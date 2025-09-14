@@ -27,7 +27,7 @@ include 'header.php';
 									<div class="nav-li-float-left">
 										<img src="<?php echo get_template_directory_uri(); ?>/img/ico/location-ico.svg">
 									</div>
-									<div class="nav-li-float-right">
+									<div class="nav-li-float-right" >
 										гор. Рязань,<br>ул. Чапаева, 56
 									</div>
 									<div style="clear: both;"></div>
@@ -40,7 +40,7 @@ include 'header.php';
 									<div class="nav-li-float-left">
 										<img src="<?php echo get_template_directory_uri(); ?>/img/ico/clock-ico.svg">
 									</div>
-									<div class="nav-li-float-right">
+									<div class="nav-li-float-right" >
 										Пн-Сб: с 10.00-19.00<br>Вс: с 10.00-17.00
 									</div>
 									<div style="clear: both;"></div>
@@ -53,7 +53,7 @@ include 'header.php';
 									<div class="nav-li-float-left">
 										<img src="<?php echo get_template_directory_uri(); ?>/img/ico/callback-ico.svg">
 									</div>
-									<div class="nav-li-float-right max-width-1400">
+									<div class="nav-li-float-right max-width-1400" >
 										Обратный звонок
 									</div>
 									<div style="clear: both;"></div>
@@ -62,11 +62,11 @@ include 'header.php';
 						</li>
 						<li class="nav-item me-1 me-xxl-4">
 							<a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">
-								<div style="display: flex;">
+								<div style="display: flex;">      
 									<div class="nav-li-float-left">
 										<img src="<?php echo get_template_directory_uri(); ?>/img/ico/calculator-ico.svg">
 									</div>
-									<div class="nav-li-float-right max-width-1400">
+									<div class="nav-li-float-right max-width-1400" >
 										Рассчитать стоимость
 									</div>
 									<div style="clear: both;"></div>
@@ -121,20 +121,19 @@ include 'header.php';
 				<a class="navbar-brand" href="#">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/ico/logo-light.svg">
 				</a>
-
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobail-header-collapse"
-					aria-controls="mobail-header-collapse" aria-expanded="false" aria-label="Toggle navigation">
+				
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobail-header-collapse" aria-controls="mobail-header-collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-
+				
 				<div class="collapse navbar-collapse" id="mobail-header-collapse">
 					<?php
-					wp_nav_menu(array(
-						'theme_location' => 'mobail-header-collapse',
-						'container' => false,
-						'menu_class' => '',
-						'fallback_cb' => '__return_false',
-						'items_wrap' => '
+						wp_nav_menu(array(
+							'theme_location' => 'mobail-header-collapse',
+							'container' => false,
+							'menu_class' => '',
+							'fallback_cb' => '__return_false',
+							'items_wrap' => '
 								<ul id="%1$s" class="navbar-nav align-items-center ms-auto mb-2 mb-lg-0 %2$s">%3$s
 									<!-- Mobile menu -->
 									<li class="nav-item d-lg-none">
@@ -142,28 +141,28 @@ include 'header.php';
 									</li>
 									<li class="nav-item d-lg-none">
 										<div style="font-size: 12px; font-family: HelveticaNeueCyr-Light; text-transform: none;">
-											<img src="' . get_template_directory_uri() . '/img/ico/location-ico.svg" style="width: 10px;" class="me-1">
+											<img src="'.get_template_directory_uri().'/img/ico/location-ico.svg" style="width: 10px;" class="me-1">
 												<span>гор. Рязань, ул. Чапаева, 56</span>
 										</div>
 										<a class="nav-link top-menu-tel pt-1 pb-1" href="tel:89511014610">8 (951) 101-46-10</a>
 										<div class="mb-2" style="font-size: 12px; font-family: HelveticaNeueCyr-Light; text-transform: none;">
-											<img src="' . get_template_directory_uri() . '/img/ico/clock-ico.svg" style="width: 10px; position: relative; top: 2px;" class="me-1 mb-2">Пн-Сб: с 10.00-19.00, Вс: с 10.00-17.00
+											<img src="'.get_template_directory_uri().'/img/ico/clock-ico.svg" style="width: 10px; position: relative; top: 2px;" class="me-1 mb-2">Пн-Сб: с 10.00-19.00, Вс: с 10.00-17.00
 										</div>
 									</li>
 									<li class="nav-item d-lg-none pb-4">
 										<a class="ico-button pe-2" href="https://wa.me/79511014610?web=1&app_absent=1">
-											<img src="' . get_template_directory_uri() . '/img/ico/whatsapp-ico.svg">
+											<img src="'.get_template_directory_uri().'/img/ico/whatsapp-ico.svg">
 										</a>
 										<a class="ico-button pe-0" href="https://t.me/+79511014610">
-											<img src="' . get_template_directory_uri() . '/img/ico/telegram-ico.svg">
+											<img src="'.get_template_directory_uri().'/img/ico/telegram-ico.svg">
 										</a>
 									</li>	
 									<!-- End mobile menu -->
 								</ul>
 							',
-						'depth' => 2,
-						'walker' => new bootstrap_5_wp_nav_menu_walker()
-					));
+							'depth' => 2,
+							'walker' => new bootstrap_5_wp_nav_menu_walker()
+						));
 					?>
 				</div>
 
