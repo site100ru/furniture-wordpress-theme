@@ -608,6 +608,22 @@ do_action('woocommerce_before_main_content');
 				<br>
 				<a href="#" type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal"
 					data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
+				<div class="row justify-content-md-end">
+					<div class="col">
+						<ul class="nav justify-content-md-end gap-3">
+							<li class="nav-item">
+								<a class="nav-link ico-button" href="https://wa.me/79361385058?web=1&amp;app_absent=1">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/ico/whatsapp-ico.png" />
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link ico-button" href="https://t.me/+79361385058">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/ico/telegram-ico.png" />
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 			<div class="col-md-7"></div>
 		</div>
@@ -1242,6 +1258,22 @@ do_action('woocommerce_before_main_content');
 				<br>
 				<a href="#" type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal"
 					data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
+				<div class="row justify-content-md-end">
+					<div class="col">
+						<ul class="nav justify-content-md-end gap-3">
+							<li class="nav-item">
+								<a class="nav-link ico-button" href="https://wa.me/79361385058?web=1&amp;app_absent=1">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/ico/whatsapp-ico.png" />
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link ico-button" href="https://t.me/+79361385058">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/ico/telegram-ico.png" />
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 			<div class="col-md-7"></div>
 		</div>

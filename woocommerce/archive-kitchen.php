@@ -1,22 +1,22 @@
 <?php
-	
-	/**
-	 * Template Name: Страница архива кухонь
-	 * Template Post Type: page, product_cat
-	 **/
 
-	defined( 'ABSPATH' ) || exit;
+/**
+ * Template Name: Страница архива кухонь
+ * Template Post Type: page, product_cat
+ **/
 
-	get_header();
+defined('ABSPATH') || exit;
 
-	/**
-	 * Hook: woocommerce_before_main_content.
-	 *
-	 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
-	 * @hooked woocommerce_breadcrumb - 20
-	 * @hooked WC_Structured_Data::generate_website_data() - 30
-	 */
-	do_action( 'woocommerce_before_main_content' );
+get_header();
+
+/**
+ * Hook: woocommerce_before_main_content.
+ *
+ * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+ * @hooked woocommerce_breadcrumb - 20
+ * @hooked WC_Structured_Data::generate_website_data() - 30
+ */
+do_action('woocommerce_before_main_content');
 
 ?>
 
@@ -37,7 +37,7 @@
 									<div class="nav-li-float-left">
 										<img src="<?php echo get_template_directory_uri(); ?>/img/ico/location-ico.svg">
 									</div>
-									<div class="nav-li-float-right" >
+									<div class="nav-li-float-right">
 										гор. Рязань,<br>ул. Чапаева, 56
 									</div>
 									<div style="clear: both;"></div>
@@ -50,7 +50,7 @@
 									<div class="nav-li-float-left">
 										<img src="<?php echo get_template_directory_uri(); ?>/img/ico/clock-ico.svg">
 									</div>
-									<div class="nav-li-float-right" >
+									<div class="nav-li-float-right">
 										Пн-Сб: с 10.00-19.00<br>Вс: с 10.00-17.00
 									</div>
 									<div style="clear: both;"></div>
@@ -63,7 +63,7 @@
 									<div class="nav-li-float-left">
 										<img src="<?php echo get_template_directory_uri(); ?>/img/ico/callback-ico.svg">
 									</div>
-									<div class="nav-li-float-right max-width-1400" >
+									<div class="nav-li-float-right max-width-1400">
 										Обратный звонок
 									</div>
 									<div style="clear: both;"></div>
@@ -72,11 +72,11 @@
 						</li>
 						<li class="nav-item me-1 me-xxl-4">
 							<a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">
-								<div style="display: flex;">      
+								<div style="display: flex;">
 									<div class="nav-li-float-left">
 										<img src="<?php echo get_template_directory_uri(); ?>/img/ico/calculator-ico.svg">
 									</div>
-									<div class="nav-li-float-right max-width-1400" >
+									<div class="nav-li-float-right max-width-1400">
 										Рассчитать стоимость
 									</div>
 									<div style="clear: both;"></div>
@@ -124,26 +124,27 @@
 			</div>
 		</nav>
 		<!-- /Header nav top -->
-		
+
 		<!-- Header nav bottom -->
 		<nav class="header-nav-bottom navbar navbar-expand-lg navbar-light py-0">
 			<div class="container">
 				<a class="navbar-brand" href="#">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/ico/logo-light.svg">
 				</a>
-				
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobail-header-collapse" aria-controls="mobail-header-collapse" aria-expanded="false" aria-label="Toggle navigation">
+
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobail-header-collapse"
+					aria-controls="mobail-header-collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-				
+
 				<div class="collapse navbar-collapse" id="mobail-header-collapse">
 					<?php
-						wp_nav_menu(array(
-							'theme_location' => 'mobail-header-collapse',
-							'container' => false,
-							'menu_class' => '',
-							'fallback_cb' => '__return_false',
-							'items_wrap' => '
+					wp_nav_menu(array(
+						'theme_location' => 'mobail-header-collapse',
+						'container' => false,
+						'menu_class' => '',
+						'fallback_cb' => '__return_false',
+						'items_wrap' => '
 								<ul id="%1$s" class="navbar-nav align-items-center ms-auto mb-2 mb-lg-0 %2$s">%3$s
 									<!-- Mobile menu -->
 									<li class="nav-item d-lg-none">
@@ -151,28 +152,28 @@
 									</li>
 									<li class="nav-item d-lg-none">
 										<div style="font-size: 12px; font-family: HelveticaNeueCyr-Light; text-transform: none;">
-											<img src="'.get_template_directory_uri().'/img/ico/location-ico.svg" style="width: 10px;" class="me-1">
+											<img src="' . get_template_directory_uri() . '/img/ico/location-ico.svg" style="width: 10px;" class="me-1">
 												<span>гор. Рязань, ул. Чапаева, 56</span>
 										</div>
 										<a class="nav-link top-menu-tel pt-1 pb-1" href="tel:89511014610">8 (951) 101-46-10</a>
 										<div class="mb-2" style="font-size: 12px; font-family: HelveticaNeueCyr-Light; text-transform: none;">
-											<img src="'.get_template_directory_uri().'/img/ico/clock-ico.svg" style="width: 10px; position: relative; top: 2px;" class="me-1 mb-2">Пн-Сб: с 10.00-19.00, Вс: с 10.00-17.00
+											<img src="' . get_template_directory_uri() . '/img/ico/clock-ico.svg" style="width: 10px; position: relative; top: 2px;" class="me-1 mb-2">Пн-Сб: с 10.00-19.00, Вс: с 10.00-17.00
 										</div>
 									</li>
 									<li class="nav-item d-lg-none pb-4">
 										<a class="ico-button pe-2" href="https://wa.me/79511014610?web=1&app_absent=1">
-											<img src="'.get_template_directory_uri().'/img/ico/whatsapp-ico.svg">
+											<img src="' . get_template_directory_uri() . '/img/ico/whatsapp-ico.svg">
 										</a>
 										<a class="ico-button pe-0" href="https://t.me/+79511014610">
-											<img src="'.get_template_directory_uri().'/img/ico/telegram-ico.svg">
+											<img src="' . get_template_directory_uri() . '/img/ico/telegram-ico.svg">
 										</a>
 									</li>	
 									<!-- End mobile menu -->
 								</ul>
 							',
-							'depth' => 2,
-							'walker' => new bootstrap_5_wp_nav_menu_walker()
-						));
+						'depth' => 2,
+						'walker' => new bootstrap_5_wp_nav_menu_walker()
+					));
 					?>
 				</div>
 
@@ -180,8 +181,8 @@
 		</nav>
 		<!-- /Header nav bottom -->
 	</header>
-	
-	
+
+
 	<header id="sliding-header" class="shadow">
 		<!-- Header nav bottom -->
 		<nav class="header-nav-bottom navbar navbar-expand-lg navbar-light py-1 py-lg-0">
@@ -189,26 +190,28 @@
 				<a class="navbar-brand" href="#">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/ico/logo-dark.svg">
 				</a>
-				
+
 				<div class="d-lg-none">
 					<a class="top-menu-tel pt-1 pb-0" style="font-size: 14px;" href="tel:89511014610">8 (951) 101-46-10</a>
 					<div style="font-size: 10px; font-family: Gilroy-Light; text-transform: none;">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/ico/clock-ico.svg" style="width: 12px; position: relative; top: -1px;" class="me-1">Пн-Сб: с 10.00-19.00<br>Вс: с 10.00-17.00
+						<img src="<?php echo get_template_directory_uri(); ?>/img/ico/clock-ico.svg"
+							style="width: 12px; position: relative; top: -1px;" class="me-1">Пн-Сб: с 10.00-19.00<br>Вс: с 10.00-17.00
 					</div>
 				</div>
-				
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sliding-header-collapse" aria-controls="sliding-header-collapse" aria-expanded="false" aria-label="Toggle navigation">
+
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sliding-header-collapse"
+					aria-controls="sliding-header-collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-				
+
 				<div class="collapse navbar-collapse" id="sliding-header-collapse">
 					<?php
-						wp_nav_menu(array(
-							'theme_location' => 'sliding-header-collapse',
-							'container' => false,
-							'menu_class' => '',
-							'fallback_cb' => '__return_false',
-							'items_wrap' => '
+					wp_nav_menu(array(
+						'theme_location' => 'sliding-header-collapse',
+						'container' => false,
+						'menu_class' => '',
+						'fallback_cb' => '__return_false',
+						'items_wrap' => '
 								<ul id="%1$s" class="navbar-nav ms-auto mb-2 mb-lg-0 %2$s">%3$s
 									<!-- Mobile menu -->
 									<li class="nav-item d-lg-none">
@@ -216,28 +219,28 @@
 									</li>
 									<li class="nav-item d-lg-none">
 										<div style="font-size: 12px; font-family: Gilroy-Light; text-transform: none;">
-											<img src="'. get_template_directory_uri().'/img/ico/location-ico.svg" style="width: 10px; position: relative; top: -2px;" class="me-1">
+											<img src="' . get_template_directory_uri() . '/img/ico/location-ico.svg" style="width: 10px; position: relative; top: -2px;" class="me-1">
 											<span>гор. Рязань, ул. Чапаева, 56</span>
 										</div>
 										<a class="nav-link top-menu-tel pt-1 pb-1" href="tel:89511014610">8 (951) 101-46-10</a>
 										<div class="mb-2" style="font-size: 12px; font-family: Gilroy-Light; text-transform: none;">
-											<img src="'.get_template_directory_uri().'/img/ico/clock-ico.svg" style="width: 10px; position: relative; top: 3px;" class="me-1 mb-2">Пн-Сб: с 10.00-19.00, Вс: с 10.00-17.00
+											<img src="' . get_template_directory_uri() . '/img/ico/clock-ico.svg" style="width: 10px; position: relative; top: 3px;" class="me-1 mb-2">Пн-Сб: с 10.00-19.00, Вс: с 10.00-17.00
 										</div>
 									</li>
 									<li class="nav-item d-lg-none pb-2">
 										<a class="ico-button pe-2" href="https://wa.me/79511014610?web=1&app_absent=1">
-											<img src="'.get_template_directory_uri().'/img/ico/whatsapp-ico.svg">
+											<img src="' . get_template_directory_uri() . '/img/ico/whatsapp-ico.svg">
 										</a>
 										<a class="ico-button pe-0" href="https://t.me/+79511014610">
-											<img src="'.get_template_directory_uri().'/img/ico/telegram-ico.svg">
+											<img src="' . get_template_directory_uri() . '/img/ico/telegram-ico.svg">
 										</a>
 									</li>	
 									<!-- End mobile menu -->
 								</ul>
 							',
-							'depth' => 2,
-							'walker' => new bootstrap_5_wp_nav_menu_walker()
-						));
+						'depth' => 2,
+						'walker' => new bootstrap_5_wp_nav_menu_walker()
+					));
 					?>
 				</div>
 			</div>
@@ -248,23 +251,27 @@
 		<div class="row align-items-center home-section-height">
 			<div class="col-xl-10 col-xxl-9">
 				<h1 class="home-title mb-3">Каталог кухонь по индивидуальным размерам на заказ от производителя</h1>
-				<p class="home-subtitle mb-4">Изготовим качественную кухню с учетом Ваших пожеланий и особенностей помещения. Рассчитаем стоимость за 15 минут.</p>
-				<a href="#" type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
-			</div>	
+				<p class="home-subtitle mb-4">Изготовим качественную кухню с учетом Ваших пожеланий и особенностей помещения.
+					Рассчитаем стоимость за 15 минут.</p>
+				<a href="#" type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal"
+					data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
+			</div>
 		</div>
 	</div>
 </section>
 <!-- /Home section -->
 
 
-		
+
 <!-- ARCHIVE PRODUCT SECTION -->
 <section class="archive-product-section pb-5 bg-white">
 	<div class="container">
 		<div class="row">
 			<div class="col">
 				<div class="breadcrumbs py-4">
-					<nav class="woocommerce-breadcrumb" itemprop="breadcrumb"><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/ico/breadcrumbs-icon.svg"></a> / Каталог / Кухни</nav>
+					<nav class="woocommerce-breadcrumb" itemprop="breadcrumb"><a href="#"><img
+								src="<?php echo get_template_directory_uri(); ?>/img/ico/breadcrumbs-icon.svg"></a> / Каталог / Кухни
+					</nav>
 				</div>
 			</div>
 		</div>
@@ -275,93 +282,93 @@
 				<img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-title-dec.svg" class="mb-5">
 				<div class="row text-start">
 					<div class="col-md-3 mb-5 mb-md-0" style="text-transform: uppercase; font-size: 14px;">
-						<?php dynamic_sidebar( 'wsidebar-1' ); ?>
+						<?php dynamic_sidebar('wsidebar-1'); ?>
 					</div>
 					<div class="col-md-9">
 						<div class="row">
 							<?php
-								if ( woocommerce_product_loop() ) {
+							if (woocommerce_product_loop()) {
 
-									/**
-									 * Hook: woocommerce_before_shop_loop.
-									 *
-									 * @hooked woocommerce_output_all_notices - 10
-									 * @hooked woocommerce_result_count - 20
-									 * @hooked woocommerce_catalog_ordering - 30
-									 */
-									//do_action( 'woocommerce_before_shop_loop' );
-									
-									// Нижее выводятся карточки категорий и подкатегорий
-									woocommerce_product_loop_start();
-								
-									
-									if ( wc_get_loop_prop( 'total' ) ) {
-										
-										
-										/* Выводим все товары кроме тех, у которых есть тег Портфолио */
-										/* С таким условием вывода неправильно работает пагинация
-										global $query_string;
-										// добавляем базовые параметры в массив $args
-										parse_str( $query_string, $args );
-										// добавляем/заменяем параметр post_type в массиве
-										$args['tax_query'] = array(           
-											array(
-												'taxonomy' => 'product_tag',
-												'field' => 'slug',
-												'terms' => 'portfolio',
-												'operator' => 'NOT IN'
-											)
-										);
-										query_posts( $args ); */
-										/* End Выводим все товары кроме тех, у которых есть тег Портфолио */
-										
-										
-										while ( have_posts() ) {
-											
-											the_post();
-											
-											/**
-											 * Hook: woocommerce_shop_loop.
-											 */
-											
-											do_action( 'woocommerce_shop_loop' );
-											
-											wc_get_template_part( 'content', 'kitchen' );
-											
-										}
+								/**
+								 * Hook: woocommerce_before_shop_loop.
+								 *
+								 * @hooked woocommerce_output_all_notices - 10
+								 * @hooked woocommerce_result_count - 20
+								 * @hooked woocommerce_catalog_ordering - 30
+								 */
+								//do_action( 'woocommerce_before_shop_loop' );
+							
+								// Нижее выводятся карточки категорий и подкатегорий
+								woocommerce_product_loop_start();
+
+
+								if (wc_get_loop_prop('total')) {
+
+
+									/* Выводим все товары кроме тех, у которых есть тег Портфолио */
+									/* С таким условием вывода неправильно работает пагинация
+									global $query_string;
+									// добавляем базовые параметры в массив $args
+									parse_str( $query_string, $args );
+									// добавляем/заменяем параметр post_type в массиве
+									$args['tax_query'] = array(           
+										array(
+											'taxonomy' => 'product_tag',
+											'field' => 'slug',
+											'terms' => 'portfolio',
+											'operator' => 'NOT IN'
+										)
+									);
+									query_posts( $args ); */
+									/* End Выводим все товары кроме тех, у которых есть тег Портфолио */
+
+
+									while (have_posts()) {
+
+										the_post();
+
+										/**
+										 * Hook: woocommerce_shop_loop.
+										 */
+
+										do_action('woocommerce_shop_loop');
+
+										wc_get_template_part('content', 'kitchen');
+
 									}
-
-									woocommerce_product_loop_end();
-
-									/**
-									 * Hook: woocommerce_after_shop_loop.
-									 *
-									 * @hooked woocommerce_pagination - 10
-									 */
-									do_action( 'woocommerce_after_shop_loop' );
-								} else {
-									/**
-									 * Hook: woocommerce_no_products_found.
-									 *
-									 * @hooked wc_no_products_found - 10
-									 */
-									do_action( 'woocommerce_no_products_found' );
 								}
 
-								/**
-								 * Hook: woocommerce_after_main_content.
-								 *
-								 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-								 */
-								do_action( 'woocommerce_after_main_content' );
+								woocommerce_product_loop_end();
 
 								/**
-								 * Hook: woocommerce_sidebar.
+								 * Hook: woocommerce_after_shop_loop.
 								 *
-								 * @hooked woocommerce_get_sidebar - 10
+								 * @hooked woocommerce_pagination - 10
 								 */
-								//do_action( 'woocommerce_sidebar' );
-							?>	
+								do_action('woocommerce_after_shop_loop');
+							} else {
+								/**
+								 * Hook: woocommerce_no_products_found.
+								 *
+								 * @hooked wc_no_products_found - 10
+								 */
+								do_action('woocommerce_no_products_found');
+							}
+
+							/**
+							 * Hook: woocommerce_after_main_content.
+							 *
+							 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
+							 */
+							do_action('woocommerce_after_main_content');
+
+							/**
+							 * Hook: woocommerce_sidebar.
+							 *
+							 * @hooked woocommerce_get_sidebar - 10
+							 */
+							//do_action( 'woocommerce_sidebar' );
+							?>
 						</div><!-- row -->
 					</div><!-- col-md-9 -->
 				</div><!-- row -->
@@ -379,44 +386,48 @@
 		<div class="row">
 			<div class="col text-md-center">
 				<h2 style="margin-bottom: 15px;">Последние выполненные работы</h2>
-				<img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-title-dec.svg" style="margin-bottom: 52px;">	
+				<img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-title-dec.svg"
+					style="margin-bottom: 52px;">
 				<div class="row">
 
-					<?php	
-						$obj = get_queried_object();
-						$portfolio_cat = $obj->slug;
-						switch ( $portfolio_cat ) {
-							case 'кухни':
-								$portfolio_cat = '01-кухни';
-								break;
-						}
-						
-						$args = [
-							'post_type'      => 'portfolio',
-							'numberposts' 	 => 6,
-							'posts_per_page' => 6,
-							'portfolio-cat'  => '01-кухни'//$portfolio_cat
-						];
-						
-						$query = new WP_Query( $args );
-						
-						while( $query->have_posts() ) : $query->the_post(); ?>
-							<div class="col-md-4 mb-5">
-								<a onclick="portfolioGalleryOpen( 'portfolio-gallery-<?php echo get_the_ID(); ?>' )">
-									<div class="approximation project-container-2 rounded">
-										<img src="<?php echo get_post_meta( get_the_ID(), '_img-1' )[0]; ?>" class="rounded" alt="<?php echo get_the_title(); ?>" loading="lazy">
-										<div class="card-wrapper">
-											<div class="position-absolute"><?php echo get_the_title(); ?></div>
-										</div>
+					<?php
+					$obj = get_queried_object();
+					$portfolio_cat = $obj->slug;
+					switch ($portfolio_cat) {
+						case 'кухни':
+							$portfolio_cat = '01-кухни';
+							break;
+					}
+
+					$args = [
+						'post_type' => 'portfolio',
+						'numberposts' => 6,
+						'posts_per_page' => 6,
+						'portfolio-cat' => '01-кухни'//$portfolio_cat
+					];
+
+					$query = new WP_Query($args);
+
+					while ($query->have_posts()):
+						$query->the_post(); ?>
+						<div class="col-md-4 mb-5">
+							<a onclick="portfolioGalleryOpen( 'portfolio-gallery-<?php echo get_the_ID(); ?>' )">
+								<div class="approximation project-container-2 rounded">
+									<img src="<?php echo get_post_meta(get_the_ID(), '_img-1')[0]; ?>" class="rounded"
+										alt="<?php echo get_the_title(); ?>" loading="lazy">
+									<div class="card-wrapper">
+										<div class="position-absolute"><?php echo get_the_title(); ?></div>
 									</div>
-								</a>
-							</div>
-						<?php endwhile;
-						
-						wp_reset_postdata();
+								</div>
+							</a>
+						</div>
+					<?php endwhile;
+
+					wp_reset_postdata();
 					?>
 				</div>
-				<a href="https://site100.ru/furniture/portfolio-cat/01-кухни/" class="btn btn-lg btn-corporate-color-1" style="margin-top: 12px;">Смотреть еще</a>
+				<a href="https://site100.ru/furniture/portfolio-cat/01-кухни/" class="btn btn-lg btn-corporate-color-1"
+					style="margin-top: 12px;">Смотреть еще</a>
 			</div>
 		</div>
 	</div>
@@ -426,118 +437,133 @@
 <!-- SECTION PORTFOLIO GALLERY -->
 <div id="portfolioGalleryWrapper" style="display: none;">
 	<?php
-		$obj = get_queried_object();
-		$portfolio_cat = $obj->slug;
-		switch ( $portfolio_cat ) {
-			case 'кухни':
-				$portfolio_cat = '01-кухни';
-				break;
-		}
-		
-		$args = [
-			'post_type'      => 'portfolio',
-			'numberposts' 	 => 6,
-			'posts_per_page' => 6,
-			'portfolio-cat'  => '01-кухни'//$portfolio_cat
-		];
-		
-		$query = new WP_Query( $args );
-		
-		while( $query->have_posts() ) : $query->the_post(); ?>
-			<div id="portfolio-gallery-<?php echo get_the_ID(); ?>" class="carousel slide" data-bs-ride="false" data-bs-interval="false" style="display: none; position: fixed; top: 0; height: 100%; width: 100%; z-index: 9999;">
-				
-				<div class="carousel-indicators">
-					<?php
-						$count_2 = 0;
-						for ( $i=1; $i<=9; $i++ ) {
-							if ( get_post_meta( get_the_ID(), '_img-'.$i ) ) {
-								if ( $count_2 == 0 ) { ?>
-									
-									<button id="ind-<?php echo get_the_ID(); ?>-<?php echo $count_2; ?>" type="button" data-bs-target="#portfolio-gallery-<?php echo get_the_ID(); ?>" data-bs-slide-to="<?php echo $count_2; ?>" aria-label="Slide 3" class="active" aria-current="true"></button>
-									
-								<?php $count_2 = $count_2 + 1; } else { ?>
-									
-									<button id="ind-<?php echo get_the_ID(); ?>-<?php echo $count_2; ?>" type="button" data-bs-target="#portfolio-gallery-<?php echo get_the_ID(); ?>" data-bs-slide-to="<?php echo $count_2; ?>" aria-label="Slide 3"></button>
-									
-								<?php $count_2 = $count_2 + 1; }
-							}
+	$obj = get_queried_object();
+	$portfolio_cat = $obj->slug;
+	switch ($portfolio_cat) {
+		case 'кухни':
+			$portfolio_cat = '01-кухни';
+			break;
+	}
+
+	$args = [
+		'post_type' => 'portfolio',
+		'numberposts' => 6,
+		'posts_per_page' => 6,
+		'portfolio-cat' => '01-кухни'//$portfolio_cat
+	];
+
+	$query = new WP_Query($args);
+
+	while ($query->have_posts()):
+		$query->the_post(); ?>
+		<div id="portfolio-gallery-<?php echo get_the_ID(); ?>" class="carousel slide" data-bs-ride="false"
+			data-bs-interval="false" style="display: none; position: fixed; top: 0; height: 100%; width: 100%; z-index: 9999;">
+
+			<div class="carousel-indicators">
+				<?php
+				$count_2 = 0;
+				for ($i = 1; $i <= 9; $i++) {
+					if (get_post_meta(get_the_ID(), '_img-' . $i)) {
+						if ($count_2 == 0) { ?>
+
+							<button id="ind-<?php echo get_the_ID(); ?>-<?php echo $count_2; ?>" type="button"
+								data-bs-target="#portfolio-gallery-<?php echo get_the_ID(); ?>" data-bs-slide-to="<?php echo $count_2; ?>"
+								aria-label="Slide 3" class="active" aria-current="true"></button>
+
+							<?php $count_2 = $count_2 + 1;
+						} else { ?>
+
+							<button id="ind-<?php echo get_the_ID(); ?>-<?php echo $count_2; ?>" type="button"
+								data-bs-target="#portfolio-gallery-<?php echo get_the_ID(); ?>" data-bs-slide-to="<?php echo $count_2; ?>"
+								aria-label="Slide 3"></button>
+
+							<?php $count_2 = $count_2 + 1;
 						}
-					?>
-				</div>
-				<div class="carousel-inner h-100">
-					<?php
-						$count_2 = 0;
-						for ( $i=1; $i<=9; $i++ ) {
-							if ( get_post_meta(get_the_ID(), '_img-'.$i ) ) { ?>
-								<div id="img-<?php echo get_the_ID(); ?>-<?php echo $count_2; ?>" class="carousel-item h-100 <?php if ( $i == 1 ) echo ' active'; ?>" data-bs-interval="999999999">
-									<div class="row align-items-center h-100">
-										<div class="col text-center">
-											<img src="<?php echo get_post_meta(get_the_ID(), '_img-'.$i )[0]; ?>" class="img-fluid" style="max-width: 90vw; max-height: 90vh;" alt="...">
-										</div>
-									</div>
-								</div>
-							<?php $count_2 = $count_2 + 1; }
-						}
-					?>
-				</div>
-				
-				<button class="carousel-control-prev" type="button" data-bs-target="#portfolio-gallery-<?php echo get_the_ID(); ?>" data-bs-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Previous</span>
-				</button>
-				<button class="carousel-control-next" type="button" data-bs-target="#portfolio-gallery-<?php echo get_the_ID(); ?>" data-bs-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Next</span>
-				</button>
+					}
+				}
+				?>
 			</div>
-		<?php endwhile;
-		
-		wp_reset_postdata();
+			<div class="carousel-inner h-100">
+				<?php
+				$count_2 = 0;
+				for ($i = 1; $i <= 9; $i++) {
+					if (get_post_meta(get_the_ID(), '_img-' . $i)) { ?>
+						<div id="img-<?php echo get_the_ID(); ?>-<?php echo $count_2; ?>" class="carousel-item h-100 <?php if ($i == 1)
+										echo ' active'; ?>" data-bs-interval="999999999">
+							<div class="row align-items-center h-100">
+								<div class="col text-center">
+									<img src="<?php echo get_post_meta(get_the_ID(), '_img-' . $i)[0]; ?>" class="img-fluid"
+										style="max-width: 90vw; max-height: 90vh;" alt="...">
+								</div>
+							</div>
+						</div>
+						<?php $count_2 = $count_2 + 1;
+					}
+				}
+				?>
+			</div>
+
+			<button class="carousel-control-prev" type="button" data-bs-target="#portfolio-gallery-<?php echo get_the_ID(); ?>"
+				data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#portfolio-gallery-<?php echo get_the_ID(); ?>"
+				data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+	<?php endwhile;
+
+	wp_reset_postdata();
 	?>
-	
-	<button  type="button" onClick="portfolioGalleryClose();" class="btn-close btn-close-white" style="position: fixed; top: 25px; right: 25px; z-index: 99999" aria-label="Close"></button>
+
+	<button type="button" onClick="portfolioGalleryClose();" class="btn-close btn-close-white"
+		style="position: fixed; top: 25px; right: 25px; z-index: 99999" aria-label="Close"></button>
 </div>
 <!-- END SECTION PORTFOLIO GALLERY -->
 
 <!-- SECTION PORTFOLIO SCRIPT -->
 <script>
-	function portfolioGalleryOpen( gal ) {
+	function portfolioGalleryOpen(gal) {
 		var gallery = gal; // Получаем ID галереи
 
 		// Открываем обертку галереи
-		document.getElementById( "portfolioGalleryWrapper" ).style.display = "block";
+		document.getElementById("portfolioGalleryWrapper").style.display = "block";
 
 		// Открываем галерею
-		document.getElementById( gallery ).style.display = "block";
+		document.getElementById(gallery).style.display = "block";
 	}
 
 	function portfolioGalleryClose() {
 		// Закрываем обертку галереи
-		document.getElementById( "portfolioGalleryWrapper" ).style.display = "none";
+		document.getElementById("portfolioGalleryWrapper").style.display = "none";
 		// Закрываем галерею
-		<?php	
-			$obj = get_queried_object();
-			$portfolio_cat = $obj->slug;
-			switch ( $portfolio_cat ) {
-				case 'кухни':
-					$portfolio_cat = '01-кухни';
-					break;
-			}
-			
-			$args = [
-				'post_type'      => 'portfolio',
-				'numberposts' 	 => 6,
-				'posts_per_page' => 6,
-				'portfolio-cat'  => '01-кухни'//$portfolio_cat
-			];
-			
-			$query = new WP_Query( $args );
-			
-			while( $query->have_posts() ) : $query->the_post(); ?>
-				document.getElementById( 'portfolio-gallery-<?php echo get_the_ID(); ?>' ).style.display = "none";
-			<?php endwhile;
-			
-			wp_reset_postdata();
+		<?php
+		$obj = get_queried_object();
+		$portfolio_cat = $obj->slug;
+		switch ($portfolio_cat) {
+			case 'кухни':
+				$portfolio_cat = '01-кухни';
+				break;
+		}
+
+		$args = [
+			'post_type' => 'portfolio',
+			'numberposts' => 6,
+			'posts_per_page' => 6,
+			'portfolio-cat' => '01-кухни'//$portfolio_cat
+		];
+
+		$query = new WP_Query($args);
+
+		while ($query->have_posts()):
+			$query->the_post(); ?>
+			document.getElementById('portfolio-gallery-<?php echo get_the_ID(); ?>').style.display = "none";
+		<?php endwhile;
+
+		wp_reset_postdata();
 		?>
 	}
 </script>
@@ -546,15 +572,34 @@
 
 
 <!-- Gradient order section -->
-<section class="gradient-order-section bg-light" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/gradient-order-section-bg-dark.jpg);">
+<section class="gradient-order-section bg-light"
+	style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/gradient-order-section-bg-dark.jpg);">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-5 text-md-end">
 				<h2 class="text-light">Рассчитаем стоимость за 15 минут</h2>
-				<p class="section-description archive-portfolio text-light mb-3">Хотите узнать стоимость качественной кухни с учетом всех Ваших пожеланий и особенностей помещения? Это бесплатно и ни к чему Вас не обязывает!</p>
+				<p class="section-description archive-portfolio text-light mb-3">Хотите узнать стоимость качественной кухни с
+					учетом всех Ваших пожеланий и особенностей помещения? Это бесплатно и ни к чему Вас не обязывает!</p>
 				<img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-title-dec.svg" class="mb-5">
 				<br>
-				<a href="#" type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
+				<a href="#" type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal"
+					data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
+				<div class="row justify-content-md-end">
+					<div class="col">
+						<ul class="nav justify-content-md-end gap-3">
+							<li class="nav-item">
+								<a class="nav-link ico-button" href="https://wa.me/79361385058?web=1&amp;app_absent=1">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/ico/whatsapp-ico.png" />
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link ico-button" href="https://t.me/+79361385058">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/ico/telegram-ico.png" />
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 			<div class="col-md-7"></div>
 		</div>
@@ -1182,15 +1227,34 @@
 
 
 <!-- Gradient order section -->
-<section class="gradient-order-section bg-light" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/sec-bg2.jpg);">
+<section class="gradient-order-section bg-light"
+	style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/sec-bg2.jpg);">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-5 text-md-end">
 				<h2>Рассчитаем стоимость за 15 минут</h2>
-				<p class="section-description archive-portfolio mb-3">Хотите узнать стоимость качественной кухни с учетом всех Ваших пожеланий и особенностей помещения? Это бесплатно и ни к чему Вас не обязывает!</p>
+				<p class="section-description archive-portfolio mb-3">Хотите узнать стоимость качественной кухни с учетом всех
+					Ваших пожеланий и особенностей помещения? Это бесплатно и ни к чему Вас не обязывает!</p>
 				<img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-title-dec.svg" class="mb-5">
 				<br>
-				<a href="#" type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
+				<a href="#" type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal"
+					data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
+				<div class="row justify-content-md-end">
+					<div class="col">
+						<ul class="nav justify-content-md-end gap-3">
+							<li class="nav-item">
+								<a class="nav-link ico-button" href="https://wa.me/79361385058?web=1&amp;app_absent=1">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/ico/whatsapp-ico.png" />
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link ico-button" href="https://t.me/+79361385058">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/ico/telegram-ico.png" />
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 			<div class="col-md-7"></div>
 		</div>
@@ -1200,4 +1264,4 @@
 
 
 
-<?php get_footer( '1' ); ?>
+<?php get_footer('1'); ?>
