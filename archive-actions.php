@@ -264,17 +264,25 @@
 			</div>
 		</div>
 		<div class="row text-start">
+			<div class="col-md-6">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-1.jpg" class="img-fluid rounded mb-3" alt="">
+				<p class="mb-5 d-none">Бесплатная доставка</p>
+			</div>
+			<div class="col-md-6">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-1.jpg" class="img-fluid rounded mb-3" alt="">
+				<p class="mb-5 d-none">Бесплатная доставка</p>
+			</div>
 			<div class="col-md-4">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-1.jpg" class="img-fluid rounded mb-3" alt="">
-				<p class="mb-5">При заказе кухни от 150 000 рублей в подарок мойка из искусственного камня  фирмы Granfest.</p>
+				<p class="mb-5 d-none">Бесплатная доставка</p>
 			</div>
 			<div class="col-md-4">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-2.jpg" class="img-fluid rounded mb-3" alt="">
-				<p class="mb-5">При заказе кухни от 100 000 в подарок столешница из пластика 26 мм.</p>
+				<img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-1.jpg" class="img-fluid rounded mb-3" alt="">
+				<p class="mb-5 d-none">Бесплатная доставка</p>
 			</div>
 			<div class="col-md-4">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-3.jpg" class="img-fluid rounded mb-3" alt="">
-				<p class="mb-5">Скидка 10% на повторный заказ из корпусной мебели.</p>
+				<img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-1.jpg" class="img-fluid rounded mb-3" alt="">
+				<p class="mb-5 d-none">Бесплатная доставка</p>
 			</div>
 			<!--div class="col-md-4 mb-5">
 				<a href="single-portfolio-product-page.html">

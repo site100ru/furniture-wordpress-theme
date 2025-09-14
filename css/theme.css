@@ -64,16 +64,16 @@
 
 /*** GENERAL ***/
 :root {
-	--corporate-color-1: #00A3D3;
-	--corporate-color-hover-1: #0092BD;
-	--corporate-color-active-1: #007395;
-	--corporate-color-2: #2292bb;
+	--corporate-color-1: #DC3545;
+	--corporate-color-hover-1: #BB2D3C;
+	--corporate-color-active-1: #902531;
+	--corporate-color-2: #DC3545;
 	--dark-color: #323232;
 	--light-color: #E1E1E1;
 }
 
 .bg-light {
-	background-color: #f8f9fa;
+	background-color: #F5F5F5;
 }
 
 
@@ -105,7 +105,7 @@ h3 {
 }
 
 p {
-	font-family: Gilroy-Regular;
+	font-family: Gilroy-Light;
 	color: #323232;
 	font-size: 20px;
 }
@@ -1105,6 +1105,7 @@ a.navbar-brand {
 	text-transform: uppercase;
 	text-align: center;
 	color: #4b4b4b;
+	display: flex;
 }
 
 #myTab .nav-item:has(span) {
@@ -2593,4 +2594,48 @@ footer {
     .breadcrumbs_box {
         margin-top: 70px;
     }
+}
+
+.section-faq .accordion .accordion-collapse a {
+	color: #323232;
+	font-weight: 500;
+	text-decoration: none;
+	font-family: Gilroy-Medium;
+}
+
+
+/*** SECTION HALF ***/
+
+.section-half {
+	position: relative;
+}
+
+.section-half .half-bg {
+	pointer-events: none;
+	position: absolute;
+	inset: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.section-half .left-part,
+.section-half .right-part {
+	flex: 0 0 50%;
+	max-width: 50%;
+	height: 100%;
+	width: 100%;
+}
+
+.section-half .right-part img {
+	height: 100%;
+	width: 100%;
+}
+
+.section-half .ico-button {
+	padding: 0;
+}
+
+.section-half .order-description {
+	margin-top: 10px;
+	line-height: 1.35;
 }

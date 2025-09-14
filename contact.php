@@ -292,7 +292,8 @@
 									</div>
 									<div style="clear: both;"></div>
 								</div>
-								<div style="display: flex;" class="align-items-center">
+								<button data-bs-toggle="modal" data-bs-target="#callbackModal" style="display: flex;" class="btn p-0 align-items-center">
+
 									<div class="nav-li-float-left">
 										<img src="<?php echo get_template_directory_uri(); ?>/img/ico/callback-ico.svg">
 									</div>
@@ -300,7 +301,8 @@
 										<span>Обратный звонок</span>
 									</div>
 									<div style="clear: both;"></div>
-								</div>
+								</button>
+
 							</div>
 							<div class="col-md-3 contact-info">
 								<div style="display: flex; padding-bottom: 15px;" class="align-items-center">

@@ -493,6 +493,56 @@
 </div>
 <!-- /Рассчитать стоимость без загрузки изображения -->
 
+<!-- Measurer Modal -->
+<div class="modal fade" id="measurerModal" tabindex="-1" aria-labelledby="measurerModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<form method="post" action="mails/measurer-mail.php" class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="measurerModalLabel">Вызов замерщика</h5>			
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col">
+						<p><small>Наш специалист приедет в удобное для Вас время, произведет замеры, ознакомит с продукцией и материалами, cделает 3d дизайн-проект, проконсультирует по всем вопросам! Для связи с замерщиком дизайнером введите Ваше имя и телефон.</small></p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 mb-3">
+						<input type="text" name="name" class="form-control" placeholder="Ваше имя">
+					</div>
+					<div class="col-md-6 mb-3">
+						<input type="text" name="tel" class="form-control telMask" placeholder="Ваш телефон*">
+					</div>
+					<div class="col-12 mb-3">
+						<input type="text" name="adr" class="form-control" placeholder="Адрес объекта*">
+					</div>
+					<div class="col-12 mb-3">
+						<textarea type="text" name="mes" class="form-control" placeholder="Дополнительная информация"></textarea>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-6">
+						<p class="mb-0">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/ico/advantage-1.svg" class="me-1" style="width: 25px;">
+							<small>Изготовление от 10 дней!</small>
+						</p>
+					</div>
+					<div class="col-6">
+						<p class="mb-0">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/ico/advantage-3.svg" class="me-1" style="width: 20px;">
+							<small>Гарантия 2 года!</small>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-corporate-color-1 mx-auto">Вызвать</button>
+			</div>
+		</form>
+	</div>
+</div>
+<!-- /Measurer Modall -->
 
 
 <!-- Callback button HTML -->
