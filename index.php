@@ -1051,9 +1051,8 @@ include 'header.php';
 					<div id="collapse-2" class="accordion-collapse collapse" aria-labelledby="heading-2"
 						data-bs-parent="#accordionExample">
 						<div class="accordion-body">
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-								Porro, dolore?
+							<p> Срок производства зависит от материалов и составляет от 10 рабочих дней. Сроки, в обязательном
+								порядке, согласовываются с заказчиком при заключении договора.
 							</p>
 						</div>
 					</div>
@@ -1089,9 +1088,8 @@ include 'header.php';
 						data-bs-parent="#accordionExample">
 						<div class="accordion-body">
 							<p class="mb-0">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-								Quidem nisi sint, corrupti magnam ab est impedit officia cum
-								iure quod.
+								Стоимость выезда замерщика с образцами материалов составляет 3000 руб. Но если Вы заключаете договор, то
+								замер для Вас обходится бесплатно, а оплаченный Вами выезд вычитается из суммы оплаты.
 							</p>
 						</div>
 					</div>
@@ -1107,11 +1105,10 @@ include 'header.php';
 						data-bs-parent="#accordionExample">
 						<div class="accordion-body">
 							<p>Конечно!</p>
-							<p class="mb-0">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-								Molestias doloremque repellat rerum eveniet explicabo soluta
-								ullam in, facilis vitae iure?
-							</p>
+							<p class="mb-0">Направьте эскиз с Вашей кухней (или другой корпусной мебелью) на нашу электронную почту:<a
+									target="_blank" href="mailto:mebel-dsever@yandex.ru">mebel-dsever@yandex.ru</a>,
+								дополнительно указав в письме материал фасадов,
+								комплектацию, габариты мебели и мы предоставим расчет в ответном письме.</p>
 						</div>
 					</div>
 				</div>
@@ -1126,9 +1123,9 @@ include 'header.php';
 						data-bs-parent="#accordionExample">
 						<div class="accordion-body pb-2">
 							<p class="mb-0">
-								Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-								Aperiam necessitatibus sapiente perspiciatis optio, rerum
-								ratione.
+								Наличие собственного производства, оптовые закупки расходных материалов и большое количество заказов
+								позволяют нам сохранять цены на докризисном уровне и делать нашим клиентам предложения на самых выгодных
+								условиях.
 							</p>
 						</div>
 					</div>
@@ -1143,12 +1140,12 @@ include 'header.php';
 					<div id="collapse-6" class="accordion-collapse collapse" aria-labelledby="heading-6"
 						data-bs-parent="#accordionExample">
 						<div class="accordion-body pb-2">
+							<p>Предпочтения наших клиентов настолько разнообразны, что выделить какую-либо модель достаточно сложно.
+								При разработке проекта мы учитываем все Ваши пожелания, а благодаря широчайшей коллекции фасадов и
+								столешниц, могут быть сотни разных вариаций.</p>
 							<p class="mb-0">
-								Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-								Nam vero in inventore quo harum possimus atque quidem
-								commodi velit ab distinctio quaerat totam, obcaecati illum
-								rem ex! Sint, unde laboriosam neque deleniti, reprehenderit
-								blanditiis officiis dolore cumque, nostrum ullam saepe!
+								В одном можем уверить Вас точно: какая бы ни была кухня от нашей фабрики по стилю или конфигурации, она
+								идеально впишется в ваш интерьер и прослужит долгие годы.
 							</p>
 						</div>
 					</div>
@@ -1167,7 +1164,8 @@ include 'header.php';
 
 		<!-- Правая часть с картинкой (скрывается на мобилках) -->
 		<div class="right-part d-none d-md-block">
-			<img src="<?php echo get_template_directory_uri(); ?>/img/gradient-order-section-bg-1.jpg" alt="Изображение" class="img-cover" />
+			<img src="<?php echo get_template_directory_uri(); ?>/img/gradient-order-section-bg-1.jpg" alt="Изображение"
+				class="img-cover" />
 		</div>
 	</div>
 

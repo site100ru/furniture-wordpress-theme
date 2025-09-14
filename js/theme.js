@@ -58,26 +58,26 @@ function modalClose () {
 
 
 
-// Dynamic favicon
-function dynamicFavicon() {
-	var delay		= 1500;
-	var link 		= document.getElementById('favicon');
-	var currentNum	= 0;
-	var head		= document.getElementsByTagName('head')[0];
-	var favicons	= [
-		'https://site100.ru/wp-content/themes/site100furniture/img/ico/favicon-light-1.svg',
-		'https://site100.ru/wp-content/themes/site100furniture/img/ico/favicon-dark-1.svg'
-	];
+// // Dynamic favicon
+// function dynamicFavicon() {
+// 	var delay		= 1500;
+// 	var link 		= document.getElementById('favicon');
+// 	var currentNum	= 0;
+// 	var head		= document.getElementsByTagName('head')[0];
+// 	var favicons	= [
+// 		'https://site100.ru/wp-content/themes/site100furniture/img/ico/favicon-light-1.svg',
+// 		'https://site100.ru/wp-content/themes/site100furniture/img/ico/favicon-dark-1.svg'
+// 	];
 
-	setInterval(function() {
-		document.getElementById("favicon").remove();
-		link.href = favicons[currentNum];
-		head.append(link);
-		currentNum++;
-		if ( currentNum >= favicons.length ) {
-			currentNum = 0;
-		}
-	}, delay );
-}
+// 	setInterval(function() {
+// 		document.getElementById("favicon").remove();
+// 		link.href = favicons[currentNum];
+// 		head.append(link);
+// 		currentNum++;
+// 		if ( currentNum >= favicons.length ) {
+// 			currentNum = 0;
+// 		}
+// 	}, delay );
+// }
 
-dynamicFavicon();
+// dynamicFavicon();

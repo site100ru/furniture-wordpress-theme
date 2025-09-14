@@ -331,7 +331,7 @@ a:hover {
 
 
 .btn-corporate-color-1:focus {
-    box-shadow: 0 0 1px 3px rgba(0,163,211,.5);
+    box-shadow: 0 0 1px 3px rgba(220, 53, 69,.5);
 }
 
 
@@ -1965,12 +1965,12 @@ footer {
 
 @keyframes waves {
 	0% {
-		box-shadow: 0 0 0 0 rgba(0,163,211,.3), 0 0 0 0 rgba(0,163,211,.3), 0 0 8px 0 rgba(0,0,0,.5);
+		box-shadow: 0 0 0 0 rgba(220, 53, 69,.3), 0 0 0 0 rgba(220, 53, 69,.3), 0 0 8px 0 rgba(0,0,0,.5);
 	}
-	50% { box-shadow: 0 0 0 0 rgba(0,163,211,.15), 0 0 0 15px rgba(0,163,211,.15), 0 0 8px 0 rgba(0,0,0,.5);
+	50% { box-shadow: 0 0 0 0 rgba(220, 53, 69,.15), 0 0 0 15px rgba(220, 53, 69,.15), 0 0 8px 0 rgba(0,0,0,.5);
 	}
 	100% {
-		box-shadow: 0 0 0 20px rgba(0,163,211,0), 0 0 0 30px rgba(0,163,211,0), 0 0 8px 0 rgba(0,0,0,.5);
+		box-shadow: 0 0 0 20px rgba(220, 53, 69,0), 0 0 0 30px rgba(220, 53, 69,0), 0 0 8px 0 rgba(0,0,0,.5);
 	}
 }
 
