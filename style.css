@@ -514,17 +514,6 @@ strong {
 	padding-right: 0px;
 }
 
-/* Пункты меню в футер-3 которые не показываем */
-#menu-main-menu-2 > li:nth-child(3) { display: none !important }
-#menu-main-menu-2 > li:nth-child(6) { display: none !important }
-#menu-main-menu-2 > li:nth-child(10) { display: none !important }
-
-#menu-main-menu-3 > li:nth-child(1) { display: none !important }
-#menu-main-menu-3 > li:nth-child(5) { display: none !important }
-#menu-main-menu-3 > li:nth-child(8) { display: none !important }
-#menu-main-menu-3 > li:nth-child(12) { display: none !important }
-
-
 /* Отключаем хлебные крошки woocommerce */
 .site-main > .woocommerce-breadcrumb { display: none; }
 
