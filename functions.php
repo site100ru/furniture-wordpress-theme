@@ -108,7 +108,9 @@
 			'mobail-header-collapse' => 'Mobail header collapse',
 			'sliding-header-collapse' => 'Sliding header collapse',
 			'contacts-desktop-menu' => 'Contacts desktop menu',
-			'navbarSupportedContent2' => 'navbarSupportedContent2'
+			'navbarSupportedContent2' => 'navbarSupportedContent2',
+			'footer-menu-1' => 'footer-menu-1',
+			'footer-menu-2' => 'footer-menu-2'
 		] );
 	} );
 	/* End register a new menu */
