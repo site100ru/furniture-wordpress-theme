@@ -572,7 +572,7 @@ do_action('woocommerce_before_main_content');
 
 
 <!-- Gradient order section -->
-<section class="gradient-order-section bg-light"
+<section class="gradient-order-section bg-light section-half"
 	style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/gradient-order-section-bg-dark.jpg);">
 	<div class="container">
 		<div class="row justify-content-center">
@@ -1226,7 +1226,7 @@ do_action('woocommerce_before_main_content');
 <!-- /Частые вопросы -->
 
 <!-- Gradient order section -->
-<section class="gradient-order-section bg-light"
+<section class="gradient-order-section bg-light section-half"
 	style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/sec-bg2.jpg);">
 	<div class="container">
 		<div class="row justify-content-center">
@@ -1237,7 +1237,7 @@ do_action('woocommerce_before_main_content');
 				<img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-title-dec.svg" class="mb-5">
 				<br>
 				<a href="#" type="button" class="btn btn-lg btn-corporate-color-1 mb-4" data-bs-toggle="modal"
-					data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость 12</a>
+					data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
 				<div class="row justify-content-md-end">
 					<div class="col">
 						<ul class="nav justify-content-md-end gap-3">

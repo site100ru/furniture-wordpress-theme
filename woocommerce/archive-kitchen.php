@@ -572,7 +572,7 @@ do_action('woocommerce_before_main_content');
 
 
 <!-- Gradient order section -->
-<section class="gradient-order-section bg-light"
+<section class="gradient-order-section bg-light section-half"
 	style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/gradient-order-section-bg-dark.jpg);">
 	<div class="container">
 		<div class="row justify-content-center">
@@ -1227,7 +1227,7 @@ do_action('woocommerce_before_main_content');
 
 
 <!-- Gradient order section -->
-<section class="gradient-order-section bg-light"
+<section class="gradient-order-section bg-light section-half"
 	style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/sec-bg2.jpg);">
 	<div class="container">
 		<div class="row justify-content-center">
