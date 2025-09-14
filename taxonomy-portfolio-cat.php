@@ -284,7 +284,7 @@
 									$terms = get_terms( $args );
 									
 									foreach( $terms as $term ) { ?>
-										<li class="nav-item d-none d-xl-inline"><span class="nav-link px-0"><img src="<?php echo get_template_directory_uri(); ?>/img/ico/menu-decoration-point.svg" alt=""></span></li>
+										<li class="nav-item d-none d-xl-inline"><span class="nav-link px-0"><img style="margin-bottom: 5px;" src="<?php echo get_template_directory_uri(); ?>/img/ico/menu-decoration-point.svg" alt=""></span></li>
 										<li class="nav-item">
 											<a class="nav-link<?php if ( $current_category_name == $term->name ) { echo ' active'; } ?>" href="<?php echo get_term_link( $term->term_id ); ?>"><?php echo $term->name; ?></a>
 										</li>

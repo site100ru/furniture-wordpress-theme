@@ -597,7 +597,7 @@ do_action('woocommerce_before_main_content');
 
 <!-- Gradient order section -->
 <section class="gradient-order-section bg-light"
-	style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/gradient-order-section-bg.jpg);">
+	style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/gradient-order-section-bg-1.jpg);">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-5 text-md-end">
@@ -922,7 +922,8 @@ do_action('woocommerce_before_main_content');
 	<div class="container">
 		<div class="row">
 			<div class="col align-items-center text-md-center">
-				<h2 class="mb-3">Наши преимущества</h2>
+				<h2>Наши преимущества</h2>
+				<p class="advantages">Почему стоит выбрать компанию «Furniture»</p>
 				<img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-title-dec.svg" class="mb-5">
 
 				<div class="row">
@@ -934,7 +935,7 @@ do_action('woocommerce_before_main_content');
 							<div class="col-9 col-md-10">
 								<h3 class="advantage-title text-start">Замер и дизайн-проект бесплатно</h3>
 								<p class="text-start">При заключении договора наш специалист бесплатно сделает замер и разработает
-									дизайн-проект Вашей будущей кухни.</p>
+									дизайн-проект любого предмета мебели.</p>
 							</div>
 						</div>
 					</div>
@@ -945,9 +946,9 @@ do_action('woocommerce_before_main_content');
 									class="img-fluid">
 							</div>
 							<div class="col-9 col-md-10">
-								<h3 class="advantage-title text-start">Собственное производство</h3>
-								<p class="text-start">Мы обеспечиваем полный цикл изготовления кухни (проект, производство, доставка,
-									монтаж), без перекладывания обязанностей на посредников.</p>
+								<h3 class="advantage-title text-start">Высокотехнологичное производство</h3>
+								<p class="text-start">Вся наша мебель изготавливаются на современном оборудовании фабрики Cucina, что
+									позволяет гарантировать нам высочайшее качество каждого изделия.</p>
 							</div>
 						</div>
 					</div>
@@ -959,8 +960,8 @@ do_action('woocommerce_before_main_content');
 							</div>
 							<div class="col-9 col-md-10">
 								<h3 class="advantage-title text-start">Гарантия 2 года</h3>
-								<p class="text-start">Мы даем максимальную гарантию на свои кухни, т.к. уверены в профессионализме своих
-									сотрудников и используемых материалах.</p>
+								<p class="text-start">Мы даем максимальную гарантию на свою мебель, т.к. уверены в профессионализме
+									своих сотрудников и используемых материалах.</p>
 							</div>
 						</div>
 					</div>
@@ -970,9 +971,9 @@ do_action('woocommerce_before_main_content');
 								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/discount-ico.svg" class="img-fluid">
 							</div>
 							<div class="col-9 col-md-10">
-								<h3 class="advantage-title text-start">Скидка +20% при повторном обращении</h3>
-								<p class="text-start">Мы изготавливаем любую корпусную мебель, а значит Вы можете заказать у нас шкаф,
-									гостиную или другую мебель в квартиру в едином стиле по выгодной цене.</p>
+								<h3 class="advantage-title text-start">Скидка +10% при повторном обращении</h3>
+								<p class="text-start">Мы изготавливаем любую корпусную мебель, а значит Вы можете заказать у нас кухню,
+									шкаф, прихожую или другую мебель в квартиру в едином стиле по выгодной цене.</p>
 							</div>
 						</div>
 					</div>
@@ -1002,7 +1003,6 @@ do_action('woocommerce_before_main_content');
 						</div>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</div>
@@ -1010,83 +1010,90 @@ do_action('woocommerce_before_main_content');
 <!-- /Advantage section -->
 
 
-<!-- Process -->
+<!-- Как заказать -->
 <section class="advantages bg-light py-5">
 	<div class="container">
 		<div class="row">
-			<div class="col text-md-center">
-				<h2 class="mb-3">Как заказать</h2>
+			<div class="section-title text-center">
+				<h2>Как заказать</h2>
 				<img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-title-dec.svg" class="mb-5">
+			</div>
 
-				<div class="row justify-content-around">
-					<div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-						<div class="row align-items-center">
-							<div class="col-4 text-center">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/1.svg" class="img-fluid">
-							</div>
-							<div class="col-4">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/call-agent-ico.svg" class="img-fluid">
-							</div>
+			<div class="row justify-content-around">
+				<div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
+					<div class="row align-items-center">
+						<div class="col-4 text-center">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/ico/1.svg" class="img-fluid" />
 						</div>
-						<div class="row pt-3">
-							<div class="col text-start">
-								<h3>Первичный контакт</h3>
-								<p class="mb-0">Свяжитесь с нами любым удобным способом, расскажите, что Вы хотите. При наличии
-									дизайн-проекта, наброска, размеров или другой информации — высылаете нам на почту, в Telegram,
-									Whatsapp или в форме обратной связи.
-								</p>
-							</div>
+						<div class="col-4">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/ico/call-agent-ico.svg" class="img-fluid" />
 						</div>
 					</div>
-					<div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-						<div class="row align-items-center">
-							<div class="col-4 text-center">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/2.svg" class="img-fluid">
-							</div>
-							<div class="col-4 text-start">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/calc-ico.svg" class="img-fluid">
-							</div>
-						</div>
-						<div class="row pt-3">
-							<div class="col text-start">
-								<h3>Расчет стоимости</h3>
-								<p class="mb-0">На основании полученой от Вас информации мы сделаем предварительный расчет стоимости и
-									сроков производства. При необходимости уточним детали.</p>
-							</div>
+					<div class="row pt-3">
+						<div class="col text-start">
+							<h3>Первичный контакт</h3>
+							<p class="mb-0">
+								Свяжитесь с нами любым удобным способом, расскажите, что Вы хотите. При наличии дизайн-проекта,
+								набросок, размеров или другой информации — высылаете нам на почту, в Telegram, Whatsapp или в форме
+								обратной связи.
+							</p>
 						</div>
 					</div>
-					<div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-						<div class="row align-items-center">
-							<div class="col-4 text-center ">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/3.svg" class="img-fluid">
-							</div>
-							<div class="col-4">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/doc-ico.svg" class="img-fluid">
-							</div>
+				</div>
+				<div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
+					<div class="row align-items-center">
+						<div class="col-4 text-center">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/ico/2.svg" class="img-fluid" />
 						</div>
-						<div class="row pt-3">
-							<div class="col text-start">
-								<h3>Заключение договора</h3>
-								<p class="mb-0">Если Вас все устраивает, мы приезжаем к Вам на замер, утверждаем сроки, материалы,
-									заключаем договор. Вы вносите предоплату и кухня поступает в производство.</p>
-							</div>
+						<div class="col-4 text-start">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/ico/calc-ico.svg" class="img-fluid" />
 						</div>
 					</div>
-					<div class="col-md-6 col-lg-3 mb-0">
-						<div class="row align-items-center">
-							<div class="col-4 text-center">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/4.svg" class="img-fluid">
-							</div>
-							<div class="col-4">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/delivery.svg" class="img-fluid">
-							</div>
+					<div class="row pt-3">
+						<div class="col text-start">
+							<h3>Расчет стоимости</h3>
+							<p class="mb-0">
+								На основании полученой от Вас информации мы сделаем предварительный расчет стоимости и сроков
+								производства. При необходимости уточняемм детали.
+							</p>
 						</div>
-						<div class="row pt-3">
-							<div class="col text-start">
-								<h3>Доставка и установка</h3>
-								<p class="mb-0">После окончания производства доставляем и устанавливаем кухню в заранее оговоренные дату
-									и время. После установки производим окончательные расчеты.</p>
-							</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
+					<div class="row align-items-center">
+						<div class="col-4 text-center">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/ico/3.svg" class="img-fluid" />
+						</div>
+						<div class="col-4">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/ico/doc-ico.svg" class="img-fluid" />
+						</div>
+					</div>
+					<div class="row pt-3">
+						<div class="col text-start">
+							<h3>Заключение договора</h3>
+							<p class="mb-0">
+								Если Вас все устраивает, мы приезжаем к Вам на замер, утверждаем сроки, материалы, заключаем договор. Вы
+								вносите предоплату и кухня поступает в производство.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 mb-0">
+					<div class="row align-items-center">
+						<div class="col-4 text-center">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/ico/4.svg" class="img-fluid" />
+						</div>
+						<div class="col-4">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/ico/delivery.svg" class="img-fluid" />
+						</div>
+					</div>
+					<div class="row pt-3">
+						<div class="col text-start">
+							<h3>Доставка и установка</h3>
+							<p class="mb-0">
+								После окончания производства доставляем и устанавливаем кухню в заранее оговоренные дату и время. После
+								установки производим окончательные расчеты.
+							</p>
 						</div>
 					</div>
 				</div>
@@ -1094,7 +1101,7 @@ do_action('woocommerce_before_main_content');
 		</div>
 	</div>
 </section>
-<!-- /Process -->
+<!-- /Как заказать -->
 
 
 <!-- Частые вопросы -->

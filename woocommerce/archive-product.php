@@ -422,9 +422,9 @@ do_action( 'woocommerce_before_main_content' );
 		<div class="row">
 			<div class="col align-items-center text-md-center">
 				<h2>Наши преимущества</h2>
-				<p class="advantages">Почему стоит выбрать салон кухонь «Мозаика»</p>
+				<p class="advantages">Почему стоит выбрать компанию «Furniture»</p>
 				<img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-title-dec.svg" class="mb-5">
-				
+
 				<div class="row">
 					<div class="col-lg-6 mb-4">
 						<div class="row">
@@ -433,30 +433,35 @@ do_action( 'woocommerce_before_main_content' );
 							</div>
 							<div class="col-9 col-md-10">
 								<h3 class="advantage-title text-start">Замер и дизайн-проект бесплатно</h3>
-								<p class="text-start">При заключении договора наш специалист бесплатно сделает замер и разработает дизайн-проект любого предмета мебели.</p>
+								<p class="text-start">При заключении договора наш специалист бесплатно сделает замер и разработает
+									дизайн-проект любого предмета мебели.</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-6 mb-4">
 						<div class="row">
 							<div class="col-3 col-md-2">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-advantage-ico.svg" class="img-fluid">
+								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-advantage-ico.svg"
+									class="img-fluid">
 							</div>
 							<div class="col-9 col-md-10">
 								<h3 class="advantage-title text-start">Высокотехнологичное производство</h3>
-								<p class="text-start">Вся наша мебель изготавливаются на современном оборудовании фабрики Cucina, что позволяет гарантировать нам высочайшее качество каждого изделия.</p>
+								<p class="text-start">Вся наша мебель изготавливаются на современном оборудовании фабрики Cucina, что
+									позволяет гарантировать нам высочайшее качество каждого изделия.</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-6 mb-4">
 						<div class="row">
 							<div class="col-3 col-md-2">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/advantage-guarantee-ico.svg" class="img-fluid">
+								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/advantage-guarantee-ico.svg"
+									class="img-fluid">
 							</div>
 							<div class="col-9 col-md-10">
 								<h3 class="advantage-title text-start">Гарантия 2 года</h3>
-								<p class="text-start">Мы даем максимальную гарантию на свою мебель, т.к. уверены в профессионализме своих сотрудников и используемых материалах.</p>
-							</div>	
+								<p class="text-start">Мы даем максимальную гарантию на свою мебель, т.к. уверены в профессионализме
+									своих сотрудников и используемых материалах.</p>
+							</div>
 						</div>
 					</div>
 					<div class="col-lg-6 mb-4">
@@ -465,9 +470,35 @@ do_action( 'woocommerce_before_main_content' );
 								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/discount-ico.svg" class="img-fluid">
 							</div>
 							<div class="col-9 col-md-10">
-								<h3 class="advantage-title text-start">Скидка +20% при повторном обращении</h3>
-								<p class="text-start">Мы изготавливаем любую корпусную мебель, а значит Вы можете заказать у нас кухню, шкаф, прихожую или другую мебель в квартиру в едином стиле по выгодной цене.</p>
-							</div>	
+								<h3 class="advantage-title text-start">Скидка +10% при повторном обращении</h3>
+								<p class="text-start">Мы изготавливаем любую корпусную мебель, а значит Вы можете заказать у нас кухню,
+									шкаф, прихожую или другую мебель в квартиру в едином стиле по выгодной цене.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 mb-4">
+						<div class="row">
+							<div class="col-3 col-md-2">
+								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/measurement-ico.svg" class="img-fluid">
+							</div>
+							<div class="col-9 col-md-10">
+								<h3 class="advantage-title text-start">Замер и дизайн-проект бесплатно</h3>
+								<p class="text-start">При заключении договора наш специалист бесплатно сделает замер и разработает
+									дизайн-проект Вашей будущей кухни</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 mb-4">
+						<div class="row">
+							<div class="col-3 col-md-2">
+								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-advantage-ico.svg"
+									class="img-fluid">
+							</div>
+							<div class="col-9 col-md-10">
+								<h3 class="advantage-title text-start">Собственное производство</h3>
+								<p class="text-start">Мы обеспечиваем полный цикл изготовления кухни (проект, производство, доставка,
+									монтаж), без перекладывания обязанностей на посредников.</p>
+							</div>
 						</div>
 					</div>
 				</div>
