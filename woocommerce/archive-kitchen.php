@@ -582,7 +582,7 @@ do_action('woocommerce_before_main_content');
 					учетом всех Ваших пожеланий и особенностей помещения? Это бесплатно и ни к чему Вас не обязывает!</p>
 				<img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-title-dec.svg" class="mb-5">
 				<br>
-				<a href="#" type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal"
+				<a href="#" type="button" class="btn btn-lg btn-corporate-color-1 mb-4" data-bs-toggle="modal"
 					data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
 				<div class="row justify-content-md-end">
 					<div class="col">
@@ -1237,7 +1237,7 @@ do_action('woocommerce_before_main_content');
 					Ваших пожеланий и особенностей помещения? Это бесплатно и ни к чему Вас не обязывает!</p>
 				<img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-title-dec.svg" class="mb-5">
 				<br>
-				<a href="#" type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal"
+				<a href="#" type="button" class="btn btn-lg btn-corporate-color-1 mb-4" data-bs-toggle="modal"
 					data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
 				<div class="row justify-content-md-end">
 					<div class="col">
