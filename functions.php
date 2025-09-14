@@ -174,7 +174,7 @@
 	function jk_woocommerce_breadcrumbs() {
 		return array(
 				'delimiter'   => ' &#47; ',
-				'wrap_before' => '<nav class="woocommerce-breadcrumb" itemprop="breadcrumb"><a href="https://мозаика62.рф/"><img src="'.get_template_directory_uri().'/img/ico/breadcrumbs-icon.svg"></a> / ',
+				'wrap_before' => '<nav class="woocommerce-breadcrumb" itemprop="breadcrumb"><a href="https://site100.ru/"><img src="'.get_template_directory_uri().'/img/ico/breadcrumbs-icon.svg"></a> / ',
 				'wrap_after'  => '</nav>',
 				'before'      => '',
 				'after'       => '',
@@ -206,7 +206,7 @@
         } else if ( is_tax( 'portfolio-cat' ) ) {
 			$new_breadcrumb = [
                 _x( 'Наши работы', 'breadcrumb', 'woocommerce' ), //Title
-                'https://мозаика62.рф/portfolio/' // URL
+                'https://site100.ru/furniture/portfolio/' // URL
             ];
             array_splice( $crumbs, 0, 1, [ $new_breadcrumb ] ); //Insert a new breadcrumb after the 'Home' crumb
 		}

@@ -724,7 +724,7 @@
 				</div>
 				<div class="row">
 					<div class="col text-center d-none d-md-block">
-						<a href="https://мозаика62.рф/portfolio-cat/02-кухни-cucina" class="btn btn-lg btn-corporate-color-1">Смотреть все кухни Cucina</a>
+						<a href="/furniture/portfolio-cat/02-кухни-cucina" class="btn btn-lg btn-corporate-color-1">Смотреть все кухни Cucina</a>
 					</div>
 				</div>
 			</div>

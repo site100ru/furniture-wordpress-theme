@@ -16,9 +16,9 @@ if($_POST){
 
 		$name = $_POST['name'];
         $tel = $_POST['tel'];	
-		mail("mozaika62@bk.ru, vasilyev-r@mail.ru", "Запрос на обратный звонок с сайта мозаика62.рф", "Потенциальный клиент с именем ".$name." просит перезвонить Вас на номер ".$tel);
+		mail("mozaika62@bk.ru, vasilyev-r@mail.ru", "Запрос на обратный звонок с сайта Furniture.ru", "Потенциальный клиент с именем ".$name." просит перезвонить Вас на номер ".$tel);
         $_SESSION['win'] = 1;
-		$_SESSION['recaptcha'] = '<p class="text-light">Спасибо за обращение в салон кухонь «Мозаика». Мы ответим Вам в&#160;ближайшее время.</p>';
+		$_SESSION['recaptcha'] = '<p class="text-light">Спасибо за обращение в салон кухонь Furniture. Мы ответим Вам в&#160;ближайшее время.</p>';
 		header("Location: ".$_SERVER['HTTP_REFERER']);
 
 	/*} else {

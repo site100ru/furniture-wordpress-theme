@@ -22,7 +22,7 @@
 
 		$headers = "MIME-Version: 1.0\r\n";
 		
-		$headers .= "From: info@мозаика62.рф\r\n";
+		$headers .= "From: info@furniture.ru\r\n";
 
 		$headers .="Content-Type: multipart/mixed; boundary=\"$boundary\"\n"; 
 
@@ -66,7 +66,7 @@
 	
 	$picture = "";
 	$mail_to = "mozaika62@bk.ru, vasilyev-r@mail.ru"; // Адрес доставки почты
-	$thm = "Заявка на расчет стоимости с сайта мозаика62.рф"; // Тема письма
+	$thm = "Заявка на расчет стоимости с сайта furniture.ru"; // Тема письма
 	
 	
 	if ( isset( $_FILES['mail_file']['type'] ) ) { $file_type = $_FILES['mail_file']['type']; }
@@ -116,7 +116,7 @@
 	/* Отправляем почтовое сообщение  */
 	if ( empty( $picture ) ) {
 		$headers = "MIME-Version: 1.0\r\n";
-		$headers .= "From: info@мозаика62.рф\r\n";
+		$headers .= "From: info@furniture.ru\r\n";
 		$headers .= "Content-type: text/html; charset=utf-8\r\n";
 		$msg = "
 			<strong>Имя:</strong> ".$name."<br><br>
@@ -137,7 +137,7 @@
 	}
 	
 	$_SESSION['win'] = 1;
-	$_SESSION['recaptcha'] = '<p class="text-light">Спасибо за обращение в салон кухонь «Мозаика». Мы ответим Вам в&#160;ближайшее время.</p>';
+	$_SESSION['recaptcha'] = '<p class="text-light">Спасибо за обращение в салон кухонь «Furniture». Мы ответим Вам в&#160;ближайшее время.</p>';
 	header("Location: ".$_SERVER['HTTP_REFERER']);
 		
 ?>

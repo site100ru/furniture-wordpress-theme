@@ -9,8 +9,8 @@
 
 	
 	$to 	 = 'mozaika62@bk.ru, vasilyev-r@mail.ru';
-	$from 	 = 'info@мозаика62.рф';
-	$subject = 'Заявка на расчет стоимости с сайта мозаика62.рф';
+	$from 	 = 'info@furniture.ru';
+	$subject = 'Заявка на расчет стоимости с сайта furniture.ru';
 	 
 	
 	// Проверяем есть ли загруженные файлы
@@ -92,7 +92,7 @@
 	}
 	
 	$_SESSION['win'] = 1;
-	$_SESSION['recaptcha'] = '<p class="text-light">Спасибо за обращение в салон кухонь «Мозаика». Мы ответим Вам в&#160;ближайшее время.</p>';
+	$_SESSION['recaptcha'] = '<p class="text-light">Спасибо за обращение в салон кухонь «Furniture». Мы ответим Вам в&#160;ближайшее время.</p>';
 	
 	header("Location: ".$_SERVER['HTTP_REFERER']);
 	

@@ -344,7 +344,7 @@ include 'header.php';
 		</div>
 		<div class="row text-md-center">
 			<div class="col">
-				<a href="https://мозаика62.рф/наши-работы" type="button" class="btn btn-lg btn-corporate-color-1">Показать
+				<a href="/furniture/portfolio/" type="button" class="btn btn-lg btn-corporate-color-1">Показать
 					еще</a>
 			</div>
 		</div>
