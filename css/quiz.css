@@ -85,7 +85,7 @@
 }
 
 .custom-file-button:hover label {
-	background-color: #0092BD;
+	background-color: var(--corporate-color-1);
 	cursor: pointer;
 }
 
@@ -114,8 +114,8 @@
     line-height: 1.5;
     text-align: center;
     white-space: nowrap;
-    background-color: #00A3D3;
-    border: 1px solid #00A3D3;
+    background-color: var(--corporate-color-1);
+    border: 1px solid var(--corporate-color-1);
     border-radius: 0.25rem;
 	color: #ffff;
 	font-family: HelveticaNeueBoldCondensed;
