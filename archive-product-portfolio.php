@@ -355,7 +355,7 @@ include 'header.php';
 
 <!-- Gradient order section -->
 <section class="gradient-order-section bg-light"
-	style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/gradient-order-section-bg-1.jpg);">
+	style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/gradient-order-section-bg-dark.jpg);">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-5 text-md-end">
