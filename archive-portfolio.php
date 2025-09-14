@@ -271,6 +271,7 @@
 								<li class="nav-item">
 									<a class="nav-link active" href="https://site100.ru/furniture/portfolio/">Все</a>
 								</li>
+								<li class="nav-item d-none d-xl-inline"><span class="nav-link px-0"><img src="<?php echo get_template_directory_uri(); ?>/img/ico/menu-decoration-point.svg" alt=""></span></li>
 								<?php
 									$args = [
 										'taxonomy' => [ 'portfolio-cat' ],
