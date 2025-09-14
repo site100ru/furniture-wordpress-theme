@@ -269,7 +269,7 @@
 						<div class="nav-scroller mb-0" style="text-transform: uppercase; font-family: 'HelveticaNeueCyr-Light'; font-weight: bold;">
 							<ul class="nav justify-content-md-center d-flex m-auto">
 								<li class="nav-item">
-									<a class="nav-link" href="https://site100.ru/furniture/portfolio-cat/">Все</a>
+									<a class="nav-link" href="https://site100.ru/furniture/portfolio/">Все</a>
 								</li>
 								<?php
 									$obj = get_queried_object();

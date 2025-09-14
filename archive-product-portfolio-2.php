@@ -273,7 +273,7 @@
 					'post_type'      => 'portfolio',
 					'numberposts' 	 => 10,
 					'posts_per_page' => 10,
-					'portfolio-cat'  => '010-кухни'
+					'portfolio-cat'  => '01-кухни'
 				];
 				
 				$query = new WP_Query( $args );

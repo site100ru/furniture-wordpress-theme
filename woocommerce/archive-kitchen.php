@@ -395,7 +395,7 @@
 							'post_type'      => 'portfolio',
 							'numberposts' 	 => 6,
 							'posts_per_page' => 6,
-							'portfolio-cat'  => '010-кухни'//$portfolio_cat
+							'portfolio-cat'  => '01-кухни'//$portfolio_cat
 						];
 						
 						$query = new WP_Query( $args );
@@ -416,7 +416,7 @@
 						wp_reset_postdata();
 					?>
 				</div>
-				<a href="https://site100.ru/furniture/portfolio-cat/010-кухни/" class="btn btn-lg btn-corporate-color-1" style="margin-top: 12px;">Смотреть еще</a>
+				<a href="https://site100.ru/furniture/portfolio-cat/01-кухни/" class="btn btn-lg btn-corporate-color-1" style="margin-top: 12px;">Смотреть еще</a>
 			</div>
 		</div>
 	</div>
@@ -430,7 +430,7 @@
 		$portfolio_cat = $obj->slug;
 		switch ( $portfolio_cat ) {
 			case 'кухни':
-				$portfolio_cat = '010-кухни';
+				$portfolio_cat = '01-кухни';
 				break;
 		}
 		
@@ -438,7 +438,7 @@
 			'post_type'      => 'portfolio',
 			'numberposts' 	 => 6,
 			'posts_per_page' => 6,
-			'portfolio-cat'  => '010-кухни'//$portfolio_cat
+			'portfolio-cat'  => '01-кухни'//$portfolio_cat
 		];
 		
 		$query = new WP_Query( $args );
@@ -520,7 +520,7 @@
 			$portfolio_cat = $obj->slug;
 			switch ( $portfolio_cat ) {
 				case 'кухни':
-					$portfolio_cat = '010-кухни';
+					$portfolio_cat = '01-кухни';
 					break;
 			}
 			
@@ -528,7 +528,7 @@
 				'post_type'      => 'portfolio',
 				'numberposts' 	 => 6,
 				'posts_per_page' => 6,
-				'portfolio-cat'  => '010-кухни'//$portfolio_cat
+				'portfolio-cat'  => '01-кухни'//$portfolio_cat
 			];
 			
 			$query = new WP_Query( $args );

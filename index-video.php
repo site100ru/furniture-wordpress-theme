@@ -434,7 +434,7 @@ include 'header.php';
 							wp_reset_postdata();
 							?>
 						</div>
-						<a href="/portfolio/" class="btn btn-lg btn-corporate-color-1" style="margin-top: 12px;">Смотреть еще</a>
+						<a href="/furniture/portfolio/" class="btn btn-lg btn-corporate-color-1" style="margin-top: 12px;">Смотреть еще</a>
 					</div>
 
 					<!-- Кухни -->
@@ -445,7 +445,7 @@ include 'header.php';
 								'post_type' => 'portfolio',
 								'numberposts' => 6,
 								'posts_per_page' => 6,
-								'portfolio-cat' => '010-кухни'
+								'portfolio-cat' => '01-кухни'
 							];
 
 							$query = new WP_Query($args);
@@ -468,7 +468,7 @@ include 'header.php';
 							wp_reset_postdata();
 							?>
 						</div>
-						<a href="/portfolio-cat/010-кухни/" class="btn btn-lg btn-corporate-color-1"
+						<a href="/furniture/portfolio-cat/01-кухни/" class="btn btn-lg btn-corporate-color-1"
 							style="margin-top: 12px;">Смотреть все кухни</a>
 					</div>
 
@@ -480,7 +480,7 @@ include 'header.php';
 								'post_type' => 'portfolio',
 								'numberposts' => 6,
 								'posts_per_page' => 6,
-								'portfolio-cat' => '020-шкафы' // Предполагаемый slug для шкафов
+								'portfolio-cat' => '06-шкафы'
 							];
 
 							$query = new WP_Query($args);
@@ -503,7 +503,7 @@ include 'header.php';
 							wp_reset_postdata();
 							?>
 						</div>
-						<a href="/portfolio-cat/020-шкафы/" class="btn btn-lg btn-corporate-color-1"
+						<a href="/furniture/portfolio-cat/06-шкафы/" class="btn btn-lg btn-corporate-color-1"
 							style="margin-top: 12px;">Смотреть все шкафы</a>
 					</div>
 
@@ -515,7 +515,7 @@ include 'header.php';
 								'post_type' => 'portfolio',
 								'numberposts' => 6,
 								'posts_per_page' => 6,
-								'portfolio-cat' => '030-другая' // Предполагаемый slug для другой мебели
+								'portfolio-cat' => '04-детские-комнаты' 
 							];
 
 							$query = new WP_Query($args);
@@ -538,7 +538,7 @@ include 'header.php';
 							wp_reset_postdata();
 							?>
 						</div>
-						<a href="/portfolio-cat/030-другая/" class="btn btn-lg btn-corporate-color-1"
+						<a href="/furniture/portfolio-cat/04-детские-комнаты/" class="btn btn-lg btn-corporate-color-1"
 							style="margin-top: 12px;">Смотреть другую мебель</a>
 					</div>
 
