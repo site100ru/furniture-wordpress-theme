@@ -211,7 +211,7 @@ strong {
 }
 
 .single-portfolio-btn {
-    background-color: #00A3D3;
+    background-color: #dc3545;
     font-family: 'HelveticaNeueCyr-Bold';
     padding: 13px 36px;
     border-radius: 5px;
@@ -249,7 +249,7 @@ strong {
 }
 
 .category.active {
-    color: #00A3D3;
+    color: #dc3545;
 }
 
 .category span {
@@ -302,12 +302,12 @@ strong {
 .page-link {
     padding: 5px 15px;
     background-color: #fff;
-    border: 1px solid #00A3D3;
+    border: 1px solid #dc3545;
     font-size: 18px;
 }
 
 .page-link.active {
-    background-color: #00A3D380;
+    background-color: #dc354580;
 }
 
 .mobile-wrap {
@@ -355,7 +355,7 @@ strong {
     width: 416px;
     height: 277px;
     border-radius: 50%;
-    background-color: #00A3D3;
+    background-color: #dc3545;
     z-index: 1;
 }
 
@@ -367,7 +367,7 @@ strong {
 }
 
 .archive-product-page.active {
-    border: 1px solid #00A3D3;
+    border: 1px solid #dc3545;
 }
 
 .nav-scroller {
@@ -395,7 +395,7 @@ strong {
 }
 
 .archive-portfolio-section-2 .nav-item a.active {
-    color: #00A3D3;
+    color: #dc3545;
 }
 
 .card-portfolio {
@@ -574,7 +574,7 @@ strong {
 }
 
 .widget_product_categories ul.product-categories li.cat-item.current-cat a {
-    color: #00A3D3;
+    color: #dc3545;
 }
 
 h6,

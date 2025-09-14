@@ -277,7 +277,7 @@
 									
 									$args = [
 										'taxonomy' => [ 'portfolio-cat' ],
-										'orderby'  		=> 'name',
+										'orderby'  		=> 'slug',
 										'order'    		=> 'ASC',
 									];
 									
@@ -287,6 +287,8 @@
 										<li class="nav-item">
 											<a class="nav-link<?php if ( $current_category_name == $term->name ) { echo ' active'; } ?>" href="<?php echo get_term_link( $term->term_id ); ?>"><?php echo $term->name; ?></a>
 										</li>
+										<li class="nav-item d-none d-xl-inline"><span class="nav-link px-0"><img src="<?php echo get_template_directory_uri(); ?>/img/ico/menu-decoration-point.svg" alt=""></span></li>
+
 									<?php }
 								?>
 							</ul>
