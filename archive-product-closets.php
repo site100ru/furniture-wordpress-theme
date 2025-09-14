@@ -12,7 +12,7 @@ get_header();
 //include 'header.php';
 
 /**
- * Hook: woocommerce_before_main_content.
+	 * Hook: woocommerce_before_main_content.
  *
  * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
  * @hooked woocommerce_breadcrumb - 20
