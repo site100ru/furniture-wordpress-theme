@@ -627,6 +627,10 @@ a.navbar-brand {
 	color: var(--corporate-color-1);
 }
 
+.dropdown-menu {
+	--bs-dropdown-min-width: 11rem;
+}
+
 /* lg (tablets, less than 992px) */
 @media (max-width: 991.98px) {
 	#sliding-header {

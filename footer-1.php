@@ -25,54 +25,7 @@
 						'depth' => 2,
 						'walker' => new bootstrap_5_wp_nav_menu_walker()
 					));
-				?>
-				<!--ul class="nav justify-content-center">
-					<li class="nav-item">
-						<a class="nav-link active" href="index.html" style="transition: .25s;">Главная</a>
-					</li>
-					<li class="nav-item d-none d-lg-inline">
-						<span class="nav-link px-0">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/ico/menu-decoration-point.svg">
-						</span>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle pe-0" aria-current="page" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Каталог</a>
-						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="archive-product-page.html">Кухни</a></li>
-							<li><a class="dropdown-item" href="#">Шкафы</a></li>
-							<li><a class="dropdown-item" href="#">Прихожие</a></li>
-							<li><a class="dropdown-item" href="#">Обеденные группы</a></li>
-						</ul>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle pe-0" href="archive-product-portfolio.html" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Услуги</a>
-						<ul class="dropdown-menu dropdown-menu-light ms-2 py-1" style="border-radius: 5px;" aria-labelledby="navbarDarkDropdownMenuLink">
-							<li><a class="dropdown-item nav-item" href="archive-product-portfolio.html">Кухни на заказ</a></li>
-							<li><a class="dropdown-item nav-item" href="archive-product-portfolio1.html">Шкафы на заказ</a></li>
-							<li><a class="dropdown-item nav-item" href="archive-product-portfolio2.html">Прихожие на заказ</a></li>
-						</ul>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="our-works.html">Наши работы</a>
-					</li>
-					<li class="nav-item d-none d-lg-inline">
-						<span class="nav-link px-0">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/ico/menu-decoration-point.svg">
-						</span>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="archive-action-page.html">Акции</a>
-					</li>
-					<li class="nav-item d-none d-lg-inline">
-						<span class="nav-link px-0">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/ico/menu-decoration-point.svg">
-						</span>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="contact.html">Контакты</a>
-					</li>
-				</ul-->
-				
+				?>	
 			</div>
 			<div class="col-xl-2 text-end">
 				<a href="tel:‪89511014610" class="contacts-phone">‪
@@ -310,47 +263,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<!--div class="row">
-					<div class="col-6">
-						<ul class="nav flex-column">
-							<li class="nav-item">
-								<a class="nav-link ps-0 active" href="#">Главная</a>
-							</li>
-							<li class="nav-item dropdown">
-								<a class="nav-link ps-0 dropdown-toggle" aria-current="page" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Услуги</a>
-								<ul class="dropdown-menu">
-									<li><a class="dropdown-item" href="archive-product-portfolio.html">Кухни на заказ</a></li>
-									<li><a class="dropdown-item" href="archive-product-portfolio1.html">Шкафы на заказ</a></li>
-									<li><a class="dropdown-item" href="archive-product-portfolio2.html">Прихожие на заказ</a></li>
-								</ul>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link ps-0" href="archive-action-page.html">Акции</a>
-							</li>
-						</ul>
-					</div>
-					<div class="col-6">
-						<ul class="nav flex-column">
-							<li class="nav-item dropdown">
-								<a class="nav-link ps-0 dropdown-toggle" aria-current="page" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Каталог</a>
-								<ul class="dropdown-menu">
-									<li><a class="dropdown-item" href="archive-product-page.html">Кухни</a></li>
-									<li><a class="dropdown-item" href="#">Шкафы</a></li>
-									<li><a class="dropdown-item" href="#">Прихожие</a></li>
-									<li><a class="dropdown-item" href="#">Обеденные группы</a></li>
-								</ul>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link ps-0" href="our-works.html">Наши работы</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link ps-0" href="contacts.html">Контакты</a>
-							</li>
-						</ul>
-					</div>
-				</div-->
-				
+				</div>	
 			</div>
 		</div>
 	</div>

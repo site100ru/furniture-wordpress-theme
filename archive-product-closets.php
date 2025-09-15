@@ -191,106 +191,56 @@ do_action('woocommerce_before_main_content');
 				<a class="navbar-brand" href="#">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/ico/logo-dark.svg">
 				</a>
-
+				
 				<div class="d-lg-none">
 					<a class="top-menu-tel pt-1 pb-0" style="font-size: 14px;" href="tel:89511014610">8 (951) 101-46-10</a>
 					<div style="font-size: 10px; font-family: Gilroy-Light; text-transform: none;">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/ico/clock-ico.svg"
-							style="width: 12px; position: relative; top: -1px;" class="me-1">Пн-Сб: с 10.00-19.00<br>Вс: с 10.00-17.00
+						<img src="<?php echo get_template_directory_uri(); ?>/img/ico/clock-ico.svg" style="width: 12px; position: relative; top: -1px;" class="me-1">Пн-Сб: с 10.00-19.00<br>Вс: с 10.00-17.00
 					</div>
 				</div>
-
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sliding-header-collapse"
-					aria-controls="sliding-header-collapse" aria-expanded="false" aria-label="Toggle navigation">
+				
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sliding-header-collapse" aria-controls="sliding-header-collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-
+				
 				<div class="collapse navbar-collapse" id="sliding-header-collapse">
-					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-						<li class="nav-item">
-							<a class="nav-link" href="index.html" style="transition: .25s;">Главная</a>
-						</li>
-						<li class="nav-item d-none d-lg-inline">
-							<span class="nav-link">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/menu-decoration-point.svg">
-							</span>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="archive-product-portfolio.html" id="navbarDarkDropdownMenuLink"
-								role="button" data-bs-toggle="dropdown" aria-expanded="false">Каталог</a>
-							<ul class="dropdown-menu dropdown-menu-light ms-0 py-1" style="border-radius: 5px;"
-								aria-labelledby="navbarDarkDropdownMenuLink">
-								<li><a class="dropdown-item nav-item" href="archive-product-page.html">Кухни</a></li>
-								<li><a class="dropdown-item nav-item" href="#">Шкафы</a></li>
-								<li><a class="dropdown-item nav-item" href="#">Прихожие</a></li>
-								<li><a class="dropdown-item nav-item" href="#">Обеденные группы</a></li>
-							</ul>
-						</li>
-						<li class="nav-item d-none d-lg-inline">
-							<span class="nav-link">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/menu-decoration-point.svg">
-							</span>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link active dropdown-toggle" href="archive-product-portfolio.html"
-								id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Услуги</a>
-							<ul class="dropdown-menu dropdown-menu-light ms-0 py-1" style="border-radius: 5px;"
-								aria-labelledby="navbarDarkDropdownMenuLink">
-								<li><a class="dropdown-item nav-item" href="archive-product-portfolio.html">Кухни на заказ</a></li>
-								<li><a class="dropdown-item nav-item active" href="archive-product-portfolio1.html">Шкафы на заказ</a>
-								</li>
-								<li><a class="dropdown-item nav-item" href="archive-product-portfolio2.html">Прихожие на заказ</a></li>
-							</ul>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="our-works.html">Наши работы</a>
-						</li>
-						<li class="nav-item d-none d-lg-inline">
-							<span class="nav-link">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/menu-decoration-point.svg">
-							</span>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="archive-action-page.html">Акции</a>
-						</li>
-						<li class="nav-item d-none d-lg-inline">
-							<span class="nav-link">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/menu-decoration-point.svg">
-							</span>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="contact.html">Контакты</a>
-						</li>
-
-						<!-- Mobile menu -->
-
-						<li class="nav-item d-lg-none">
-							<a class="nav-link active" href="#" data-bs-toggle="modal" data-bs-target="#measurerModal">Вызов
-								замерщика</a>
-						</li>
-						<li class="nav-item d-lg-none">
-							<div style="font-size: 12px; font-family: Gilroy-Light; text-transform: none;">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/location-ico.svg"
-									style="width: 10px; position: relative; top: -2px;" class="me-1">
-								<span>гор. Рязань, ул. Чапаева, 56</span>
-							</div>
-							<a class="nav-link top-menu-tel pt-1 pb-1" href="tel:89511014610">8 (951) 101-46-10</a>
-							<div class="mb-2" style="font-size: 12px; font-family: Gilroy-Light; text-transform: none;">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/clock-ico.svg"
-									style="width: 10px; position: relative; top: 3px;" class="me-1 mb-2">Пн-Сб: с 10.00-19.00, Вс: с
-								10.00-17.00
-							</div>
-						</li>
-						<li class="nav-item d-lg-none pb-2">
-							<a class="ico-button pe-2" href="whatsapp://send?phone=+79256424787">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/whatsapp-ico.svg">
-							</a>
-							<a class="ico-button pe-0" href="https://t.me/vasilyevr">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/telegram-ico.svg">
-							</a>
-						</li>
-						<!-- End mobile menu -->
-					</ul>
+					<?php
+						wp_nav_menu(array(
+							'theme_location' => 'sliding-header-collapse',
+							'container' => false,
+							'menu_class' => '',
+							'fallback_cb' => '__return_false',
+							'items_wrap' => '
+								<ul id="%1$s" class="navbar-nav ms-auto mb-2 mb-lg-0 %2$s">%3$s
+									<!-- Mobile menu -->
+									<li class="nav-item d-lg-none">
+										<a class="nav-link active" href="#" data-bs-toggle="modal" data-bs-target="#measurerModal">Вызов замерщика</a>
+									</li>
+									<li class="nav-item d-lg-none">
+										<div style="font-size: 12px; font-family: Gilroy-Light; text-transform: none;">
+											<img src="'. get_template_directory_uri().'/img/ico/location-ico.svg" style="width: 10px; position: relative; top: -2px;" class="me-1">
+											<span>гор. Рязань, ул. Чапаева, 56</span>
+										</div>
+										<a class="nav-link top-menu-tel pt-1 pb-1" href="tel:89511014610">8 (951) 101-46-10</a>
+										<div class="mb-2" style="font-size: 12px; font-family: Gilroy-Light; text-transform: none;">
+											<img src="'.get_template_directory_uri().'/img/ico/clock-ico.svg" style="width: 10px; position: relative; top: 3px;" class="me-1 mb-2">Пн-Сб: с 10.00-19.00, Вс: с 10.00-17.00
+										</div>
+									</li>
+									<li class="nav-item d-lg-none pb-2">
+										<a class="ico-button pe-2" href="https://wa.me/79511014610?web=1&app_absent=1">
+											<img src="'.get_template_directory_uri().'/img/ico/whatsapp-ico.svg">
+										</a>
+										<a class="ico-button pe-0" href="https://t.me/+79511014610">
+											<img src="'.get_template_directory_uri().'/img/ico/telegram-ico.svg">
+										</a>
+									</li>	
+									<!-- End mobile menu -->
+								</ul>
+							',
+							'depth' => 2,
+							'walker' => new bootstrap_5_wp_nav_menu_walker()
+						));
+					?>
 				</div>
 
 			</div>
@@ -1261,53 +1211,6 @@ do_action('woocommerce_before_main_content');
 						'walker' => new bootstrap_5_wp_nav_menu_walker()
 					));
 				?>
-				<!--ul class="nav justify-content-center">
-					<li class="nav-item">
-						<a class="nav-link active" href="index.html" style="transition: .25s;">Главная</a>
-					</li>
-					<li class="nav-item d-none d-lg-inline">
-						<span class="nav-link px-0">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/ico/menu-decoration-point.svg">
-						</span>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle pe-0" aria-current="page" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Каталог</a>
-						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="archive-product-page.html">Кухни</a></li>
-							<li><a class="dropdown-item" href="#">Шкафы</a></li>
-							<li><a class="dropdown-item" href="#">Прихожие</a></li>
-							<li><a class="dropdown-item" href="#">Обеденные группы</a></li>
-						</ul>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle pe-0" href="archive-product-portfolio.html" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Услуги</a>
-						<ul class="dropdown-menu dropdown-menu-light ms-2 py-1" style="border-radius: 5px;" aria-labelledby="navbarDarkDropdownMenuLink">
-							<li><a class="dropdown-item nav-item" href="archive-product-portfolio.html">Кухни на заказ</a></li>
-							<li><a class="dropdown-item nav-item" href="archive-product-portfolio1.html">Шкафы на заказ</a></li>
-							<li><a class="dropdown-item nav-item" href="archive-product-portfolio2.html">Прихожие на заказ</a></li>
-						</ul>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="our-works.html">Наши работы</a>
-					</li>
-					<li class="nav-item d-none d-lg-inline">
-						<span class="nav-link px-0">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/ico/menu-decoration-point.svg">
-						</span>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="archive-action-page.html">Акции</a>
-					</li>
-					<li class="nav-item d-none d-lg-inline">
-						<span class="nav-link px-0">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/ico/menu-decoration-point.svg">
-						</span>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="contact.html">Контакты</a>
-					</li>
-				</ul-->
-				
 			</div>
 			<div class="col-xl-2 text-end">
 				<a href="tel:‪89511014610" class="contacts-phone">‪
@@ -1546,46 +1449,6 @@ do_action('woocommerce_before_main_content');
 						</div>
 					</div>
 				</div>
-				<!--div class="row">
-					<div class="col-6">
-						<ul class="nav flex-column">
-							<li class="nav-item">
-								<a class="nav-link ps-0 active" href="#">Главная</a>
-							</li>
-							<li class="nav-item dropdown">
-								<a class="nav-link ps-0 dropdown-toggle" aria-current="page" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Услуги</a>
-								<ul class="dropdown-menu">
-									<li><a class="dropdown-item" href="archive-product-portfolio.html">Кухни на заказ</a></li>
-									<li><a class="dropdown-item" href="archive-product-portfolio1.html">Шкафы на заказ</a></li>
-									<li><a class="dropdown-item" href="archive-product-portfolio2.html">Прихожие на заказ</a></li>
-								</ul>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link ps-0" href="archive-action-page.html">Акции</a>
-							</li>
-						</ul>
-					</div>
-					<div class="col-6">
-						<ul class="nav flex-column">
-							<li class="nav-item dropdown">
-								<a class="nav-link ps-0 dropdown-toggle" aria-current="page" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Каталог</a>
-								<ul class="dropdown-menu">
-									<li><a class="dropdown-item" href="archive-product-page.html">Кухни</a></li>
-									<li><a class="dropdown-item" href="#">Шкафы</a></li>
-									<li><a class="dropdown-item" href="#">Прихожие</a></li>
-									<li><a class="dropdown-item" href="#">Обеденные группы</a></li>
-								</ul>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link ps-0" href="our-works.html">Наши работы</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link ps-0" href="contacts.html">Контакты</a>
-							</li>
-						</ul>
-					</div>
-				</div-->
-				
 			</div>
 		</div>
 	</div>
