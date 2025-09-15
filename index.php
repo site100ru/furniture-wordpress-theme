@@ -304,7 +304,7 @@ include 'header.php';
 		</div>
 		<div class="row text-start">
 			<div class="col-md-6 mb-5">
-				<a href="/furniture/product-category/кухни/">
+				<a href="/furniture/кухни-на-заказ/">
 					<div class="approximation project-container-2 services">
 						<img src="<?php echo get_template_directory_uri(); ?>/img/services-1.jpg" class="img-fluid" alt="">
 						<div class="card-wrapper project-container-2-footer">
@@ -318,7 +318,7 @@ include 'header.php';
 				</a>
 			</div>
 			<div class="col-md-6 mb-5">
-				<a href="/furniture/product-category/шкафы/">
+				<a href="/furniture/шкафы-на-заказ/">
 					<div class="services approximation project-container-2">
 						<img src="<?php echo get_template_directory_uri(); ?>/img/services-2.jpg" class="img-fluid" alt=""
 							decoding="async" />
