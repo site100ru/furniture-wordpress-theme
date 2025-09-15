@@ -12,7 +12,7 @@ include 'header.php';
 
 <!-- Home section -->
 <div id="sp-home" class="scroll-points"></div>
-<section class="main-home-section">
+<section class="main-home-section main-home-section-kyxnu">
 	<div class="home-img" style="min-height: 640px;"></div>
 	<header class="d-none d-lg-block">
 		<!-- Header nav top -->

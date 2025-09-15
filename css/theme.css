@@ -758,7 +758,7 @@ a.navbar-brand {
 	min-height: 640px;
 	width: 100%;
 	position: fixed;
-	background: url(../img/contact.jpg) no-repeat;
+	background: url(../img/home-kyxnu.jpg) no-repeat;
 	background-position: 50% 50%;
 	background-size: cover;
 	z-index: -1;
@@ -766,6 +766,18 @@ a.navbar-brand {
 
 .main-parallax .parallax-home-section {
 	background: url(../img/home-paralax.jpg) no-repeat;
+}
+
+.main-home-section-kyxnu .parallax-home-section {
+	background: url(../img/home-kyxnu.jpg) no-repeat;
+}
+
+.main-home-section-prihojie .parallax-home-section {
+	background: url(../img/home-prihojie.jpg) no-repeat;
+}
+
+.main-home-section-shkafy .parallax-home-section {
+	background: url(../img/home-shkafy.jpg) no-repeat;
 }
 
 /* md (less than 768px) */
