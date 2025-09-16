@@ -15,23 +15,30 @@
  * @version     4.7.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+if (!defined('ABSPATH')) {
+    exit;
 }
 
-/* Определяем текущую категорию */
 $product_cat = get_queried_object();
 
-// Выбираем шаблон для текущей категории
-// Кухни
- if ( $product_cat->name == 'Кухни' ) {
-	wc_get_template( 'archive-kitchen.php' );
-
-// Шкафы
-} else if ( $product_cat->name == 'Шкафы' ) {
-	wc_get_template( 'archive-closets.php' );
-
-// Другие или новые категории
+// Проверяем по названию категории
+if ($product_cat->name == 'Кухни') {
+    include get_template_directory() . '/woocommerce/archive-kitchen.php';
+} elseif ($product_cat->name == 'Шкафы') {
+    include get_template_directory() . '/woocommerce/archive-closets.php';
 } else {
-	wc_get_template( 'archive-product.php' );
+    // Для подкатегорий проверяем родителя
+    if ($product_cat->parent != 0) {
+        $parent = get_term($product_cat->parent, 'product_cat');
+        if ($parent->name == 'Кухни') {
+            include get_template_directory() . '/woocommerce/archive-kitchen.php';
+        } elseif ($parent->name == 'Шкафы') {
+            include get_template_directory() . '/woocommerce/archive-closets.php';
+        } else {
+            wc_get_template('archive-product.php');
+        }
+    } else {
+        wc_get_template('archive-product.php');
+    }
 }
+?>

@@ -809,4 +809,26 @@
 	}
 	/*** END ОБНОВЛЕНИЕ THEME ***/
 	
+	// Фильтр для виджета категорий товаров
+	function filter_product_categories_widget($list_args) {
+		// Получаем текущую категорию
+		if (is_product_category()) {
+				$current_cat = get_queried_object();
+				
+				// Если это подкатегория, берем родительскую
+				if ($current_cat->parent != 0) {
+						$parent_cat = get_term($current_cat->parent, 'product_cat');
+						$list_args['child_of'] = $parent_cat->term_id;
+				} else {
+						// Если это родительская категория, показываем её дочерние
+						$list_args['child_of'] = $current_cat->term_id;
+				}
+				
+				// Не показываем пустые категории
+				$list_args['hide_empty'] = true;
+		}
+		
+		return $list_args;
+	}
+	add_filter('woocommerce_product_categories_widget_args', 'filter_product_categories_widget');
 ?>
