@@ -211,7 +211,7 @@ a:hover {
 
 .header-nav-bottom a.nav-link:hover,
 .header-nav-bottom a.nav-link:focus {
-	color: var(--corporate-color-1);
+	color: var(--corporate-color-1) !important;
 }
 
 .navbar-light .navbar-nav .nav-link.active {
@@ -2683,7 +2683,7 @@ footer {
 }
 
 .header-link:hover {
-	color: var(--corporate-color-1);
+	color: var(--corporate-color-1) !important;
 }
 
 .woocommerce-widget-layered-nav-list__item.wc-layered-nav-term a,
