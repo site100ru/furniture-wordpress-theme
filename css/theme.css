@@ -766,19 +766,23 @@ a.navbar-brand {
 
 .main-parallax .parallax-home-section {
 	background: url(../img/home-paralax.jpg) no-repeat;
+	background-size: cover;
 }
 
 .main-home-section-kyxnu .home-img,
 .main-home-section-kyxnu .parallax-home-section {
 	background: url(../img/home-kyxnu.jpg) no-repeat;
+	background-size: cover;
 }
 
 .main-home-section-prihojie .parallax-home-section {
 	background: url(../img/home-prihojie.jpg) no-repeat;
+	background-size: cover;
 }
 
 .main-home-section-shkafy .parallax-home-section {
 	background: url(../img/home-shkafy.jpg) no-repeat;
+	background-size: cover;
 }
 
 /* md (less than 768px) */
@@ -2663,4 +2667,21 @@ footer {
 .section-half .order-description {
 	margin-top: 10px;
 	line-height: 1.35;
+}
+
+.nav-li-float-righ {
+	opacity: 100%;
+	transition: 0.25s;
+}
+
+.nav-li-float-righ:hover {
+	opacity: 75%;
+}
+
+.header-link {
+	transition: all 0.5s;
+}
+
+.header-link:hover {
+	color: var(--corporate-color-1);
 }
