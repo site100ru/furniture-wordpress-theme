@@ -552,7 +552,7 @@ strong {
 
 /*** ARCHIVE PRODUCT SECTION ***/
 .woocommerce-widget-layered-nav-list__item.wc-layered-nav-term a {
-	font-family: HelveticaNeueCyr-Medium;
+	font-family: HelveticaNeueCyr-Light;
 	font-size: 14px;
 	width: auto;
 	color: var(--dark-color);
@@ -647,7 +647,7 @@ h6,
 }
 
 .cat-item a {
-	font-family: HelveticaNeueCyr-Medium;
+	font-family: HelveticaNeueCyr-Light;
 	color: var(--dark-color);
 	text-decoration: none;
 }

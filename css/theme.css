@@ -2686,7 +2686,3 @@ footer {
 	color: var(--corporate-color-1) !important;
 }
 
-.woocommerce-widget-layered-nav-list__item.wc-layered-nav-term a,
-.cat-item a {
-	font-family: HelveticaNeueCyr-Light;
-}
