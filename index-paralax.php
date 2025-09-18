@@ -690,6 +690,13 @@ include 'header.php';
 </script>
 <!-- END SECTION PORTFOLIO -->
 
+
+
+<?php get_template_part( 'template-parts/section-actions', null, [ 'section_actions_button' => 'false', 'section_actions_place' => 'home-page' ] ); ?>
+
+
+
+
 <!-- ABOUT SECTION -->
 <section class="about-section bg-light py-5">
     <div class="container">
