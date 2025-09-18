@@ -789,6 +789,10 @@ a.navbar-brand {
 	background-size: cover;
 }
 
+.main-home-section-kyxnu .home-img {
+	background-position: 15% 50%;
+}
+
 .main-home-section-prihojie .parallax-home-section {
 	background: url(../img/home-prihojie.jpg) no-repeat;
 	background-size: cover;
