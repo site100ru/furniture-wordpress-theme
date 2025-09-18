@@ -34,7 +34,7 @@
 	do_action( 'woocommerce_before_main_content' );
 	
 ?>
-  	
+
 		
 		
 <!-- Header 2 -->
@@ -126,58 +126,64 @@
 	<!-- /Top menu header  -->
 
 	<!-- Menu header -->
-	<nav id="header-2-bottom" class="navbar navbar-expand-xl navbar-light bg-white shadow py-2 py-md-0">
+	<nav id="top-menu-2" class="navbar navbar-expand-xl navbar-light bg-white shadow py-2 py-md-0">
 		<div class="container">
 			<a class="navbar-brand" href="#">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/ico/logo-dark.svg">
 			</a>
+            <div class="d-lg-none">
+                <a class="top-menu-tel pt-1 pb-0" href="tel:89511014610">8 (951) 101-46-10</a>
+                <div style="font-size: 10px; font-family: Gilroy-Light; text-transform: none;">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/clock-ico.svg" style="width: 10px; position: relative; top: -1px;" class="me-1">Пн-Сб:&nbsp;с
+                        10.00-19.00<br>Вс:&nbsp;с 10.00-17.00
+                    
+                </div>
+            </div>
 			
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobail-header-collapse" aria-controls="mobail-header-collapse" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 			
-			<div class="collapse navbar-collapse" id="main-menu">
-				<?php
-					wp_nav_menu(array(
-						'theme_location' => 'main-menu',
-						'container' => false,
-						'menu_class' => '',
-						'fallback_cb' => '__return_false',
-						'items_wrap' => '
-							<ul id="%1$s" class="navbar-nav align-items-center ms-auto mb-2 mb-lg-0 %2$s">%3$s
-								<!-- Mobile menu -->
-								<li class="nav-item d-lg-none">
-									<a class="nav-link active" href="#" data-bs-toggle="modal" data-bs-target="#measurerModal">Вызов замерщика</a>
-								</li>
-								<li class="nav-item d-lg-none">
-									<div style="font-size: 12px; font-family: HelveticaNeueCyr-Light; text-transform: none;">
-										<img src="'.get_template_directory_uri().'/img/ico/location-ico.svg" style="width: 10px;" class="me-1">
-											<span>гор. Рязань, ул. Чапаева, 56</span>
-									</div>
-									<a class="nav-link top-menu-tel pt-1 pb-1" href="tel:89511014610">8 (951) 101-46-10</a>
-									<div class="mb-2" style="font-size: 12px; font-family: HelveticaNeueCyr-Light; text-transform: none;">
-										<img src="'.get_template_directory_uri().'/img/ico/clock-ico.svg" style="width: 10px; position: relative; top: 2px;" class="me-1 mb-2">Пн-Сб: с 10.00-19.00, Вс: с 10.00-17.00
-									</div>
-								</li>
-								<li class="nav-item d-lg-none pb-4">
-									<a class="ico-button pe-2" href="https://wa.me/79511014610?web=1&app_absent=1">
-										<img src="'.get_template_directory_uri().'/img/ico/whatsapp-ico.svg">
-									</a>
-									<a class="ico-button pe-0" href="https://t.me/+79511014610">
-										<img src="'.get_template_directory_uri().'/img/ico/telegram-ico.svg">
-									</a>
-								</li>	
-								<!-- End mobile menu -->
-							</ul>
-						',
-						'depth' => 2,
-						'walker' => new bootstrap_5_wp_nav_menu_walker()
-					));
-				?>
-			</div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+                <?php
+                    wp_nav_menu(array(
+                        'theme_location' => 'navbarSupportedContent2',
+                        'container' => false,
+                        'menu_class' => '',
+                        'fallback_cb' => '__return_false',
+                        'items_wrap' => '
+                            <ul id="%1$s" class="navbar-nav ms-auto mb-2 mb-lg-0 %2$s">%3$s
+                                <!-- Mobile menu -->
+                                <li class="nav-item d-lg-none">
+                                    <div style="font-size: 12px; font-family: HelveticaNeueCyr-Light; text-transform: none;">
+                                        <img src="'.get_stylesheet_directory_uri().'/img/ico/location-ico.svg" style="width: 10px;" class="me-1">
+                                            <span>гор. Рязань ул. Чапаева, 56</span>
+                                    </div>
+                                    <a class="nav-link top-menu-tel pt-1 pb-1" href="tel:89511014610">8 (951) 101-46-10</a>
+                                    <div class="mb-2" style="font-size: 12px; font-family: HelveticaNeueCyr-Light; text-transform: none;">
+                                        <img src="'.get_stylesheet_directory_uri().'/img/ico/clock-ico.svg" style="width: 10px; position: relative; top: 2px;" class="me-1 mb-2">Пн-Сб: с 10.00-19.00, Вс: с 10.00-17.00
+                                    </div>
+                                </li>
+                                <li class="nav-item d-lg-none pb-4">
+                                    <a class="ico-button pe-2" href="https://wa.me/79361385058?web=1&app_absent=1">
+                                        <img src="'.get_stylesheet_directory_uri().'/img/ico/whatsapp-ico.svg">
+                                    </a>
+                                    <a class="ico-button pe-0" href="https://t.me/+79361385058">
+                                        <img src="'.get_stylesheet_directory_uri().'/img/ico/telegram-ico.svg">
+                                    </a>
+                                </li>
+                                <!-- End mobile menu -->
+                            </ul>
+                        ',
+                        'depth' => 2,
+                        'walker' => new bootstrap_5_wp_nav_menu_walker()
+                    ));
+                ?>
+            </div>
 
 		</div>
 	</nav>
+
 	<!-- /Menu header -->
 </header><!-- /header-2 -->
 

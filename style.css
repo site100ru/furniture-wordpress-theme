@@ -422,6 +422,16 @@ strong {
 	color: #fff;
 }
 
+@media (max-width: 992px ) {
+    	.single_img,
+	.single_img_slide {
+        max-width: 100%;
+		width: 100%;
+		height: auto;
+        margin-right: 0;
+	}
+}
+
 @media (max-width: 575px) {
 	.carousel-item {
 		height: auto;
