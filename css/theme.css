@@ -514,6 +514,15 @@ a:hover {
 	top: 57px;
 }
 
+@media (max-width: 991.98px) {
+    #top-menu-2 {
+        position: fixed;
+        width: 100%;
+        z-index: 999;
+        top: 0px;
+    }
+}
+
 /** Header nav bottom **/
 
 .header-nav-bottom a.nav-link.dropdown-toggle,

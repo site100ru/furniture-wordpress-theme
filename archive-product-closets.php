@@ -1735,7 +1735,7 @@ do_action('woocommerce_before_main_content');
     </div>
     <div id="phoneBtn" class="callback-phone-button" data-bs-toggle="tooltip" data-bs-placement="left"
         data-bs-custom-class="custom-tooltip" data-bs-title="Позвонить">
-        <a href="tel:84993900100">
+        <a href="tel:89511014610">
             <div class="callback-phone-button-ico"></div>
         </a>
     </div>
