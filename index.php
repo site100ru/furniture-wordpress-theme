@@ -74,7 +74,7 @@ include 'header.php';
                                 </div>
                             </a>
                         </li>
-                        <li class="nav-item me-1 me-xxl-4">
+                        <!-- <li class="nav-item me-1 me-xxl-4">
                             <a class="top-menu-tel nav-link" href="tel:89511014610">
                                 <div style="display: flex;">
                                     <div class="nav-li-float-left">
@@ -87,7 +87,7 @@ include 'header.php';
                                     <div style="clear: both;"></div>
                                 </div>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="nav-item me-1 me-xxl-4">
                             <a class="top-menu-tel nav-link" href="tel:89511014610">
                                 <div style="display: flex;">
