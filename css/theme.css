@@ -515,12 +515,12 @@ a:hover {
 }
 
 @media (max-width: 991.98px) {
-    #top-menu-2 {
-        position: fixed;
-        width: 100%;
-        z-index: 999;
-        top: 0px;
-    }
+	#top-menu-2 {
+		position: fixed;
+		width: 100%;
+		z-index: 999;
+		top: 0px;
+	}
 }
 
 /** Header nav bottom **/
@@ -797,6 +797,20 @@ a.navbar-brand {
 .main-home-section-shkafy .parallax-home-section {
 	background: url(../img/home-shkafy.jpg) no-repeat;
 	background-size: cover;
+}
+
+@media (max-width: 768px) {
+	.main-home-section-prihojie .parallax-home-section {
+		background: url(../img/home-prihojie-mobile.jpg) no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.main-home-section-shkafy .parallax-home-section {
+		background: url(../img/home-shkafy-mobile.jpg) no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
 }
 
 /* md (less than 768px) */
@@ -1671,8 +1685,8 @@ h6,
 	color: #000000;
 	opacity: 0.75;
 	transition: 0.25s;
-    font-family: Gilroy-Medium;
-    font-weight: 400;
+	font-family: Gilroy-Medium;
+	font-weight: 400;
 }
 
 .archive-portfolio-section-2 .nav-item a:hover {
