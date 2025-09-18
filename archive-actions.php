@@ -256,7 +256,7 @@ include 'header.php';
 
 
 
-<?php get_template_part( 'template-parts/section-actions', null, [ 'section_actions_button' => 'false', 'section_actions_place' => 'home-page' ] ); ?>
+<?php get_template_part( 'template-parts/section-actions', null, [ 'section_actions_button' => 'false', 'section_actions_place' => 'actions-page' ] ); ?>
 
 
 
