@@ -401,6 +401,11 @@ a:hover {
 	font-family: HelveticaNeueBoldCondensed;
 	font-size: 18px;
 	text-decoration: none;
+	transition: all 0.3s;
+}
+
+.header-nav-top a.top-menu-tel.nav-link:hover {
+	opacity: 75%;
 }
 
 .nav-li-float-left {
@@ -1119,7 +1124,7 @@ a.navbar-brand {
 }
 
 #myTab .nav-link {
-	font-family: HelveticaNeueCyr-Medium;
+	font-family: Gilroy-Medium;
 	font-size: 14px;
 	text-transform: uppercase;
 	text-align: center;
@@ -1657,6 +1662,12 @@ h6,
 	color: #000000;
 	opacity: 0.75;
 	transition: 0.25s;
+    font-family: Gilroy-Medium;
+    font-weight: 400;
+}
+
+.archive-portfolio-section-2 .nav-item a:hover {
+	color: var(--corporate-color-1);
 }
 
 .archive-portfolio-section-2 .nav-item a.active {
@@ -1831,10 +1842,6 @@ strong {
 	opacity: 1;
 }
 
-.contacts-section-4 .nav-link span:hover {
-	opacity: 0.85;
-}
-
 .contacts-section-4 .nav-link img {
 	position: relative;
 	bottom: 2px;
@@ -1855,12 +1862,20 @@ strong {
 	line-height: 18px;
 }
 
+.contacts-section-4 .nav-li-float-right:hover {
+	opacity: 0.85;
+}
+
 .contacts-section-4 .contacts-phone {
 	font-family: HelveticaNeueBoldCondensed;
 	font-size: 18px;
 	color: #c8c8c8;
 	text-decoration: none;
 	transition: 0.25s;
+}
+
+.contacts-section-4 .contacts-phone:hover {
+	opacity: 0.85;
 }
 
 .contacts-section-4 .dropdown-toggle::after {
@@ -2685,4 +2700,3 @@ footer {
 .header-link:hover {
 	color: var(--corporate-color-1) !important;
 }
-

@@ -32,13 +32,15 @@ if ( ! $short_description ) {
 <div class="woocommerce-product-details__short-description">
 	<div class="row justify-content-center">
 		<div class="col">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-title-dec.svg" class="mb-5">
+
 			<?php
 				echo $short_description;
 				$price = get_post_meta( get_the_ID(), '_regular_price', true);
 				
 				// ЕСЛИ ЦЕНЫ НЕТ
 				if ( $price == null ) { ?>
-					<button class="btn btn-lg btn-corporate-color-1 mt-2 px-3 text-light" data-bs-toggle="modal" data-bs-target="#calculatePriceWithoutDownloadModal">Рассчитать стоимость</button>
+					<button class="btn btn-lg btn-corporate-color-1 mt-2 px-3 text-light" data-bs-toggle="modal" data-bs-target="#calculatePriceWithoutDownloadModal">Да, рассчитайте</button>
 				<?php
 					
 				// ЕСЛИ ЦЕНА ЕСТЬ
@@ -51,13 +53,13 @@ if ( ! $short_description ) {
 						// ЕСЛИ ЕСТЬ МЕТКА "ПОРТФОЛИО"
 						if ( has_term( 'Портфолио', 'product_tag' ) ) { ?>
 							<p>Стоимость указана за данный образец. Хотите рассчитаем точную стоимость по Вашим размерам? Это бесплатно и ни к чему Вас не обязывает!</p>
-							<button class="btn btn-lg btn-corporate-color-1 mt-2 px-3 text-light" data-bs-toggle="modal" data-bs-target="#calculatePriceWithoutDownloadModal">Рассчитать стоимость</button>
+							<button class="btn btn-lg btn-corporate-color-1 mt-2 px-3 text-light" data-bs-toggle="modal" data-bs-target="#calculatePriceWithoutDownloadModal">Да, рассчитайте</button>
 						<?php
 						
 						// ЕСЛИ НЕТ МЕТКИ "ПОРТФОЛИО"
 						} else { ?>
 							<p>Хотите рассчитаем точную стоимость этого образца по Вашим размерам? Это бесплатно и ни к чему Вас не обязывает!</p>
-							<button class="btn btn-lg btn-corporate-color-1 mt-2 px-3 text-light" data-bs-toggle="modal" data-bs-target="#calculatePriceWithoutDownloadModal">Рассчитать стоимость</button>
+							<button class="btn btn-lg btn-corporate-color-1 mt-2 px-3 text-light" data-bs-toggle="modal" data-bs-target="#calculatePriceWithoutDownloadModal">Да, рассчитайте</button>
 						<?php }
 					?>
 				<?php }
