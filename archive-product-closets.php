@@ -1486,7 +1486,7 @@ do_action('woocommerce_before_main_content');
                 </ul>
                 <div class="row">
                     <div class="col-lg-8 pt-4 pt-lg-2">
-                        <div class="row d-lg-none justify-content-center">
+                        <div class="row d-xl-none justify-content-center">
                             <div class="col-6 left-col-footer-menu">
                                 <?php
                                 wp_nav_menu(array(

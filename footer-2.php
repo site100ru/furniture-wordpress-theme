@@ -243,11 +243,11 @@
                 </ul>
                 <div class="row">
                     <div class="col-lg-8 pt-4 pt-lg-2">
-                        <div class="row d-lg-none justify-content-center">
+                        <div class="row d-xl-none justify-content-center">
                             <div class="col-6 left-col-footer-menu">
                                 <?php
                                 wp_nav_menu(array(
-                                    'theme_location' => 'main-menu',
+                                    'theme_location' => 'footer-menu-1',
                                     'container' => false,
                                     'menu_class' => '',
                                     'fallback_cb' => '__return_false',
@@ -260,7 +260,7 @@
                             <div class="col-6 right-col-footer-menu">
                                 <?php
                                 wp_nav_menu(array(
-                                    'theme_location' => 'main-menu',
+                                    'theme_location' => 'footer-menu-2',
                                     'container' => false,
                                     'menu_class' => '',
                                     'fallback_cb' => '__return_false',
