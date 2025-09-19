@@ -249,8 +249,7 @@ include 'header.php';
             <div class="col-xl-10 col-xxl-9">
                 <h1 class="home-title mb-3">Мебель По индивидуальным размерам <br/>
                     на заказ от производителя</h1>
-                <p class="home-subtitle mb-4">Изготовим качественную кухню с учетом Ваших пожеланий и особенностей помещения
-по разумной цене! Рассчитаем стоимость за 15 минут.</p>
+                <p class="home-subtitle mb-4">Изготовим качественную кухню с учетом Ваших пожеланий и особенностей помещения по разумной цене! Рассчитаем стоимость за 15 минут.</p>
                 <a href="#" type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal"
                     data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
             </div>
@@ -267,8 +266,7 @@ include 'header.php';
         <div class="row">
             <div class="col text-md-center">
                 <h2>Каталог проектов</h2>
-                <img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-title-dec.svg"
-                    style="margin-bottom: 60px;">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-title-dec.svg" style="margin-bottom: 60px;">
             </div>
         </div>
         <div class="row text-start">

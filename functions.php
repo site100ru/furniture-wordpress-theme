@@ -667,15 +667,17 @@ function mytheme_customize_register($wp_customize)
         'type' => 'input'
     ));
 
-
-    // Добавляем секцию Адрес
+	
+	/* Address */
+    // Добавляем секцию адрес
     $wp_customize->add_section('mytheme_contacts_address', array(
         'title' => 'Адрес',
         'panel' => 'contact_panel', // Указываем родительскую панель
         'priority' => 5
     ));
 
-    // Добавляем поле для ввода Вконтакте
+	
+	// Добавляем поле для ввода адреса
     $wp_customize->add_setting('mytheme_address', array(
         'default' => '',
         'transport' => 'postMessage',
@@ -687,6 +689,30 @@ function mytheme_customize_register($wp_customize)
         'section' => 'mytheme_contacts_address',
         'type' => 'input'
     ));
+	/* End address */
+	
+	
+	/* MAX */
+	// Добавляем секцию МАХ
+    $wp_customize->add_section('mytheme_contacts_max', array(
+        'title' => 'МАХ',
+        'panel' => 'contact_panel', // Указываем родительскую панель
+        'priority' => 5
+    ));
+	
+	 // Добавляем поле для ввода МАХ
+    $wp_customize->add_setting('mytheme_max', array(
+        'default' => '',
+        'transport' => 'postMessage',
+    ));
+
+    $wp_customize->add_control('mytheme_max', array(
+        'label' => 'Адрес',
+        'description' => 'Укажите ссылку на МАХ',
+        'section' => 'mytheme_contacts_max',
+        'type' => 'input'
+    ));
+	/* END MAX */
 
 
     // Добавляем секцию «Время работы»
@@ -727,8 +753,7 @@ function add_excerpt_to_pages()
 
 
 /*** ДЕЛАЕМ ПРАВИЛЬНЫЙ DESCRIPTION ДЛЯ КАЖДОЙ СТРАНИЦЫ ***/
-function echo_description()
-{
+function echo_description() {
 
     // Если страница стандартной категории поста
     if (is_category()) {
@@ -833,7 +858,11 @@ function force_transient_refresh()
 }
 /*** END ОБНОВЛЕНИЕ THEME ***/
 
+
+
+
 // Фильтр для виджета категорий товаров
+// Здесь необходимо более подробное пояснение для чего этот код
 function filter_product_categories_widget($list_args)
 {
     // Получаем текущую категорию

@@ -89,14 +89,14 @@ include 'header.php';
                             </a>
                         </li> -->
                         <li class="nav-item me-1 me-xxl-4">
-                            <a class="top-menu-tel nav-link" href="tel:89511014610">
+                            <a class="top-menu-tel nav-link" href="tel:<?php echo get_theme_mod( 'mytheme_main_phone_country_code' ) . get_theme_mod( 'mytheme_main_phone_region_code' ) . str_replace( [ '-' ], '', get_theme_mod( 'mytheme_main_phone_number' ) ); ?>">
                                 <div style="display: flex;">
                                     <div class="nav-li-float-left">
                                         <img
                                             src="<?php echo get_template_directory_uri(); ?>/img/ico/mobile-phone-ico.svg">
                                     </div>
                                     <div class="nav-li-float-right" style="min-width: 128px;">
-                                        8 (951) 101-46-10
+										<?php echo get_theme_mod( 'mytheme_main_phone_country_code' ) . ' (' . get_theme_mod( 'mytheme_main_phone_region_code' ) . ') ' . get_theme_mod( 'mytheme_main_phone_number' ); ?>
                                     </div>
                                     <div style="clear: both;"></div>
                                 </div>
@@ -149,7 +149,7 @@ include 'header.php';
 											<img src="' . get_template_directory_uri() . '/img/ico/location-ico.svg" style="width: 10px;" class="me-1">
 												<span>гор. Рязань, ул. Чапаева, 56</span>
 										</div>
-										<a class="nav-link top-menu-tel pt-1 pb-1" href="tel:89511014610">8 (951) 101-46-10</a>
+										<a class="nav-link top-menu-tel pt-1 pb-1" href="tel:'.get_theme_mod( 'mytheme_main_phone_country_code' ) . get_theme_mod( 'mytheme_main_phone_region_code' ) . str_replace( [ '-' ], '', get_theme_mod( 'mytheme_main_phone_number' ) ).'">'.get_theme_mod( 'mytheme_main_phone_country_code' ) . ' (' . get_theme_mod( 'mytheme_main_phone_region_code' ) . ') ' . get_theme_mod( 'mytheme_main_phone_number' ).'</a>
 										<div class="mb-2" style="font-size: 12px; font-family: HelveticaNeueCyr-Light; text-transform: none;">
 											<img src="' . get_template_directory_uri() . '/img/ico/clock-ico.svg" style="width: 10px; position: relative; top: 2px;" class="me-1 mb-2">Пн-Сб: с 10.00-19.00, Вс: с 10.00-17.00
 										</div>
@@ -186,8 +186,7 @@ include 'header.php';
                 </a>
 
                 <div class="d-lg-none">
-                    <a class="top-menu-tel pt-1 pb-0" style="font-size: 14px;" href="tel:89511014610">8 (951)
-                        101-46-10</a>
+                    <a class="top-menu-tel pt-1 pb-0" style="font-size: 14px;" href="tel:<?php echo get_theme_mod( 'mytheme_main_phone_country_code' ) . get_theme_mod( 'mytheme_main_phone_region_code' ) . str_replace( [ '-' ], '', get_theme_mod( 'mytheme_main_phone_number' ) ); ?>"><?php echo get_theme_mod( 'mytheme_main_phone_country_code' ) . ' (' . get_theme_mod( 'mytheme_main_phone_region_code' ) . ') ' . get_theme_mod( 'mytheme_main_phone_number' ); ?></a>
                     <div style="font-size: 10px; font-family: Gilroy-Light; text-transform: none;">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/ico/clock-ico.svg"
                             style="width: 12px; position: relative; top: -1px;" class="me-1">Пн-Сб: с
@@ -219,7 +218,7 @@ include 'header.php';
 											<img src="' . get_template_directory_uri() . '/img/ico/location-ico.svg" style="width: 10px; position: relative; top: -2px;" class="me-1">
 											<span>гор. Рязань, ул. Чапаева, 56</span>
 										</div>
-										<a class="nav-link top-menu-tel pt-1 pb-1" href="tel:89511014610">8 (951) 101-46-10</a>
+										<a class="nav-link top-menu-tel pt-1 pb-1" href="tel:'.get_theme_mod( 'mytheme_main_phone_country_code' ) . get_theme_mod( 'mytheme_main_phone_region_code' ) . str_replace( [ '-' ], '', get_theme_mod( 'mytheme_main_phone_number' ) ).'">'.get_theme_mod( 'mytheme_main_phone_country_code' ) . ' (' . get_theme_mod( 'mytheme_main_phone_region_code' ) . ') ' . get_theme_mod( 'mytheme_main_phone_number' ).'</a>
 										<div class="mb-2" style="font-size: 12px; font-family: Gilroy-Light; text-transform: none;">
 											<img src="' . get_template_directory_uri() . '/img/ico/clock-ico.svg" style="width: 10px; position: relative; top: 3px;" class="me-1 mb-2">Пн-Сб: с 10.00-19.00, Вс: с 10.00-17.00
 										</div>
@@ -247,12 +246,10 @@ include 'header.php';
     <div class="container">
         <div class="row align-items-center home-section-height">
             <div class="col-xl-10 col-xxl-9">
-                <h1 class="home-title mb-3">Мебель По индивидуальным размерам <br/>
+                <h1 class="home-title mb-3">Мебель по индивидуальным размерам <br/>
                     на заказ от производителя</h1>
-                <p class="home-subtitle mb-4">Изготовим качественную кухню с учетом Ваших пожеланий и особенностей помещения
-по разумной цене! Рассчитаем стоимость за 15 минут.</p>
-                <a href="#" type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal"
-                    data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
+                <p class="home-subtitle mb-4">Изготовим качественную кухню с учетом Ваших пожеланий и особенностей помещения по разумной цене! Рассчитаем стоимость за 15 минут.</p>
+                <a href="#" type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
             </div>
         </div>
     </div>
