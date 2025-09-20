@@ -817,11 +817,10 @@ function custom_robots_txt($output)
 
 /*** THEME UPDATE ***/
 add_filter('pre_set_site_transient_update_themes', 'check_custom_theme_updates');
-
 function check_custom_theme_updates($transient) {
 	$theme_slug = 'site100furniture'; // Имя папки темы
 	$current_version = wp_get_theme()->get('Version');
-	$update_server = 'https://site100.ru/wp-themes/furniture/furniture-updates.json';
+	$update_server = 'https://site100.ru/wp-themes/site100furniture/site100furniture-updates.json';
 
 	// Запрос к вашему серверу
 	$response = wp_remote_get($update_server);
@@ -838,12 +837,35 @@ function check_custom_theme_updates($transient) {
 				'theme'       => $theme_slug,
 				'new_version' => $update_data->version,
 				'package'     => $update_data->download_url,
-				'url'         => 'https://site100.ru/wp-themes/furniture/changelog' // Опционально
+				'url'         => 'https://site100.ru/blog/sozdanie-i-prodvizhenie-saytov/shablon-sayta-po-mebeli/' // Описание темы при доступности обновлений
 			);
 		}
 	}
 	
 	return $transient;
+}
+
+
+// Функция для принудительной проверки
+add_action('admin_init', 'force_theme_update_check');
+function force_theme_update_check() {
+    if (isset($_GET['force-check']) && $_GET['force-check'] == '1') {
+        delete_site_transient('update_themes');
+        wp_clean_themes_cache();
+        error_log("Forced update check triggered");
+    }
+}
+
+
+// Добавляем кнопку в админку
+add_action('admin_notices', 'theme_update_admin_notice');
+function theme_update_admin_notice() {
+    if (current_user_can('update_themes')) {
+        echo '<div class="notice notice-info">';
+        echo '<p>Проверить обновления: ';
+        echo '<a href="' . esc_url(add_query_arg('force-check', '1')) . '" class="button">Проверить</a>';
+        echo '</p></div>';
+    }
 }
 /*** END THEME UPDATE ***/
 
