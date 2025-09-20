@@ -819,7 +819,7 @@ function custom_robots_txt($output)
 add_filter('pre_set_site_transient_update_themes', 'check_furniture_updates');
 
 function check_furniture_updates($transient) {
-    $theme_slug = 'furniture'; // Имя папки темы
+    $theme_slug = 'site100furniture'; // Имя папки темы
     $current_version = wp_get_theme()->get('Version');
     $update_server = 'https://site100.ru/wp-themes/furniture/furniture-updates.json';
 
