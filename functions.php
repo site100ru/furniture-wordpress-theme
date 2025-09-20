@@ -818,8 +818,7 @@ function custom_robots_txt($output)
 /*** ОБНОВЛЕНИЕ THEME ***/
 add_filter('pre_set_site_transient_update_themes', 'check_furniture_updates');
 
-function check_furniture_updates($transient)
-{
+function check_furniture_updates($transient) {
     $theme_slug = 'furniture'; // Имя папки темы
     $current_version = wp_get_theme()->get('Version');
     $update_server = 'https://site100.ru/wp-themes/furniture/furniture-updates.json';
@@ -843,15 +842,14 @@ function check_furniture_updates($transient)
             );
         }
     }
-
-    return $transient;
+	
+	return $transient;
 }
 
 
-
 add_action('admin_init', 'force_transient_refresh');
-function force_transient_refresh()
-{
+
+function force_transient_refresh() {
     delete_site_transient('update_themes');
     wp_clean_themes_cache();
     wp_update_themes(); // Запуск проверки обновлений
