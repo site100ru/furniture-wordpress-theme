@@ -1691,6 +1691,7 @@ h6,
 	transition: 0.25s;
 	font-family: Gilroy-Medium;
 	font-weight: 400;
+    font-size: 14px;
 }
 
 .archive-portfolio-section-2 .nav-item a:hover {
