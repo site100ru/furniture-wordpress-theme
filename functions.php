@@ -815,54 +815,44 @@ function custom_robots_txt($output)
 
 
 
-/*** ОБНОВЛЕНИЕ THEME ***/
-add_filter('pre_set_site_transient_update_themes', 'check_furniture_updates');
+/*** THEME UPDATE ***/
+add_filter('pre_set_site_transient_update_themes', 'check_custom_theme_updates');
 
-function check_furniture_updates($transient) {
-    $theme_slug = 'site100furniture'; // Имя папки темы
-    $current_version = wp_get_theme()->get('Version');
-    $update_server = 'https://site100.ru/wp-themes/furniture/furniture-updates.json';
+function check_custom_theme_updates($transient) {
+	$theme_slug = 'site100furniture'; // Имя папки темы
+	$current_version = wp_get_theme()->get('Version');
+	$update_server = 'https://site100.ru/wp-themes/furniture/furniture-updates.json';
 
-    // Запрос к вашему серверу
-    $response = wp_remote_get($update_server);
+	// Запрос к вашему серверу
+	$response = wp_remote_get($update_server);
 
-    if (!is_wp_error($response)) {
-        $update_data = json_decode(wp_remote_retrieve_body($response));
+	if (!is_wp_error($response)) {
+		$update_data = json_decode(wp_remote_retrieve_body($response));
 
-        if (
-            $update_data &&
-            version_compare($current_version, $update_data->version, '<') &&
-            !empty($update_data->download_url)
-        ) {
-            $transient->response[$theme_slug] = array(
-                'theme' => $theme_slug,
-                'new_version' => $update_data->version,
-                'package' => $update_data->download_url,
-                'url' => 'https://site100.ru/wp-themes/furniture/changelog' // Опционально
-            );
-        }
-    }
+		if (
+			$update_data &&
+			version_compare($current_version, $update_data->version, '<') &&
+			!empty($update_data->download_url)
+		) {
+			$transient->response[$theme_slug] = array(
+				'theme'       => $theme_slug,
+				'new_version' => $update_data->version,
+				'package'     => $update_data->download_url,
+				'url'         => 'https://site100.ru/wp-themes/furniture/changelog' // Опционально
+			);
+		}
+	}
 	
 	return $transient;
 }
-
-
-add_action('admin_init', 'force_transient_refresh');
-
-function force_transient_refresh() {
-    delete_site_transient('update_themes');
-    wp_clean_themes_cache();
-    wp_update_themes(); // Запуск проверки обновлений
-}
-/*** END ОБНОВЛЕНИЕ THEME ***/
+/*** END THEME UPDATE ***/
 
 
 
 
 // Фильтр для виджета категорий товаров
 // Здесь необходимо более подробное пояснение для чего этот код
-function filter_product_categories_widget($list_args)
-{
+function filter_product_categories_widget($list_args) {
     // Получаем текущую категорию
     if (is_product_category()) {
         $current_cat = get_queried_object();
@@ -883,4 +873,3 @@ function filter_product_categories_widget($list_args)
     return $list_args;
 }
 add_filter('woocommerce_product_categories_widget_args', 'filter_product_categories_widget');
-?>
