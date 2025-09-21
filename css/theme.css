@@ -2748,19 +2748,10 @@ footer {
 }
 
 @media (max-width: 992px) {
-	.main-home-section .home-title {
-		margin-top: 160px !important;
+	.main-home-section {
+		min-height: auto;
 	}
-}
-
-@media (max-width: 768px) {
-	.main-home-section .home-title {
-		margin-top: 100px !important;
-	}
-}
-
-@media (max-width: 578px) {
-	.main-home-section .home-title {
-		margin-top: 140px !important;
+	.main-home-section .home-section-height {
+		padding: 120px 0 60px 0;
 	}
 }
