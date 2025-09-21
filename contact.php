@@ -10,7 +10,7 @@ include 'header.php';
 ?>
 
 
-<div class="site-wrap" style="height: 640px; z-index: auto;">
+<div class="site-wrap min-home" style="height: auto; z-index: auto;">
     <!-- Header -->
     <div class="site-navbar-wrap">
         <div class="parallax-home-section" style="min-height: 640px;"></div>
@@ -26,7 +26,8 @@ include 'header.php';
                                 <a class="nav-link" href="#">
                                     <div style="display: flex;">
                                         <div class="nav-li-float-left">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/ico/location-ico.svg">
+                                            <img
+                                                src="<?php echo get_template_directory_uri(); ?>/img/ico/location-ico.svg">
                                         </div>
                                         <div class="nav-li-float-right">
                                             гор. Рязань,<br>ул. Чапаева, 56
@@ -39,7 +40,8 @@ include 'header.php';
                                 <a class="nav-link" href="#">
                                     <div style="display: flex;">
                                         <div class="nav-li-float-left">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/ico/clock-ico.svg">
+                                            <img
+                                                src="<?php echo get_template_directory_uri(); ?>/img/ico/clock-ico.svg">
                                         </div>
                                         <div class="nav-li-float-right">
                                             Пн-Сб: с 10.00-19.00<br>Вс: с 10.00-17.00
@@ -52,7 +54,8 @@ include 'header.php';
                                 <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#callbackModal">
                                     <div style="display: flex;">
                                         <div class="nav-li-float-left">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/ico/callback-ico.svg">
+                                            <img
+                                                src="<?php echo get_template_directory_uri(); ?>/img/ico/callback-ico.svg">
                                         </div>
                                         <div class="nav-li-float-right max-width-1400">
                                             Обратный звонок
@@ -66,7 +69,8 @@ include 'header.php';
                                     data-bs-target="#calculatePriceWithDownloadModal">
                                     <div style="display: flex;">
                                         <div class="nav-li-float-left">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/ico/calculator-ico.svg">
+                                            <img
+                                                src="<?php echo get_template_directory_uri(); ?>/img/ico/calculator-ico.svg">
                                         </div>
                                         <div class="nav-li-float-right max-width-1400">
                                             Рассчитать стоимость
@@ -92,7 +96,8 @@ include 'header.php';
                                 <a class="top-menu-tel nav-link" href="tel:89511014610">
                                     <div style="display: flex;">
                                         <div class="nav-li-float-left">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/ico/mobile-phone-ico.svg">
+                                            <img
+                                                src="<?php echo get_template_directory_uri(); ?>/img/ico/mobile-phone-ico.svg">
                                         </div>
                                         <div class="nav-li-float-right" style="min-width: 128px;">
                                             8 (951) 101-46-10
@@ -184,8 +189,8 @@ include 'header.php';
                     </a>
 
                     <div class="d-lg-none">
-                        <a class="top-menu-tel pt-1 pb-0" style="font-size: 14px;" href="tel:89511014610">8 (951)
-                            101-46-10</a>
+                        <a class="top-menu-tel pt-1 pb-0" style="font-size: 14px;" href="tel:89511014610">
+                            8 (951) 101-46-10</a>
                         <div style="font-size: 10px; font-family: Gilroy-Light; text-transform: none;">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/ico/clock-ico.svg"
                                 style="width: 12px; position: relative; top: -1px;" class="me-1">Пн-Сб: с
@@ -276,81 +281,68 @@ include 'header.php';
                     <img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-title-dec.svg"
                         class="mb-5 mx-md-auto d-block">
                     <div class="container" style="margin-top: 60px;">
-                        <div class="row contact-p contact-box-info" style="font-family: 'Gilroy-Regular';">
-                            <div class="col-md-3 contact-info" style="flex: 0 0 35%;">
-                                <div style="display: flex; padding-bottom: 15px;" class="align-items-center">
-                                    <div class="nav-li-float-left">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/ico/location-ico.svg">
-                                    </div>
-                                    <div class="nav-li-float-right">
+                        <div class="row section-contacts contacts">
+                            <!-- 1 блок -->
+                            <div class="col-12 col-md-6 col-xl-3 col-xxl-4 mb-0 mb-md-4">
+                                <div class="d-flex align-items-center mb-4 pb-md-3">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/ico/location-ico.svg"
+                                        alt="Адрес" class="me-3 img-fluid" />
+                                    <p class="mb-0 text-min-text">
                                         <span>гор. Рязань, ул. Чапаева, д. 56, Мебельный центр "Базар" (ост.
                                             "Центральный рынок").</span>
-                                    </div>
-                                    <div style="clear: both;"></div>
+                                    </p>
                                 </div>
-                                <div style="display: flex;" class="align-items-center">
-                                    <div class="nav-li-float-left">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/ico/clock-ico.svg">
-                                    </div>
-                                    <div class="nav-li-float-right">
-                                        <span>Пн-Сб 10:00-19:00, Вс 10:00-17:00</span>
-                                    </div>
-                                    <div style="clear: both;"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 contact-info">
-                                <div style="display: flex; padding-bottom: 15px;" class="align-items-center">
-                                    <div class="nav-li-float-left">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/ico/mobile-phone-ico.svg">
-                                    </div>
-                                    <div class="nav-li-float-right">
-                                        <span>8 (951) 101-46-10</span>
-                                    </div>
-                                    <div style="clear: both;"></div>
-                                </div>
-                                <button data-bs-toggle="modal" data-bs-target="#callbackModal" style="display: flex;"
-                                    class="btn p-0 align-items-center">
 
-                                    <div class="nav-li-float-left">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/ico/callback-ico.svg">
-                                    </div>
-                                    <div class="nav-li-float-right">
-                                        <span>Обратный звонок</span>
-                                    </div>
-                                    <div style="clear: both;"></div>
-                                </button>
+                                <div class="d-flex align-items-center mb-4">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/ico/clock-ico.svg"
+                                        alt="Адрес" class="me-3 img-fluid" />
+                                    <p class="mb-0 text-min-text">Пн-Сб 10:00-19:00, <br /> Вс 10:00-17:00</p>
+                                </div>
+                            </div>
 
-                            </div>
-                            <div class="col-md-3 contact-info">
-                                <div style="display: flex; padding-bottom: 15px;" class="align-items-center">
-                                    <div class="nav-li-float-left">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/ico/telephone-ico-blue.svg">
-                                    </div>
-                                    <div class="nav-li-float-right">
-                                        <span>8 (4912) 52-78-90</span>
-                                    </div>
-                                    <div style="clear: both;"></div>
+                            <!-- 2 блок -->
+                            <div class="col-12 col-md-6 col-xl-3 col-xxl-2 mb-0 mb-md-4">
+                                <div class="d-flex align-items-center mb-4 pb-md-3 flex-wrap">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/ico/mobile-phone-ico.svg"
+                                        alt="Адрес" class="me-3 img-fluid" />
+                                    <a href="tel:+79511014610" class="text-decoration-none">+7 (951) 101-46-10</a>
                                 </div>
-                                <div style="display: flex;" class="align-items-center">
-                                    <div class="nav-li-float-left">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/ico/telephone-ico-blue.svg">
-                                    </div>
-                                    <div class="nav-li-float-right">
-                                        <span>8 (4912) 77-70-98</span>
-                                    </div>
-                                    <div style="clear: both;"></div>
+
+                                <div class="d-flex align-items-center mb-4">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/ico/callback-ico.svg"
+                                        alt="Адрес" class="me-3 img-fluid" />
+                                    <button class="nav-link d-flex align-items-center gap-3 gap-md-2 gap-xl-3 lh-1"
+                                        data-bs-toggle="modal" data-bs-target="#callbackModal">
+                                        Обратный звонок
+                                    </button>
                                 </div>
                             </div>
-                            <div class="col-md-3 contact-info">
-                                <div style="display: flex; padding-bottom: 15px;" class="align-items-center">
-                                    <div class="nav-li-float-left">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/ico/email-ico.svg">
-                                    </div>
-                                    <div class="nav-li-float-right">
-                                        <span>mozaika62@bk.ru</span>
-                                    </div>
-                                    <div style="clear: both;"></div>
+
+                            <!-- 3 блок -->
+                            <div class="col-12 col-md-6 col-xl-3 col-xxl-2 mb-0 mb-md-4">
+                                <div class="d-flex align-items-center mb-4 pb-md-3 flex-wrap">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/ico/telephone-ico-blue.svg"
+                                        alt="Адрес" class="me-3 img-fluid" />
+                                    <a href="tel:+74912527890" class="text-decoration-none">8 (4912) 52-78-90</a>
                                 </div>
+
+                                <div class="d-flex align-items-center mb-4 flex-wrap">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/ico/telephone-ico-blue.svg"
+                                        alt="Адрес" class="me-3 img-fluid" />
+                                    <a href="tel:+74912777098" class="text-decoration-none">8 (4912) 77-70-98</a>
+                                </div>
+                            </div>
+
+                            <!-- Третий блок -->
+                            <div class="col-12 col-md-12 col-xl-3 col-xxl-3 mb-0 mb-md-4">
+                                <div class="d-flex align-items-center mb-4 pb-md-3 flex-wrap">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/ico/email-ico.svg"
+                                        alt="Адрес" class="me-3 img-fluid" />
+                                    <a href="mailto:zakaz@mglight.ru" class="text-decoration-none">zakaz@mglight.ru
+                                    </a>
+                                </div>
+
+
                             </div>
                         </div>
                     </div>
@@ -365,22 +357,26 @@ include 'header.php';
                             <li class="nav-item">
                                 <a class="nav-link ico-button px-2"
                                     href="https://wa.me/79511014610?web=1&amp;app_absent=1">
-                                    <img src="https://xn--62-6kca7ahoms.xn--p1ai/wp-content/themes/mozaika/img/ico/whatsapp-ico.svg">
+                                    <img
+                                        src="https://xn--62-6kca7ahoms.xn--p1ai/wp-content/themes/mozaika/img/ico/whatsapp-ico.svg">
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link ico-button px-2" href="https://t.me/+79511014610">
-                                    <img src="https://xn--62-6kca7ahoms.xn--p1ai/wp-content/themes/mozaika/img/ico/telegram-ico.svg">
+                                    <img
+                                        src="https://xn--62-6kca7ahoms.xn--p1ai/wp-content/themes/mozaika/img/ico/telegram-ico.svg">
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link ico-button px-2" href="https://www.instagram.com/mozaika.kitchen62">
-                                    <img src="https://xn--62-6kca7ahoms.xn--p1ai/wp-content/themes/mozaika/img/ico/instagram-ico.svg">
+                                    <img
+                                        src="https://xn--62-6kca7ahoms.xn--p1ai/wp-content/themes/mozaika/img/ico/instagram-ico.svg">
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link ico-button px-2" href="https://vk.com/mozaika.kitchen62">
-                                    <img src="https://xn--62-6kca7ahoms.xn--p1ai/wp-content/themes/mozaika/img/ico/vk-ico.svg">
+                                    <img
+                                        src="https://xn--62-6kca7ahoms.xn--p1ai/wp-content/themes/mozaika/img/ico/vk-ico.svg">
                                 </a>
                             </li>
                         </ul>

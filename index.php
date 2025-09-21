@@ -456,9 +456,9 @@ include 'header.php';
 
                             while ($query->have_posts()):
                                 $query->the_post(); ?>
-                                <div class="col-md-4 mb-5">
+                                <div class="col-md-6 col-lg-4 mb-5">
                                     <a href="#" onclick="galleryOn('gallery-<?php echo get_the_ID(); ?>', 'img-<?php echo get_the_ID(); ?>-0'); return false;">
-                                        <div class="approximation project-container-2 rounded">
+                                        <div class="approximation approximation-project project-container-2 rounded">
                                             <img src="<?php echo get_post_meta(get_the_ID(), '_img-1')[0]; ?>"
                                                 class="rounded" alt="<?php echo get_the_title(); ?>" loading="lazy">
                                             <div class="card-wrapper">
@@ -501,9 +501,9 @@ include 'header.php';
                                     if ($category_query->have_posts()):
                                         while ($category_query->have_posts()):
                                             $category_query->the_post(); ?>
-                                            <div class="col-md-4 mb-5">
+                                            <div class="col-md-6 col-lg-4 mb-5">
                                                 <a href="#" onclick="galleryOn('gallery-<?php echo get_the_ID(); ?>', 'img-<?php echo get_the_ID(); ?>-0'); return false;">
-                                                    <div class="approximation project-container-2 rounded">
+                                                    <div class="approximation approximation-project project-container-2 rounded">
                                                         <img src="<?php echo get_post_meta(get_the_ID(), '_img-1')[0]; ?>"
                                                             class="rounded" alt="<?php echo get_the_title(); ?>" loading="lazy">
                                                         <div class="card-wrapper">

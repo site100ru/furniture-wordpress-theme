@@ -420,9 +420,9 @@ do_action('woocommerce_before_main_content');
 
                     while ($query->have_posts()):
                         $query->the_post(); ?>
-                        <div class="col-md-4 mb-5">
+                        <div class="col-md-6 col-lg-4 mb-5">
                             <a onclick="portfolioGalleryOpen( 'portfolio-gallery-<?php echo get_the_ID(); ?>' )">
-                                <div class="approximation project-container-2 rounded">
+                                <div class="approximation approximation-project project-container-2 rounded">
                                     <img src="<?php echo get_post_meta(get_the_ID(), '_img-1')[0]; ?>" class="rounded"
                                         alt="<?php echo get_the_title(); ?>" loading="lazy">
                                     <div class="card-wrapper">
