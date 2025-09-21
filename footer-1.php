@@ -283,8 +283,13 @@
         <div class="container">
             <div class="row">
                 <div class="col text-start text-md-center">
-                    <div id="im-in-footer">Создание, продвижение и поддержка:
-                        <a href="#" class="text-light">сайт100.рф</a>
+                    <div id="company-in-footer">©<?php echo date( 'Y' ); ?> ООО «Furniture»</div>
+                    <div id="im-in-footer">
+                        Создание и продвижение сайтов:
+                        <a href="https://site100.ru" class="text-light">site100.ru</a>
+                    </div>
+                    <div class="policy-in-footer">
+                        <a href="<?php echo get_template_directory_uri(); ?>/docs/Privacy-Policy.pdf" target="_blank">Политика конфиденциальности</a> | <a href="<?php echo get_template_directory_uri(); ?>/docs/Consent-to-the-processing-of-personal-data.pdf" target="_blank">Согласие на обработку персональных данных</a>
                     </div>
                 </div>
             </div>

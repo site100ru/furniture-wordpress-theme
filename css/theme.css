@@ -2726,3 +2726,10 @@ footer {
 .header-link:hover {
 	color: var(--corporate-color-1) !important;
 }
+
+.policy-in-footer a {
+    font-family: Gilroy;
+    font-weight: 300;
+    color: #f5f5f5;
+    font-size: 14px;
+}
