@@ -266,6 +266,7 @@ strong {
 
     .main-parallax.min-home .parallax-home-section {
         background-size: cover;
+        background-position: 10% 50%;
     }
 }
 
