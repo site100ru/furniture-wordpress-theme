@@ -397,13 +397,15 @@ strong {
 	-webkit-overflow-scrolling: touch;
 }
 
-.archive-portfolio-section-2 .nav-item a {
+.archive-portfolio-section-2 .nav-item a,
+.archive-portfolio-section-2 .nav-item button {
 	color: #000000;
 	opacity: 0.75;
 	transition: 0.25s;
 }
 
-.archive-portfolio-section-2 .nav-item a.active {
+.archive-portfolio-section-2 .nav-item a.active,
+.archive-portfolio-section-2 .nav-item button.active {
 	color: #dc3545;
 }
 

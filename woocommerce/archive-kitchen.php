@@ -269,8 +269,10 @@ do_action('woocommerce_before_main_content');
 		<div class="row">
 			<div class="col">
 				<div class="breadcrumbs py-4">
-					<nav class="woocommerce-breadcrumb" itemprop="breadcrumb"><a href="#"><img
-								src="<?php echo get_template_directory_uri(); ?>/img/ico/breadcrumbs-icon.svg"></a> / Каталог / Кухни
+					<nav class="woocommerce-breadcrumb" itemprop="breadcrumb">
+                        <a href="#">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/ico/breadcrumbs-icon.svg">
+                        </a> / Каталог / Кухни
 					</nav>
 				</div>
 			</div>

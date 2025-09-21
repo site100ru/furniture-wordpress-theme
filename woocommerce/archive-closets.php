@@ -23,7 +23,7 @@ do_action('woocommerce_before_main_content');
 
 <!-- Home section -->
 <div id="sp-home" class="scroll-points"></div>
-<section class="main-home-section">
+<section class="main-home-section main-home-section-shkafy">
     <div class="parallax-home-section" style="min-height: 640px;"></div>
     <header class="d-none d-lg-block">
         <!-- Header nav top -->
@@ -75,8 +75,7 @@ do_action('woocommerce_before_main_content');
                                 data-bs-target="#calculatePriceWithDownloadModal">
                                 <div style="display: flex;">
                                     <div class="nav-li-float-left">
-                                        <img
-                                            src="<?php echo get_template_directory_uri(); ?>/img/ico/calculator-ico.svg">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/ico/calculator-ico.svg">
                                     </div>
                                     <div class="nav-li-float-right max-width-1400">
                                         Рассчитать стоимость
@@ -102,8 +101,7 @@ do_action('woocommerce_before_main_content');
                             <a class="top-menu-tel nav-link" href="tel:89511014610">
                                 <div style="display: flex;">
                                     <div class="nav-li-float-left">
-                                        <img
-                                            src="<?php echo get_template_directory_uri(); ?>/img/ico/mobile-phone-ico.svg">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/ico/mobile-phone-ico.svg">
                                     </div>
                                     <div class="nav-li-float-right" style="min-width: 128px;">
                                         8 (951) 101-46-10
@@ -277,8 +275,10 @@ do_action('woocommerce_before_main_content');
         <div class="row">
             <div class="col">
                 <div class="breadcrumbs py-4">
-                    <nav class="woocommerce-breadcrumb" itemprop="breadcrumb"><a href="#"><img
-                                src="<?php echo get_template_directory_uri(); ?>/img/ico/breadcrumbs-icon.svg"></a> /
+                    <nav class="woocommerce-breadcrumb" itemprop="breadcrumb">
+                        <a href="#">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/ico/breadcrumbs-icon.svg">
+                        </a> /
                         Католог / Шкафы
                     </nav>
                 </div>

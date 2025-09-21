@@ -64,8 +64,7 @@ include 'header.php';
                                 data-bs-target="#calculatePriceWithDownloadModal">
                                 <div style="display: flex;">
                                     <div class="nav-li-float-left">
-                                        <img
-                                            src="<?php echo get_template_directory_uri(); ?>/img/ico/calculator-ico.svg">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/ico/calculator-ico.svg">
                                     </div>
                                     <div class="nav-li-float-right max-width-1400">
                                         Рассчитать стоимость
@@ -78,8 +77,7 @@ include 'header.php';
                             <a class="top-menu-tel nav-link" href="tel:89511014610">
                                 <div style="display: flex;">
                                     <div class="nav-li-float-left">
-                                        <img
-                                            src="<?php echo get_template_directory_uri(); ?>/img/ico/mobile-phone-ico.svg">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/ico/mobile-phone-ico.svg">
                                     </div>
                                     <div class="nav-li-float-right" style="min-width: 128px;">
                                         8 (4912) 77-70-98
@@ -92,8 +90,7 @@ include 'header.php';
                             <a class="top-menu-tel nav-link" href="tel:<?php echo get_theme_mod( 'mytheme_main_phone_country_code' ) . get_theme_mod( 'mytheme_main_phone_region_code' ) . str_replace( [ '-' ], '', get_theme_mod( 'mytheme_main_phone_number' ) ); ?>">
                                 <div style="display: flex;">
                                     <div class="nav-li-float-left">
-                                        <img
-                                            src="<?php echo get_template_directory_uri(); ?>/img/ico/mobile-phone-ico.svg">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/ico/mobile-phone-ico.svg">
                                     </div>
                                     <div class="nav-li-float-right" style="min-width: 128px;">
 										<?php echo get_theme_mod( 'mytheme_main_phone_country_code' ) . ' (' . get_theme_mod( 'mytheme_main_phone_region_code' ) . ') ' . get_theme_mod( 'mytheme_main_phone_number' ); ?>
@@ -387,9 +384,7 @@ include 'header.php';
                                     data-bs-toggle="tab" data-bs-target="#<?php echo esc_attr($category->slug); ?>"
                                     type="button" role="tab" aria-controls="<?php echo esc_attr($category->slug); ?>"
                                     aria-selected="false">
-                                    <img class="me-3"
-                                        src="<?php echo get_template_directory_uri(); ?>/img/ico/menu-decoration-point.svg"
-                                        alt="">
+                                    <img class="me-3" src="<?php echo get_template_directory_uri(); ?>/img/ico/menu-decoration-point.svg" alt="">
                                     <?php echo esc_html($category->name); ?>
                                 </button>
                             </li>

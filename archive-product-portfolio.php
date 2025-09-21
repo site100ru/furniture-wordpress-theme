@@ -65,8 +65,7 @@ include 'header.php';
                                 data-bs-target="#calculatePriceWithDownloadModal">
                                 <div style="display: flex;">
                                     <div class="nav-li-float-left">
-                                        <img
-                                            src="<?php echo get_template_directory_uri(); ?>/img/ico/calculator-ico.svg">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/ico/calculator-ico.svg">
                                     </div>
                                     <div class="nav-li-float-right max-width-1400">
                                         Рассчитать стоимость
@@ -79,8 +78,7 @@ include 'header.php';
                             <a class="top-menu-tel nav-link" href="tel:89511014610">
                                 <div style="display: flex;">
                                     <div class="nav-li-float-left">
-                                        <img
-                                            src="<?php echo get_template_directory_uri(); ?>/img/ico/mobile-phone-ico.svg">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/ico/mobile-phone-ico.svg">
                                     </div>
                                     <div class="nav-li-float-right" style="min-width: 128px;">
                                         8 (4912) 77-70-98
@@ -93,8 +91,7 @@ include 'header.php';
                             <a class="top-menu-tel nav-link" href="tel:89511014610">
                                 <div style="display: flex;">
                                     <div class="nav-li-float-left">
-                                        <img
-                                            src="<?php echo get_template_directory_uri(); ?>/img/ico/mobile-phone-ico.svg">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/ico/mobile-phone-ico.svg">
                                     </div>
                                     <div class="nav-li-float-right" style="min-width: 128px;">
                                         8 (951) 101-46-10
@@ -267,7 +264,9 @@ include 'header.php';
         <div class="row">
             <div class="col">
                 <nav class="breadcrumbs">
-                    <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/ico/breadcrumbs-icon.svg"></a>
+                    <a href="#">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/ico/breadcrumbs-icon.svg">
+                    </a>
                     /
                     <a href="archive-product-portfolio.html" style="text-decoration: none;">Услуги</a> /
                     Кухни на заказ

@@ -45,7 +45,7 @@ if ( ! $short_description ) {
 					
 				// ЕСЛИ ЦЕНА ЕСТЬ
 				} else { ?>
-					<p><strong>Стоимость: от <span class="text-corporate-color-1"><?php echo number_format( $price, 0, ',', ' ' ); ?></span> руб.</strong></p>
+					<p><strong>Стоимость:</strong><span class="text-corporate-color-1"> от <?php echo number_format( $price, 0, ',', ' ' ); ?></span> руб.</p>
 					
 					<?php
 						/* Проверяем, содержит ли протукт метку "Портфолио" и в зависимости от результата выводим то или иное описание. */
