@@ -25,7 +25,7 @@ do_action('woocommerce_before_main_content');
 
 <!-- Home section -->
 <div id="sp-home" class="scroll-points"></div>
-<section class="main-home-section">
+<section class="main-home-section min-home main-parallax">
     <div class="parallax-home-section" style="min-height: 640px;"></div>
     <header class="d-none d-lg-block">
         <!-- Header nav top -->
