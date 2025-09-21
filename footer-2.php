@@ -194,7 +194,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link ps-0 pt-2">
+                        <a href="#" class="nav-link ps-0 pt-2" data-bs-toggle="modal" data-bs-target="#callbackModal">
                             <div style="display: flex;" class="align-items-center">
                                 <div class="nav-li-float-left">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/ico/callback-ico.svg">

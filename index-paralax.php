@@ -349,7 +349,7 @@ include 'header.php';
 <!-- /Action -->
 
 <!-- SECTION PORTFOLIO -->
-<section class="section-portfolio bg-white" style="padding-block: 60px;">
+<section class="section-portfolio archive-portfolio-section-2 bg-white" style="padding-block: 60px;">
     <div class="container">
         <div class="row">
             <div class="col text-md-center">
@@ -367,30 +367,77 @@ include 'header.php';
                 ));
                 ?>
 
-                <!-- Bootstrap Tabs Navigation -->
-                <ul class="nav nav-tabs justify-content-center mb-4" id="myTab" role="tablist">
-                    <!-- Таб "Все" -->
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all"
-                            type="button" role="tab" aria-controls="all" aria-selected="true">
-                            Все
-                        </button>
-                    </li>
+                <div class="row">
+                    <div class="col text-center mb-4 mb-md-5"> 
+                        <div class="d-md-none">
+                          <!-- Bootstrap Tabs Navigation -->
+                            <div class="nav-scroller mb-0" style="text-transform: uppercase; font-family: 'HelveticaNeueCyr-Light'; font-weight: bold;">
+                                <ul class="nav justify-content-md-center d-flex m-auto" id="myTab" role="tablist">
+                                    <!-- Таб "Все" -->
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all"
+                                            type="button" role="tab" aria-controls="all" aria-selected="true">
+                                            Все
+                                        </button>
+                                    </li>
 
-                    <?php if (!empty($portfolio_categories)): ?>
-                        <?php foreach ($portfolio_categories as $category): ?>
+                                    <?php if (!empty($portfolio_categories)): ?>
+                                        <?php foreach ($portfolio_categories as $category): ?>
+                                            <!-- Декоративная точка -->
+                                            <li class="nav-item d-none d-xl-inline">
+                                                <span class="nav-link px-0">
+                                                    <img style="margin-bottom: 5px;" 
+                                                        src="<?php echo get_template_directory_uri(); ?>/img/ico/menu-decoration-point.svg" 
+                                                        alt="">
+                                                </span>
+                                            </li>
+                                            <!-- Категория -->
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="<?php echo esc_attr($category->slug); ?>-tab"
+                                                    data-bs-toggle="tab" data-bs-target="#<?php echo esc_attr($category->slug); ?>"
+                                                    type="button" role="tab" aria-controls="<?php echo esc_attr($category->slug); ?>"
+                                                    aria-selected="false">
+                                                    <?php echo esc_html($category->name); ?>
+                                                </button>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </ul>
+                            </div>
+                            <div class="text-center mb-4">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/ico/left-right-finger.png"
+                                    style="opacity: 1; max-width: 25px;" alt="Прокрутите для просмотра">
+                            </div>
+                        </div>
+
+                        <!-- Десктопная версия с Bootstrap Tabs -->
+                        <ul class="nav nav-tabs justify-content-center mb-4 d-none d-md-flex" id="myTab" role="tablist">
+                            <!-- Таб "Все" -->
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link ps-0" id="<?php echo esc_attr($category->slug); ?>-tab"
-                                    data-bs-toggle="tab" data-bs-target="#<?php echo esc_attr($category->slug); ?>"
-                                    type="button" role="tab" aria-controls="<?php echo esc_attr($category->slug); ?>"
-                                    aria-selected="false">
-                                    <img class="me-3" src="<?php echo get_template_directory_uri(); ?>/img/ico/menu-decoration-point.svg" alt="">
-                                    <?php echo esc_html($category->name); ?>
+                                <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all"
+                                    type="button" role="tab" aria-controls="all" aria-selected="true">
+                                    Все
                                 </button>
                             </li>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
-                </ul>
+
+                            <?php if (!empty($portfolio_categories)): ?>
+                                <?php foreach ($portfolio_categories as $category): ?>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link ps-0" id="<?php echo esc_attr($category->slug); ?>-tab"
+                                            data-bs-toggle="tab" data-bs-target="#<?php echo esc_attr($category->slug); ?>"
+                                            type="button" role="tab" aria-controls="<?php echo esc_attr($category->slug); ?>"
+                                            aria-selected="false">
+                                            <img class="me-3" 
+                                                src="<?php echo get_template_directory_uri(); ?>/img/ico/menu-decoration-point.svg" 
+                                                alt="">
+                                            <?php echo esc_html($category->name); ?>
+                                        </button>
+                                    </li>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- Tab Content -->
                 <div class="tab-content" id="portfolioTabContent">
