@@ -263,6 +263,10 @@ strong {
 		background-size: 1100px;
 		background-position: inherit;
 	}
+
+    .main-parallax.min-home .parallax-home-section {
+        background-size: cover;
+    }
 }
 
 .breadcrumbs {
