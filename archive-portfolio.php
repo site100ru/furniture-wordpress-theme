@@ -269,7 +269,7 @@ include 'header.php';
         <div class="row">
             <div class="col">
                 <div class="row">
-                    <div class="col ext-md-center">
+                    <div class="col text-md-center">
                         <h2>Наши работы</h2>
                         <img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-title-dec.svg"
                             class="mb-5">

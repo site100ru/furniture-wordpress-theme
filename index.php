@@ -368,25 +368,35 @@ include 'header.php';
                 ?>
 
                 <div class="row">
-                    <div class="col text-center mb-4 mb-md-5">
+                    <div class="col text-center mb-4 mb-md-5"> 
                         <div class="d-md-none">
-                            <div class="nav-scroller mb-0"
-                                style="text-transform: uppercase; font-family: 'HelveticaNeueCyr-Light'; font-weight: bold; overflow-x: auto; white-space: nowrap;">
-                                <ul id="myTab" class="nav d-inline-flex m-auto" style="flex-wrap: nowrap;">
-                                    <li class="nav-item">
-                                        <button class="nav-link active" id="all-tab-mobile" data-bs-toggle="tab" 
-                                            data-bs-target="#all" type="button" role="tab" aria-controls="all" 
-                                            aria-selected="true" style="white-space: nowrap;">
+                          <!-- Bootstrap Tabs Navigation -->
+                            <div class="nav-scroller mb-0" style="text-transform: uppercase; font-family: 'HelveticaNeueCyr-Light'; font-weight: bold;">
+                                <ul class="nav justify-content-md-center d-flex m-auto" id="myTab" role="tablist">
+                                    <!-- Таб "Все" -->
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all"
+                                            type="button" role="tab" aria-controls="all" aria-selected="true">
                                             Все
                                         </button>
                                     </li>
+
                                     <?php if (!empty($portfolio_categories)): ?>
                                         <?php foreach ($portfolio_categories as $category): ?>
-                                            <li class="nav-item">
-                                                <button class="nav-link" id="<?php echo esc_attr($category->slug); ?>-tab-mobile"
+                                            <!-- Декоративная точка -->
+                                            <li class="nav-item d-none d-xl-inline">
+                                                <span class="nav-link px-0">
+                                                    <img style="margin-bottom: 5px;" 
+                                                        src="<?php echo get_template_directory_uri(); ?>/img/ico/menu-decoration-point.svg" 
+                                                        alt="">
+                                                </span>
+                                            </li>
+                                            <!-- Категория -->
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="<?php echo esc_attr($category->slug); ?>-tab"
                                                     data-bs-toggle="tab" data-bs-target="#<?php echo esc_attr($category->slug); ?>"
                                                     type="button" role="tab" aria-controls="<?php echo esc_attr($category->slug); ?>"
-                                                    aria-selected="false" style="white-space: nowrap;">
+                                                    aria-selected="false">
                                                     <?php echo esc_html($category->name); ?>
                                                 </button>
                                             </li>
@@ -1146,7 +1156,7 @@ include 'header.php';
 <section class="section section-how bg-light py-5">
     <div class="container">
         <div class="row">
-            <div class="section-title text-center">
+            <div class="section-title text-md-center">
                 <h2>Как заказать</h2>
                 <img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-title-dec.svg" class="mb-5">
             </div>
@@ -1247,7 +1257,7 @@ include 'header.php';
 <!-- Частые вопросы -->
 <section class="section section-faq py-5">
     <div class="container">
-        <div class="section-title text-center">
+        <div class="section-title text-md-center">
             <h2>Частые вопросы</h2>
             <img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-title-dec.svg" class="mb-5">
         </div>

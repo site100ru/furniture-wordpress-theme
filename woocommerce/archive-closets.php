@@ -279,13 +279,13 @@ do_action('woocommerce_before_main_content');
                         <a href="#">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/ico/breadcrumbs-icon.svg">
                         </a> /
-                        Католог / Шкафы
+                        Каталог / Шкафы
                     </nav>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col header-text mb-5">
+            <div class="col text-md-center mb-5">
                 <h2>Каталог проектов для заказа кухни по Вашим размерам</h2>
                 <p style="font-family: 'HelveticaNeueCyr-Light';">Выбирайте из нашего каталога или присылайте Ваш проект
                 </p>
@@ -1047,7 +1047,7 @@ do_action('woocommerce_before_main_content');
 <section class="advantages bg-light py-5">
     <div class="container">
         <div class="row">
-            <div class="section-title text-center">
+            <div class="section-title text-md-center">
                 <h2>Как заказать</h2>
                 <img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-title-dec.svg" class="mb-5">
             </div>
@@ -1150,7 +1150,7 @@ do_action('woocommerce_before_main_content');
 <!-- Частые вопросы -->
 <section class="section section-faq py-5 bg-white">
     <div class="container">
-        <div class="section-title text-center">
+        <div class="section-title text-md-center">
             <h2>Частые вопросы</h2>
             <img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-title-dec.svg" class="mb-5">
         </div>

@@ -271,8 +271,8 @@ include 'header.php';
         </div>
         <div class="container" style="padding: 0;">
             <div class="row">
-                <div class="col text-dark ">
-                    <h2 class="text-md-center mb-3">Контакты</h2>
+                <div class="col text-dark text-md-center">
+                    <h2 class="mb-3">Контакты</h2>
                     <img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-title-dec.svg"
                         class="mb-5 mx-md-auto d-block">
                     <div class="container" style="margin-top: 60px;">
