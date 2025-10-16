@@ -1,4 +1,4 @@
-name: Deploy site100furniture
+name: Deploy Furniture
 
 on:
   push:
