@@ -78,7 +78,7 @@ $wrapper_classes   = apply_filters(
 		<div class="carousel-item active">
 			<a href="#" onClick="galleryOn('gallery-2');">
 				<div>
-					<img src="<?php echo get_template_directory_uri(); ?>/img/portfolio-card1.jpg" class="d-block w-100" loading="lazy" alt="...">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/portfolio-card1.webp" class="d-block w-100" loading="lazy" alt="...">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/ico/magnifying-glass.svg" alt="Лупа" class="magnifying-glass">
 				</div>
 			</a>
@@ -86,7 +86,7 @@ $wrapper_classes   = apply_filters(
 		<div class="carousel-item">
 			<a href="#" onClick="galleryOn('gallery-2');">
 				<div>
-					<img src="<?php echo get_template_directory_uri(); ?>/img/portfolio-card5.jpg" class="d-block w-100" loading="lazy" alt="...">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/portfolio-card5.webp" class="d-block w-100" loading="lazy" alt="...">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/ico/magnifying-glass.svg" alt="Лупа" class="magnifying-glass">
 				</div>
 			</a>
@@ -94,7 +94,7 @@ $wrapper_classes   = apply_filters(
 		<div class="carousel-item">
 			<a href="#" onClick="galleryOn('gallery-2');">
 				<div>
-					<img src="<?php echo get_template_directory_uri(); ?>/img/portfolio-card6.jpg" class="d-block w-100" loading="lazy" alt="...">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/portfolio-card6.webp" class="d-block w-100" loading="lazy" alt="...">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/ico/magnifying-glass.svg" alt="Лупа" class="magnifying-glass">
 				</div>
 			</a>
@@ -102,7 +102,7 @@ $wrapper_classes   = apply_filters(
 		<div class="carousel-item">
 			<a href="#" onClick="galleryOn('gallery-2');">
 				<div>
-					<img src="<?php echo get_template_directory_uri(); ?>/img/portfolio-card7.jpg" class="d-block w-100" loading="lazy" alt="...">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/portfolio-card7.webp" class="d-block w-100" loading="lazy" alt="...">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/ico/magnifying-glass.svg" alt="Лупа" class="magnifying-glass">
 				</div>
 			</a>
@@ -110,7 +110,7 @@ $wrapper_classes   = apply_filters(
 		<div class="carousel-item">
 			<a href="#" onClick="galleryOn('gallery-2');">
 				<div>
-					<img src="<?php echo get_template_directory_uri(); ?>/img/portfolio-card8.jpg" class="d-block w-100" loading="lazy" alt="...">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/portfolio-card8.webp" class="d-block w-100" loading="lazy" alt="...">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/ico/magnifying-glass.svg" alt="Лупа" class="magnifying-glass">
 				</div>
 			</a>
@@ -118,7 +118,7 @@ $wrapper_classes   = apply_filters(
 		<div class="carousel-item">
 			<a href="#" onClick="galleryOn('gallery-2');">
 				<div>
-					<img src="<?php echo get_template_directory_uri(); ?>/img/portfolio-card9.jpg" class="d-block w-100" loading="lazy" alt="...">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/portfolio-card9.webp" class="d-block w-100" loading="lazy" alt="...">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/ico/magnifying-glass.svg" alt="Лупа" class="magnifying-glass">
 				</div>
 			</a>
@@ -126,7 +126,7 @@ $wrapper_classes   = apply_filters(
 		<div class="carousel-item">
 			<a href="#" onClick="galleryOn('gallery-2');">
 				<div>
-					<img src="<?php echo get_template_directory_uri(); ?>/img/portfolio-card10.jpg" class="d-block w-100" loading="lazy" alt="...">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/portfolio-card10.webp" class="d-block w-100" loading="lazy" alt="...">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/ico/magnifying-glass.svg" alt="Лупа" class="magnifying-glass">
 				</div>
 			</a>

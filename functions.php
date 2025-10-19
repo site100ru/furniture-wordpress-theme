@@ -86,7 +86,9 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
             $output .= '
 					<li class="nav-item d-none">
 						<span class="nav-link">
-							<img src="' . get_template_directory_uri() . '/img/ico/menu-decoration-point.svg" alt="">
+							 <svg width="6" height="6" viewBox="0 0 6 6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
+                                                        <rect width="6" height="6" rx="2" />
+                                                    </svg>
 						</span>
 					</li>
 				';
@@ -94,7 +96,9 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
             $output .= '
 					<li class="nav-item d-none d-xl-inline">
 						<span class="nav-link">
-							<img src="' . get_template_directory_uri() . '/img/ico/menu-decoration-point.svg" alt="">
+							 <svg width="6" height="6" viewBox="0 0 6 6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
+                                                        <rect width="6" height="6" rx="2" />
+                                                    </svg>
 						</span>
 					</li>
 				';
@@ -185,7 +189,7 @@ function jk_woocommerce_breadcrumbs()
 {
     return array(
         'delimiter' => ' &#47; ',
-        'wrap_before' => '<nav class="woocommerce-breadcrumb" itemprop="breadcrumb"><a href="https://site100.ru/"><img src="' . get_template_directory_uri() . '/img/ico/breadcrumbs-icon.svg"></a> / ',
+        'wrap_before' => '<nav class="woocommerce-breadcrumb" itemprop="breadcrumb"><a href="/"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" fill="currentColor" viewBox="0 0 24 24" class="svg-icon"><path d="m21.71 11.29-9-9a1 1 0 0 0-1.42 0l-9 9a1 1 0 0 0 1.42 1.42l.29-.3v7.89A1.77 1.77 0 0 0 5.83 22H8.5a1 1 0 0 0 1-1v-4.9a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1V21a1 1 0 0 0 1 1h2.67A1.77 1.77 0 0 0 20 20.3v-7.89l.29.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42" /> </svg></a> / ',
         'wrap_after' => '</nav>',
         'before' => '',
         'after' => '',
@@ -351,7 +355,7 @@ if (function_exists('register_sidebar')) {
             'before_widget' => '<aside id="%1$s" class="widget %2$s">', //открывающий тег виджета с динамичным идентификатором
             'after_widget' => '<div class="clear"></div></aside>', //закрывающий тег виджета с очищающим блоком
             'before_title' => '<span class="widget-title">', //открывающий тег заголовка виджета
-            'after_title' => '</span>',//закрывающий тег заголовка виджета
+            'after_title' => '</span>', //закрывающий тег заголовка виджета
         )
     );
 }
@@ -376,7 +380,7 @@ function extra_fields_box_func($post)
         <div style="clear: both;"></div>
     <? } ?>
     <input type="hidden" name="extra_fields_nonce" value="<?php echo wp_create_nonce(__FILE__); ?>" />
-    <?php
+<?php
 }
 
 // включаем обновление полей при сохранении
@@ -667,8 +671,8 @@ function mytheme_customize_register($wp_customize)
         'type' => 'input'
     ));
 
-	
-	/* Address */
+
+    /* Address */
     // Добавляем секцию адрес
     $wp_customize->add_section('mytheme_contacts_address', array(
         'title' => 'Адрес',
@@ -676,8 +680,8 @@ function mytheme_customize_register($wp_customize)
         'priority' => 5
     ));
 
-	
-	// Добавляем поле для ввода адреса
+
+    // Добавляем поле для ввода адреса
     $wp_customize->add_setting('mytheme_address', array(
         'default' => '',
         'transport' => 'postMessage',
@@ -689,18 +693,18 @@ function mytheme_customize_register($wp_customize)
         'section' => 'mytheme_contacts_address',
         'type' => 'input'
     ));
-	/* End address */
-	
-	
-	/* MAX */
-	// Добавляем секцию МАХ
+    /* End address */
+
+
+    /* MAX */
+    // Добавляем секцию МАХ
     $wp_customize->add_section('mytheme_contacts_max', array(
         'title' => 'МАХ',
         'panel' => 'contact_panel', // Указываем родительскую панель
         'priority' => 5
     ));
-	
-	 // Добавляем поле для ввода МАХ
+
+    // Добавляем поле для ввода МАХ
     $wp_customize->add_setting('mytheme_max', array(
         'default' => '',
         'transport' => 'postMessage',
@@ -712,7 +716,7 @@ function mytheme_customize_register($wp_customize)
         'section' => 'mytheme_contacts_max',
         'type' => 'input'
     ));
-	/* END MAX */
+    /* END MAX */
 
 
     // Добавляем секцию «Время работы»
@@ -753,7 +757,8 @@ function add_excerpt_to_pages()
 
 
 /*** ДЕЛАЕМ ПРАВИЛЬНЫЙ DESCRIPTION ДЛЯ КАЖДОЙ СТРАНИЦЫ ***/
-function echo_description() {
+function echo_description()
+{
 
     // Если страница стандартной категории поста
     if (is_category()) {
@@ -817,38 +822,40 @@ function custom_robots_txt($output)
 
 /*** THEME UPDATE ***/
 add_filter('pre_set_site_transient_update_themes', 'check_custom_theme_updates');
-function check_custom_theme_updates($transient) {
-	$theme_slug = 'site100furniture'; // Имя папки темы
-	$current_version = wp_get_theme()->get('Version');
-	$update_server = 'https://site100.ru/wp-themes/site100furniture/site100furniture-updates.json';
+function check_custom_theme_updates($transient)
+{
+    $theme_slug = 'site100furniture'; // Имя папки темы
+    $current_version = wp_get_theme()->get('Version');
+    $update_server = 'https://site100.ru/wp-themes/site100furniture/site100furniture-updates.json';
 
-	// Запрос к вашему серверу
-	$response = wp_remote_get($update_server);
+    // Запрос к вашему серверу
+    $response = wp_remote_get($update_server);
 
-	if (!is_wp_error($response)) {
-		$update_data = json_decode(wp_remote_retrieve_body($response));
+    if (!is_wp_error($response)) {
+        $update_data = json_decode(wp_remote_retrieve_body($response));
 
-		if (
-			$update_data &&
-			version_compare($current_version, $update_data->version, '<') &&
-			!empty($update_data->download_url)
-		) {
-			$transient->response[$theme_slug] = array(
-				'theme'       => $theme_slug,
-				'new_version' => $update_data->version,
-				'package'     => $update_data->download_url,
-				'url'         => 'https://site100.ru/blog/sozdanie-i-prodvizhenie-saytov/shablon-sayta-po-mebeli/' // Описание темы при доступности обновлений
-			);
-		}
-	}
-	
-	return $transient;
+        if (
+            $update_data &&
+            version_compare($current_version, $update_data->version, '<') &&
+            !empty($update_data->download_url)
+        ) {
+            $transient->response[$theme_slug] = array(
+                'theme'       => $theme_slug,
+                'new_version' => $update_data->version,
+                'package'     => $update_data->download_url,
+                'url'         => 'https://site100.ru/blog/sozdanie-i-prodvizhenie-saytov/shablon-sayta-po-mebeli/' // Описание темы при доступности обновлений
+            );
+        }
+    }
+
+    return $transient;
 }
 
 
 // Функция для принудительной проверки
 add_action('admin_init', 'force_theme_update_check');
-function force_theme_update_check() {
+function force_theme_update_check()
+{
     if (isset($_GET['force-check']) && $_GET['force-check'] == '1') {
         delete_site_transient('update_themes');
         wp_clean_themes_cache();
@@ -859,7 +866,8 @@ function force_theme_update_check() {
 
 // Добавляем кнопку в админку
 add_action('admin_notices', 'theme_update_admin_notice');
-function theme_update_admin_notice() {
+function theme_update_admin_notice()
+{
     if (current_user_can('update_themes')) {
         echo '<div class="notice notice-info">';
         echo '<p>Проверить обновления: ';
@@ -874,7 +882,8 @@ function theme_update_admin_notice() {
 
 // Фильтр для виджета категорий товаров
 // Здесь необходимо более подробное пояснение для чего этот код
-function filter_product_categories_widget($list_args) {
+function filter_product_categories_widget($list_args)
+{
     // Получаем текущую категорию
     if (is_product_category()) {
         $current_cat = get_queried_object();

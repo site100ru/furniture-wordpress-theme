@@ -42,18 +42,6 @@ bdi {
 	color: var(--corporate-color-1);
 }
 
-.dropdown-toggle::after {
-	background-image: url(img/ico/accordion-arrow.svg);
-	background-position: bottom;
-	vertical-align: 0;
-	margin-left: 14px;
-	background-size: 10px;
-	width: 10px;
-	height: 10px;
-	background-repeat: no-repeat;
-	border: none;
-}
-
 .site-navbar-wrap a {
 	color: var(--dark-color);
 }
@@ -82,49 +70,6 @@ p.advantages {
 
 .about_box {
 	margin-bottom: 20px;
-}
-
-/* .carousel-inner {
-    position: relative;
-    display: flex;
-    width: 636px;
-    border-radius: 10px;
-    align-items: center;
-    padding-right: 0 !important;
-} */
-
-.carousel-item {
-	position: relative;
-	cursor: pointer;
-	transition: transform 0.6s ease-in-out;
-	padding-right: 0 !important;
-}
-
-.carousel-control-prev-icon {
-	width: 28px;
-	height: 28px;
-	background: url(img/ico/left-arrow.svg);
-}
-
-.carousel-control-next-icon {
-	width: 28px;
-	height: 28px;
-	background: url(img/ico/right-arrow.svg);
-}
-
-.magnifying-glass {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 60px;
-	height: 60px;
-	opacity: 0;
-	transition: 0.3s;
-}
-
-.carousel-inner:hover .magnifying-glass {
-	opacity: 1;
 }
 
 .description_about {
@@ -160,7 +105,7 @@ p.advantages {
 	left: 0;
 	width: 100%;
 	height: 540px;
-	background: url(img/contact.png);
+	background: url('img/contact (1).webp');
 	background-position: center;
 }
 
@@ -215,7 +160,7 @@ strong {
 }
 
 .single-portfolio-btn {
-	background-color: #dc3545;
+	background-color: var(--corporate-color-1);
 	font-family: 'HelveticaNeueCyr-Bold';
 	padding: 13px 36px;
 	border-radius: 5px;
@@ -240,7 +185,7 @@ strong {
 }
 
 .main-home-section.min-home {
-    min-height: auto;
+	min-height: auto;
 }
 
 .min-home .home-section-height {
@@ -260,14 +205,14 @@ strong {
 	.main-parallax .parallax-home-section,
 	.parallax-home-section {
 		min-height: 640px;
-		background-size: 1100px;
-		background-position: inherit;
+		/* background-size: 1100px; */
+		background-position: 15% 50%;
 	}
 
-    .main-parallax.min-home .parallax-home-section {
-        background-size: cover;
-        background-position: 10% 50%;
-    }
+	.main-parallax.min-home .parallax-home-section {
+		background-size: cover;
+		background-position: 10% 50%;
+	}
 }
 
 .breadcrumbs {
@@ -284,7 +229,7 @@ strong {
 }
 
 .category.active {
-	color: #dc3545;
+	color: var(--corporate-color-1);
 }
 
 .category span {
@@ -337,12 +282,12 @@ strong {
 .page-link {
 	padding: 5px 15px;
 	background-color: #fff;
-	border: 1px solid #dc3545;
+	border: 1px solid var(--corporate-color-1);
 	font-size: 18px;
 }
 
 .page-link.active {
-	background-color: #dc354580;
+	background-color: var(--corporate-color-1)80;
 }
 
 .mobile-wrap {
@@ -390,7 +335,7 @@ strong {
 	width: 416px;
 	height: 277px;
 	border-radius: 50%;
-	background-color: #dc3545;
+	background-color: var(--corporate-color-1);
 	z-index: 1;
 }
 
@@ -402,7 +347,7 @@ strong {
 }
 
 .archive-product-page.active {
-	border: 1px solid #dc3545;
+	border: 1px solid var(--corporate-color-1);
 }
 
 .nav-scroller {
@@ -432,7 +377,7 @@ strong {
 
 .archive-portfolio-section-2 .nav-item a.active,
 .archive-portfolio-section-2 .nav-item button.active {
-	color: #dc3545;
+	color: var(--corporate-color-1);
 }
 
 .card-portfolio {
@@ -569,16 +514,6 @@ strong {
 	color: #fff;
 }
 
-.single-product-section .magnifier {
-	transition: 0.35s;
-	opacity: 0;
-	position: absolute;
-	background: url(img/ico/magnifying-glass.svg) no-repeat center;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-}
 
 .single-product-section .magnifier:hover {
 	opacity: 1;
@@ -602,7 +537,7 @@ strong {
 }
 
 .widget_product_categories ul.product-categories li.cat-item.current-cat a {
-	color: #dc3545;
+	color: var(--corporate-color-1);
 }
 
 h6,
