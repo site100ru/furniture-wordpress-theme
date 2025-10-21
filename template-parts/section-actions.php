@@ -30,23 +30,23 @@
         <?php if ($args['section_actions_place'] == 'actions-page') { ?>
             <div class="row text-start">
                 <div class="col-md-6">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-1.jpg"
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-1.webp"
                         class="img-fluid rounded mb-3" alt="">
                     <p class="mb-5 d-none">Бесплатная доставка</p>
                 </div>
                 <div class="col-md-6">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-4.jpg" class="img-fluid rounded mb-3" alt="Акция">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-4.webp" class="img-fluid rounded mb-3" alt="Акция">
                 </div>
                 <div class="col-md-4">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-4.jpg" class="img-fluid rounded mb-3" alt="Акция">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-4.webp" class="img-fluid rounded mb-3" alt="Акция">
                 </div>
                 <div class="col-md-4">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-1.jpg"
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-1.webp"
                         class="img-fluid rounded mb-3" alt="">
                     <p class="mb-5 d-none">Бесплатная доставка</p>
                 </div>
                 <div class="col-md-4">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-1.jpg"
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-1.webp"
                         class="img-fluid rounded mb-3" alt="">
                     <p class="mb-5 d-none">Бесплатная доставка</p>
                 </div>
@@ -56,7 +56,7 @@
 							<div class="blue_circle">
 								<h4>Бесплатная<br>доставка</h4>
 							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/img/action.jpg" class="img-fluid" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/action.webp" class="img-fluid" alt="">
 						</div>
 					</a>
 				</div>
@@ -66,7 +66,7 @@
 							<div class="blue_circle">
 								<h4>Бесплатная<br>доставка</h4>
 							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/img/action.jpg" class="img-fluid" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/action.webp" class="img-fluid" alt="">
 						</div>
 					</a>
 				</div-->
@@ -74,15 +74,15 @@
         <?php } else if ($args['section_actions_place'] == 'home-page') { ?>
             <div class="row text-start">
                 <div class="col-md-4">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-1.jpg"
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-1.webp"
                         class="img-fluid rounded mb-3" alt="">
                     <p class="mb-5 d-none">Бесплатная доставка</p>
                 </div>
                 <div class="col-md-4">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-4.jpg" class="img-fluid rounded mb-3" alt="Акция">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-4.webp" class="img-fluid rounded mb-3" alt="Акция">
                 </div>
                 <div class="col-md-4">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-4.jpg" class="img-fluid rounded mb-3" alt="Акция">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-4.webp" class="img-fluid rounded mb-3" alt="Акция">
                 </div>
             </div>
         <?php } ?>
