@@ -315,7 +315,7 @@
     <!-- /Mobile version -->
 
     <!-- Footer -->
-    <footer style="padding: 29px 0;">
+    <footer>
         <div class="container">
             <div class="row">
                 <div class="col text-start text-md-center">
