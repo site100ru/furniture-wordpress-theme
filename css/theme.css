@@ -208,6 +208,8 @@ a:hover {
 }
 /*** END CHECKBOX ***/
 
+
+/*** NAVBAR ***/
 .navbar-light .navbar-nav .nav-link {
 	color: #c8c8c8;
 }
@@ -230,7 +232,7 @@ a:hover {
 	color: var(--corporate-color-1);
 }
 
-/*** END GENERAL ***/
+/*** END NAVBAR ***/
 
 
 /*** CAROUSEL ***/
