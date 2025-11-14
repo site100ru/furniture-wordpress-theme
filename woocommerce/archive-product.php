@@ -616,7 +616,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-1.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-1.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Прямая</h3>
@@ -628,7 +628,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-2.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-2.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Угловая</h3>
@@ -640,7 +640,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-3.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-3.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">П-образная</h3>
@@ -652,7 +652,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-4.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-4.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">С островком</h3>
@@ -662,7 +662,7 @@ do_action('woocommerce_before_main_content');
 									<input type="radio" id="answer-2-1-5" name="quostion-2-1" class="checkbox" value="Пока не знаю">
 									<div class="option_inner">
 										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-5.jpg" style="width: 100%;">
+										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-5.webp" style="width: 100%;">
 									</div>
 								</label>
 								<h3>Пока не знаю</h3>
@@ -779,7 +779,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-1.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-1.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Современный</h3>
@@ -791,7 +791,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-2.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-2.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Классический</h3>
@@ -803,7 +803,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-3.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-3.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Лофт</h3>
@@ -815,7 +815,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-4.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-4.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Пока не знаю, нужна консультация</h3>
@@ -840,7 +840,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-1.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-1.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">ЛДСП/ЛМДФ</h3>
@@ -852,7 +852,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-2.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-2.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Пленка</h3>
@@ -864,7 +864,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-3.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-3.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Эмаль</h3>
@@ -876,7 +876,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-4.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-4.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Пластик</h3>
@@ -888,7 +888,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-5.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-5.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Массив</h3>
@@ -900,7 +900,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-6.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-6.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Пока не знаю, нужна консультация</h3>
@@ -925,7 +925,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-1.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-1.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Скидка 10%</h3>
@@ -937,7 +937,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-2.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-2.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Беспроцентная рассрочка на 6 месяцев</h3>
@@ -949,7 +949,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-4.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-4.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Скидка 15% на заказ шкафа в теченее года</h3>
@@ -959,7 +959,7 @@ do_action('woocommerce_before_main_content');
 									<input type="radio" id="answer-6-1-4" name="quostion-6-1" class="checkbox" value="С островком">
 									<div class="option_inner">
 										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-4.jpg" style="width: 100%;">
+										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-4.webp" style="width: 100%;">
 									</div>
 								</label>
 								<h3>Пластик</h3>
@@ -1023,7 +1023,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-1.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-1.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Корпусный</h3>
@@ -1035,7 +1035,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-2.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-2.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Встроенный</h3>
@@ -1047,7 +1047,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-3.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-3.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Угловой</h3>
@@ -1059,7 +1059,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-4.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-4.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Радиусный</h3>
@@ -1071,7 +1071,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-5.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-5.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Гардеробный</h3>
@@ -1083,7 +1083,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-6.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-6.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Пока не знаю</h3>
@@ -1107,7 +1107,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-1.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-1.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">ЛДСП</h3>
@@ -1119,7 +1119,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-2.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-2.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Пескоструй</h3>
@@ -1131,7 +1131,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-3.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-3.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Зеркало</h3>
@@ -1143,7 +1143,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-4.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-4.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Фотопечать</h3>
@@ -1155,7 +1155,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-5.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-5.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Комбинированный</h3>
@@ -1167,7 +1167,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-6.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-6.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Пока не знаю, нужна консультация</h3>
@@ -1303,7 +1303,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-1.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-1.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">1 дверь</h3>
@@ -1315,7 +1315,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-2.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-2.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">2 двери</h3>
@@ -1327,7 +1327,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-3.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-3.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">3 двери</h3>
@@ -1339,7 +1339,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-4.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-4.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">4 двери</h3>
@@ -1351,7 +1351,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-5.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-5.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">5 дверей</h3>
@@ -1363,7 +1363,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-6.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-6.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Более 5 дверей</h3>
@@ -1387,7 +1387,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-1.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-1.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Скидка 15%</h3>
@@ -1399,7 +1399,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-2.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-2.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Беспроцентная рассрочка на 6 месяцев</h3>
@@ -1411,7 +1411,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-3.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-3.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Бесплатная доставка и установка</h3>
@@ -1423,7 +1423,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-4.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-4.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Скидка 10% на заказ кухни в теченее года</h3>
@@ -1484,7 +1484,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/1-1.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/1-1.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Кухня</h3>
@@ -1496,7 +1496,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/1-2.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/1-2.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Шкаф или гардеробная</h3>
@@ -1508,7 +1508,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/1-3.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/1-3.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Другая корпусная мебель</h3>
@@ -1534,7 +1534,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-1.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-1.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Прямая</h3>
@@ -1546,7 +1546,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-2.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-2.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Угловая</h3>
@@ -1558,7 +1558,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-3.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-3.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">П-образная</h3>
@@ -1570,7 +1570,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-4.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-4.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">С островком</h3>
@@ -1580,7 +1580,7 @@ do_action('woocommerce_before_main_content');
 									<input type="radio" id="answer-2-1-5" name="quostion-2-1" class="checkbox" value="Пока не знаю">
 									<div class="option_inner">
 										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-5.jpg" style="width: 100%;">
+										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-5.webp" style="width: 100%;">
 									</div>
 								</label>
 								<h3>Пока не знаю</h3>
@@ -1697,7 +1697,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-1.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-1.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Современный</h3>
@@ -1709,7 +1709,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-2.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-2.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Классический</h3>
@@ -1721,7 +1721,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-3.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-3.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Лофт</h3>
@@ -1733,7 +1733,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-4.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-4.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Пока не знаю, нужна консультация</h3>
@@ -1758,7 +1758,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-1.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-1.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">ЛДСП/ЛМДФ</h3>
@@ -1770,7 +1770,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-2.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-2.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Пленка</h3>
@@ -1782,7 +1782,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-3.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-3.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Эмаль</h3>
@@ -1794,7 +1794,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-4.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-4.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Пластик</h3>
@@ -1806,7 +1806,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-5.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-5.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Массив</h3>
@@ -1818,7 +1818,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-6.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-6.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Пока не знаю, нужна консультация</h3>
@@ -1843,7 +1843,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-1.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-1.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Скидка 10%</h3>
@@ -1855,7 +1855,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-2.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-2.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Беспроцентная рассрочка на 6 месяцев</h3>
@@ -1867,7 +1867,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-4.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-4.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Скидка 15% на заказ шкафа в теченее года</h3>
@@ -1877,7 +1877,7 @@ do_action('woocommerce_before_main_content');
 									<input type="radio" id="answer-6-1-4" name="quostion-6-1" class="checkbox" value="С островком">
 									<div class="option_inner">
 										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-4.jpg" style="width: 100%;">
+										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-4.webp" style="width: 100%;">
 									</div>
 								</label>
 								<h3>Пластик</h3>
@@ -1936,7 +1936,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-1.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-1.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Корпусный</h3>
@@ -1948,7 +1948,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-2.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-2.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Встроенный</h3>
@@ -1960,7 +1960,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-3.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-3.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Угловой</h3>
@@ -1972,7 +1972,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-4.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-4.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Радиусный</h3>
@@ -1984,7 +1984,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-5.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-5.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Гардеробный</h3>
@@ -1996,7 +1996,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-6.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-6.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Пока не знаю</h3>
@@ -2020,7 +2020,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-1.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-1.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">ЛДСП</h3>
@@ -2032,7 +2032,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-2.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-2.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Пескоструй</h3>
@@ -2044,7 +2044,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-3.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-3.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Зеркало</h3>
@@ -2056,7 +2056,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-4.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-4.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Фотопечать</h3>
@@ -2068,7 +2068,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-5.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-5.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Комбинированный</h3>
@@ -2080,7 +2080,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-6.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-6.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Пока не знаю, нужна консультация</h3>
@@ -2216,7 +2216,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-1.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-1.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">1 дверь</h3>
@@ -2228,7 +2228,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-2.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-2.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">2 двери</h3>
@@ -2240,7 +2240,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-3.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-3.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">3 двери</h3>
@@ -2252,7 +2252,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-4.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-4.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">4 двери</h3>
@@ -2264,7 +2264,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-5.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-5.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">5 дверей</h3>
@@ -2276,7 +2276,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-6.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-6.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Более 5 дверей</h3>
@@ -2300,7 +2300,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-1.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-1.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Скидка 15%</h3>
@@ -2312,7 +2312,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-2.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-2.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Беспроцентная рассрочка на 6 месяцев</h3>
@@ -2324,7 +2324,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-3.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-3.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Бесплатная доставка и установка</h3>
@@ -2336,7 +2336,7 @@ do_action('woocommerce_before_main_content');
                                             <div class="shadow-wrapper">
                                                 <div class="shadow-wrapper-decoration"></div>
                                             </div>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-4.jpg" style="width: 100%;">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-4.webp" style="width: 100%;">
                                         </div>
                                     </label>
                                     <h3 class="mb-3 mb-md-0">Скидка 10% на заказ кухни в теченее года</h3>

@@ -691,19 +691,6 @@ a.navbar-brand {
 } */
 /** End main home section **/
 
-.home-cutting {
-	min-height: 400px;
-	background: url(../img/header-cutting-bg.jpg) 100% 0%;
-	background-size: cover;
-	padding-top: 86px;
-}
-
-@media (max-width: 991.98px) {
-	.home-cutting {
-		padding-top: 55px;
-	}
-}
-
 .home-subtitle {
 	font-family: Gilroy-Light;
 	font-size: 24px;
@@ -2517,9 +2504,6 @@ footer {
 		max-width: 58px;
 	}
 
-	#header-slide-4 {
-		background: url(../img/main-header-slide-4.jpg) 70% 30%;
-	}
 	/* END HEADER */
 
 	.home-section_main {
