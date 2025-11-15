@@ -800,7 +800,7 @@ function echo_description()
     } elseif ( is_page() ) {
         echo get_the_excerpt();
     
-    // Во всех других случаях
+     // Во всех других случаях
     } else {
         echo get_the_title();
     }
