@@ -797,8 +797,12 @@ function echo_description()
         echo get_the_excerpt($shop_page_id);
 
         // Если обычная страница
-    } else {
+    } elseif {
         echo get_the_excerpt();
+    
+    // Во всех других случаях
+    } else {
+        echo get_the_title();
     }
 }
 /*** END ДЕЛАЕМ ПРАВИЛЬНЫЙ DESCRIPTION ДЛЯ КАЖДОЙ СТРАНИЦЫ ***/
