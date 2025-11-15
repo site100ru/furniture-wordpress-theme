@@ -32,7 +32,11 @@ if ( ! $short_description ) {
 <div class="woocommerce-product-details__short-description">
 	<div class="row justify-content-center">
 		<div class="col">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-title-dec.svg" class="mb-5">
+            <svg width="62" height="14" viewBox="0 0 62 14" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon mb-5">
+                    <rect x="48" width="14" height="14" rx="3" />
+                    <rect x="24" width="14" height="14" rx="3" />
+                    <rect width="14" height="14" rx="3" />
+                </svg>
 
 			<?php
 				echo $short_description;

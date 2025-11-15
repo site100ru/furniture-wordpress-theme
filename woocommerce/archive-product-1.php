@@ -5,10 +5,10 @@
  * 
  **/
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 //get_header( 'shop' );
-get_header( '2' );
+get_header('2');
 
 /**
  * Hook: woocommerce_before_main_content.
@@ -17,55 +17,66 @@ get_header( '2' );
  * @hooked woocommerce_breadcrumb - 20
  * @hooked WC_Structured_Data::generate_website_data() - 30
  */
-do_action( 'woocommerce_before_main_content' );
+do_action('woocommerce_before_main_content');
 
 ?>
 
 
 <!-- Header -->
 <header id="header-catalogy" class="woocommerce-products-header">
-	<div class="container">
-		<div class="row align-items-center text-start" style="min-height: 410px;">
-			<div class="col py-5">
-				<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-					<h1 class="woocommerce-products-header__title page-title mb-3">111<?php woocommerce_page_title(); ?></h1>
-				<?php endif; ?>
-				<?php
-					if ( is_shop() ) {
-						echo '<h2 class="mb-4 mb-md-5 home-sub-title">Корпусная мебель на заказ по Вашим размерам</h2>';
-					} else {
-						echo '<h2 class="mb-4 mb-md-5 home-sub-title">На заказ по Вашим размерам</h2>';
-					}
-				?>
-				<?php
-				/**
-				 * Hook: woocommerce_archive_description.
-				 *
-				 * @hooked woocommerce_taxonomy_archive_description - 10
-				 * @hooked woocommerce_product_archive_description - 10
-				 */
-				//do_action( 'woocommerce_archive_description' );
-				?>
-				<!--p class="home-description mb-0">Собственное производство в Санкт-Петербурге жалюзи и рулонных штор, готовых и на заказ от 540 руб./м2. Оформляем окна любого размера и конфигурации. Бесплатный выезд замерщика с образцами. Срок изготовления и доставки от 2 до 5 дней. Гарантия 2 года. Европейская фурнитура.</p-->
-				<!--button type="button" class="btn btn-lg btn-orange mt-4">Вызвать замерщика</button-->
-				
-				<!-- Home advantages -->
-				<div class="row pb-2">
-					<div class="col-md-6 col-lg-3 mb-2 mb-md-0">
+    <div class="container">
+        <div class="row align-items-center text-start" style="min-height: 410px;">
+            <div class="col py-5">
+                <?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
+                    <h1 class="woocommerce-products-header__title page-title mb-3">111<?php woocommerce_page_title(); ?></h1>
+                <?php endif; ?>
+                <?php
+                if (is_shop()) {
+                    echo '<h2 class="mb-4 mb-md-5 home-sub-title">Корпусная мебель на заказ по Вашим размерам</h2>';
+                } else {
+                    echo '<h2 class="mb-4 mb-md-5 home-sub-title">На заказ по Вашим размерам</h2>';
+                }
+                ?>
+                <?php
+                /**
+                 * Hook: woocommerce_archive_description.
+                 *
+                 * @hooked woocommerce_taxonomy_archive_description - 10
+                 * @hooked woocommerce_product_archive_description - 10
+                 */
+                //do_action( 'woocommerce_archive_description' );
+                ?>
+                <!--p class="home-description mb-0">Собственное производство в Санкт-Петербурге жалюзи и рулонных штор, готовых и на заказ от 540 руб./м2. Оформляем окна любого размера и конфигурации. Бесплатный выезд замерщика с образцами. Срок изготовления и доставки от 2 до 5 дней. Гарантия 2 года. Европейская фурнитура.</p-->
+                <!--button type="button" class="btn btn-lg btn-orange mt-4">Вызвать замерщика</button-->
+
+                <!-- Home advantages -->
+                <div class="row pb-2">
+                    <div class="col-md-6 col-lg-3 mb-2 mb-md-0">
+                        <div class="row align-items-center">
+                            <div class="col-2 col-md-3">
+                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
+                                    <circle cx="30" cy="30" r="30" fill="currentColor" />
+                                    <path
+                                        d="M19.274 15.875c-.89 0-1.607.838-1.607 1.875v21.563c0 1.552 1.08 2.812 2.41 2.812H40.97c1.331 0 2.41-1.26 2.41-2.812V22.918c0-1.066-.973-1.74-1.777-1.236l-7.865 4.94v-3.704c0-1.066-.974-1.74-1.778-1.236l-7.865 4.94V17.75c0-1.037-.718-1.875-1.607-1.875z"
+                                        fill="#fff" />
+                                </svg>
+                            </div>
+                            <div class="col-10 col-md-9">
+                                <h3 class="text-light mb-0">Собственное производство</h3>
+                                <p class="home-advantage-description">Сроком от 10 дней</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--div class="col-md-6 col-lg-3 mb-2 mb-md-0">
 						<div class="row align-items-center">
 							<div class="col-2 col-md-3">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/home-advantage-manufacture-icon.svg">
-							</div>
-							<div class="col-10 col-md-9">
-								<h3 class="text-light mb-0">Собственное производство</h3>
-								<p class="home-advantage-description">Сроком от 10 дней</p>
-							</div>
-						</div>
-					</div>
-					<!--div class="col-md-6 col-lg-3 mb-2 mb-md-0">
-						<div class="row align-items-center">
-							<div class="col-2 col-md-3">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/home-advantage-economy-icon.svg">
+								<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
+    <circle cx="30" cy="30" r="30" fill="currentColor" />
+    <path fill="#fff"
+        d="M43.887 35.369c-.57-.044-1.757.602-2.086.763-1.16.584-2.763 1.497-3.818 2.223-.075.05-.174.118-.249.161-.471.305-.974.51-1.533.627-3.067.652-7.538.727-7.538.727l-.26.012a.37.37 0 1 1-.056-.739l6.65-.633a1.413 1.413 0 0 0 1.235-1.533c-.08-.77-.789-1.335-1.521-1.255l-5.911-.074a6.6 6.6 0 0 1-1.434-.217c-3.812-1.112-5.96-.069-7.103.416a1.38 1.38 0 0 0-1.279-.659l-2.552.168c-.85.056-1.49.764-1.428 1.583l.41 5.663c.056.82.795 1.434 1.64 1.378l2.55-.168c.541-.037.976-.366 1.168-.82l11.2.485c1.249.13 2.416-.018 3.515-.596l.323-.168 8.462-4.954c.416-.242.714-.665.727-1.136.024-.565-.305-1.199-1.112-1.255m-25.896 7.27c-.479 0-.87-.373-.87-.838 0-.466.392-.838.87-.838s.869.372.869.838-.391.838-.87.838" />
+    <path fill="#fff"
+        d="M37.859 37.132c.863-.602 2.632-1.565 3.632-2.068.304-.149.62-.304.962-.422-.434-.292-.9-.304-1.385-.118-.95.379-2.7 1.223-3.594 1.707q-.011.019-.013.038c.062.186.112.379.13.577.02.162.013.317.007.472q.121-.093.26-.186M40.143 33.96c-.434-.28-.894-.293-1.365-.107-.59.23-1.9.659-2.484.97.248.154.472.347.664.57.038-.025.075-.056.118-.08l.429-.236c.62-.342 1.956-.814 2.638-1.118M39.293 22.945a4.652 4.652 0 0 0-1.825-8.928 4.656 4.656 0 0 0-4.65 4.65c0 .025.005.05.005.074a8.54 8.54 0 0 1 6.47 4.204M31.935 33.965a6.754 6.754 0 0 0 6.756-6.755 6.754 6.754 0 0 0-6.756-6.755 6.754 6.754 0 0 0-6.755 6.755 6.754 6.754 0 0 0 6.755 6.755m-2.359-4.085q.091-.337.193-.664c.08-.255.149-.286.385-.168.403.211.825.323 1.272.379.286.037.572.006.832-.112.497-.217.578-.795.155-1.136a2 2 0 0 0-.471-.28c-.435-.192-.888-.335-1.304-.583-.665-.398-1.093-.95-1.043-1.757.056-.92.577-1.49 1.415-1.795.348-.124.348-.124.354-.484v-.366c.006-.274.056-.323.323-.33h.255c.577 0 .577 0 .583.578 0 .41 0 .41.41.478.31.05.615.143.9.267.162.068.218.18.174.348-.074.248-.143.503-.223.751-.075.236-.15.267-.38.162a2.9 2.9 0 0 0-1.427-.286 1 1 0 0 0-.379.08c-.434.187-.503.665-.136.963.186.149.397.255.62.348.385.161.77.31 1.13.509 1.162.64 1.472 2.098.652 3.085-.298.36-.676.603-1.123.72-.193.057-.286.156-.274.36.007.2 0 .398 0 .597 0 .18-.093.273-.267.28a11 11 0 0 1-.645 0c-.187-.007-.28-.113-.28-.293 0-.142 0-.291-.006-.434-.006-.323-.012-.335-.323-.385a4.1 4.1 0 0 1-1.148-.33c-.28-.13-.305-.204-.224-.502" />
+</svg>
 							</div>
 							<div class="col-10 col-md-9">
 								<h3 class="text-light mb-0">Рассрочка 0%</h3>
@@ -73,68 +84,78 @@ do_action( 'woocommerce_before_main_content' );
 							</div>
 						</div>
 					</!--div-->
-					<div class="col-md-6 col-lg-3 mb-2 mb-md-0">
-						<div class="row align-items-center">
-							<div class="col-2 col-md-3">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/home-advantage-free-measure-icon.svg">
-							</div>
-							<div class="col-10 col-md-9">
-								<h3 class="text-light mb-0">Замер с образцами материалов</h3>
-								<p class="home-advantage-description">Входит в стоимость кухни</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-3 mb-md-0">
-						<div class="row align-items-center">
-							<div class="col-2 col-md-3">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/home-advantage-discount-icon.svg">
-							</div>
-							<div class="col-10 col-md-9">
-								<h3 class="text-light mb-0">Монтаж с гарантией</h3>
-								<p class="home-advantage-description">2 года!</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /Home advantages -->
-				<div class="row align-items-center">
-					<div class="col">
-						<a href="#quiz-sp">
-							<button class="btn btn-lg btn-corporate-color-1 ps-3 pe-3 mt-3 mt-md-5">Рассчитать стоимость мебели</button>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                    <div class="col-md-6 col-lg-3 mb-2 mb-md-0">
+                        <div class="row align-items-center">
+                            <div class="col-2 col-md-3">
+                                <svg width="60" height="60" viewBox="0 0 60 60" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
+                                    <circle cx="30" cy="30" r="30" fill="currentColor" />
+                                    <path
+                                        d="M17.012 40.475a2.816 2.816 0 0 0 2.8 2.525h24.375A2.813 2.813 0 0 0 47 40.188v-5.626a2.813 2.813 0 0 0-2.812-2.812h-2.813v4.688a.94.94 0 0 1-.937.937.94.94 0 0 1-.938-.937V31.75h-3.75v4.688a.94.94 0 0 1-.937.937.94.94 0 0 1-.938-.937V31.75h-3.75v4.688a.94.94 0 0 1-.937.937.94.94 0 0 1-.938-.937V31.75h-4.687a.94.94 0 0 1-.938-.937.94.94 0 0 1 .938-.938h4.687v-3.75h-4.687a.94.94 0 0 1-.938-.937.94.94 0 0 1 .938-.938h4.687V20.5h-4.687a.94.94 0 0 1-.938-.937.94.94 0 0 1 .938-.938h4.687v-2.812A2.813 2.813 0 0 0 25.438 13h-5.625A2.813 2.813 0 0 0 17 15.813v24.374q.002.149.012.288"
+                                        fill="#fff" />
+                                </svg>
+                            </div>
+                            <div class="col-10 col-md-9">
+                                <h3 class="text-light mb-0">Замер с образцами материалов</h3>
+                                <p class="home-advantage-description">Входит в стоимость кухни</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-md-0">
+                        <div class="row align-items-center">
+                            <div class="col-2 col-md-3">
+                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
+                                    <circle cx="30" cy="30" r="30" fill="currentColor" />
+                                    <path
+                                        d="M29.315 13.358a2.15 2.15 0 0 1 2.37 0l1.159.762c.39.254.846.377 1.308.351l1.387-.084a2.15 2.15 0 0 1 2.05 1.185l.626 1.243c.208.417.547.749.957.957l1.256.632a2.15 2.15 0 0 1 1.185 2.05l-.084 1.387a2.16 2.16 0 0 0 .351 1.309l.768 1.159a2.15 2.15 0 0 1 0 2.37l-.768 1.165c-.254.39-.377.846-.351 1.308l.084 1.387a2.15 2.15 0 0 1-1.185 2.05l-1.243.626a2.16 2.16 0 0 0-.957.957l-.632 1.256a2.15 2.15 0 0 1-2.05 1.185l-1.387-.084a2.16 2.16 0 0 0-1.309.351l-1.159.768a2.15 2.15 0 0 1-2.37 0l-1.165-.768a2.17 2.17 0 0 0-1.308-.351l-1.387.084a2.15 2.15 0 0 1-2.05-1.185l-.626-1.243a2.16 2.16 0 0 0-.957-.957l-1.256-.632a2.15 2.15 0 0 1-1.185-2.05l.084-1.387a2.16 2.16 0 0 0-.351-1.309l-.762-1.165a2.15 2.15 0 0 1 0-2.37l.762-1.159c.254-.39.377-.846.351-1.308l-.084-1.387a2.15 2.15 0 0 1 1.185-2.05l1.243-.626c.417-.215.755-.553.964-.97l.625-1.243a2.15 2.15 0 0 1 2.05-1.185l1.387.084a2.16 2.16 0 0 0 1.309-.351zM35.708 25.5a5.208 5.208 0 1 0-10.417 0 5.208 5.208 0 0 0 10.417 0M18.085 41.763l2.806-6.673a.05.05 0 0 1 .026.026l.625 1.243a4.25 4.25 0 0 0 4.036 2.331l1.387-.084c.013 0 .032 0 .045.012l1.16.769a4.4 4.4 0 0 0 1.047.501l-2.447 5.814a1.03 1.03 0 0 1-.866.631 1.03 1.03 0 0 1-.964-.468l-2.096-3.21-3.653.54a1.06 1.06 0 0 1-.976-.39 1.04 1.04 0 0 1-.137-1.042zm16.145 3.932-2.447-5.807c.364-.117.716-.28 1.048-.501l1.158-.769c.014-.006.027-.013.046-.013l1.387.085a4.25 4.25 0 0 0 4.036-2.33l.625-1.244a.05.05 0 0 1 .026-.026l2.813 6.673c.143.345.091.742-.137 1.042s-.605.449-.976.39l-3.653-.54-2.096 3.203a1.041 1.041 0 0 1-1.83-.163"
+                                        fill="#fff" />
+                                </svg>
+                            </div>
+                            <div class="col-10 col-md-9">
+                                <h3 class="text-light mb-0">Монтаж с гарантией</h3>
+                                <p class="home-advantage-description">2 года!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Home advantages -->
+                <div class="row align-items-center">
+                    <div class="col">
+                        <a href="#quiz-sp">
+                            <button class="btn btn-lg btn-corporate-color-1 ps-3 pe-3 mt-3 mt-md-5">Рассчитать стоимость мебели</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
 <!-- /Header -->
 
 
 <!-- Archive product cat -->
 <section class="pb-5">
-	<div class="container">
-		<div class="row">
-			<div class="col">
-				<div class="breadcrumbs py-4">
-					<?php woocommerce_breadcrumb(); ?>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col">
-				<h2 class="text-center mb-2">Каталог проектов</h2>
-				<p class="section-description text-center mb-3">Выбирайте из нашего каталога или присылайте свои проекты!</p>
-				<div class="title-line mb-5"></div>
-				<div class="row">
-					<div class="col-md-2">
-						<?php dynamic_sidebar( 'wsidebar-1' ); ?>
-					</div>
-					<div class="col-md-10">
-						<div class="row">
-							<?php
-							
-							/*
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="breadcrumbs py-4">
+                    <?php woocommerce_breadcrumb(); ?>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2 class="text-center mb-2">Каталог проектов</h2>
+                <p class="section-description text-center mb-3">Выбирайте из нашего каталога или присылайте свои проекты!</p>
+                <div class="title-line mb-5"></div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <?php dynamic_sidebar('wsidebar-1'); ?>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="row">
+                            <?php
+
+                            /*
 							$obj = get_queried_object();
 							$cat_name = $obj->name;
 							
@@ -152,31 +173,31 @@ do_action( 'woocommerce_before_main_content' );
 							) );
 							*/
 
-							
-							
-							
-							
-							if ( woocommerce_product_loop() ) {
 
-								/**
-								 * Hook: woocommerce_before_shop_loop.
-								 *
-								 * @hooked woocommerce_output_all_notices - 10
-								 * @hooked woocommerce_result_count - 20
-								 * @hooked woocommerce_catalog_ordering - 30
-								 */
-								//do_action( 'woocommerce_before_shop_loop' );
-								
-								// Нижее выводятся карточки категорий и подкатегорий
-								woocommerce_product_loop_start();
-								
-									
-							
-								
-								if ( wc_get_loop_prop( 'total' ) ) {
-									
-										
-									/*
+
+
+
+                            if (woocommerce_product_loop()) {
+
+                                /**
+                                 * Hook: woocommerce_before_shop_loop.
+                                 *
+                                 * @hooked woocommerce_output_all_notices - 10
+                                 * @hooked woocommerce_result_count - 20
+                                 * @hooked woocommerce_catalog_ordering - 30
+                                 */
+                                //do_action( 'woocommerce_before_shop_loop' );
+
+                                // Нижее выводятся карточки категорий и подкатегорий
+                                woocommerce_product_loop_start();
+
+
+
+
+                                if (wc_get_loop_prop('total')) {
+
+
+                                    /*
 									$args['tax_query'] = array(           
 										array(
 											'taxonomy' => 'product_tag',
@@ -188,214 +209,228 @@ do_action( 'woocommerce_before_main_content' );
 									
 									query_posts( $args );
 									*/
-									
-									/* Выводим все товары кроме тех, у которых есть тег Портфолио */
-									global $query_string;
-									// добавляем базовые параметры в массив $args
-									parse_str( $query_string, $args );
-									// добавляем/заменяем параметр post_type в массиве
-									$args['tax_query'] = array(           
-										array(
-											'taxonomy' => 'product_tag',
-											'field' => 'slug',
-											'terms' => 'portfolio',
-											'operator' => 'NOT IN'
-										)
-									);
-									query_posts( $args );
-									/* End Выводим все товары кроме тех, у которых есть тег Портфолио */
-									
-									
-									while ( have_posts() ) {
-										
-										the_post();
-										
-										/**
-										 * Hook: woocommerce_shop_loop.
-										 */
-										
-										do_action( 'woocommerce_shop_loop' );
-										
-										wc_get_template_part( 'content', 'product' );
-										
-									}
-								}
 
-								woocommerce_product_loop_end();
+                                    /* Выводим все товары кроме тех, у которых есть тег Портфолио */
+                                    global $query_string;
+                                    // добавляем базовые параметры в массив $args
+                                    parse_str($query_string, $args);
+                                    // добавляем/заменяем параметр post_type в массиве
+                                    $args['tax_query'] = array(
+                                        array(
+                                            'taxonomy' => 'product_tag',
+                                            'field' => 'slug',
+                                            'terms' => 'portfolio',
+                                            'operator' => 'NOT IN'
+                                        )
+                                    );
+                                    query_posts($args);
+                                    /* End Выводим все товары кроме тех, у которых есть тег Портфолио */
 
-								/**
-								 * Hook: woocommerce_after_shop_loop.
-								 *
-								 * @hooked woocommerce_pagination - 10
-								 */
-								do_action( 'woocommerce_after_shop_loop' );
-							} else {
-								/**
-								 * Hook: woocommerce_no_products_found.
-								 *
-								 * @hooked wc_no_products_found - 10
-								 */
-								do_action( 'woocommerce_no_products_found' );
-							}
 
-							/**
-							 * Hook: woocommerce_after_main_content.
-							 *
-							 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-							 */
-							do_action( 'woocommerce_after_main_content' );
+                                    while (have_posts()) {
 
-							/**
-							 * Hook: woocommerce_sidebar.
-							 *
-							 * @hooked woocommerce_get_sidebar - 10
-							 */
-							//do_action( 'woocommerce_sidebar' );
+                                        the_post();
 
-							?>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                                        /**
+                                         * Hook: woocommerce_shop_loop.
+                                         */
+
+                                        do_action('woocommerce_shop_loop');
+
+                                        wc_get_template_part('content', 'product');
+                                    }
+                                }
+
+                                woocommerce_product_loop_end();
+
+                                /**
+                                 * Hook: woocommerce_after_shop_loop.
+                                 *
+                                 * @hooked woocommerce_pagination - 10
+                                 */
+                                do_action('woocommerce_after_shop_loop');
+                            } else {
+                                /**
+                                 * Hook: woocommerce_no_products_found.
+                                 *
+                                 * @hooked wc_no_products_found - 10
+                                 */
+                                do_action('woocommerce_no_products_found');
+                            }
+
+                            /**
+                             * Hook: woocommerce_after_main_content.
+                             *
+                             * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
+                             */
+                            do_action('woocommerce_after_main_content');
+
+                            /**
+                             * Hook: woocommerce_sidebar.
+                             *
+                             * @hooked woocommerce_get_sidebar - 10
+                             */
+                            //do_action( 'woocommerce_sidebar' );
+
+                            ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 
 <!-- Portfolio -->
 <div id="portfolio-scroll-point" class="scroll-point"></div>
 <section class="bg-light pb-5">
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-md-10 py-5">
-				<h2 class="text-center mb-3">Примеры наших работ</h2>
-				<div class="title-line mb-5"></div>
-				<div id="carouselExampleIndicators2" class="carousel slide" data-bs-ride="carousel">
-					<div class="carousel-indicators" style="bottom: 5%;">
-						<?php
-							$product_cat = get_queried_object()->name;
-							
-							$count = 0;
-							
-							if ( $product_cat == 'product' ) {
-								$query = new WP_Query( array(
-									'post_type' => 'portfolio'
-								) );
-								
-								
-								while ( $query->have_posts() ) { $query->the_post();
-									if ( $count == 0 ) { ?>
-										<button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="<?php echo $count; ?>" class="active" aria-current="true" aria-label="Slide <?php echo $count + 1; ?>"></button>
-									<?php $count = $count + 1; } else { ?>
-										<button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="<?php echo $count; ?>" aria-label="Slide <?php echo $count + 1; ?>"></button>
-									<?php $count = $count + 1; }
-								}
-							} else {
-								
-								$query = new WP_Query( array(
-									'post_type' => 'portfolio',
-									/**/
-									'tax_query' => array(
-										array(
-											'taxonomy' => 'portfolio-cat',
-											'field' => 'slug',
-											'terms' => $product_cat
-										)
-									)
-								) );
-								
-								while ( $query->have_posts() ) { $query->the_post();
-									global $post;
-									if ( $count == 0 ) { ?>
-										<button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="<?php echo $count; ?>" class="active" aria-current="true" aria-label="Slide <?php echo $count + 1; ?>"></button>
-									<?php $count = $count + 1; } else { ?>
-										<button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="<?php echo $count; ?>" aria-label="Slide <?php echo $count + 1; ?>"></button>
-									<?php $count = $count + 1; }
-								}
-								
-							}
-						?>
-					</div>
-					<div class="carousel-inner">
-						<?php
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 py-5">
+                <h2 class="text-center mb-3">Примеры наших работ</h2>
+                <div class="title-line mb-5"></div>
+                <div id="carouselExampleIndicators2" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators" style="bottom: 5%;">
+                        <?php
+                        $product_cat = get_queried_object()->name;
 
-							
-							$product_cat = get_queried_object()->name;
-							
-							$count = 0;
-							
-							/* Если НЕ категория, то показываем ВСЕ фото из портфолио */
-							if ( $product_cat == 'product' ) {
-								$query = new WP_Query( array(
-									'post_type' => 'portfolio'
-								) );
-								
-								while ( $query->have_posts() ) { $query->the_post();
-									/* */
-									if ( $count == 0 ) { ?>
-										
-										<div class="carousel-item mb-4 active" data-bs-interval="100000">
-											<img src="<?php echo get_post_meta($post->ID, '_img-1')[0]; ?>" class="rounded shadow" alt="..." loading="lazy">
-										</div>
-									<?php $count = $count + 1; } else { ?>
-										
-										<div class="carousel-item mb-4">
-											<img src="<?php echo get_post_meta($post->ID, '_img-1')[0]; ?>" class="rounded shadow" alt="..." loading="lazy">
-										</div>
-									<?php }
-								}
-							} else {
-								/* Если категория, то показываем фото из этой категории */
-								
-								$query = new WP_Query( array(
-									'post_type' => 'portfolio',
-									/**/
-									'tax_query' => array(
-										array(
-											'taxonomy' => 'portfolio-cat',
-											'field' => 'slug',
-											'terms' => $product_cat
-										)
-									)
-								) );
-								
-								
-								while ( $query->have_posts() ) { $query->the_post();
-									global $post;
-									if ( $count == 0 ) { ?>
-										<div class="carousel-item mb-4 active" data-bs-interval="100000">
-											<img src="<?php echo get_post_meta($post->ID, '_img-1')[0]; ?>" class="rounded shadow" alt="..." loading="lazy">
-										</div>
-									<?php $count = $count + 1; } else { ?>
-										
-										<div class="carousel-item mb-4">
-											<img src="<?php echo get_post_meta($post->ID, '_img-1')[0]; ?>" class="rounded shadow" alt="..." loading="lazy">
-										</div>
-									<?php }
-								}
-							}
-							
-						?>
-					</div>
-					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/ico/arrow-left.svg">
-					</button>
-					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/ico/arrow-right.svg">
-					</button>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col">
-				<div class="row align-items-center text-center">
-					<div class="col">
-						<a href="https://dekorsever.ru/portfolio/"><button class="btn btn-lg btn-corporate-color-1 ps-3 pe-3">Смотреть все работы</button></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                        $count = 0;
+
+                        if ($product_cat == 'product') {
+                            $query = new WP_Query(array(
+                                'post_type' => 'portfolio'
+                            ));
+
+
+                            while ($query->have_posts()) {
+                                $query->the_post();
+                                if ($count == 0) { ?>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="<?php echo $count; ?>" class="active" aria-current="true" aria-label="Slide <?php echo $count + 1; ?>"></button>
+                                <?php $count = $count + 1;
+                                } else { ?>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="<?php echo $count; ?>" aria-label="Slide <?php echo $count + 1; ?>"></button>
+                                <?php $count = $count + 1;
+                                }
+                            }
+                        } else {
+
+                            $query = new WP_Query(array(
+                                'post_type' => 'portfolio',
+                                /**/
+                                'tax_query' => array(
+                                    array(
+                                        'taxonomy' => 'portfolio-cat',
+                                        'field' => 'slug',
+                                        'terms' => $product_cat
+                                    )
+                                )
+                            ));
+
+                            while ($query->have_posts()) {
+                                $query->the_post();
+                                global $post;
+                                if ($count == 0) { ?>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="<?php echo $count; ?>" class="active" aria-current="true" aria-label="Slide <?php echo $count + 1; ?>"></button>
+                                <?php $count = $count + 1;
+                                } else { ?>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="<?php echo $count; ?>" aria-label="Slide <?php echo $count + 1; ?>"></button>
+                        <?php $count = $count + 1;
+                                }
+                            }
+                        }
+                        ?>
+                    </div>
+                    <div class="carousel-inner">
+                        <?php
+
+
+                        $product_cat = get_queried_object()->name;
+
+                        $count = 0;
+
+                        /* Если НЕ категория, то показываем ВСЕ фото из портфолио */
+                        if ($product_cat == 'product') {
+                            $query = new WP_Query(array(
+                                'post_type' => 'portfolio'
+                            ));
+
+                            while ($query->have_posts()) {
+                                $query->the_post();
+                                /* */
+                                if ($count == 0) { ?>
+
+                                    <div class="carousel-item mb-4 active" data-bs-interval="100000">
+                                        <img src="<?php echo get_post_meta($post->ID, '_img-1')[0]; ?>" class="rounded shadow" alt="..." loading="lazy">
+                                    </div>
+                                <?php $count = $count + 1;
+                                } else { ?>
+
+                                    <div class="carousel-item mb-4">
+                                        <img src="<?php echo get_post_meta($post->ID, '_img-1')[0]; ?>" class="rounded shadow" alt="..." loading="lazy">
+                                    </div>
+                                <?php }
+                            }
+                        } else {
+                            /* Если категория, то показываем фото из этой категории */
+
+                            $query = new WP_Query(array(
+                                'post_type' => 'portfolio',
+                                /**/
+                                'tax_query' => array(
+                                    array(
+                                        'taxonomy' => 'portfolio-cat',
+                                        'field' => 'slug',
+                                        'terms' => $product_cat
+                                    )
+                                )
+                            ));
+
+
+                            while ($query->have_posts()) {
+                                $query->the_post();
+                                global $post;
+                                if ($count == 0) { ?>
+                                    <div class="carousel-item mb-4 active" data-bs-interval="100000">
+                                        <img src="<?php echo get_post_meta($post->ID, '_img-1')[0]; ?>" class="rounded shadow" alt="..." loading="lazy">
+                                    </div>
+                                <?php $count = $count + 1;
+                                } else { ?>
+
+                                    <div class="carousel-item mb-4">
+                                        <img src="<?php echo get_post_meta($post->ID, '_img-1')[0]; ?>" class="rounded shadow" alt="..." loading="lazy">
+                                    </div>
+                        <?php }
+                            }
+                        }
+
+                        ?>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
+                            <path d="M15.557 4.243a2 2 0 0 0-2.829-2.829L1.415 12.728a2 2 0 1 0 2.828 2.828z" />
+                            <path d="M12.728 26.87a2 2 0 1 0 2.829-2.828L4.243 12.728a2 2 0 1 0-2.829 2.828z" />
+                        </svg>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
+                            <path d="M12.443 23.757a2 2 0 0 0 2.829 2.829l11.313-11.314a2 2 0 1 0-2.828-2.828z" />
+                            <path d="M15.272 1.13a2 2 0 1 0-2.828 2.828l11.313 11.314a2 2 0 1 0 2.829-2.828z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="row align-items-center text-center">
+                    <div class="col">
+                        <a href="https://dekorsever.ru/portfolio/"><button class="btn btn-lg btn-corporate-color-1 ps-3 pe-3">Смотреть все работы</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <!-- /Portfolio -->
 
@@ -403,93 +438,136 @@ do_action( 'woocommerce_before_main_content' );
 
 <!-- Advantage section -->
 <section class="advantage bg-white py-5">
-	<div class="container">
-		<div class="row">
-			<div class="col align-items-center text-md-center">
-				<h2>Наши преимущества</h2>
-				<p class="advantages">Почему стоит выбрать компанию «Furniture»</p>
-				<img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-title-dec.svg" class="mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col align-items-center text-md-center">
+                <h2>Наши преимущества</h2>
+                <p class="advantages">Почему стоит выбрать компанию «Furniture»</p>
+                <svg width="62" height="14" viewBox="0 0 62 14" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon mb-5">
+                    <rect x="48" width="14" height="14" rx="3" />
+                    <rect x="24" width="14" height="14" rx="3" />
+                    <rect width="14" height="14" rx="3" />
+                </svg>
 
-				<div class="row">
-					<div class="col-lg-6 mb-4">
-						<div class="row">
-							<div class="col-3 col-md-2">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/measurement-ico.svg" class="img-fluid">
-							</div>
-							<div class="col-9 col-md-10">
-								<h3 class="advantage-title text-start">Замер и дизайн-проект бесплатно</h3>
-								<p class="text-start">При заключении договора наш специалист бесплатно сделает замер и разработает
-									дизайн-проект любого предмета мебели.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6 mb-4">
-						<div class="row">
-							<div class="col-3 col-md-2">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-advantage-ico.svg"
-									class="img-fluid">
-							</div>
-							<div class="col-9 col-md-10">
-								<h3 class="advantage-title text-start">Высокотехнологичное производство</h3>
-								<p class="text-start">Вся наша мебель изготавливаются на современном оборудовании фабрики Cucina, что
-									позволяет гарантировать нам высочайшее качество каждого изделия.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6 mb-4">
-						<div class="row">
-							<div class="col-3 col-md-2">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/advantage-guarantee-ico.svg"
-									class="img-fluid">
-							</div>
-							<div class="col-9 col-md-10">
-								<h3 class="advantage-title text-start">Гарантия 2 года</h3>
-								<p class="text-start">Мы даем максимальную гарантию на свою мебель, т.к. уверены в профессионализме
-									своих сотрудников и используемых материалах.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6 mb-4">
-						<div class="row">
-							<div class="col-3 col-md-2">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/discount-ico.svg" class="img-fluid">
-							</div>
-							<div class="col-9 col-md-10">
-								<h3 class="advantage-title text-start">Скидка +10% при повторном обращении</h3>
-								<p class="text-start">Мы изготавливаем любую корпусную мебель, а значит Вы можете заказать у нас кухню,
-									шкаф, прихожую или другую мебель в квартиру в едином стиле по выгодной цене.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6 mb-4">
-						<div class="row">
-							<div class="col-3 col-md-2">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/measurement-ico.svg" class="img-fluid">
-							</div>
-							<div class="col-9 col-md-10">
-								<h3 class="advantage-title text-start">Замер и дизайн-проект бесплатно</h3>
-								<p class="text-start">При заключении договора наш специалист бесплатно сделает замер и разработает
-									дизайн-проект Вашей будущей кухни</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6 mb-4">
-						<div class="row">
-							<div class="col-3 col-md-2">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/ico/section-advantage-ico.svg"
-									class="img-fluid">
-							</div>
-							<div class="col-9 col-md-10">
-								<h3 class="advantage-title text-start">Собственное производство</h3>
-								<p class="text-start">Мы обеспечиваем полный цикл изготовления кухни (проект, производство, доставка,
-									монтаж), без перекладывания обязанностей на посредников.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="row">
+                            <div class="col-3 col-md-2">
+                                <svg width="70" height="70" viewBox="0 0 70 70" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
+                                    <path
+                                        d="M70 51.201V36.025H16.27V16.338h8.75v-8.75h28.574v15.45H30.383l-10.8 5.4 10.8 5.4h36.199v-10.8H55.645v-17.5H23.638l-9.42 9.282v21.205H0v15.176h14.219v13.262h41.426v-9.844h-2.051v7.793H16.27v-11.21zM29.531 31.085 24.1 28.369l5.432-2.716zm24.063.702H31.582v-2.324h22.012zm0-4.375H31.582v-2.324h22.012zm6.426-2.324h4.511v6.7H60.02zm-4.376 0h2.325v6.7h-2.325zM22.97 8.97v5.317h-5.181zM2.05 38.076h3.418v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h3.555v6.7H2.051zm0 11.074v-2.324h65.898v2.324z" />
+                                    <path d="M63.3 28.37h-2.05v2.187h2.05z" />
+                                </svg>
+                            </div>
+                            <div class="col-9 col-md-10">
+                                <h3 class="advantage-title text-start">Замер и дизайн-проект бесплатно</h3>
+                                <p class="text-start">При заключении договора наш специалист бесплатно сделает замер и
+                                    разработает
+                                    дизайн-проект любого предмета мебели.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="row">
+                            <div class="col-3 col-md-2">
+                                <svg width="70" height="70" viewBox="0 0 70 70" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M22.285 58.79c-4.512 0-8.203-3.83-8.203-8.204 0-4.512 3.691-8.203 8.203-8.203s8.203 3.691 8.203 8.203-3.691 8.203-8.203 8.203m0-14.493c-3.418 0-6.152 2.871-6.152 6.152-.137 3.555 2.598 6.29 6.152 6.29a6.127 6.127 0 0 0 6.153-6.153c0-3.418-2.735-6.29-6.153-6.29" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M25.566 70h-6.699c-.547 0-.957-.41-.957-1.094v-3.418c-1.094-.273-2.187-.82-3.144-1.367l-2.598 2.461c-.41.41-.957.41-1.367 0l-4.785-4.785c-.41-.274-.41-.957 0-1.367l2.46-2.461c-.546-1.094-.956-2.051-1.23-3.145H3.828c-.547 0-1.094-.547-1.094-1.093v-6.563c0-.547.547-1.094 1.094-1.094h3.418c.41-.957.82-2.05 1.367-3.008L6.016 40.47c-.41-.41-.41-.957 0-1.367l4.785-4.786c.41-.41 1.094-.41 1.504 0l2.46 2.461c.958-.547 2.051-.957 3.145-1.23v-3.555c0-.547.41-.957 1.094-.957h6.7c.546 0 .956.41.956.957v3.555c1.094.273 2.188.684 3.145 1.23l2.46-2.46c.41-.41 1.094-.41 1.505 0l4.785 4.785c.41.41.41.957 0 1.367l-2.598 2.597c.547.957.957 2.051 1.23 3.145h3.555c.547 0 1.094.41 1.094.957v6.7c0 .546-.547 1.093-1.094 1.093h-3.554c-.274 1.094-.684 2.05-1.231 3.145l2.461 2.46c.41.41.41.957 0 1.368l-4.785 4.785c-.41.41-.957.41-1.367 0l-2.598-2.461c-.957.547-2.05.957-3.145 1.367v3.418c0 .547-.41.957-.957.957m-5.742-2.05h4.785v-3.282c0-.41.274-.82.82-.957a11.1 11.1 0 0 0 3.966-1.64c.41-.274.82-.137 1.23.136l2.324 2.324 3.418-3.418-2.324-2.324c-.41-.273-.41-.82-.137-1.23.684-1.23 1.367-2.598 1.64-3.965.138-.41.411-.82.958-.82h3.281v-4.649h-3.281c-.547 0-.82-.41-.957-.82-.274-1.367-.957-2.735-1.64-3.965-.274-.41-.274-.957.136-1.23l2.324-2.325-3.418-3.418-2.324 2.324c-.41.41-.82.41-1.23.137a11.1 11.1 0 0 0-3.965-1.64c-.547 0-.82-.41-.82-.82v-3.282h-4.786v3.281c0 .41-.273.82-.683.957-1.368.274-2.735.957-3.965 1.64-.41.274-.957.274-1.367 0l-2.325-2.46-3.28 3.418 2.323 2.324c.274.41.41.82.137 1.23-.82 1.231-1.367 2.598-1.777 3.965-.137.547-.547.82-.957.82H4.648v4.65h3.418c.41 0 .82.41.957.82.41 1.367.957 2.734 1.641 3.964.274.41.137.957-.137 1.23L8.203 61.25l3.418 3.418 2.324-2.324c.274-.41.82-.41 1.23-.137a11.1 11.1 0 0 0 3.966 1.64c.41.137.82.547.82.958v3.144zM54.414 47.852c-3.145 0-5.742-2.461-5.742-5.606s2.598-5.605 5.742-5.605 5.605 2.46 5.605 5.605c-.136 3.145-2.597 5.606-5.605 5.606m0-9.297c-2.05 0-3.691 1.777-3.691 3.691 0 2.05 1.64 3.691 3.691 3.691 1.914 0 3.555-1.64 3.555-3.69 0-2.052-1.64-3.692-3.555-3.692" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M56.465 55.098h-4.238c-.547 0-1.094-.41-1.094-.957V52.09a5 5 0 0 1-1.504-.684l-1.504 1.367c-.137.137-.41.274-.684.274-.273 0-.547-.137-.683-.274l-3.008-3.007a1.073 1.073 0 0 1 0-1.504l1.504-1.367c-.41-.547-.547-1.094-.684-1.641h-2.05a.935.935 0 0 1-.958-.957v-4.375c0-.547.41-.957.958-.957h2.05c.137-.547.41-1.094.684-1.64L43.75 35.82c-.41-.273-.41-.957 0-1.367l3.008-3.008c.136-.273.547-.41.683-.41.274 0 .547.137.684.41l1.504 1.367c.41-.273.957-.41 1.504-.683v-2.05c0-.548.547-.958 1.094-.958h4.238c.683 0 1.094.41 1.094.957v2.05c.547.138 1.093.411 1.64.684l1.367-1.503c.137-.137.41-.274.684-.274.273 0 .547.137.684.274l3.007 3.144c.41.41.41.957 0 1.367l-1.367 1.367c.274.547.41 1.094.684 1.641h1.914c.547 0 1.094.41 1.094 1.094v4.238c0 .547-.547 1.094-1.094 1.094h-1.914c-.274.547-.41 1.094-.684 1.504l1.367 1.504c.41.41.41.957 0 1.367l-3.007 3.144c-.137.137-.41.274-.684.274-.273 0-.547-.137-.684-.274L59.2 51.27c-.547.274-1.093.547-1.64.684v2.05c0 .684-.547 1.095-1.094 1.095m-3.281-1.914h2.324v-1.778c0-.547.273-.82.683-.957.957-.273 1.778-.547 2.461-1.093.41-.274.957-.137 1.23.136l1.368 1.23 1.64-1.64-1.23-1.23c-.41-.41-.41-.82-.273-1.23.547-.821.957-1.642 1.093-2.462.137-.41.547-.82.958-.82h1.777v-2.324h-1.778c-.41 0-.82-.274-.956-.684-.274-.82-.547-1.777-1.094-2.46-.137-.411-.137-.958.273-1.231l1.23-1.23-1.64-1.642L59.883 35c-.274.41-.82.41-1.23.137-.684-.41-1.505-.82-2.462-.957-.41-.137-.683-.547-.683-1.094v-1.64h-2.324v1.64c0 .547-.274.957-.82 1.094-.821.136-1.641.547-2.325.957-.41.273-.957.136-1.367-.137l-1.23-1.23-1.641 1.64 1.23 1.23c.41.274.41.82.274 1.231-.547.684-.82 1.64-1.094 2.461 0 .41-.41.684-.957.684h-1.777v2.324h1.777c.547 0 .957.41.957.82.273.82.547 1.64 1.094 2.598.136.41.136.82-.274 1.094l-1.23 1.367 1.64 1.64 1.23-1.367c.411-.273.958-.273 1.368-.136.684.546 1.504.82 2.324 1.093.547.137.82.41.82.957zM37.871 23.242c-3.828 0-6.973-3.144-6.973-7.11 0-3.827 3.145-6.972 6.973-6.972s6.973 3.145 6.973 6.973c0 3.965-3.145 7.11-6.973 7.11m0-12.031c-2.734 0-5.059 2.187-5.059 4.922S35 21.19 37.873 21.19c2.733 0 4.921-2.187 4.921-5.058a4.9 4.9 0 0 0-4.922-4.922" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M40.606 32.402H35a.934.934 0 0 1-.957-.957v-2.734c-.82-.273-1.64-.684-2.461-1.094l-1.914 2.051c-.41.41-.957.41-1.367 0l-3.828-3.828a1.073 1.073 0 0 1 0-1.504l1.914-1.914c-.41-.82-.684-1.64-.957-2.461h-2.871a.934.934 0 0 1-.957-.957v-5.606c0-.546.41-.957.957-.957h2.87c.137-.82.548-1.64.958-2.46l-1.914-1.915a1.073 1.073 0 0 1 0-1.504L28.3 2.735a.75.75 0 0 1 .683-.41c.274 0 .547.137.684.41l1.914 1.914c.82-.273 1.64-.683 2.461-.957V.957c0-.547.547-.957 1.094-.957h5.468c.547 0 1.094.41 1.094.957v2.734c.82.274 1.64.684 2.324 1.094l1.914-2.05c.274-.137.547-.274.684-.274.273 0 .547.137.684.273L51.27 6.7c.41.41.41.957 0 1.367L49.355 9.98c.274.82.684 1.641.958 2.461h2.734c.684 0 1.094.41 1.094.957v5.606c0 .547-.41.957-1.094.957h-2.734c-.274.82-.547 1.64-.958 2.46l1.915 1.915c.41.41.41 1.094 0 1.504l-3.965 3.828c-.137.137-.41.273-.684.273-.273 0-.41-.136-.684-.273l-1.914-2.05c-.82.546-1.64.82-2.46 1.093v2.734c0 .684-.41.957-.958.957m-4.512-1.914h3.554v-2.597c0-.41.274-.82.82-.957a15.3 15.3 0 0 0 3.282-1.368c.41-.273.82-.136 1.094.137l1.914 1.914 2.46-2.597-1.913-1.778c-.274-.41-.41-.957 0-1.23.547-1.094.957-2.188 1.367-3.282 0-.41.41-.82.957-.82h2.46v-3.555h-2.46c-.547 0-.957-.273-.957-.683-.41-1.23-.82-2.324-1.367-3.281-.274-.41-.274-.957 0-1.23l1.914-1.915-2.598-2.46-1.777 1.777c-.274.41-.82.41-1.23.273-.958-.684-2.051-1.094-3.145-1.367-.547-.137-.82-.547-.82-1.094v-2.46h-3.555v2.46c0 .547-.41.957-.82 1.094-1.094.273-2.188.683-3.282 1.367-.41.137-.82.137-1.23-.274l-1.778-1.777-2.46 2.461L28.3 9.16c.41.274.41.684.273 1.094-.683 1.23-1.23 2.324-1.367 3.418-.137.41-.547.683-1.094.683h-2.46v3.692h2.46c.547 0 .957.273 1.094.683.137 1.094.684 2.188 1.367 3.282.137.41.137.957-.137 1.23l-1.914 1.777 2.598 2.598 1.777-1.914c.41-.273.82-.41 1.23-.137 1.095.684 2.188 1.094 3.282 1.368.41.136.82.546.82.957v2.597z" />
+                                </svg>
+                            </div>
+                            <div class="col-9 col-md-10">
+                                <h3 class="advantage-title text-start">Высокотехнологичное производство</h3>
+                                <p class="text-start">Вся наша мебель изготавливаются на современном оборудовании
+                                    фабрики Cucina, что
+                                    позволяет гарантировать нам высочайшее качество каждого изделия.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="row">
+                            <div class="col-3 col-md-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" viewBox="0 0 70 70" class="svg-icon">
+                                    <path
+                                        d="M35 44.844a17.5 17.5 0 1 1 14-28 1.094 1.094 0 1 1-1.75 1.312 15.247 15.247 0 1 0 1.794 3.063 1.094 1.094 0 1 1 2.001-.875A17.5 17.5 0 0 1 35 44.844m5.053-9.406a1.09 1.09 0 0 0 .438-1.094l-.744-4.375 3.15-3.074a1.094 1.094 0 0 0-.602-1.87l-4.375-.634-1.936-3.883a1.094 1.094 0 0 0-1.958 0l-1.946 3.948-4.375.635a1.094 1.094 0 0 0-.602 1.87l3.15 3.074-.744 4.375a1.094 1.094 0 0 0 1.586 1.148L35 33.468l3.894 2.046a1.09 1.09 0 0 0 1.148-.087zm-5.556-4.168-2.45 1.28.47-2.723a1.1 1.1 0 0 0-.317-.963l-1.98-1.925 2.735-.393a1.1 1.1 0 0 0 .82-.602L35 23.46l1.225 2.472a1.1 1.1 0 0 0 .82.602l2.735.393-1.98 1.925a1.1 1.1 0 0 0-.317.963l.47 2.723-2.439-1.28a1.1 1.1 0 0 0-1.017 0zm6.07 20.443a6.1 6.1 0 0 0 2.975-2.188 6 6 0 0 1 1.51-1.356 6.1 6.1 0 0 1 2.045-.35 6.07 6.07 0 0 0 3.489-.974 6.1 6.1 0 0 0 1.728-3.193 6 6 0 0 1 .788-1.903 6 6 0 0 1 1.673-1.182 6.1 6.1 0 0 0 2.745-2.406 6.05 6.05 0 0 0 .175-3.598 6.1 6.1 0 0 1-.11-2.09 6 6 0 0 1 .974-1.75 6.14 6.14 0 0 0 1.422-3.38 6.14 6.14 0 0 0-1.444-3.4 5.9 5.9 0 0 1-.973-1.75 6.1 6.1 0 0 1 .11-2.09 6.04 6.04 0 0 0-.176-3.598 6.1 6.1 0 0 0-2.745-2.406 6 6 0 0 1-1.673-1.182 6 6 0 0 1-.788-1.903 6.1 6.1 0 0 0-1.728-3.193 6.07 6.07 0 0 0-3.49-.974 6.1 6.1 0 0 1-2.044-.35A6 6 0 0 1 43.53 5.13a6.1 6.1 0 0 0-2.975-2.188 6 6 0 0 0-3.522.635A6.2 6.2 0 0 1 35 4.2a6.2 6.2 0 0 1-2.034-.58 6 6 0 0 0-3.522-.634 6.1 6.1 0 0 0-2.975 2.188 6 6 0 0 1-1.51 1.356 6.1 6.1 0 0 1-2.045.35 6.07 6.07 0 0 0-3.49.973 6.1 6.1 0 0 0-1.727 3.194 6 6 0 0 1-.788 1.903 6 6 0 0 1-1.673 1.181 6.1 6.1 0 0 0-2.745 2.407 3.5 3.5 0 0 0-.263.765 1.119 1.119 0 1 0 2.188.47q.032-.147.098-.284a4.5 4.5 0 0 1 1.848-1.454 7.6 7.6 0 0 0 2.232-1.761 7.7 7.7 0 0 0 1.17-2.636 4.5 4.5 0 0 1 1.017-2.111 4.5 4.5 0 0 1 2.275-.503 7.7 7.7 0 0 0 2.844-.558 7.6 7.6 0 0 0 2.187-1.849 4.5 4.5 0 0 1 1.849-1.487 4.46 4.46 0 0 1 2.187.536 7.7 7.7 0 0 0 2.844.733 7.8 7.8 0 0 0 2.844-.733 4.46 4.46 0 0 1 2.187-.536c.76.295 1.425.79 1.925 1.433a7.5 7.5 0 0 0 2.188 1.848 7.7 7.7 0 0 0 2.844.569c.79-.02 1.57.17 2.264.547.513.607.856 1.339.995 2.122.226.946.63 1.84 1.192 2.636a7.6 7.6 0 0 0 2.308 1.717 4.5 4.5 0 0 1 1.827 1.498c.203.76.203 1.56 0 2.319a7.7 7.7 0 0 0-.088 2.91 7.5 7.5 0 0 0 1.313 2.515 4.53 4.53 0 0 1 1.093 2.187 4.53 4.53 0 0 1-1.093 2.188 7.5 7.5 0 0 0-1.313 2.516 7.7 7.7 0 0 0 .088 2.909c.202.76.202 1.56 0 2.319a4.5 4.5 0 0 1-1.849 1.454 7.6 7.6 0 0 0-2.286 1.597 7.7 7.7 0 0 0-1.17 2.636 4.5 4.5 0 0 1-1.017 2.111c-.701.365-1.486.538-2.275.503a7.7 7.7 0 0 0-2.844.558 7.6 7.6 0 0 0-2.188 1.849 4.5 4.5 0 0 1-1.848 1.487 4.45 4.45 0 0 1-2.187-.536 7.7 7.7 0 0 0-2.844-.733c-.986.061-1.951.31-2.844.733a4.45 4.45 0 0 1-2.187.536 4.5 4.5 0 0 1-1.925-1.433 7.5 7.5 0 0 0-2.188-1.848 7.7 7.7 0 0 0-2.844-.569c-.79.02-1.57-.17-2.264-.547a4.5 4.5 0 0 1-.995-2.122 7.7 7.7 0 0 0-1.192-2.636 7.6 7.6 0 0 0-2.308-1.717 4.5 4.5 0 0 1-1.827-1.498 4.5 4.5 0 0 1 0-2.32 7.7 7.7 0 0 0 .088-2.908 7.5 7.5 0 0 0-1.313-2.516 4.53 4.53 0 0 1-1.093-2.188 4.54 4.54 0 0 1 1.093-2.187l.361-.525c.435-.6.757-1.275.952-1.99a6 6 0 0 0 0-2.024 1.1 1.1 0 1 0-2.188.262c.072.424.072.856 0 1.28-.139.455-.353.884-.634 1.269l-.34.492a6.14 6.14 0 0 0-1.366 3.51 6.14 6.14 0 0 0 1.443 3.403c.422.523.751 1.115.974 1.75a6.1 6.1 0 0 1-.11 2.089 6.04 6.04 0 0 0 .175 3.598 6.1 6.1 0 0 0 2.746 2.406 6 6 0 0 1 1.673 1.181 6 6 0 0 1 .788 1.904 6.1 6.1 0 0 0 1.728 3.193 6.07 6.07 0 0 0 3.489.974 6.1 6.1 0 0 1 2.045.35 6 6 0 0 1 1.51 1.356 6.1 6.1 0 0 0 2.975 2.188 6.03 6.03 0 0 0 3.522-.635A6.2 6.2 0 0 1 35 50.488c.706.074 1.395.27 2.034.58a7.7 7.7 0 0 0 2.767.721q.384 0 .755-.087zM17.5 40.578 15.18 66.106l14.624-14.634a1.094 1.094 0 0 0-1.543-1.542L15.137 63.055l-1.192-7.186a1.09 1.09 0 0 0-.897-.897L5.852 53.77l12.173-12.206a1.093 1.093 0 0 0-1.542-1.543L2.8 53.726a1.093 1.093 0 0 0 .59 1.849l8.51 1.422 1.422 8.509a1.094 1.094 0 0 0 1.848.59zm42.23 7.23a1.094 1.094 0 0 0 0-1.542l-6.136-6.114a1.093 1.093 0 0 0-1.543 1.542l6.104 6.103a1.094 1.094 0 0 0 1.542 0zm-3.796 18.594a1.1 1.1 0 0 0 .744-.864l1.422-8.51 8.51-1.422a1.092 1.092 0 0 0 .59-1.848l-3.106-3.128a1.094 1.094 0 0 0-1.542 1.542l1.596 1.597-7.186 1.192a1.09 1.09 0 0 0-.896.897l-1.193 7.186L42.34 50.52a1.094 1.094 0 0 0-1.542 1.542l14.022 14.043a1.09 1.09 0 0 0 1.093.274zm5.316-18.277a1.094 1.094 0 1 0 0 2.187 1.094 1.094 0 0 0 0-2.187" />
+                                </svg>
+                            </div>
+                            <div class="col-9 col-md-10">
+                                <h3 class="advantage-title text-start">Гарантия 2 года</h3>
+                                <p class="text-start">Мы даем максимальную гарантию на свою мебель, т.к. уверены в
+                                    профессионализме
+                                    своих сотрудников и используемых материалах.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="row">
+                            <div class="col-3 col-md-2">
+                                <svg width="65" height="65" viewBox="0 0 65 65" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
+                                    <path
+                                        d="M40.05 23.97a1.03 1.03 0 0 0-.73-.313 1 1 0 0 0-.73.313L24.138 38.905a1.07 1.07 0 0 0-.315.758 1.1 1.1 0 0 0 .303.764 1.005 1.005 0 0 0 1.472-.013L40.05 25.478a1.07 1.07 0 0 0 .302-.754 1.1 1.1 0 0 0-.302-.754M26.933 31.125c.816 0 1.615-.25 2.294-.719a4.24 4.24 0 0 0 1.52-1.915 4.4 4.4 0 0 0 .235-2.465 4.3 4.3 0 0 0-1.13-2.185 4.1 4.1 0 0 0-2.114-1.168 4 4 0 0 0-2.385.243c-.755.323-1.4.87-1.853 1.571a4.37 4.37 0 0 0-.696 2.371 4.35 4.35 0 0 0 1.21 3.016c.774.8 1.824 1.25 2.919 1.251m0-6.4c.408 0 .807.125 1.147.359s.604.568.76.957a2.2 2.2 0 0 1 .118 1.233c-.08.414-.277.794-.565 1.093a2.05 2.05 0 0 1-1.058.584c-.4.082-.815.04-1.192-.122a2.1 2.1 0 0 1-.927-.786 2.185 2.185 0 0 1 .258-2.693c.387-.4.911-.625 1.459-.626M37.255 33.259c-.817 0-1.615.25-2.294.719a4.24 4.24 0 0 0-1.52 1.915 4.4 4.4 0 0 0-.236 2.465c.16.828.553 1.589 1.13 2.185a4.1 4.1 0 0 0 2.114 1.168c.801.165 1.632.08 2.386-.243s1.4-.87 1.853-1.571a4.37 4.37 0 0 0 .696-2.371 4.35 4.35 0 0 0-1.21-3.016 4.07 4.07 0 0 0-2.919-1.251m0 6.4c-.408 0-.808-.124-1.147-.359a2.1 2.1 0 0 1-.76-.957 2.2 2.2 0 0 1-.118-1.233c.08-.414.276-.794.565-1.093a2.04 2.04 0 0 1 1.057-.584c.4-.082.816-.04 1.193.122.377.161.7.435.927.786a2.185 2.185 0 0 1-.258 2.693c-.387.4-.912.625-1.459.626" />
+                                    <path
+                                        d="M61.218 25.811a6.26 6.26 0 0 1-1.832-2.839 6.44 6.44 0 0 1-.113-3.41 8.6 8.6 0 0 0 .095-3.596 8.45 8.45 0 0 0-1.385-3.3 8.1 8.1 0 0 0-2.605-2.386 7.85 7.85 0 0 0-3.337-1.024 5.87 5.87 0 0 1-3.085-1.174 6.16 6.16 0 0 1-2.02-2.681 8.3 8.3 0 0 0-1.957-2.97A7.95 7.95 0 0 0 41.986.598a7.75 7.75 0 0 0-3.461-.344 7.8 7.8 0 0 0-3.276 1.206 5.8 5.8 0 0 1-3.156.936 5.8 5.8 0 0 1-3.156-.937A7.8 7.8 0 0 0 25.662.255 7.75 7.75 0 0 0 22.2.6a7.95 7.95 0 0 0-2.992 1.83 8.3 8.3 0 0 0-1.957 2.97 6.16 6.16 0 0 1-2.025 2.685 5.87 5.87 0 0 1-3.093 1.172 7.85 7.85 0 0 0-3.336 1.03 8.1 8.1 0 0 0-2.601 2.39 8.45 8.45 0 0 0-1.38 3.304 8.6 8.6 0 0 0 .102 3.597 6.44 6.44 0 0 1-.123 3.412 6.26 6.26 0 0 1-1.841 2.835 8.3 8.3 0 0 0-2.113 2.861 8.6 8.6 0 0 0-.748 3.516 8.6 8.6 0 0 0 .756 3.514 8.3 8.3 0 0 0 2.12 2.857A6.26 6.26 0 0 1 4.8 41.412a6.44 6.44 0 0 1 .113 3.41 8.6 8.6 0 0 0-.095 3.596 8.45 8.45 0 0 0 1.385 3.3 8.1 8.1 0 0 0 2.605 2.386 7.85 7.85 0 0 0 3.337 1.024 5.87 5.87 0 0 1 3.086 1.174 6.16 6.16 0 0 1 2.02 2.68 8.3 8.3 0 0 0 1.957 2.972 7.94 7.94 0 0 0 2.992 1.83 7.75 7.75 0 0 0 3.462.345 7.8 7.8 0 0 0 3.276-1.207 5.8 5.8 0 0 1 3.155-.935c1.115 0 2.209.324 3.155.935l.551-.901-.55.902a7.8 7.8 0 0 0 3.276 1.206 7.75 7.75 0 0 0 3.46-.345 7.95 7.95 0 0 0 2.993-1.83 8.3 8.3 0 0 0 1.957-2.97 6.16 6.16 0 0 1 2.025-2.685 5.87 5.87 0 0 1 3.092-1.172 7.85 7.85 0 0 0 3.336-1.03 8.1 8.1 0 0 0 2.602-2.39 8.45 8.45 0 0 0 1.38-3.304 8.6 8.6 0 0 0-.102-3.597 6.44 6.44 0 0 1 .123-3.412 6.26 6.26 0 0 1 1.84-2.835 8.3 8.3 0 0 0 2.114-2.861 8.6 8.6 0 0 0 .748-3.516 8.6 8.6 0 0 0-.756-3.514 8.3 8.3 0 0 0-2.12-2.857m-1.33 11.13a8.4 8.4 0 0 0-2.464 3.813 8.66 8.66 0 0 0-.155 4.583c.212.874.237 1.787.072 2.672a6.3 6.3 0 0 1-1.028 2.454 6.04 6.04 0 0 1-1.935 1.774 5.8 5.8 0 0 1-2.48.762 7.9 7.9 0 0 0-4.157 1.58 8.3 8.3 0 0 0-2.721 3.61 6.14 6.14 0 0 1-1.451 2.206 5.9 5.9 0 0 1-2.22 1.36 5.75 5.75 0 0 1-2.57.257 5.8 5.8 0 0 1-2.43-.895 7.84 7.84 0 0 0-4.256-1.262c-1.505 0-2.98.438-4.256 1.262a5.8 5.8 0 0 1-2.43.895c-.865.11-1.741.023-2.569-.257a5.9 5.9 0 0 1-2.22-1.36 6.1 6.1 0 0 1-1.45-2.205 8.3 8.3 0 0 0-2.727-3.614A7.9 7.9 0 0 0 12.277 53a5.8 5.8 0 0 1-2.464-.753 6 6 0 0 1-1.924-1.762 6.3 6.3 0 0 1-1.04-2.47 6.4 6.4 0 0 1 .074-2.693 8.66 8.66 0 0 0-.165-4.584 8.4 8.4 0 0 0-2.473-3.809 6.2 6.2 0 0 1-1.571-2.13 6.38 6.38 0 0 1 .008-5.23A6.2 6.2 0 0 1 4.3 27.443c1.148-1.01 2-2.33 2.463-3.813a8.66 8.66 0 0 0 .156-4.582 6.4 6.4 0 0 1-.072-2.673 6.3 6.3 0 0 1 1.027-2.453 6.04 6.04 0 0 1 1.936-1.775 5.8 5.8 0 0 1 2.48-.762 7.9 7.9 0 0 0 4.157-1.58 8.3 8.3 0 0 0 2.72-3.611c.321-.837.816-1.59 1.45-2.207a5.9 5.9 0 0 1 2.221-1.361 5.74 5.74 0 0 1 2.57-.256c.864.11 1.694.417 2.43.897a7.83 7.83 0 0 0 4.257 1.262c1.505 0 2.98-.437 4.255-1.262a5.8 5.8 0 0 1 2.431-.895 5.75 5.75 0 0 1 2.568.257c.828.28 1.586.743 2.22 1.36a6.1 6.1 0 0 1 1.45 2.205 8.3 8.3 0 0 0 2.728 3.614 7.9 7.9 0 0 0 4.163 1.577 5.8 5.8 0 0 1 2.465.753 6 6 0 0 1 1.923 1.761 6.3 6.3 0 0 1 1.04 2.471 6.4 6.4 0 0 1-.073 2.693 8.66 8.66 0 0 0 .165 4.584 8.4 8.4 0 0 0 2.473 3.809 6.2 6.2 0 0 1 1.571 2.13 6.38 6.38 0 0 1-.008 5.23 6.2 6.2 0 0 1-1.578 2.125" />
+                                    <path
+                                        d="M32.093 10.856a20.17 20.17 0 0 0-11.47 3.596c-3.395 2.344-6.04 5.676-7.603 9.575a22 22 0 0 0-1.175 12.328c.797 4.138 2.763 7.94 5.65 10.924s6.566 5.016 10.57 5.84c4.006.822 8.156.4 11.929-1.215s6.997-4.35 9.265-7.858a21.85 21.85 0 0 0 3.48-11.854c-.007-5.657-2.184-11.08-6.054-15.08s-9.118-6.25-14.592-6.256m0 40.538a18.16 18.16 0 0 1-10.323-3.236c-3.055-2.11-5.436-5.109-6.843-8.617a19.8 19.8 0 0 1-1.057-11.095c.717-3.725 2.486-7.147 5.085-9.832s5.91-4.514 9.514-5.256c3.604-.74 7.34-.36 10.735 1.093 3.395 1.454 6.297 3.915 8.339 7.073a19.66 19.66 0 0 1 3.131 10.668c-.005 5.091-1.965 9.972-5.448 13.572s-8.206 5.625-13.133 5.63" />
+                                </svg>
+                            </div>
+                            <div class="col-9 col-md-10">
+                                <h3 class="advantage-title text-start">Скидка +10% при повторном обращении</h3>
+                                <p class="text-start">Мы изготавливаем любую корпусную мебель, а значит Вы можете
+                                    заказать у нас кухню,
+                                    шкаф, прихожую или другую мебель в квартиру в едином стиле по выгодной цене.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="row">
+                            <div class="col-3 col-md-2">
+                                <svg width="70" height="70" viewBox="0 0 70 70" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
+                                    <path
+                                        d="M70 51.201V36.025H16.27V16.338h8.75v-8.75h28.574v15.45H30.383l-10.8 5.4 10.8 5.4h36.199v-10.8H55.645v-17.5H23.638l-9.42 9.282v21.205H0v15.176h14.219v13.262h41.426v-9.844h-2.051v7.793H16.27v-11.21zM29.531 31.085 24.1 28.369l5.432-2.716zm24.063.702H31.582v-2.324h22.012zm0-4.375H31.582v-2.324h22.012zm6.426-2.324h4.511v6.7H60.02zm-4.376 0h2.325v6.7h-2.325zM22.97 8.97v5.317h-5.181zM2.05 38.076h3.418v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h3.555v6.7H2.051zm0 11.074v-2.324h65.898v2.324z" />
+                                    <path d="M63.3 28.37h-2.05v2.187h2.05z" />
+                                </svg>
+                            </div>
+                            <div class="col-9 col-md-10">
+                                <h3 class="advantage-title text-start">Замер и дизайн-проект бесплатно</h3>
+                                <p class="text-start">При заключении договора наш специалист бесплатно сделает замер и
+                                    разработает
+                                    дизайн-проект Вашей будущей кухни</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="row">
+                            <div class="col-3 col-md-2">
+                                <svg width="70" height="70" viewBox="0 0 70 70" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M22.285 58.79c-4.512 0-8.203-3.83-8.203-8.204 0-4.512 3.691-8.203 8.203-8.203s8.203 3.691 8.203 8.203-3.691 8.203-8.203 8.203m0-14.493c-3.418 0-6.152 2.871-6.152 6.152-.137 3.555 2.598 6.29 6.152 6.29a6.127 6.127 0 0 0 6.153-6.153c0-3.418-2.735-6.29-6.153-6.29" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M25.566 70h-6.699c-.547 0-.957-.41-.957-1.094v-3.418c-1.094-.273-2.187-.82-3.144-1.367l-2.598 2.461c-.41.41-.957.41-1.367 0l-4.785-4.785c-.41-.274-.41-.957 0-1.367l2.46-2.461c-.546-1.094-.956-2.051-1.23-3.145H3.828c-.547 0-1.094-.547-1.094-1.093v-6.563c0-.547.547-1.094 1.094-1.094h3.418c.41-.957.82-2.05 1.367-3.008L6.016 40.47c-.41-.41-.41-.957 0-1.367l4.785-4.786c.41-.41 1.094-.41 1.504 0l2.46 2.461c.958-.547 2.051-.957 3.145-1.23v-3.555c0-.547.41-.957 1.094-.957h6.7c.546 0 .956.41.956.957v3.555c1.094.273 2.188.684 3.145 1.23l2.46-2.46c.41-.41 1.094-.41 1.505 0l4.785 4.785c.41.41.41.957 0 1.367l-2.598 2.597c.547.957.957 2.051 1.23 3.145h3.555c.547 0 1.094.41 1.094.957v6.7c0 .546-.547 1.093-1.094 1.093h-3.554c-.274 1.094-.684 2.05-1.231 3.145l2.461 2.46c.41.41.41.957 0 1.368l-4.785 4.785c-.41.41-.957.41-1.367 0l-2.598-2.461c-.957.547-2.05.957-3.145 1.367v3.418c0 .547-.41.957-.957.957m-5.742-2.05h4.785v-3.282c0-.41.274-.82.82-.957a11.1 11.1 0 0 0 3.966-1.64c.41-.274.82-.137 1.23.136l2.324 2.324 3.418-3.418-2.324-2.324c-.41-.273-.41-.82-.137-1.23.684-1.23 1.367-2.598 1.64-3.965.138-.41.411-.82.958-.82h3.281v-4.649h-3.281c-.547 0-.82-.41-.957-.82-.274-1.367-.957-2.735-1.64-3.965-.274-.41-.274-.957.136-1.23l2.324-2.325-3.418-3.418-2.324 2.324c-.41.41-.82.41-1.23.137a11.1 11.1 0 0 0-3.965-1.64c-.547 0-.82-.41-.82-.82v-3.282h-4.786v3.281c0 .41-.273.82-.683.957-1.368.274-2.735.957-3.965 1.64-.41.274-.957.274-1.367 0l-2.325-2.46-3.28 3.418 2.323 2.324c.274.41.41.82.137 1.23-.82 1.231-1.367 2.598-1.777 3.965-.137.547-.547.82-.957.82H4.648v4.65h3.418c.41 0 .82.41.957.82.41 1.367.957 2.734 1.641 3.964.274.41.137.957-.137 1.23L8.203 61.25l3.418 3.418 2.324-2.324c.274-.41.82-.41 1.23-.137a11.1 11.1 0 0 0 3.966 1.64c.41.137.82.547.82.958v3.144zM54.414 47.852c-3.145 0-5.742-2.461-5.742-5.606s2.598-5.605 5.742-5.605 5.605 2.46 5.605 5.605c-.136 3.145-2.597 5.606-5.605 5.606m0-9.297c-2.05 0-3.691 1.777-3.691 3.691 0 2.05 1.64 3.691 3.691 3.691 1.914 0 3.555-1.64 3.555-3.69 0-2.052-1.64-3.692-3.555-3.692" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M56.465 55.098h-4.238c-.547 0-1.094-.41-1.094-.957V52.09a5 5 0 0 1-1.504-.684l-1.504 1.367c-.137.137-.41.274-.684.274-.273 0-.547-.137-.683-.274l-3.008-3.007a1.073 1.073 0 0 1 0-1.504l1.504-1.367c-.41-.547-.547-1.094-.684-1.641h-2.05a.935.935 0 0 1-.958-.957v-4.375c0-.547.41-.957.958-.957h2.05c.137-.547.41-1.094.684-1.64L43.75 35.82c-.41-.273-.41-.957 0-1.367l3.008-3.008c.136-.273.547-.41.683-.41.274 0 .547.137.684.41l1.504 1.367c.41-.273.957-.41 1.504-.683v-2.05c0-.548.547-.958 1.094-.958h4.238c.683 0 1.094.41 1.094.957v2.05c.547.138 1.093.411 1.64.684l1.367-1.503c.137-.137.41-.274.684-.274.273 0 .547.137.684.274l3.007 3.144c.41.41.41.957 0 1.367l-1.367 1.367c.274.547.41 1.094.684 1.641h1.914c.547 0 1.094.41 1.094 1.094v4.238c0 .547-.547 1.094-1.094 1.094h-1.914c-.274.547-.41 1.094-.684 1.504l1.367 1.504c.41.41.41.957 0 1.367l-3.007 3.144c-.137.137-.41.274-.684.274-.273 0-.547-.137-.684-.274L59.2 51.27c-.547.274-1.093.547-1.64.684v2.05c0 .684-.547 1.095-1.094 1.095m-3.281-1.914h2.324v-1.778c0-.547.273-.82.683-.957.957-.273 1.778-.547 2.461-1.093.41-.274.957-.137 1.23.136l1.368 1.23 1.64-1.64-1.23-1.23c-.41-.41-.41-.82-.273-1.23.547-.821.957-1.642 1.093-2.462.137-.41.547-.82.958-.82h1.777v-2.324h-1.778c-.41 0-.82-.274-.956-.684-.274-.82-.547-1.777-1.094-2.46-.137-.411-.137-.958.273-1.231l1.23-1.23-1.64-1.642L59.883 35c-.274.41-.82.41-1.23.137-.684-.41-1.505-.82-2.462-.957-.41-.137-.683-.547-.683-1.094v-1.64h-2.324v1.64c0 .547-.274.957-.82 1.094-.821.136-1.641.547-2.325.957-.41.273-.957.136-1.367-.137l-1.23-1.23-1.641 1.64 1.23 1.23c.41.274.41.82.274 1.231-.547.684-.82 1.64-1.094 2.461 0 .41-.41.684-.957.684h-1.777v2.324h1.777c.547 0 .957.41.957.82.273.82.547 1.64 1.094 2.598.136.41.136.82-.274 1.094l-1.23 1.367 1.64 1.64 1.23-1.367c.411-.273.958-.273 1.368-.136.684.546 1.504.82 2.324 1.093.547.137.82.41.82.957zM37.871 23.242c-3.828 0-6.973-3.144-6.973-7.11 0-3.827 3.145-6.972 6.973-6.972s6.973 3.145 6.973 6.973c0 3.965-3.145 7.11-6.973 7.11m0-12.031c-2.734 0-5.059 2.187-5.059 4.922S35 21.19 37.873 21.19c2.733 0 4.921-2.187 4.921-5.058a4.9 4.9 0 0 0-4.922-4.922" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M40.606 32.402H35a.934.934 0 0 1-.957-.957v-2.734c-.82-.273-1.64-.684-2.461-1.094l-1.914 2.051c-.41.41-.957.41-1.367 0l-3.828-3.828a1.073 1.073 0 0 1 0-1.504l1.914-1.914c-.41-.82-.684-1.64-.957-2.461h-2.871a.934.934 0 0 1-.957-.957v-5.606c0-.546.41-.957.957-.957h2.87c.137-.82.548-1.64.958-2.46l-1.914-1.915a1.073 1.073 0 0 1 0-1.504L28.3 2.735a.75.75 0 0 1 .683-.41c.274 0 .547.137.684.41l1.914 1.914c.82-.273 1.64-.683 2.461-.957V.957c0-.547.547-.957 1.094-.957h5.468c.547 0 1.094.41 1.094.957v2.734c.82.274 1.64.684 2.324 1.094l1.914-2.05c.274-.137.547-.274.684-.274.273 0 .547.137.684.273L51.27 6.7c.41.41.41.957 0 1.367L49.355 9.98c.274.82.684 1.641.958 2.461h2.734c.684 0 1.094.41 1.094.957v5.606c0 .547-.41.957-1.094.957h-2.734c-.274.82-.547 1.64-.958 2.46l1.915 1.915c.41.41.41 1.094 0 1.504l-3.965 3.828c-.137.137-.41.273-.684.273-.273 0-.41-.136-.684-.273l-1.914-2.05c-.82.546-1.64.82-2.46 1.093v2.734c0 .684-.41.957-.958.957m-4.512-1.914h3.554v-2.597c0-.41.274-.82.82-.957a15.3 15.3 0 0 0 3.282-1.368c.41-.273.82-.136 1.094.137l1.914 1.914 2.46-2.597-1.913-1.778c-.274-.41-.41-.957 0-1.23.547-1.094.957-2.188 1.367-3.282 0-.41.41-.82.957-.82h2.46v-3.555h-2.46c-.547 0-.957-.273-.957-.683-.41-1.23-.82-2.324-1.367-3.281-.274-.41-.274-.957 0-1.23l1.914-1.915-2.598-2.46-1.777 1.777c-.274.41-.82.41-1.23.273-.958-.684-2.051-1.094-3.145-1.367-.547-.137-.82-.547-.82-1.094v-2.46h-3.555v2.46c0 .547-.41.957-.82 1.094-1.094.273-2.188.683-3.282 1.367-.41.137-.82.137-1.23-.274l-1.778-1.777-2.46 2.461L28.3 9.16c.41.274.41.684.273 1.094-.683 1.23-1.23 2.324-1.367 3.418-.137.41-.547.683-1.094.683h-2.46v3.692h2.46c.547 0 .957.273 1.094.683.137 1.094.684 2.188 1.367 3.282.137.41.137.957-.137 1.23l-1.914 1.777 2.598 2.598 1.777-1.914c.41-.273.82-.41 1.23-.137 1.095.684 2.188 1.094 3.282 1.368.41.136.82.546.82.957v2.597z" />
+                                </svg>
+                            </div>
+                            <div class="col-9 col-md-10">
+                                <h3 class="advantage-title text-start">Собственное производство</h3>
+                                <p class="text-start">Мы обеспечиваем полный цикл изготовления кухни (проект,
+                                    производство, доставка,
+                                    монтаж), без перекладывания обязанностей на посредников.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <!-- /Advantage section -->
 
@@ -498,1675 +576,1838 @@ do_action( 'woocommerce_before_main_content' );
 <!-- Quiz section -->
 <div id="quiz-sp" class="scroll-points"></div>
 <section id="quiz" class="bg-light py-5">
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col">
-			<?php
-				$obj = get_queried_object();
-				$cat_name = $obj->name;
-				//echo $cat_name;
-				/**/
-				if ( $cat_name == 'Кухни' ) { ?>
-				<h2 class="text-center mb-3">Ответьте на 6 вопросов ниже<br>и узнайте предварительную стоимость Вашей кухни</h2>
-				<div class="title-line mb-5"></div>
-				<div class="row justify-content-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col">
+                <?php
+                $obj = get_queried_object();
+                $cat_name = $obj->name;
+                //echo $cat_name;
+                /**/
+                if ($cat_name == 'Кухни') { ?>
+                    <h2 class="text-center mb-3">Ответьте на 6 вопросов ниже<br>и узнайте предварительную стоимость Вашей кухни</h2>
+                    <div class="title-line mb-5"></div>
+                    <div class="row justify-content-center">
 
-					<!-- ВОПРОСЫ ПО КУХНЯМ -->
-					<div class="col-12" id="2-1">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">1/6</span>Какая планировка кухни Вам нужна?</h3>
-						<div class="row justify-content-md-center mb-5">
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-2-1-1">
-									<input type="radio" id="answer-2-1-1" name="quostion-2-1" class="checkbox" value="Прямая">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-1.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Прямая</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-2-1-2">
-									<input type="radio" id="answer-2-1-2" name="quostion-2-1" class="checkbox" value="Угловая">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-2.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Угловая</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-2-1-3">
-									<input type="radio" id="answer-2-1-3" name="quostion-2-1" class="checkbox" value="П-образная">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-3.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">П-образная</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-2-1-4">
-									<input type="radio" id="answer-2-1-4" name="quostion-2-1" class="checkbox" value="С островком">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-4.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">С островком</h3>
-							</div>
-							<!--div class="col-2">
+                        <!-- ВОПРОСЫ ПО КУХНЯМ -->
+                        <div class="col-12" id="2-1">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">1/6</span>Какая планировка кухни Вам нужна?</h3>
+                            <div class="row justify-content-md-center mb-5">
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-2-1-1">
+                                        <input type="radio" id="answer-2-1-1" name="quostion-2-1" class="checkbox" value="Прямая">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-1.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Прямая</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-2-1-2">
+                                        <input type="radio" id="answer-2-1-2" name="quostion-2-1" class="checkbox" value="Угловая">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-2.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Угловая</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-2-1-3">
+                                        <input type="radio" id="answer-2-1-3" name="quostion-2-1" class="checkbox" value="П-образная">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-3.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">П-образная</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-2-1-4">
+                                        <input type="radio" id="answer-2-1-4" name="quostion-2-1" class="checkbox" value="С островком">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-4.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">С островком</h3>
+                                </div>
+                                <!--div class="col-2">
 								<label class="option_item mb-3" for="answer-2-1-5">
 									<input type="radio" id="answer-2-1-5" name="quostion-2-1" class="checkbox" value="Пока не знаю">
 									<div class="option_inner">
 										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-5.jpg" style="width: 100%;">
+										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-5.webp" style="width: 100%;">
 									</div>
 								</label>
 								<h3>Пока не знаю</h3>
 							</div-->
-						</div>
-						<div class="row justify-content-center">
-							<div class="col text-center" style="margin-top: 35px;">
-								<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '2-1' );">
-								<input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '2-1' );">
-							</div>
-						</div>
-					</div>
-					
-					<!-- Один размер -->
-					<div class="col-md-6" id="3-1-1" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">2/6</span>Укажите размеры</h3>
-						<div class="row justify-content-md-center mb-5">
-							<div class="col-md-4">
-								<label for="answer-3-1-1" class="form-label">Длинна 1, см</label>
-								<input type="text" class="form-control" id="answer-3-1-1-1" name="quostion-3-1-1">
-							</div>
-						</div>
-						<div class="row justify-content-center">
-							<div class="col text-center" style="margin-top: 35px;">
-								<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '3-1-1' );">
-								<input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '3-1-1' );">
-							</div>
-						</div>
-					</div>
-					
-					<!-- Два размера -->
-					<div class="col-md-6" id="3-1-2" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">2/6</span>Укажите размеры</h3>
-						<div class="row justify-content-md-center mb-5">
-							<div class="col-md-4">
-								<label for="answer-3-1-1" class="form-label">Длинна 1, см</label>
-								<input type="text" class="form-control" id="answer-3-1-1-2" name="quostion-3-1-2">
-							</div>
-							<div class="col-md-4">
-								<label for="answer-3-1-2" class="form-label">Длинна 2, см</label>
-								<input type="text" class="form-control" id="answer-3-1-2-2" name="quostion-3-1-2">
-							</div>
-						</div>
-						<div class="row justify-content-center">
-							<div class="col text-center" style="margin-top: 35px;">
-								<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '3-1-2' );">
-								<input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '3-1-2' );">
-							</div>
-						</div>
-					</div>
-					
-					<!-- Три размера -->
-					<div class="col-md-6" id="3-1-3" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">2/6</span>Укажите размеры</h3>
-						<div class="row justify-content-md-center mb-5">
-							<div class="col-md-4">
-								<label for="answer-3-1-1" class="form-label">Длинна 1, см</label>
-								<input type="text" class="form-control" id="answer-3-1-1-3" name="quostion-3-1-2">
-							</div>
-							<div class="col-md-4">
-								<label for="answer-3-1-2" class="form-label">Длинна 2, см</label>
-								<input type="text" class="form-control" id="answer-3-1-2-3" name="quostion-3-1-2">
-							</div>
-							<div class="col-md-4">
-								<label for="answer-3-1-3" class="form-label">Длинна 3, см</label>
-								<input type="text" class="form-control" id="answer-3-1-3-3" name="quostion-3-1-2">
-							</div>
-						</div>
-						<div class="row justify-content-center">
-							<div class="col text-center" style="margin-top: 35px;">
-								<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '3-1-3' );">
-								<input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '3-1-3' );">
-							</div>
-						</div>
-					</div>
-					
-					<!-- Четыре размера -->
-					<div class="col-md-6" id="3-1-4" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">2/6</span>Укажите размеры в сантиметрах</h3>
-						<div class="row justify-content-md-center mb-5">
-							<div class="col-md-3">
-								<label for="answer-3-1-1" class="form-label">Длинна 1</label>
-								<input type="text" class="form-control" id="answer-3-1-1-4" name="quostion-3-1-2">
-							</div>
-							<div class="col-md-3">
-								<label for="answer-3-1-2" class="form-label">Длинна 2</label>
-								<input type="text" class="form-control" id="answer-3-1-2-4" name="quostion-3-1-2">
-							</div>
-							<div class="col-md-3">
-								<label for="answer-3-1-3" class="form-label">Длинна 3</label>
-								<input type="text" class="form-control" id="answer-3-1-3-4" name="quostion-3-1-2">
-							</div>
-							<div class="col-md-3">
-								<label for="answer-3-1-4" class="form-label">Длинна островка</label>
-								<input type="text" class="form-control" id="answer-3-1-4-4" name="quostion-3-1-2">
-							</div>
-						</div>
-						<div class="row justify-content-center">
-							<div class="col text-center" style="margin-top: 35px;">
-								<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '3-1-4' );">
-								<input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '3-1-4' );">
-							</div>
-						</div>
-					</div>
-					
-					<!-- 4/7 -->
-					<div class="col-12" id="4-1" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">3/6</span>Какой стиль кухни Вы рассматриваете?</h3>
-						<div class="row justify-content-md-center mb-5">
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-4-1-1">
-									<input type="radio" id="answer-4-1-1" name="quostion-4-1" class="checkbox" value="Современный">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-1.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Современный</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-4-1-2">
-									<input type="radio" id="answer-4-1-2" name="quostion-4-1" class="checkbox" value="Классический">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-2.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Классический</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-4-1-3">
-									<input type="radio" id="answer-4-1-3" name="quostion-4-1" class="checkbox" value="Лофт">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-3.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Лофт</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-4-1-4">
-									<input type="radio" id="answer-4-1-4" name="quostion-4-1" class="checkbox" value="Пока не знаю, нужна консультация">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-4.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Пока не знаю, нужна консультация</h3>
-							</div>
-						</div>
-						<div class="row justify-content-center">
-							<div class="col text-center" style="margin-top: 35px;">
-								<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '4-1' );">
-								<input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '4-1' );">
-							</div>
-						</div>
-					</div>
-					
-					<!-- 5/7 -->
-					<div class="col-12" id="5-1" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">4/6</span>Какой материал фасада кухни Вы хотите?</h3>
-						<div class="row justify-content-md-center mb-5">
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-5-1-1">
-									<input type="radio" id="answer-5-1-1" name="quostion-5-1" class="checkbox" value="ЛДСП/ЛМДФ">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-1.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">ЛДСП/ЛМДФ</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-5-1-2">
-									<input type="radio" id="answer-5-1-2" name="quostion-5-1" class="checkbox" value="Пленка">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-2.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Пленка</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-5-1-3">
-									<input type="radio" id="answer-5-1-3" name="quostion-5-1" class="checkbox" value="Эмаль">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-3.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Эмаль</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-5-1-4">
-									<input type="radio" id="answer-5-1-4" name="quostion-5-1" class="checkbox" value="Пластик">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-4.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Пластик</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-5-1-5">
-									<input type="radio" id="answer-5-1-5" name="quostion-5-1" class="checkbox" value="Массив">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-5.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Массив</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-5-1-6">
-									<input type="radio" id="answer-5-1-6" name="quostion-5-1" class="checkbox" value="Пока не знаю, нужна консультация">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-6.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Пока не знаю, нужна консультация</h3>
-							</div>
-						</div>
-						<div class="row justify-content-center">
-							<div class="col text-center" style="margin-top: 35px;">
-								<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '5-1' );">
-								<input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '5-1' );">
-							</div>
-						</div>
-					</div>
-					
-					<!-- 6/7 -->
-					<div class="col-12" id="6-1" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">5/6</span>Какой подарок Вы хотите получить в случае заказа?</h3>
-						<div class="row justify-content-md-center mb-5">
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-6-1-1">
-									<input type="radio" id="answer-6-1-1" name="quostion-6-1" class="checkbox" value="Скидка 10%">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-1.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Скидка 10%</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-6-1-2">
-									<input type="radio" id="answer-6-1-2" name="quostion-6-1" class="checkbox" value="Беспроцентная рассрочка на 6 месяцев">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-2.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Беспроцентная рассрочка на 6 месяцев</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-6-1-3">
-									<input type="radio" id="answer-6-1-3" name="quostion-6-1" class="checkbox" value="Скидка 15% на заказ шкафа в теченее года">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-4.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Скидка 15% на заказ шкафа в теченее года</h3>
-							</div>
-							<!--div class="col-2">
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center" style="margin-top: 35px;">
+                                    <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '2-1' );">
+                                    <input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '2-1' );">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Один размер -->
+                        <div class="col-md-6" id="3-1-1" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">2/6</span>Укажите размеры</h3>
+                            <div class="row justify-content-md-center mb-5">
+                                <div class="col-md-4">
+                                    <label for="answer-3-1-1" class="form-label">Длинна 1, см</label>
+                                    <input type="text" class="form-control" id="answer-3-1-1-1" name="quostion-3-1-1">
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center" style="margin-top: 35px;">
+                                    <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '3-1-1' );">
+                                    <input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '3-1-1' );">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Два размера -->
+                        <div class="col-md-6" id="3-1-2" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">2/6</span>Укажите размеры</h3>
+                            <div class="row justify-content-md-center mb-5">
+                                <div class="col-md-4">
+                                    <label for="answer-3-1-1" class="form-label">Длинна 1, см</label>
+                                    <input type="text" class="form-control" id="answer-3-1-1-2" name="quostion-3-1-2">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="answer-3-1-2" class="form-label">Длинна 2, см</label>
+                                    <input type="text" class="form-control" id="answer-3-1-2-2" name="quostion-3-1-2">
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center" style="margin-top: 35px;">
+                                    <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '3-1-2' );">
+                                    <input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '3-1-2' );">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Три размера -->
+                        <div class="col-md-6" id="3-1-3" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">2/6</span>Укажите размеры</h3>
+                            <div class="row justify-content-md-center mb-5">
+                                <div class="col-md-4">
+                                    <label for="answer-3-1-1" class="form-label">Длинна 1, см</label>
+                                    <input type="text" class="form-control" id="answer-3-1-1-3" name="quostion-3-1-2">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="answer-3-1-2" class="form-label">Длинна 2, см</label>
+                                    <input type="text" class="form-control" id="answer-3-1-2-3" name="quostion-3-1-2">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="answer-3-1-3" class="form-label">Длинна 3, см</label>
+                                    <input type="text" class="form-control" id="answer-3-1-3-3" name="quostion-3-1-2">
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center" style="margin-top: 35px;">
+                                    <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '3-1-3' );">
+                                    <input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '3-1-3' );">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Четыре размера -->
+                        <div class="col-md-6" id="3-1-4" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">2/6</span>Укажите размеры в сантиметрах</h3>
+                            <div class="row justify-content-md-center mb-5">
+                                <div class="col-md-3">
+                                    <label for="answer-3-1-1" class="form-label">Длинна 1</label>
+                                    <input type="text" class="form-control" id="answer-3-1-1-4" name="quostion-3-1-2">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="answer-3-1-2" class="form-label">Длинна 2</label>
+                                    <input type="text" class="form-control" id="answer-3-1-2-4" name="quostion-3-1-2">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="answer-3-1-3" class="form-label">Длинна 3</label>
+                                    <input type="text" class="form-control" id="answer-3-1-3-4" name="quostion-3-1-2">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="answer-3-1-4" class="form-label">Длинна островка</label>
+                                    <input type="text" class="form-control" id="answer-3-1-4-4" name="quostion-3-1-2">
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center" style="margin-top: 35px;">
+                                    <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '3-1-4' );">
+                                    <input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '3-1-4' );">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4/7 -->
+                        <div class="col-12" id="4-1" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">3/6</span>Какой стиль кухни Вы рассматриваете?</h3>
+                            <div class="row justify-content-md-center mb-5">
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-4-1-1">
+                                        <input type="radio" id="answer-4-1-1" name="quostion-4-1" class="checkbox" value="Современный">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-1.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Современный</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-4-1-2">
+                                        <input type="radio" id="answer-4-1-2" name="quostion-4-1" class="checkbox" value="Классический">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-2.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Классический</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-4-1-3">
+                                        <input type="radio" id="answer-4-1-3" name="quostion-4-1" class="checkbox" value="Лофт">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-3.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Лофт</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-4-1-4">
+                                        <input type="radio" id="answer-4-1-4" name="quostion-4-1" class="checkbox" value="Пока не знаю, нужна консультация">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-4.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Пока не знаю, нужна консультация</h3>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center" style="margin-top: 35px;">
+                                    <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '4-1' );">
+                                    <input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '4-1' );">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5/7 -->
+                        <div class="col-12" id="5-1" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">4/6</span>Какой материал фасада кухни Вы хотите?</h3>
+                            <div class="row justify-content-md-center mb-5">
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-5-1-1">
+                                        <input type="radio" id="answer-5-1-1" name="quostion-5-1" class="checkbox" value="ЛДСП/ЛМДФ">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-1.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">ЛДСП/ЛМДФ</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-5-1-2">
+                                        <input type="radio" id="answer-5-1-2" name="quostion-5-1" class="checkbox" value="Пленка">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-2.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Пленка</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-5-1-3">
+                                        <input type="radio" id="answer-5-1-3" name="quostion-5-1" class="checkbox" value="Эмаль">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-3.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Эмаль</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-5-1-4">
+                                        <input type="radio" id="answer-5-1-4" name="quostion-5-1" class="checkbox" value="Пластик">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-4.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Пластик</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-5-1-5">
+                                        <input type="radio" id="answer-5-1-5" name="quostion-5-1" class="checkbox" value="Массив">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-5.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Массив</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-5-1-6">
+                                        <input type="radio" id="answer-5-1-6" name="quostion-5-1" class="checkbox" value="Пока не знаю, нужна консультация">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-6.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Пока не знаю, нужна консультация</h3>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center" style="margin-top: 35px;">
+                                    <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '5-1' );">
+                                    <input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '5-1' );">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6/7 -->
+                        <div class="col-12" id="6-1" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">5/6</span>Какой подарок Вы хотите получить в случае заказа?</h3>
+                            <div class="row justify-content-md-center mb-5">
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-6-1-1">
+                                        <input type="radio" id="answer-6-1-1" name="quostion-6-1" class="checkbox" value="Скидка 10%">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-1.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Скидка 10%</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-6-1-2">
+                                        <input type="radio" id="answer-6-1-2" name="quostion-6-1" class="checkbox" value="Беспроцентная рассрочка на 6 месяцев">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-2.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Беспроцентная рассрочка на 6 месяцев</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-6-1-3">
+                                        <input type="radio" id="answer-6-1-3" name="quostion-6-1" class="checkbox" value="Скидка 15% на заказ шкафа в теченее года">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-4.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Скидка 15% на заказ шкафа в теченее года</h3>
+                                </div>
+                                <!--div class="col-2">
 								<label class="option_item mb-3" for="answer-6-1-4">
 									<input type="radio" id="answer-6-1-4" name="quostion-6-1" class="checkbox" value="С островком">
 									<div class="option_inner">
 										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-4.jpg" style="width: 100%;">
+										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-4.webp" style="width: 100%;">
 									</div>
 								</label>
 								<h3>Пластик</h3>
 							</div-->
-						</div>
-						<div class="row justify-content-center">
-							<div class="col text-center" style="margin-top: 35px;">
-								<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '6-1' );">
-								<input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '6-1' );">
-							</div>
-						</div>
-					</div>
-					
-					<!-- 7/1 -->
-					<div class="col-md-6" id="7-1" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">6/6</span>Введите Ваши контакты</h3>
-						<form method="post" action="<?php echo get_template_directory_uri(); ?>/mails/get_calculate_kitchen.php">
-							<div class="row justify-content-center">
-								<div class="col-md-4">
-									<label for="exampleFormControlInput1" class="form-label">Ваше имя</label>
-									<input type="text" class="form-control" id="exampleFormControlInput1" name="name">
-								</div>
-								<div class="col-md-4">
-									<label for="exampleFormControlInput2" class="form-label">Ваш телефон</label>
-									<input type="text" class="form-control telMask" id="exampleFormControlInput2" name="phone">
-								</div>
-							</div>
-							<div class="row">
-								<div class="col text-center" style="margin-top: 45px;">
-									<input type="hidden" id="answer1-1" name="answer1">
-									<input type="hidden" id="answer2-1" name="answer2">
-									<input type="hidden" id="answer3-1-1" name="answer3-1">
-									<input type="hidden" id="answer3-1-2" name="answer3-2">
-									<input type="hidden" id="answer3-1-3" name="answer3-3">
-									<input type="hidden" id="answer3-1-4" name="answer3-4">
-									<input type="hidden" id="answer4-1" name="answer4">
-									<input type="hidden" id="answer5-1" name="answer5">
-									<input type="hidden" id="answer6-1" name="answer6">
-									<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '7-1' );">
-									<input type="submit" class="btn btn-corporate-color-1" value="Отправить">
-								</div>
-							</div>
-						</form>
-					</div>
-					<!-- /ВОПРОСЫ ПО КУХНЯМ -->						
-				</div>
-				
-				<?php } else if ( $cat_name == 'Шкафы' ) { ?>
-					<!-- Расчет любой мебели -->
-				<h2 class="text-center mb-3">Ответьте на 6 вопросов ниже<br>и узнайте предварительную стоимость Вашего шкафа</h2>
-				<div class="title-line mb-5"></div>
-				<div class="row justify-content-center">
-					<!-- ВОПРОСЫ ПО ШКАФАМ -->
-					<div class="col-12" id="2-2">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">2/7</span>Какой тип шкафа Вам нужен?</h3>
-						<div class="row justify-content-md-center mb-5">
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-2-2-1">
-									<input type="radio" id="answer-2-2-1" name="quostion-2-2" class="checkbox" value="Корпусный">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-1.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Корпусный</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-2-2-2">
-									<input type="radio" id="answer-2-2-2" name="quostion-2-2" class="checkbox" value="Встроенный">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-2.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Встроенный</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-2-2-3">
-									<input type="radio" id="answer-2-2-3" name="quostion-2-2" class="checkbox" value="Угловой">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-3.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Угловой</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-2-2-4">
-									<input type="radio" id="answer-2-2-4" name="quostion-2-2" class="checkbox" value="Радиусный">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-4.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Радиусный</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-2-2-5">
-									<input type="radio" id="answer-2-2-5" name="quostion-2-2" class="checkbox" value="Гардеробный">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-5.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Гардеробный</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-2-2-6">
-									<input type="radio" id="answer-2-2-6" name="quostion-2-2" class="checkbox" value="Пока не знаю">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-6.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Пока не знаю</h3>
-							</div>
-						</div>
-						<div class="row justify-content-center">
-							<div class="col text-center" style="margin-top: 35px;">
-								<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '2-2' );">
-								<input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '2-2' );">
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-12" id="3-2" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">3/7</span>Какой материал фасада шкафа Вы хотите?</h3>
-						<div class="row justify-content-md-center mb-5">
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-3-2-1">
-									<input type="radio" id="answer-3-2-1" name="quostion-3-2" class="checkbox" value="ЛДСП">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-1.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">ЛДСП</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-3-2-2">
-									<input type="radio" id="answer-3-2-2" name="quostion-3-2" class="checkbox" value="Пескоструй">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-2.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Пескоструй</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-3-2-3">
-									<input type="radio" id="answer-3-2-3" name="quostion-3-2" class="checkbox" value="Зеркало">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-3.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Зеркало</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-3-2-4">
-									<input type="radio" id="answer-3-2-4" name="quostion-3-2" class="checkbox" value="Фотопечать">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-4.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Фотопечать</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-3-2-5">
-									<input type="radio" id="answer-3-2-5" name="quostion-3-2" class="checkbox" value="Комбинированный">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-5.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Комбинированный</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-3-2-6">
-									<input type="radio" id="answer-3-2-6" name="quostion-3-2" class="checkbox" value="Пока не знаю">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-6.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Пока не знаю, нужна консультация</h3>
-							</div>
-						</div>
-						<div class="row justify-content-center">
-							<div class="col text-center" style="margin-top: 35px;">
-								<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '3-2' );">
-								<input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '3-2' );">
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-12" id="4-2" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">4/7</span>Какая ориентировочная ширина шкафа планируется?</h3>
-						<div class="row justify-content-md-center mb-5">
-							<div class="col-3 col-md-1">
-								<label class="option_item mb-3" for="answer-4-2-1">
-									<input type="radio" id="answer-4-2-1" name="quostion-4-2" class="checkbox" value="1">
-									<div class="option_inner">
-										<div class="shadow-wrapper-box"></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">1</h3>
-							</div>
-							<div class="col-3 col-md-1">
-								<label class="option_item mb-3" for="answer-4-2-2">
-									<input type="radio" id="answer-4-2-2" name="quostion-4-2" class="checkbox" value="1,5">
-									<div class="option_inner">
-										<div class="shadow-wrapper-box"></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">1,5</h3>
-							</div>
-							<div class="col-3 col-md-1">
-								<label class="option_item mb-3" for="answer-4-2-3">
-									<input type="radio" id="answer-4-2-3" name="quostion-4-2" class="checkbox" value="2">
-									<div class="option_inner">
-										<div class="shadow-wrapper-box"></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">2</h3>
-							</div>
-							<div class="col-3 col-md-1">
-								<label class="option_item mb-3" for="answer-4-2-4">
-									<input type="radio" id="answer-4-2-4" name="quostion-4-2" class="checkbox" value="2,5">
-									<div class="option_inner">
-										<div class="shadow-wrapper-box"></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">2,5</h3>
-							</div>
-							<div class="col-3 col-md-1">
-								<label class="option_item mb-3" for="answer-4-2-5">
-									<input type="radio" id="answer-4-2-5" name="quostion-4-2" class="checkbox" value="3">
-									<div class="option_inner">
-										<div class="shadow-wrapper-box"></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">3</h3>
-							</div>
-							<div class="col-3 col-md-1">
-								<label class="option_item mb-3" for="answer-4-2-6">
-									<input type="radio" id="answer-4-2-6" name="quostion-4-2" class="checkbox" value="3,5">
-									<div class="option_inner">
-										<div class="shadow-wrapper-box"></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">3,5</h3>
-							</div>
-							<div class="col-3 col-md-1">
-								<label class="option_item mb-3" for="answer-4-2-7">
-									<input type="radio" id="answer-4-2-7" name="quostion-4-2" class="checkbox" value="4">
-									<div class="option_inner">
-										<div class="shadow-wrapper-box"></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">4</h3>
-							</div>
-							<div class="col-3 col-md-1">
-								<label class="option_item mb-3" for="answer-4-2-8">
-									<input type="radio" id="answer-4-2-8" name="quostion-4-2" class="checkbox" value="4,5">
-									<div class="option_inner">
-										<div class="shadow-wrapper-box"></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">4,5</h3>
-							</div>
-							<div class="col-3 col-md-1">
-								<label class="option_item mb-3" for="answer-4-2-9">
-									<input type="radio" id="answer-4-2-9" name="quostion-4-2" class="checkbox" value="5">
-									<div class="option_inner">
-										<div class="shadow-wrapper-box"></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">5</h3>
-							</div>
-							<div class="col-3 col-md-1">
-								<label class="option_item mb-3" for="answer-4-2-10">
-									<input type="radio" id="answer-4-2-10" name="quostion-4-2" class="checkbox" value=">5">
-									<div class="option_inner">
-										<div class="shadow-wrapper-box"></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">>5</h3>
-							</div>
-						</div>
-						<div class="row justify-content-center">
-							<div class="col text-center" style="margin-top: 35px;">
-								<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '4-2' );">
-								<input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '4-2' );">
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-12" id="5-2" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">5/7</span>Какое количество дверей Вы предполагаете?</h3>
-						<div class="row justify-content-md-center mb-5">
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-5-2-1">
-									<input type="radio" id="answer-5-2-1" name="quostion-5-2" class="checkbox" value="1 дверь">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-1.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">1 дверь</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-5-2-2">
-									<input type="radio" id="answer-5-2-2" name="quostion-5-2" class="checkbox" value="2 двери">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-2.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">2 двери</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-5-2-3">
-									<input type="radio" id="answer-5-2-3" name="quostion-5-2" class="checkbox" value="3 двери">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-3.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">3 двери</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-5-2-4">
-									<input type="radio" id="answer-5-2-4" name="quostion-5-2" class="checkbox" value="4 двери">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-4.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">4 двери</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-5-2-5">
-									<input type="radio" id="answer-5-2-5" name="quostion-5-2" class="checkbox" value="5 дверей">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-5.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">5 дверей</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-5-2-6">
-									<input type="radio" id="answer-5-2-6" name="quostion-5-2" class="checkbox" value="Более 5 дверей">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-6.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Более 5 дверей</h3>
-							</div>
-						</div>
-						<div class="row justify-content-center">
-							<div class="col text-center" style="margin-top: 35px;">
-								<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '5-2' );">
-								<input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '5-2' );">
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-12" id="6-2" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">6/7</span>Какой подарок Вы хотите получить в случае заказа?</h3>
-						<div class="row justify-content-md-center mb-5">
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-6-2-1">
-									<input type="radio" id="answer-6-2-1" name="quostion-6-2" class="checkbox" value="Скидка 15%">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-1.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Скидка 15%</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-6-2-2">
-									<input type="radio" id="answer-6-2-2" name="quostion-6-2" class="checkbox" value="Беспроцентная рассрочка на 6 месяцев">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-2.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Беспроцентная рассрочка на 6 месяцев</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-6-2-3">
-									<input type="radio" id="answer-6-2-3" name="quostion-6-2" class="checkbox" value="Бесплатная доставка и установка">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-3.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Бесплатная доставка и установка</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-6-2-4">
-									<input type="radio" id="answer-6-2-4" name="quostion-6-2" class="checkbox" value="Скидка 10% на заказ кухни в теченее года">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-4.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Скидка 10% на заказ кухни в теченее года</h3>
-							</div>
-						</div>
-						<div class="row justify-content-center">
-							<div class="col text-center" style="margin-top: 35px;">
-								<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '6-2' );">
-								<input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '6-2' );">
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-md-6" id="7-2" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">7/7</span>Введите Ваши контакты</h3>
-						<form method="post" action="<?php echo get_template_directory_uri(); ?>/mails/get_calculate_closet.php">
-							<div class="row justify-content-center">
-								<div class="col-md-4">
-									<label for="exampleFormControlInput1" class="form-label">Ваше имя</label>
-									<input type="text" class="form-control" id="exampleFormControlInput1" name="name">
-								</div>
-								<div class="col-md-4">
-									<label for="exampleFormControlInput2" class="form-label">Ваш телефон</label>
-									<input type="text" class="form-control telMask" id="exampleFormControlInput2" name="phone" required>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col text-center" style="margin-top: 45px;">
-									<input type="hidden" id="answer1-2" name="answer1">
-									<input type="hidden" id="answer2-2" name="answer2">
-									<input type="hidden" id="answer3-2" name="answer3">
-									<input type="hidden" id="answer4-2" name="answer4">
-									<input type="hidden" id="answer5-2" name="answer5">
-									<input type="hidden" id="answer6-2" name="answer6">
-									<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '7-2' );">
-									<input type="submit" class="btn btn-corporate-color-1" value="Отправить">
-								</div>
-							</div>
-						</form>
-					</div><!-- /ВОПРОСЫ ПО ШКАФАМ -->
-				</div><!-- /Расчет шкафа -->
-				
-				<?php } else { ?>
-		
-				<!-- Расчет любой мебели -->
-				<h2 class="text-center mb-3">Ответьте на несколько вопросов ниже<br>и узнайте предварительную стоимость Вашей мебели</h2>
-				<div class="title-line mb-5"></div>
-				<div class="row justify-content-center">
-			
-					<!--  ПЕРВЫЙ ОБЩИЙ ВОПРОС -->
-					<div class="col-12" id="1">
-						<h3 class="text-center mb-5"><!--span class="me-2" style="color: #A5A5A5;">1/7</span-->Какая мебель Вас интересует?</h3>
-						<div class="row justify-content-md-center mb-5">
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-1-1">
-									<input type="radio" id="answer-1-1" name="quostion-1" class="checkbox" value="Кухня">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/1-1.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Кухня</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-1-2">
-									<input type="radio" id="answer-1-2" name="quostion-1" class="checkbox" value="Шкаф или гардеробная">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/1-2.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Шкаф или гардеробная</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-1-3">
-									<input type="radio" id="answer-1-3" name="quostion-1" class="checkbox" value="Другая корпусная мебель">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/1-3.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Другая корпусная мебель</h3>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col text-center">
-								<input type="button" value="Далее" class="btn btn-corporate-color-1" style="width: 175px;" onclick="nextQuostion( '1' );">
-							</div>
-						</div>
-					</div>
-					<!--  /ПЕРВЫЙ ОБЩИЙ ВОПРОС -->
-					
-					
-					<!-- ВОПРОСЫ ПО КУХНЯМ -->
-					<div class="col-12" id="2-1" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">2/7</span>Какая планировка кухни Вам нужна?</h3>
-						<div class="row justify-content-md-center mb-5">
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-2-1-1">
-									<input type="radio" id="answer-2-1-1" name="quostion-2-1" class="checkbox" value="Прямая">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-1.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Прямая</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-2-1-2">
-									<input type="radio" id="answer-2-1-2" name="quostion-2-1" class="checkbox" value="Угловая">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-2.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Угловая</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-2-1-3">
-									<input type="radio" id="answer-2-1-3" name="quostion-2-1" class="checkbox" value="П-образная">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-3.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">П-образная</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-2-1-4">
-									<input type="radio" id="answer-2-1-4" name="quostion-2-1" class="checkbox" value="С островком">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-4.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">С островком</h3>
-							</div>
-							<!--div class="col-2">
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center" style="margin-top: 35px;">
+                                    <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '6-1' );">
+                                    <input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '6-1' );">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 7/1 -->
+                        <div class="col-md-6" id="7-1" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">6/6</span>Введите Ваши контакты</h3>
+                            <form method="post" action="<?php echo get_template_directory_uri(); ?>/mails/get_calculate_kitchen.php">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-4">
+                                        <label for="exampleFormControlInput1" class="form-label">Ваше имя</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput1" name="name">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="exampleFormControlInput2" class="form-label">Ваш телефон</label>
+                                        <input type="text" class="form-control telMask" id="exampleFormControlInput2" name="phone">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col text-center" style="margin-top: 45px;">
+                                        <input type="hidden" id="answer1-1" name="answer1">
+                                        <input type="hidden" id="answer2-1" name="answer2">
+                                        <input type="hidden" id="answer3-1-1" name="answer3-1">
+                                        <input type="hidden" id="answer3-1-2" name="answer3-2">
+                                        <input type="hidden" id="answer3-1-3" name="answer3-3">
+                                        <input type="hidden" id="answer3-1-4" name="answer3-4">
+                                        <input type="hidden" id="answer4-1" name="answer4">
+                                        <input type="hidden" id="answer5-1" name="answer5">
+                                        <input type="hidden" id="answer6-1" name="answer6">
+                                        <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '7-1' );">
+                                        <input type="submit" class="btn btn-corporate-color-1" value="Отправить">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /ВОПРОСЫ ПО КУХНЯМ -->
+                    </div>
+
+                <?php } else if ($cat_name == 'Шкафы') { ?>
+                    <!-- Расчет любой мебели -->
+                    <h2 class="text-center mb-3">Ответьте на 6 вопросов ниже<br>и узнайте предварительную стоимость Вашего шкафа</h2>
+                    <div class="title-line mb-5"></div>
+                    <div class="row justify-content-center">
+                        <!-- ВОПРОСЫ ПО ШКАФАМ -->
+                        <div class="col-12" id="2-2">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">2/7</span>Какой тип шкафа Вам нужен?</h3>
+                            <div class="row justify-content-md-center mb-5">
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-2-2-1">
+                                        <input type="radio" id="answer-2-2-1" name="quostion-2-2" class="checkbox" value="Корпусный">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-1.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Корпусный</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-2-2-2">
+                                        <input type="radio" id="answer-2-2-2" name="quostion-2-2" class="checkbox" value="Встроенный">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-2.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Встроенный</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-2-2-3">
+                                        <input type="radio" id="answer-2-2-3" name="quostion-2-2" class="checkbox" value="Угловой">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-3.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Угловой</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-2-2-4">
+                                        <input type="radio" id="answer-2-2-4" name="quostion-2-2" class="checkbox" value="Радиусный">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-4.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Радиусный</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-2-2-5">
+                                        <input type="radio" id="answer-2-2-5" name="quostion-2-2" class="checkbox" value="Гардеробный">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-5.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Гардеробный</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-2-2-6">
+                                        <input type="radio" id="answer-2-2-6" name="quostion-2-2" class="checkbox" value="Пока не знаю">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-6.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Пока не знаю</h3>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center" style="margin-top: 35px;">
+                                    <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '2-2' );">
+                                    <input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '2-2' );">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12" id="3-2" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">3/7</span>Какой материал фасада шкафа Вы хотите?</h3>
+                            <div class="row justify-content-md-center mb-5">
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-3-2-1">
+                                        <input type="radio" id="answer-3-2-1" name="quostion-3-2" class="checkbox" value="ЛДСП">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-1.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">ЛДСП</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-3-2-2">
+                                        <input type="radio" id="answer-3-2-2" name="quostion-3-2" class="checkbox" value="Пескоструй">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-2.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Пескоструй</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-3-2-3">
+                                        <input type="radio" id="answer-3-2-3" name="quostion-3-2" class="checkbox" value="Зеркало">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-3.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Зеркало</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-3-2-4">
+                                        <input type="radio" id="answer-3-2-4" name="quostion-3-2" class="checkbox" value="Фотопечать">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-4.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Фотопечать</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-3-2-5">
+                                        <input type="radio" id="answer-3-2-5" name="quostion-3-2" class="checkbox" value="Комбинированный">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-5.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Комбинированный</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-3-2-6">
+                                        <input type="radio" id="answer-3-2-6" name="quostion-3-2" class="checkbox" value="Пока не знаю">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-6.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Пока не знаю, нужна консультация</h3>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center" style="margin-top: 35px;">
+                                    <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '3-2' );">
+                                    <input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '3-2' );">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12" id="4-2" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">4/7</span>Какая ориентировочная ширина шкафа планируется?</h3>
+                            <div class="row justify-content-md-center mb-5">
+                                <div class="col-3 col-md-1">
+                                    <label class="option_item mb-3" for="answer-4-2-1">
+                                        <input type="radio" id="answer-4-2-1" name="quostion-4-2" class="checkbox" value="1">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper-box"></div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">1</h3>
+                                </div>
+                                <div class="col-3 col-md-1">
+                                    <label class="option_item mb-3" for="answer-4-2-2">
+                                        <input type="radio" id="answer-4-2-2" name="quostion-4-2" class="checkbox" value="1,5">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper-box"></div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">1,5</h3>
+                                </div>
+                                <div class="col-3 col-md-1">
+                                    <label class="option_item mb-3" for="answer-4-2-3">
+                                        <input type="radio" id="answer-4-2-3" name="quostion-4-2" class="checkbox" value="2">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper-box"></div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">2</h3>
+                                </div>
+                                <div class="col-3 col-md-1">
+                                    <label class="option_item mb-3" for="answer-4-2-4">
+                                        <input type="radio" id="answer-4-2-4" name="quostion-4-2" class="checkbox" value="2,5">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper-box"></div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">2,5</h3>
+                                </div>
+                                <div class="col-3 col-md-1">
+                                    <label class="option_item mb-3" for="answer-4-2-5">
+                                        <input type="radio" id="answer-4-2-5" name="quostion-4-2" class="checkbox" value="3">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper-box"></div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">3</h3>
+                                </div>
+                                <div class="col-3 col-md-1">
+                                    <label class="option_item mb-3" for="answer-4-2-6">
+                                        <input type="radio" id="answer-4-2-6" name="quostion-4-2" class="checkbox" value="3,5">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper-box"></div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">3,5</h3>
+                                </div>
+                                <div class="col-3 col-md-1">
+                                    <label class="option_item mb-3" for="answer-4-2-7">
+                                        <input type="radio" id="answer-4-2-7" name="quostion-4-2" class="checkbox" value="4">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper-box"></div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">4</h3>
+                                </div>
+                                <div class="col-3 col-md-1">
+                                    <label class="option_item mb-3" for="answer-4-2-8">
+                                        <input type="radio" id="answer-4-2-8" name="quostion-4-2" class="checkbox" value="4,5">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper-box"></div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">4,5</h3>
+                                </div>
+                                <div class="col-3 col-md-1">
+                                    <label class="option_item mb-3" for="answer-4-2-9">
+                                        <input type="radio" id="answer-4-2-9" name="quostion-4-2" class="checkbox" value="5">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper-box"></div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">5</h3>
+                                </div>
+                                <div class="col-3 col-md-1">
+                                    <label class="option_item mb-3" for="answer-4-2-10">
+                                        <input type="radio" id="answer-4-2-10" name="quostion-4-2" class="checkbox" value=">5">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper-box"></div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">>5</h3>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center" style="margin-top: 35px;">
+                                    <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '4-2' );">
+                                    <input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '4-2' );">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12" id="5-2" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">5/7</span>Какое количество дверей Вы предполагаете?</h3>
+                            <div class="row justify-content-md-center mb-5">
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-5-2-1">
+                                        <input type="radio" id="answer-5-2-1" name="quostion-5-2" class="checkbox" value="1 дверь">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-1.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">1 дверь</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-5-2-2">
+                                        <input type="radio" id="answer-5-2-2" name="quostion-5-2" class="checkbox" value="2 двери">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-2.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">2 двери</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-5-2-3">
+                                        <input type="radio" id="answer-5-2-3" name="quostion-5-2" class="checkbox" value="3 двери">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-3.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">3 двери</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-5-2-4">
+                                        <input type="radio" id="answer-5-2-4" name="quostion-5-2" class="checkbox" value="4 двери">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-4.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">4 двери</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-5-2-5">
+                                        <input type="radio" id="answer-5-2-5" name="quostion-5-2" class="checkbox" value="5 дверей">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-5.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">5 дверей</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-5-2-6">
+                                        <input type="radio" id="answer-5-2-6" name="quostion-5-2" class="checkbox" value="Более 5 дверей">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-6.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Более 5 дверей</h3>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center" style="margin-top: 35px;">
+                                    <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '5-2' );">
+                                    <input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '5-2' );">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12" id="6-2" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">6/7</span>Какой подарок Вы хотите получить в случае заказа?</h3>
+                            <div class="row justify-content-md-center mb-5">
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-6-2-1">
+                                        <input type="radio" id="answer-6-2-1" name="quostion-6-2" class="checkbox" value="Скидка 15%">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-1.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Скидка 15%</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-6-2-2">
+                                        <input type="radio" id="answer-6-2-2" name="quostion-6-2" class="checkbox" value="Беспроцентная рассрочка на 6 месяцев">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-2.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Беспроцентная рассрочка на 6 месяцев</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-6-2-3">
+                                        <input type="radio" id="answer-6-2-3" name="quostion-6-2" class="checkbox" value="Бесплатная доставка и установка">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-3.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Бесплатная доставка и установка</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-6-2-4">
+                                        <input type="radio" id="answer-6-2-4" name="quostion-6-2" class="checkbox" value="Скидка 10% на заказ кухни в теченее года">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-4.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Скидка 10% на заказ кухни в теченее года</h3>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center" style="margin-top: 35px;">
+                                    <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '6-2' );">
+                                    <input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '6-2' );">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6" id="7-2" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">7/7</span>Введите Ваши контакты</h3>
+                            <form method="post" action="<?php echo get_template_directory_uri(); ?>/mails/get_calculate_closet.php">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-4">
+                                        <label for="exampleFormControlInput1" class="form-label">Ваше имя</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput1" name="name">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="exampleFormControlInput2" class="form-label">Ваш телефон</label>
+                                        <input type="text" class="form-control telMask" id="exampleFormControlInput2" name="phone" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col text-center" style="margin-top: 45px;">
+                                        <input type="hidden" id="answer1-2" name="answer1">
+                                        <input type="hidden" id="answer2-2" name="answer2">
+                                        <input type="hidden" id="answer3-2" name="answer3">
+                                        <input type="hidden" id="answer4-2" name="answer4">
+                                        <input type="hidden" id="answer5-2" name="answer5">
+                                        <input type="hidden" id="answer6-2" name="answer6">
+                                        <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '7-2' );">
+                                        <input type="submit" class="btn btn-corporate-color-1" value="Отправить">
+                                    </div>
+                                </div>
+                            </form>
+                        </div><!-- /ВОПРОСЫ ПО ШКАФАМ -->
+                    </div><!-- /Расчет шкафа -->
+
+                <?php } else { ?>
+
+                    <!-- Расчет любой мебели -->
+                    <h2 class="text-center mb-3">Ответьте на несколько вопросов ниже<br>и узнайте предварительную стоимость Вашей мебели</h2>
+                    <div class="title-line mb-5"></div>
+                    <div class="row justify-content-center">
+
+                        <!--  ПЕРВЫЙ ОБЩИЙ ВОПРОС -->
+                        <div class="col-12" id="1">
+                            <h3 class="text-center mb-5"><!--span class="me-2" style="color: #A5A5A5;">1/7</span-->Какая мебель Вас интересует?</h3>
+                            <div class="row justify-content-md-center mb-5">
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-1-1">
+                                        <input type="radio" id="answer-1-1" name="quostion-1" class="checkbox" value="Кухня">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/1-1.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Кухня</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-1-2">
+                                        <input type="radio" id="answer-1-2" name="quostion-1" class="checkbox" value="Шкаф или гардеробная">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/1-2.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Шкаф или гардеробная</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-1-3">
+                                        <input type="radio" id="answer-1-3" name="quostion-1" class="checkbox" value="Другая корпусная мебель">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/1-3.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Другая корпусная мебель</h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col text-center">
+                                    <input type="button" value="Далее" class="btn btn-corporate-color-1" style="width: 175px;" onclick="nextQuostion( '1' );">
+                                </div>
+                            </div>
+                        </div>
+                        <!--  /ПЕРВЫЙ ОБЩИЙ ВОПРОС -->
+
+
+                        <!-- ВОПРОСЫ ПО КУХНЯМ -->
+                        <div class="col-12" id="2-1" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">2/7</span>Какая планировка кухни Вам нужна?</h3>
+                            <div class="row justify-content-md-center mb-5">
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-2-1-1">
+                                        <input type="radio" id="answer-2-1-1" name="quostion-2-1" class="checkbox" value="Прямая">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-1.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Прямая</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-2-1-2">
+                                        <input type="radio" id="answer-2-1-2" name="quostion-2-1" class="checkbox" value="Угловая">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-2.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Угловая</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-2-1-3">
+                                        <input type="radio" id="answer-2-1-3" name="quostion-2-1" class="checkbox" value="П-образная">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-3.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">П-образная</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-2-1-4">
+                                        <input type="radio" id="answer-2-1-4" name="quostion-2-1" class="checkbox" value="С островком">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-4.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">С островком</h3>
+                                </div>
+                                <!--div class="col-2">
 								<label class="option_item mb-3" for="answer-2-1-5">
 									<input type="radio" id="answer-2-1-5" name="quostion-2-1" class="checkbox" value="Пока не знаю">
 									<div class="option_inner">
 										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-5.jpg" style="width: 100%;">
+										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-5.webp" style="width: 100%;">
 									</div>
 								</label>
 								<h3>Пока не знаю</h3>
 							</div-->
-						</div>
-						<div class="row justify-content-center">
-							<div class="col text-center" style="margin-top: 35px;">
-								<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '2-1' );">
-								<input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '2-1' );">
-							</div>
-						</div>
-					</div>
-					
-					<!-- Один размер -->
-					<div class="col-md-6" id="3-1-1" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">3/7</span>Укажите размеры</h3>
-						<div class="row justify-content-md-center mb-5">
-							<div class="col-md-4">
-								<label for="answer-3-1-1" class="form-label">Длинна 1, см</label>
-								<input type="text" class="form-control" id="answer-3-1-1-1" name="quostion-3-1-1">
-							</div>
-						</div>
-						<div class="row justify-content-center">
-							<div class="col text-center" style="margin-top: 35px;">
-								<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '3-1-1' );">
-								<input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '3-1-1' );">
-							</div>
-						</div>
-					</div>
-					
-					<!-- Два размера -->
-					<div class="col-md-6" id="3-1-2" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">3/7</span>Укажите размеры</h3>
-						<div class="row justify-content-md-center mb-5">
-							<div class="col-md-4">
-								<label for="answer-3-1-1" class="form-label">Длинна 1, см</label>
-								<input type="text" class="form-control" id="answer-3-1-1-2" name="quostion-3-1-2">
-							</div>
-							<div class="col-md-4">
-								<label for="answer-3-1-2" class="form-label">Длинна 2, см</label>
-								<input type="text" class="form-control" id="answer-3-1-2-2" name="quostion-3-1-2">
-							</div>
-						</div>
-						<div class="row justify-content-center">
-							<div class="col text-center" style="margin-top: 35px;">
-								<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '3-1-2' );">
-								<input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '3-1-2' );">
-							</div>
-						</div>
-					</div>
-					
-					<!-- Три размера -->
-					<div class="col-md-6" id="3-1-3" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">3/7</span>Укажите размеры</h3>
-						<div class="row justify-content-md-center mb-5">
-							<div class="col-md-4">
-								<label for="answer-3-1-1" class="form-label">Длинна 1, см</label>
-								<input type="text" class="form-control" id="answer-3-1-1-3" name="quostion-3-1-2">
-							</div>
-							<div class="col-md-4">
-								<label for="answer-3-1-2" class="form-label">Длинна 2, см</label>
-								<input type="text" class="form-control" id="answer-3-1-2-3" name="quostion-3-1-2">
-							</div>
-							<div class="col-md-4">
-								<label for="answer-3-1-3" class="form-label">Длинна 3, см</label>
-								<input type="text" class="form-control" id="answer-3-1-3-3" name="quostion-3-1-2">
-							</div>
-						</div>
-						<div class="row justify-content-center">
-							<div class="col text-center" style="margin-top: 35px;">
-								<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '3-1-3' );">
-								<input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '3-1-3' );">
-							</div>
-						</div>
-					</div>
-					
-					<!-- Четыре размера -->
-					<div class="col-md-6" id="3-1-4" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">3/7</span>Укажите размеры в сантиметрах</h3>
-						<div class="row justify-content-md-center mb-5">
-							<div class="col-md-3">
-								<label for="answer-3-1-1" class="form-label">Длинна 1</label>
-								<input type="text" class="form-control" id="answer-3-1-1-4" name="quostion-3-1-2">
-							</div>
-							<div class="col-md-3">
-								<label for="answer-3-1-2" class="form-label">Длинна 2</label>
-								<input type="text" class="form-control" id="answer-3-1-2-4" name="quostion-3-1-2">
-							</div>
-							<div class="col-md-3">
-								<label for="answer-3-1-3" class="form-label">Длинна 3</label>
-								<input type="text" class="form-control" id="answer-3-1-3-4" name="quostion-3-1-2">
-							</div>
-							<div class="col-md-3">
-								<label for="answer-3-1-4" class="form-label">Длинна островка</label>
-								<input type="text" class="form-control" id="answer-3-1-4-4" name="quostion-3-1-2">
-							</div>
-						</div>
-						<div class="row justify-content-center">
-							<div class="col text-center" style="margin-top: 35px;">
-								<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '3-1-4' );">
-								<input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '3-1-4' );">
-							</div>
-						</div>
-					</div>
-					
-					<!-- 4/7 -->
-					<div class="col-12" id="4-1" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">4/7</span>Какой стиль кухни Вы рассматриваете?</h3>
-						<div class="row justify-content-md-center mb-5">
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-4-1-1">
-									<input type="radio" id="answer-4-1-1" name="quostion-4-1" class="checkbox" value="Современный">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-1.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Современный</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-4-1-2">
-									<input type="radio" id="answer-4-1-2" name="quostion-4-1" class="checkbox" value="Классический">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-2.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Классический</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-4-1-3">
-									<input type="radio" id="answer-4-1-3" name="quostion-4-1" class="checkbox" value="Лофт">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-3.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Лофт</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-4-1-4">
-									<input type="radio" id="answer-4-1-4" name="quostion-4-1" class="checkbox" value="Пока не знаю, нужна консультация">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-4.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Пока не знаю, нужна консультация</h3>
-							</div>
-						</div>
-						<div class="row justify-content-center">
-							<div class="col text-center" style="margin-top: 35px;">
-								<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '4-1' );">
-								<input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '4-1' );">
-							</div>
-						</div>
-					</div>
-					
-					<!-- 5/7 -->
-					<div class="col-12" id="5-1" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">5/7</span>Какой материал фасада кухни Вы хотите?</h3>
-						<div class="row justify-content-md-center mb-5">
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-5-1-1">
-									<input type="radio" id="answer-5-1-1" name="quostion-5-1" class="checkbox" value="ЛДСП/ЛМДФ">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-1.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">ЛДСП/ЛМДФ</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-5-1-2">
-									<input type="radio" id="answer-5-1-2" name="quostion-5-1" class="checkbox" value="Пленка">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-2.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Пленка</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-5-1-3">
-									<input type="radio" id="answer-5-1-3" name="quostion-5-1" class="checkbox" value="Эмаль">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-3.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Эмаль</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-5-1-4">
-									<input type="radio" id="answer-5-1-4" name="quostion-5-1" class="checkbox" value="Пластик">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-4.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Пластик</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-5-1-5">
-									<input type="radio" id="answer-5-1-5" name="quostion-5-1" class="checkbox" value="Массив">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-5.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Массив</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-5-1-6">
-									<input type="radio" id="answer-5-1-6" name="quostion-5-1" class="checkbox" value="Пока не знаю, нужна консультация">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-6.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Пока не знаю, нужна консультация</h3>
-							</div>
-						</div>
-						<div class="row justify-content-center">
-							<div class="col text-center" style="margin-top: 35px;">
-								<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '5-1' );">
-								<input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '5-1' );">
-							</div>
-						</div>
-					</div>
-					
-					<!-- 6/7 -->
-					<div class="col-12" id="6-1" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">6/7</span>Какой подарок Вы хотите получить в случае заказа?</h3>
-						<div class="row justify-content-md-center mb-5">
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-6-1-1">
-									<input type="radio" id="answer-6-1-1" name="quostion-6-1" class="checkbox" value="Скидка 10%">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-1.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Скидка 10%</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-6-1-2">
-									<input type="radio" id="answer-6-1-2" name="quostion-6-1" class="checkbox" value="Беспроцентная рассрочка на 6 месяцев">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-2.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Беспроцентная рассрочка на 6 месяцев</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-6-1-3">
-									<input type="radio" id="answer-6-1-3" name="quostion-6-1" class="checkbox" value="Скидка 15% на заказ шкафа в теченее года">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-4.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Скидка 15% на заказ шкафа в теченее года</h3>
-							</div>
-							<!--div class="col-2">
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center" style="margin-top: 35px;">
+                                    <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '2-1' );">
+                                    <input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '2-1' );">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Один размер -->
+                        <div class="col-md-6" id="3-1-1" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">3/7</span>Укажите размеры</h3>
+                            <div class="row justify-content-md-center mb-5">
+                                <div class="col-md-4">
+                                    <label for="answer-3-1-1" class="form-label">Длинна 1, см</label>
+                                    <input type="text" class="form-control" id="answer-3-1-1-1" name="quostion-3-1-1">
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center" style="margin-top: 35px;">
+                                    <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '3-1-1' );">
+                                    <input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '3-1-1' );">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Два размера -->
+                        <div class="col-md-6" id="3-1-2" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">3/7</span>Укажите размеры</h3>
+                            <div class="row justify-content-md-center mb-5">
+                                <div class="col-md-4">
+                                    <label for="answer-3-1-1" class="form-label">Длинна 1, см</label>
+                                    <input type="text" class="form-control" id="answer-3-1-1-2" name="quostion-3-1-2">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="answer-3-1-2" class="form-label">Длинна 2, см</label>
+                                    <input type="text" class="form-control" id="answer-3-1-2-2" name="quostion-3-1-2">
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center" style="margin-top: 35px;">
+                                    <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '3-1-2' );">
+                                    <input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '3-1-2' );">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Три размера -->
+                        <div class="col-md-6" id="3-1-3" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">3/7</span>Укажите размеры</h3>
+                            <div class="row justify-content-md-center mb-5">
+                                <div class="col-md-4">
+                                    <label for="answer-3-1-1" class="form-label">Длинна 1, см</label>
+                                    <input type="text" class="form-control" id="answer-3-1-1-3" name="quostion-3-1-2">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="answer-3-1-2" class="form-label">Длинна 2, см</label>
+                                    <input type="text" class="form-control" id="answer-3-1-2-3" name="quostion-3-1-2">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="answer-3-1-3" class="form-label">Длинна 3, см</label>
+                                    <input type="text" class="form-control" id="answer-3-1-3-3" name="quostion-3-1-2">
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center" style="margin-top: 35px;">
+                                    <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '3-1-3' );">
+                                    <input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '3-1-3' );">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Четыре размера -->
+                        <div class="col-md-6" id="3-1-4" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">3/7</span>Укажите размеры в сантиметрах</h3>
+                            <div class="row justify-content-md-center mb-5">
+                                <div class="col-md-3">
+                                    <label for="answer-3-1-1" class="form-label">Длинна 1</label>
+                                    <input type="text" class="form-control" id="answer-3-1-1-4" name="quostion-3-1-2">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="answer-3-1-2" class="form-label">Длинна 2</label>
+                                    <input type="text" class="form-control" id="answer-3-1-2-4" name="quostion-3-1-2">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="answer-3-1-3" class="form-label">Длинна 3</label>
+                                    <input type="text" class="form-control" id="answer-3-1-3-4" name="quostion-3-1-2">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="answer-3-1-4" class="form-label">Длинна островка</label>
+                                    <input type="text" class="form-control" id="answer-3-1-4-4" name="quostion-3-1-2">
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center" style="margin-top: 35px;">
+                                    <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '3-1-4' );">
+                                    <input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '3-1-4' );">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4/7 -->
+                        <div class="col-12" id="4-1" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">4/7</span>Какой стиль кухни Вы рассматриваете?</h3>
+                            <div class="row justify-content-md-center mb-5">
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-4-1-1">
+                                        <input type="radio" id="answer-4-1-1" name="quostion-4-1" class="checkbox" value="Современный">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-1.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Современный</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-4-1-2">
+                                        <input type="radio" id="answer-4-1-2" name="quostion-4-1" class="checkbox" value="Классический">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-2.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Классический</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-4-1-3">
+                                        <input type="radio" id="answer-4-1-3" name="quostion-4-1" class="checkbox" value="Лофт">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-3.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Лофт</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-4-1-4">
+                                        <input type="radio" id="answer-4-1-4" name="quostion-4-1" class="checkbox" value="Пока не знаю, нужна консультация">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/4-1-4.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Пока не знаю, нужна консультация</h3>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center" style="margin-top: 35px;">
+                                    <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '4-1' );">
+                                    <input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '4-1' );">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5/7 -->
+                        <div class="col-12" id="5-1" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">5/7</span>Какой материал фасада кухни Вы хотите?</h3>
+                            <div class="row justify-content-md-center mb-5">
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-5-1-1">
+                                        <input type="radio" id="answer-5-1-1" name="quostion-5-1" class="checkbox" value="ЛДСП/ЛМДФ">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-1.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">ЛДСП/ЛМДФ</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-5-1-2">
+                                        <input type="radio" id="answer-5-1-2" name="quostion-5-1" class="checkbox" value="Пленка">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-2.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Пленка</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-5-1-3">
+                                        <input type="radio" id="answer-5-1-3" name="quostion-5-1" class="checkbox" value="Эмаль">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-3.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Эмаль</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-5-1-4">
+                                        <input type="radio" id="answer-5-1-4" name="quostion-5-1" class="checkbox" value="Пластик">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-4.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Пластик</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-5-1-5">
+                                        <input type="radio" id="answer-5-1-5" name="quostion-5-1" class="checkbox" value="Массив">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-5.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Массив</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-5-1-6">
+                                        <input type="radio" id="answer-5-1-6" name="quostion-5-1" class="checkbox" value="Пока не знаю, нужна консультация">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-1-6.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Пока не знаю, нужна консультация</h3>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center" style="margin-top: 35px;">
+                                    <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '5-1' );">
+                                    <input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '5-1' );">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6/7 -->
+                        <div class="col-12" id="6-1" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">6/7</span>Какой подарок Вы хотите получить в случае заказа?</h3>
+                            <div class="row justify-content-md-center mb-5">
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-6-1-1">
+                                        <input type="radio" id="answer-6-1-1" name="quostion-6-1" class="checkbox" value="Скидка 10%">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-1.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Скидка 10%</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-6-1-2">
+                                        <input type="radio" id="answer-6-1-2" name="quostion-6-1" class="checkbox" value="Беспроцентная рассрочка на 6 месяцев">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-2.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Беспроцентная рассрочка на 6 месяцев</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-6-1-3">
+                                        <input type="radio" id="answer-6-1-3" name="quostion-6-1" class="checkbox" value="Скидка 15% на заказ шкафа в теченее года">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-4.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Скидка 15% на заказ шкафа в теченее года</h3>
+                                </div>
+                                <!--div class="col-2">
 								<label class="option_item mb-3" for="answer-6-1-4">
 									<input type="radio" id="answer-6-1-4" name="quostion-6-1" class="checkbox" value="С островком">
 									<div class="option_inner">
 										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-4.jpg" style="width: 100%;">
+										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-4.webp" style="width: 100%;">
 									</div>
 								</label>
 								<h3>Пластик</h3>
 							</div-->
-						</div>
-						<div class="row justify-content-center">
-							<div class="col text-center" style="margin-top: 35px;">
-								<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '6-1' );">
-								<input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '6-1' );">
-							</div>
-						</div>
-					</div>
-					
-					<!-- 7/1 -->
-					<div class="col-md-6" id="7-1" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">7/7</span>Введите Ваши контакты</h3>
-						<form method="post" action="<?php echo get_template_directory_uri(); ?>/mails/get_calculate_kitchen.php">
-							<div class="row justify-content-center">
-								<div class="col-md-4">
-									<label for="exampleFormControlInput1" class="form-label">Ваше имя</label>
-									<input type="text" class="form-control" id="exampleFormControlInput1" name="name">
-								</div>
-								<div class="col-md-4">
-									<label for="exampleFormControlInput2" class="form-label">Ваш телефон</label>
-									<input type="text" class="form-control telMask" id="exampleFormControlInput2" name="phone">
-								</div>
-							</div>
-							<div class="row">
-								<div class="col text-center" style="margin-top: 45px;">
-									<input type="hidden" id="answer1-1" name="answer1">
-									<input type="hidden" id="answer2-1" name="answer2">
-									<input type="hidden" id="answer3-1-1" name="answer3-1">
-									<input type="hidden" id="answer3-1-2" name="answer3-2">
-									<input type="hidden" id="answer3-1-3" name="answer3-3">
-									<input type="hidden" id="answer3-1-4" name="answer3-4">
-									<input type="hidden" id="answer4-1" name="answer4">
-									<input type="hidden" id="answer5-1" name="answer5">
-									<input type="hidden" id="answer6-1" name="answer6">
-									<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '7-1' );">
-									<input type="submit" class="btn btn-corporate-color-1" value="Отправить">
-								</div>
-							</div>
-						</form>
-					</div>
-					<!-- /ВОПРОСЫ ПО КУХНЯМ -->
-					
-					
-					<!-- ВОПРОСЫ ПО ШКАФАМ -->
-					<div class="col-12" id="2-2" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">2/7</span>Какой тип шкафа Вам нужен?</h3>
-						<div class="row justify-content-md-center mb-5">
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-2-2-1">
-									<input type="radio" id="answer-2-2-1" name="quostion-2-2" class="checkbox" value="Корпусный">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-1.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Корпусный</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-2-2-2">
-									<input type="radio" id="answer-2-2-2" name="quostion-2-2" class="checkbox" value="Встроенный">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-2.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Встроенный</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-2-2-3">
-									<input type="radio" id="answer-2-2-3" name="quostion-2-2" class="checkbox" value="Угловой">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-3.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Угловой</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-2-2-4">
-									<input type="radio" id="answer-2-2-4" name="quostion-2-2" class="checkbox" value="Радиусный">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-4.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Радиусный</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-2-2-5">
-									<input type="radio" id="answer-2-2-5" name="quostion-2-2" class="checkbox" value="Гардеробный">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-5.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Гардеробный</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-2-2-6">
-									<input type="radio" id="answer-2-2-6" name="quostion-2-2" class="checkbox" value="Пока не знаю">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-6.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Пока не знаю</h3>
-							</div>
-						</div>
-						<div class="row justify-content-center">
-							<div class="col text-center" style="margin-top: 35px;">
-								<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '2-2' );">
-								<input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '2-2' );">
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-12" id="3-2" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">3/7</span>Какой материал фасада шкафа Вы хотите?</h3>
-						<div class="row justify-content-md-center mb-5">
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-3-2-1">
-									<input type="radio" id="answer-3-2-1" name="quostion-3-2" class="checkbox" value="ЛДСП">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-1.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">ЛДСП</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-3-2-2">
-									<input type="radio" id="answer-3-2-2" name="quostion-3-2" class="checkbox" value="Пескоструй">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-2.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Пескоструй</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-3-2-3">
-									<input type="radio" id="answer-3-2-3" name="quostion-3-2" class="checkbox" value="Зеркало">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-3.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Зеркало</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-3-2-4">
-									<input type="radio" id="answer-3-2-4" name="quostion-3-2" class="checkbox" value="Фотопечать">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-4.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Фотопечать</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-3-2-5">
-									<input type="radio" id="answer-3-2-5" name="quostion-3-2" class="checkbox" value="Комбинированный">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-5.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Комбинированный</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-3-2-6">
-									<input type="radio" id="answer-3-2-6" name="quostion-3-2" class="checkbox" value="Пока не знаю">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-6.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Пока не знаю, нужна консультация</h3>
-							</div>
-						</div>
-						<div class="row justify-content-center">
-							<div class="col text-center" style="margin-top: 35px;">
-								<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '3-2' );">
-								<input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '3-2' );">
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-12" id="4-2" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">4/7</span>Какая ориентировочная ширина шкафа планируется?</h3>
-						<div class="row justify-content-md-center mb-5">
-							<div class="col-3 col-md-1">
-								<label class="option_item mb-3" for="answer-4-2-1">
-									<input type="radio" id="answer-4-2-1" name="quostion-4-2" class="checkbox" value="1">
-									<div class="option_inner">
-										<div class="shadow-wrapper-box"></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">1</h3>
-							</div>
-							<div class="col-3 col-md-1">
-								<label class="option_item mb-3" for="answer-4-2-2">
-									<input type="radio" id="answer-4-2-2" name="quostion-4-2" class="checkbox" value="1,5">
-									<div class="option_inner">
-										<div class="shadow-wrapper-box"></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">1,5</h3>
-							</div>
-							<div class="col-3 col-md-1">
-								<label class="option_item mb-3" for="answer-4-2-3">
-									<input type="radio" id="answer-4-2-3" name="quostion-4-2" class="checkbox" value="2">
-									<div class="option_inner">
-										<div class="shadow-wrapper-box"></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">2</h3>
-							</div>
-							<div class="col-3 col-md-1">
-								<label class="option_item mb-3" for="answer-4-2-4">
-									<input type="radio" id="answer-4-2-4" name="quostion-4-2" class="checkbox" value="2,5">
-									<div class="option_inner">
-										<div class="shadow-wrapper-box"></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">2,5</h3>
-							</div>
-							<div class="col-3 col-md-1">
-								<label class="option_item mb-3" for="answer-4-2-5">
-									<input type="radio" id="answer-4-2-5" name="quostion-4-2" class="checkbox" value="3">
-									<div class="option_inner">
-										<div class="shadow-wrapper-box"></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">3</h3>
-							</div>
-							<div class="col-3 col-md-1">
-								<label class="option_item mb-3" for="answer-4-2-6">
-									<input type="radio" id="answer-4-2-6" name="quostion-4-2" class="checkbox" value="3,5">
-									<div class="option_inner">
-										<div class="shadow-wrapper-box"></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">3,5</h3>
-							</div>
-							<div class="col-3 col-md-1">
-								<label class="option_item mb-3" for="answer-4-2-7">
-									<input type="radio" id="answer-4-2-7" name="quostion-4-2" class="checkbox" value="4">
-									<div class="option_inner">
-										<div class="shadow-wrapper-box"></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">4</h3>
-							</div>
-							<div class="col-3 col-md-1">
-								<label class="option_item mb-3" for="answer-4-2-8">
-									<input type="radio" id="answer-4-2-8" name="quostion-4-2" class="checkbox" value="4,5">
-									<div class="option_inner">
-										<div class="shadow-wrapper-box"></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">4,5</h3>
-							</div>
-							<div class="col-3 col-md-1">
-								<label class="option_item mb-3" for="answer-4-2-9">
-									<input type="radio" id="answer-4-2-9" name="quostion-4-2" class="checkbox" value="5">
-									<div class="option_inner">
-										<div class="shadow-wrapper-box"></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">5</h3>
-							</div>
-							<div class="col-3 col-md-1">
-								<label class="option_item mb-3" for="answer-4-2-10">
-									<input type="radio" id="answer-4-2-10" name="quostion-4-2" class="checkbox" value=">5">
-									<div class="option_inner">
-										<div class="shadow-wrapper-box"></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">>5</h3>
-							</div>
-						</div>
-						<div class="row justify-content-center">
-							<div class="col text-center" style="margin-top: 35px;">
-								<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '4-2' );">
-								<input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '4-2' );">
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-12" id="5-2" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">5/7</span>Какое количество дверей Вы предполагаете?</h3>
-						<div class="row justify-content-md-center mb-5">
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-5-2-1">
-									<input type="radio" id="answer-5-2-1" name="quostion-5-2" class="checkbox" value="1 дверь">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-1.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">1 дверь</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-5-2-2">
-									<input type="radio" id="answer-5-2-2" name="quostion-5-2" class="checkbox" value="2 двери">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-2.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">2 двери</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-5-2-3">
-									<input type="radio" id="answer-5-2-3" name="quostion-5-2" class="checkbox" value="3 двери">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-3.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">3 двери</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-5-2-4">
-									<input type="radio" id="answer-5-2-4" name="quostion-5-2" class="checkbox" value="4 двери">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-4.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">4 двери</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-5-2-5">
-									<input type="radio" id="answer-5-2-5" name="quostion-5-2" class="checkbox" value="5 дверей">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-5.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">5 дверей</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-5-2-6">
-									<input type="radio" id="answer-5-2-6" name="quostion-5-2" class="checkbox" value="Более 5 дверей">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-6.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Более 5 дверей</h3>
-							</div>
-						</div>
-						<div class="row justify-content-center">
-							<div class="col text-center" style="margin-top: 35px;">
-								<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '5-2' );">
-								<input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '5-2' );">
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-12" id="6-2" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">6/7</span>Какой подарок Вы хотите получить в случае заказа?</h3>
-						<div class="row justify-content-md-center mb-5">
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-6-2-1">
-									<input type="radio" id="answer-6-2-1" name="quostion-6-2" class="checkbox" value="Скидка 15%">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-1.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Скидка 15%</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-6-2-2">
-									<input type="radio" id="answer-6-2-2" name="quostion-6-2" class="checkbox" value="Беспроцентная рассрочка на 6 месяцев">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-2.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Беспроцентная рассрочка на 6 месяцев</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-6-2-3">
-									<input type="radio" id="answer-6-2-3" name="quostion-6-2" class="checkbox" value="Бесплатная доставка и установка">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-3.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Бесплатная доставка и установка</h3>
-							</div>
-							<div class="col-6 col-md-2">
-								<label class="option_item mb-3" for="answer-6-2-4">
-									<input type="radio" id="answer-6-2-4" name="quostion-6-2" class="checkbox" value="Скидка 10% на заказ кухни в теченее года">
-									<div class="option_inner">
-										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-4.jpg" style="width: 100%;">
-									</div>
-								</label>
-								<h3 class="mb-3 mb-md-0">Скидка 10% на заказ кухни в теченее года</h3>
-							</div>
-						</div>
-						<div class="row justify-content-center">
-							<div class="col text-center" style="margin-top: 35px;">
-								<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '6-2' );">
-								<input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '6-2' );">
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-md-6" id="7-2" style="display: none;">
-						<h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">7/7</span>Введите Ваши контакты</h3>
-						<form method="post" action="<?php echo get_template_directory_uri(); ?>/mails/get_calculate_closet.php">
-							<div class="row justify-content-center">
-								<div class="col-md-4">
-									<label for="exampleFormControlInput1" class="form-label">Ваше имя</label>
-									<input type="text" class="form-control" id="exampleFormControlInput1" name="name">
-								</div>
-								<div class="col-md-4">
-									<label for="exampleFormControlInput2" class="form-label">Ваш телефон</label>
-									<input type="text" class="form-control telMask" id="exampleFormControlInput2" name="phone" required>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col text-center" style="margin-top: 45px;">
-									<input type="hidden" id="answer1-2" name="answer1">
-									<input type="hidden" id="answer2-2" name="answer2">
-									<input type="hidden" id="answer3-2" name="answer3">
-									<input type="hidden" id="answer4-2" name="answer4">
-									<input type="hidden" id="answer5-2" name="answer5">
-									<input type="hidden" id="answer6-2" name="answer6">
-									<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '7-2' );">
-									<input type="submit" class="btn btn-corporate-color-1" value="Отправить">
-								</div>
-							</div>
-						</form>
-					</div>
-					<!-- /ВОПРОСЫ ПО ШКАФАМ -->
-					
-					
-					<!-- ВЛПРОСЫ ПО ДРУГОЙ МЕБЕЛИ -->
-					<div class="col-12" id="2-3" style="display: none;">
-						<h3 class="text-center mb-5">Для расчета стоимости опишите Ваше изделие</h3>
-						<form method="post" action="<?php echo get_template_directory_uri(); ?>/mails/get_calculate.php" enctype="multipart/form-data">
-							<div class="row justify-content-center py-2">
-								<div class="col-8 mb-3">
-									<textarea type="text" rows="3" name="mes" class="form-control form-control-corporate-color-1" placeholder="Опишите изделие своими словами, укажите размеры, материалы и другую информацию"></textarea>
-								</div>
-								<div class="col-8">
-									<p>Прикрепите изображение изделия или схематично нарисованный Вами рисунок.</p>
-								</div>
-								<div class="col-8 mb-3">
-									<div class="input-group custom-file-button">
-										<label class="input-group-text" for="inputGroupFile">Прикрепить</label>
-										<input type="file" name="mail_file" accept=".jpg,.jpeg,.png,.pdf,.heic" class="form-control" id="inputGroupFile">
-									</div>
-								</div>
-							</div>
-							<div class="row justify-content-center">
-								<div class="col-4 mb-3">
-									<input type="text" name="name" class="form-control form-control-corporate-color-1" placeholder="Ваше имя">
-								</div>
-								<div class="col-4 mb-3">
-									<input type="text" name="tel" class="form-control form-control-corporate-color-1 telMask" placeholder="Ваш телефон*" required="" inputmode="text">
-								</div>
-							</div>
-							<div class="row justify-content-center">
-								<div class="col text-center" style="margin-top: 35px;">
-									<input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '2-3' );">
-									<input type="submit" value="Отправить" class="btn btn-corporate-color-1">
-								</div>
-							</div>
-						</form>
-					</div><!-- /ВОПРОСЫ ПО ДРУГОЙ МЕБЕЛИ -->			
-				</div><!-- /Расчет любой мебели -->
-			
-			<?php } ?>
-			</div>
-		</div>
-	</div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center" style="margin-top: 35px;">
+                                    <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '6-1' );">
+                                    <input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '6-1' );">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 7/1 -->
+                        <div class="col-md-6" id="7-1" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">7/7</span>Введите Ваши контакты</h3>
+                            <form method="post" action="<?php echo get_template_directory_uri(); ?>/mails/get_calculate_kitchen.php">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-4">
+                                        <label for="exampleFormControlInput1" class="form-label">Ваше имя</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput1" name="name">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="exampleFormControlInput2" class="form-label">Ваш телефон</label>
+                                        <input type="text" class="form-control telMask" id="exampleFormControlInput2" name="phone">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col text-center" style="margin-top: 45px;">
+                                        <input type="hidden" id="answer1-1" name="answer1">
+                                        <input type="hidden" id="answer2-1" name="answer2">
+                                        <input type="hidden" id="answer3-1-1" name="answer3-1">
+                                        <input type="hidden" id="answer3-1-2" name="answer3-2">
+                                        <input type="hidden" id="answer3-1-3" name="answer3-3">
+                                        <input type="hidden" id="answer3-1-4" name="answer3-4">
+                                        <input type="hidden" id="answer4-1" name="answer4">
+                                        <input type="hidden" id="answer5-1" name="answer5">
+                                        <input type="hidden" id="answer6-1" name="answer6">
+                                        <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '7-1' );">
+                                        <input type="submit" class="btn btn-corporate-color-1" value="Отправить">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /ВОПРОСЫ ПО КУХНЯМ -->
+
+
+                        <!-- ВОПРОСЫ ПО ШКАФАМ -->
+                        <div class="col-12" id="2-2" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">2/7</span>Какой тип шкафа Вам нужен?</h3>
+                            <div class="row justify-content-md-center mb-5">
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-2-2-1">
+                                        <input type="radio" id="answer-2-2-1" name="quostion-2-2" class="checkbox" value="Корпусный">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-1.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Корпусный</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-2-2-2">
+                                        <input type="radio" id="answer-2-2-2" name="quostion-2-2" class="checkbox" value="Встроенный">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-2.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Встроенный</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-2-2-3">
+                                        <input type="radio" id="answer-2-2-3" name="quostion-2-2" class="checkbox" value="Угловой">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-3.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Угловой</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-2-2-4">
+                                        <input type="radio" id="answer-2-2-4" name="quostion-2-2" class="checkbox" value="Радиусный">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-4.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Радиусный</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-2-2-5">
+                                        <input type="radio" id="answer-2-2-5" name="quostion-2-2" class="checkbox" value="Гардеробный">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-5.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Гардеробный</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-2-2-6">
+                                        <input type="radio" id="answer-2-2-6" name="quostion-2-2" class="checkbox" value="Пока не знаю">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-2-6.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Пока не знаю</h3>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center" style="margin-top: 35px;">
+                                    <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '2-2' );">
+                                    <input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '2-2' );">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12" id="3-2" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">3/7</span>Какой материал фасада шкафа Вы хотите?</h3>
+                            <div class="row justify-content-md-center mb-5">
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-3-2-1">
+                                        <input type="radio" id="answer-3-2-1" name="quostion-3-2" class="checkbox" value="ЛДСП">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-1.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">ЛДСП</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-3-2-2">
+                                        <input type="radio" id="answer-3-2-2" name="quostion-3-2" class="checkbox" value="Пескоструй">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-2.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Пескоструй</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-3-2-3">
+                                        <input type="radio" id="answer-3-2-3" name="quostion-3-2" class="checkbox" value="Зеркало">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-3.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Зеркало</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-3-2-4">
+                                        <input type="radio" id="answer-3-2-4" name="quostion-3-2" class="checkbox" value="Фотопечать">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-4.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Фотопечать</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-3-2-5">
+                                        <input type="radio" id="answer-3-2-5" name="quostion-3-2" class="checkbox" value="Комбинированный">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-5.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Комбинированный</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-3-2-6">
+                                        <input type="radio" id="answer-3-2-6" name="quostion-3-2" class="checkbox" value="Пока не знаю">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/3-2-6.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Пока не знаю, нужна консультация</h3>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center" style="margin-top: 35px;">
+                                    <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '3-2' );">
+                                    <input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '3-2' );">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12" id="4-2" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">4/7</span>Какая ориентировочная ширина шкафа планируется?</h3>
+                            <div class="row justify-content-md-center mb-5">
+                                <div class="col-3 col-md-1">
+                                    <label class="option_item mb-3" for="answer-4-2-1">
+                                        <input type="radio" id="answer-4-2-1" name="quostion-4-2" class="checkbox" value="1">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper-box"></div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">1</h3>
+                                </div>
+                                <div class="col-3 col-md-1">
+                                    <label class="option_item mb-3" for="answer-4-2-2">
+                                        <input type="radio" id="answer-4-2-2" name="quostion-4-2" class="checkbox" value="1,5">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper-box"></div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">1,5</h3>
+                                </div>
+                                <div class="col-3 col-md-1">
+                                    <label class="option_item mb-3" for="answer-4-2-3">
+                                        <input type="radio" id="answer-4-2-3" name="quostion-4-2" class="checkbox" value="2">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper-box"></div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">2</h3>
+                                </div>
+                                <div class="col-3 col-md-1">
+                                    <label class="option_item mb-3" for="answer-4-2-4">
+                                        <input type="radio" id="answer-4-2-4" name="quostion-4-2" class="checkbox" value="2,5">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper-box"></div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">2,5</h3>
+                                </div>
+                                <div class="col-3 col-md-1">
+                                    <label class="option_item mb-3" for="answer-4-2-5">
+                                        <input type="radio" id="answer-4-2-5" name="quostion-4-2" class="checkbox" value="3">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper-box"></div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">3</h3>
+                                </div>
+                                <div class="col-3 col-md-1">
+                                    <label class="option_item mb-3" for="answer-4-2-6">
+                                        <input type="radio" id="answer-4-2-6" name="quostion-4-2" class="checkbox" value="3,5">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper-box"></div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">3,5</h3>
+                                </div>
+                                <div class="col-3 col-md-1">
+                                    <label class="option_item mb-3" for="answer-4-2-7">
+                                        <input type="radio" id="answer-4-2-7" name="quostion-4-2" class="checkbox" value="4">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper-box"></div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">4</h3>
+                                </div>
+                                <div class="col-3 col-md-1">
+                                    <label class="option_item mb-3" for="answer-4-2-8">
+                                        <input type="radio" id="answer-4-2-8" name="quostion-4-2" class="checkbox" value="4,5">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper-box"></div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">4,5</h3>
+                                </div>
+                                <div class="col-3 col-md-1">
+                                    <label class="option_item mb-3" for="answer-4-2-9">
+                                        <input type="radio" id="answer-4-2-9" name="quostion-4-2" class="checkbox" value="5">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper-box"></div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">5</h3>
+                                </div>
+                                <div class="col-3 col-md-1">
+                                    <label class="option_item mb-3" for="answer-4-2-10">
+                                        <input type="radio" id="answer-4-2-10" name="quostion-4-2" class="checkbox" value=">5">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper-box"></div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/ico/check-background.png" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">>5</h3>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center" style="margin-top: 35px;">
+                                    <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '4-2' );">
+                                    <input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '4-2' );">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12" id="5-2" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">5/7</span>Какое количество дверей Вы предполагаете?</h3>
+                            <div class="row justify-content-md-center mb-5">
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-5-2-1">
+                                        <input type="radio" id="answer-5-2-1" name="quostion-5-2" class="checkbox" value="1 дверь">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-1.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">1 дверь</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-5-2-2">
+                                        <input type="radio" id="answer-5-2-2" name="quostion-5-2" class="checkbox" value="2 двери">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-2.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">2 двери</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-5-2-3">
+                                        <input type="radio" id="answer-5-2-3" name="quostion-5-2" class="checkbox" value="3 двери">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-3.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">3 двери</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-5-2-4">
+                                        <input type="radio" id="answer-5-2-4" name="quostion-5-2" class="checkbox" value="4 двери">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-4.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">4 двери</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-5-2-5">
+                                        <input type="radio" id="answer-5-2-5" name="quostion-5-2" class="checkbox" value="5 дверей">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-5.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">5 дверей</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-5-2-6">
+                                        <input type="radio" id="answer-5-2-6" name="quostion-5-2" class="checkbox" value="Более 5 дверей">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/5-2-6.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Более 5 дверей</h3>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center" style="margin-top: 35px;">
+                                    <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '5-2' );">
+                                    <input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '5-2' );">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12" id="6-2" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">6/7</span>Какой подарок Вы хотите получить в случае заказа?</h3>
+                            <div class="row justify-content-md-center mb-5">
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-6-2-1">
+                                        <input type="radio" id="answer-6-2-1" name="quostion-6-2" class="checkbox" value="Скидка 15%">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-1.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Скидка 15%</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-6-2-2">
+                                        <input type="radio" id="answer-6-2-2" name="quostion-6-2" class="checkbox" value="Беспроцентная рассрочка на 6 месяцев">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-2.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Беспроцентная рассрочка на 6 месяцев</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-6-2-3">
+                                        <input type="radio" id="answer-6-2-3" name="quostion-6-2" class="checkbox" value="Бесплатная доставка и установка">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-3.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Бесплатная доставка и установка</h3>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="option_item mb-3" for="answer-6-2-4">
+                                        <input type="radio" id="answer-6-2-4" name="quostion-6-2" class="checkbox" value="Скидка 10% на заказ кухни в теченее года">
+                                        <div class="option_inner">
+                                            <div class="shadow-wrapper">
+                                                <div class="shadow-wrapper-decoration"></div>
+                                            </div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-2-4.webp" style="width: 100%;">
+                                        </div>
+                                    </label>
+                                    <h3 class="mb-3 mb-md-0">Скидка 10% на заказ кухни в теченее года</h3>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col text-center" style="margin-top: 35px;">
+                                    <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '6-2' );">
+                                    <input type="button" value="Далее" class="btn btn-corporate-color-1" onclick="nextQuostion( '6-2' );">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6" id="7-2" style="display: none;">
+                            <h3 class="text-center mb-5"><span class="me-2" style="color: #A5A5A5;">7/7</span>Введите Ваши контакты</h3>
+                            <form method="post" action="<?php echo get_template_directory_uri(); ?>/mails/get_calculate_closet.php">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-4">
+                                        <label for="exampleFormControlInput1" class="form-label">Ваше имя</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput1" name="name">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="exampleFormControlInput2" class="form-label">Ваш телефон</label>
+                                        <input type="text" class="form-control telMask" id="exampleFormControlInput2" name="phone" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col text-center" style="margin-top: 45px;">
+                                        <input type="hidden" id="answer1-2" name="answer1">
+                                        <input type="hidden" id="answer2-2" name="answer2">
+                                        <input type="hidden" id="answer3-2" name="answer3">
+                                        <input type="hidden" id="answer4-2" name="answer4">
+                                        <input type="hidden" id="answer5-2" name="answer5">
+                                        <input type="hidden" id="answer6-2" name="answer6">
+                                        <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '7-2' );">
+                                        <input type="submit" class="btn btn-corporate-color-1" value="Отправить">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /ВОПРОСЫ ПО ШКАФАМ -->
+
+
+                        <!-- ВЛПРОСЫ ПО ДРУГОЙ МЕБЕЛИ -->
+                        <div class="col-12" id="2-3" style="display: none;">
+                            <h3 class="text-center mb-5">Для расчета стоимости опишите Ваше изделие</h3>
+                            <form method="post" action="<?php echo get_template_directory_uri(); ?>/mails/get_calculate.php" enctype="multipart/form-data">
+                                <div class="row justify-content-center py-2">
+                                    <div class="col-8 mb-3">
+                                        <textarea type="text" rows="3" name="mes" class="form-control form-control-corporate-color-1" placeholder="Опишите изделие своими словами, укажите размеры, материалы и другую информацию"></textarea>
+                                    </div>
+                                    <div class="col-8">
+                                        <p>Прикрепите изображение изделия или схематично нарисованный Вами рисунок.</p>
+                                    </div>
+                                    <div class="col-8 mb-3">
+                                        <div class="input-group custom-file-button">
+                                            <label class="input-group-text" for="inputGroupFile">Прикрепить</label>
+                                            <input type="file" name="mail_file" accept=".jpg,.jpeg,.png,.pdf,.heic" class="form-control" id="inputGroupFile">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-4 mb-3">
+                                        <input type="text" name="name" class="form-control form-control-corporate-color-1" placeholder="Ваше имя">
+                                    </div>
+                                    <div class="col-4 mb-3">
+                                        <input type="text" name="tel" class="form-control form-control-corporate-color-1 telMask" placeholder="Ваш телефон*" required="" inputmode="text">
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col text-center" style="margin-top: 35px;">
+                                        <input type="button" value="Назад" class="btn btn-corporate-color-1-outline" onclick="previousQuostion( '2-3' );">
+                                        <input type="submit" value="Отправить" class="btn btn-corporate-color-1">
+                                    </div>
+                                </div>
+                            </form>
+                        </div><!-- /ВОПРОСЫ ПО ДРУГОЙ МЕБЕЛИ -->
+                    </div><!-- /Расчет любой мебели -->
+
+                <?php } ?>
+            </div>
+        </div>
+    </div>
 </section>
 <!-- End Quiz section -->
 
 
-<?php //get_footer( 'shop' ); ?>
-<?php get_footer( '2' ); ?>
+<?php //get_footer( 'shop' ); 
+?>
+<?php get_footer('2'); ?>
