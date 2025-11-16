@@ -293,6 +293,7 @@ include 'header.php';
 </section>
 <!-- /Home section -->
 
+<?php get_template_part('template-parts/new-quiz/new-quiz') ?>
 
 
 <!-- Action -->
