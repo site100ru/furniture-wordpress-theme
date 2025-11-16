@@ -356,25 +356,25 @@ a:hover {
 
 /* Corporate color outline 1 */
 .btn-corporate-color-outline-1 {
-	color: #25674a;
-	background-color: none;
-	border-color: #25674a;
-	border-radius: 20px;
+	color: var(--corporate-color-1);
+	background-color: transparent;
+	border-color: var(--corporate-color-1);
+	border-radius: var(--bs-border-radius);
 	font-size: 16px;
 }
 
 .btn-corporate-color-outline-1:hover {
 	color: #fff;
-	background-color: #25674a;
-	border-color: #25674a;
+	background-color: var(--corporate-color-1);
+	border-color: var(--corporate-color-1);
 	opacity: 0.9;
 	box-shadow: 0 0 12px 3px white;
 }
 
 .btn-corporate-color-outline-1:active {
 	color: #fff;
-	background-color: #25674a;
-	border-color: #25674a;
+	background-color: var(--corporate-color-1);
+	border-color: var(--corporate-color-1);
 	opacity: 0.8;
 	box-shadow: 0 0 12px 3px white;
 }
@@ -2780,4 +2780,8 @@ footer {
 
 #sliding-header-collapse li span {
 	line-height: 1;
+}
+
+.breadcrumbs-svg {
+	margin-bottom: 4px;
 }
