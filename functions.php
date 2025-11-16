@@ -792,13 +792,17 @@ function echo_description()
         //echo 'Категория портфолио';
 
         // Если страница магазина	
-    } elseif (is_shop()) {
+    } elseif ( is_shop() ) {
         $shop_page_id = wc_get_page_id('shop');
         echo get_the_excerpt($shop_page_id);
 
         // Если обычная страница
-    } else {
+    } elseif ( is_page() ) {
         echo get_the_excerpt();
+    
+     // Во всех других случаях
+    } else {
+        echo get_the_title();
     }
 }
 /*** END ДЕЛАЕМ ПРАВИЛЬНЫЙ DESCRIPTION ДЛЯ КАЖДОЙ СТРАНИЦЫ ***/

@@ -56,7 +56,7 @@
 							<div class="blue_circle">
 								<h4>Бесплатная<br>доставка</h4>
 							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/img/action.jpg" class="img-fluid" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/action.webp" class="img-fluid" alt="">
 						</div>
 					</a>
 				</div>
@@ -66,7 +66,7 @@
 							<div class="blue_circle">
 								<h4>Бесплатная<br>доставка</h4>
 							</div>
-							<img src="<?php echo get_template_directory_uri(); ?>/img/action.jpg" class="img-fluid" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/action.webp" class="img-fluid" alt="">
 						</div>
 					</a>
 				</div-->
