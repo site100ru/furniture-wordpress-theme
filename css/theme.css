@@ -2409,7 +2409,7 @@ footer {
 	z-index: 1;
 	transition: 0.25s;
 }
-
+ 
 .callback-phone-button:hover {
 	background: var(--corporate-color-hover-1);
 }
