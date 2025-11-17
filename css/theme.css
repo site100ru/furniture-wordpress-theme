@@ -1211,10 +1211,19 @@ a.navbar-brand {
 	padding-bottom: 2px;
 }
 
+#myTab.tablist .nav-item:has(span) {
+    align-content: center;
+    padding-top: 4px;
+}
+
 @media (max-width: 991.98px) {
     #myTab .nav-item:has(span) {
         padding-bottom: 0;
         align-content: center;
+    }
+    
+    #myTab.tablist .nav-item:has(span) {
+        padding-top: 0;
     }
 }
 

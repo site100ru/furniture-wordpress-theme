@@ -24,7 +24,7 @@
                         <div class="d-lg-none">
                             <!-- Bootstrap Tabs Navigation -->
                             <div class="nav-scroller mb-0" style="text-transform: uppercase; font-family: 'HelveticaNeueCyr-Light'; font-weight: bold;">
-                                <ul class="nav justify-content-lg-center d-flex m-auto 3" id="myTab" role="tablist">
+                                <ul class="nav justify-content-lg-center d-flex m-auto" id="myTab" role="tablist">
                                     <!-- Таб "Все" -->
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all"
