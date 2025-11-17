@@ -1725,8 +1725,10 @@ h6,
     padding-right: 0;
 }
 
-.archive-portfolio-section-2 .nav-scroller .nav-item .nav-link svg{
-    margin-bottom: 5px;
+@media (min-width: 992px) {
+    .archive-portfolio-section-2 .nav-scroller .nav-item .nav-link svg{
+        margin-bottom: 5px;
+    }
 }
 
 
