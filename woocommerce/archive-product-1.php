@@ -646,7 +646,7 @@ do_action('woocommerce_before_main_content');
 									<input type="radio" id="answer-2-1-5" name="quostion-2-1" class="checkbox" value="Пока не знаю">
 									<div class="option_inner">
 										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-5.jpg" style="width: 100%;">
+										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-5.webp" style="width: 100%;">
 									</div>
 								</label>
 								<h3>Пока не знаю</h3>
@@ -943,7 +943,7 @@ do_action('woocommerce_before_main_content');
 									<input type="radio" id="answer-6-1-4" name="quostion-6-1" class="checkbox" value="С островком">
 									<div class="option_inner">
 										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-4.jpg" style="width: 100%;">
+										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-4.webp" style="width: 100%;">
 									</div>
 								</label>
 								<h3>Пластик</h3>
@@ -1564,7 +1564,7 @@ do_action('woocommerce_before_main_content');
 									<input type="radio" id="answer-2-1-5" name="quostion-2-1" class="checkbox" value="Пока не знаю">
 									<div class="option_inner">
 										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-5.jpg" style="width: 100%;">
+										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/2-1-5.webp" style="width: 100%;">
 									</div>
 								</label>
 								<h3>Пока не знаю</h3>
@@ -1861,7 +1861,7 @@ do_action('woocommerce_before_main_content');
 									<input type="radio" id="answer-6-1-4" name="quostion-6-1" class="checkbox" value="С островком">
 									<div class="option_inner">
 										<div class="shadow-wrapper"><div class="shadow-wrapper-decoration"></div></div>
-										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-4.jpg" style="width: 100%;">
+										<img src="<?php echo get_template_directory_uri(); ?>/img/quiz/6-1-4.webp" style="width: 100%;">
 									</div>
 								</label>
 								<h3>Пластик</h3>
