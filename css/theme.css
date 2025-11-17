@@ -567,7 +567,7 @@ a:hover {
 	top: 57px;
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 1199.98px) {
 	#top-menu-2 {
 		position: fixed;
 		width: 100%;
@@ -1198,10 +1198,18 @@ a.navbar-brand {
 	text-align: center;
 	color: #4b4b4b;
 	display: flex;
+    align-items: center;
 }
 
 #myTab .nav-item:has(span) {
 	padding-bottom: 2px;
+}
+
+@media (max-width: 768px) {
+    #myTab .nav-item:has(span) {
+        padding-top: 4px;
+        padding-bottom: 0;
+    }
 }
 
 #myTab .nav-link.active,
@@ -1706,6 +1714,17 @@ h6,
 	white-space: nowrap;
 	-webkit-overflow-scrolling: touch;
 }
+
+#myTab .nav-item:first-child  button.nav-link, 
+.nav-scroller .nav .nav-item:first-child  button.nav-link {
+    padding-left: 0;
+}
+
+#myTab .nav-item:last-child  button.nav-link, 
+.nav-scroller .nav .nav-item:last-child  button.nav-link {
+    padding-right: 0;
+}
+
 
 /* Archive portfolio section 2 */
 .archive-portfolio-section-2 .nav-item a,

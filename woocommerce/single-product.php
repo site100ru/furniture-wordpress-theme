@@ -122,7 +122,7 @@ do_action('woocommerce_before_main_content');
                                     </svg>
                                 </div>
                                 <div class="nav-li-float-right">
-                                    8 (951) 101-46-10
+                                    8 (800) 880-80-88
                                 </div>
                                 <div style="clear: both;"></div>
                             </div>
@@ -151,7 +151,7 @@ do_action('woocommerce_before_main_content');
                 <img src="<?php echo get_template_directory_uri(); ?>/img/ico/logo-dark.svg">
             </a>
             <div class="d-lg-none">
-                <a class="top-menu-tel pt-1 pb-0" href="tel:89511014610">8 (951) 101-46-10</a>
+                <a class="top-menu-tel pt-1 pb-0" href="tel:89511014610">8 (800) 880-80-88</a>
                 <div style="font-size: 10px; font-family: Gilroy-Light; text-transform: none;">
                     <svg width="12" height="12" style="position: relative; top: -1px;" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon me-1">
                         <path
@@ -184,7 +184,7 @@ do_action('woocommerce_before_main_content');
                                         </svg>
                                         <span>гор. Рязань ул. Чапаева, 56</span>
                                     </div>
-                                    <a class="nav-link top-menu-tel pt-1 pb-1" href="tel:89511014610">8 (951) 101-46-10</a>
+                                    <a class="nav-link top-menu-tel pt-1 pb-1" href="tel:89511014610">8 (800) 880-80-88</a>
                                     <div class="mb-2" style="font-size: 12px; font-family: HelveticaNeueCyr-Light; text-transform: none;">
                                         <svg width="10" height="10" style="position: relative; top: 2px;" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon me-1 mb-2">
                                 <path

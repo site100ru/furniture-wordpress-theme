@@ -519,6 +519,23 @@ strong {
 	opacity: 1;
 }
 
+.single-product-section  {
+    margin-top: 60px;
+}
+
+@media (max-width: 767.98px) {
+    .single-product-section {
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 568px) {
+    .single-product-section {
+        margin-top: 80px;
+    }
+}
+
+
 /*** ARCHIVE PRODUCT SECTION ***/
 .woocommerce-widget-layered-nav-list__item.wc-layered-nav-term a {
 	font-family: HelveticaNeueCyr-Light;

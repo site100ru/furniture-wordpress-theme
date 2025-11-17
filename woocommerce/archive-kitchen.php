@@ -125,7 +125,7 @@ do_action('woocommerce_before_main_content');
                                         </svg>
                                     </div>
                                     <div class="nav-li-float-right" style="min-width: 128px;">
-                                        8 (951) 101-46-10
+                                        8 (800) 880-80-88
                                     </div>
                                     <div style="clear: both;"></div>
                                 </div>
@@ -180,7 +180,7 @@ do_action('woocommerce_before_main_content');
                                             </svg>
 												<span>гор. Рязань, ул. Чапаева, 56</span>
 										</div>
-										<a class="nav-link top-menu-tel pt-1 pb-1" href="tel:89511014610">8 (951) 101-46-10</a>
+										<a class="nav-link top-menu-tel pt-1 pb-1" href="tel:89511014610">8 (800) 880-80-88</a>
 										<div class="mb-2" style="font-size: 12px; font-family: HelveticaNeueCyr-Light; text-transform: none;">
 											<svg width="10" height="10" style="position: relative; top: 2px;" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon me-1 mb-2">
                                             <path
@@ -220,7 +220,7 @@ do_action('woocommerce_before_main_content');
                 </a>
 
                 <div class="d-lg-none">
-                    <a class="top-menu-tel pt-1 pb-0" style="font-size: 14px;" href="tel:89511014610">8 (951) 101-46-10</a>
+                    <a class="top-menu-tel pt-1 pb-0" style="font-size: 14px;" href="tel:89511014610">8 (800) 880-80-88</a>
                     <div style="font-size: 10px; font-family: Gilroy-Light; text-transform: none;">
                         <svg width="12" height="12" style="position: relative; top: -1px;" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon me-1">
                             <path
@@ -255,7 +255,7 @@ do_action('woocommerce_before_main_content');
                                             </svg>
 											<span>гор. Рязань, ул. Чапаева, 56</span>
 										</div>
-										<a class="nav-link top-menu-tel pt-1 pb-1" href="tel:89511014610">8 (951) 101-46-10</a>
+										<a class="nav-link top-menu-tel pt-1 pb-1" href="tel:89511014610">8 (800) 880-80-88</a>
 										<div class="mb-2" style="font-size: 12px; font-family: Gilroy-Light; text-transform: none;">
 											  <svg width="10" height="10" style="position: relative; top: 3px;" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon me-1 mb-2">
                                             <path
@@ -1238,132 +1238,10 @@ do_action('woocommerce_before_main_content');
 
 
 <!-- Частые вопросы -->
-<section class="section section-faq py-5 bg-white">
-    <div class="container">
-        <div class="section-title text-md-center">
-            <h2>Частые вопросы</h2>
-            <svg width="62" height="14" viewBox="0 0 62 14" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon mb-5">
-                    <rect x="48" width="14" height="14" rx="3" />
-                    <rect x="24" width="14" height="14" rx="3" />
-                    <rect width="14" height="14" rx="3" />
-                </svg>
-        </div>
-
-        <div class="col-lg-10 text-center mx-auto">
-            <div class="accordion text-start" id="accordionExample">
-                <div class="accordion-item mb-3">
-                    <h3 class="accordion-header" id="heading-2">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
-                            Сколько времени изготавливается кухня?
-                        </button>
-                    </h3>
-                    <div id="collapse-2" class="accordion-collapse collapse" aria-labelledby="heading-2"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <p> Срок производства зависит от материалов и составляет от 10 рабочих дней. Сроки, в обязательном
-                                порядке, согласовываются с заказчиком при заключении договора.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item mb-3">
-                    <h3 class="accordion-header" id="heading-1">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1"
-                            aria-expanded="true" aria-controls="collapse-1">
-                            Как вызвать специалиста для проведения замера?
-                        </button>
-                    </h3>
-                    <div id="collapse-1" class="accordion-collapse collapse show" aria-labelledby="heading-1"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <p class="mb-0">
-                                Вызвать замерщика Вы можете любым из способов: оставить онлайн-заявку на нашем сайте, написать на
-                                электронный адрес: <a href="mailto:mozaika62@bk.ru">mozaika62@bk.ru</a>, позвонить по телефону ☎ <a
-                                    href="tel:+79511014610">8 (951) 101-46-10</a> или оставить заявку на
-                                обратный звонок, написать в Telegram или Whatsapp.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item mb-3">
-                    <h3 class="accordion-header" id="heading-3">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
-                            Сколько стоит вызов замерщика?
-                        </button>
-                    </h3>
-                    <div id="collapse-3" class="accordion-collapse collapse" aria-labelledby="heading-3"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <p class="mb-0">
-                                Стоимость выезда замерщика с образцами материалов составляет 3000 руб. Но если Вы заключаете договор, то
-                                замер для Вас обходится бесплатно, а оплаченный Вами выезд вычитается из суммы оплаты.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item mb-3">
-                    <h3 class="accordion-header" id="heading-4">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
-                            Если эскиз кухни уже есть, можно ли по нему получить расчет?
-                        </button>
-                    </h3>
-                    <div id="collapse-4" class="accordion-collapse collapse" aria-labelledby="heading-4"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <p>Конечно!</p>
-                            <p class="mb-0">Направьте эскиз с Вашей кухней (или другой корпусной мебелью) на нашу электронную почту:<a
-                                    target="_blank" href="mailto:mebel-dsever@yandex.ru">mebel-dsever@yandex.ru</a>,
-                                дополнительно указав в письме материал фасадов,
-                                комплектацию, габариты мебели и мы предоставим расчет в ответном письме.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item mb-3">
-                    <h3 class="accordion-header" id="heading-4">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
-                            У вас цены ниже, чем обычно по городу. Почему?
-                        </button>
-                    </h3>
-                    <div id="collapse-5" class="accordion-collapse collapse" aria-labelledby="heading-5"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body pb-2">
-                            <p class="mb-0">
-                                Наличие собственного производства, оптовые закупки расходных материалов и большое количество заказов
-                                позволяют нам сохранять цены на докризисном уровне и делать нашим клиентам предложения на самых выгодных
-                                условиях.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item mb-3">
-                    <h3 class="accordion-header" id="heading-6">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse-6" aria-expanded="false" aria-controls="collapse-6">
-                            Какая модель кухни самая популярная?
-                        </button>
-                    </h3>
-                    <div id="collapse-6" class="accordion-collapse collapse" aria-labelledby="heading-6"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body pb-2">
-                            <p>Предпочтения наших клиентов настолько разнообразны, что выделить какую-либо модель достаточно сложно.
-                                При разработке проекта мы учитываем все Ваши пожелания, а благодаря широчайшей коллекции фасадов и
-                                столешниц, могут быть сотни разных вариаций.</p>
-                            <p class="mb-0">
-                                В одном можем уверить Вас точно: какая бы ни была кухня от нашей фабрики по стилю или конфигурации, она
-                                идеально впишется в ваш интерьер и прослужит долгие годы.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<?php get_template_part('template-parts/section-faq/section-faq', null, [
+    'bg_class' => 'bg-white',
+    'config' => 'faq-kitchen'
+]);?>
 <!-- /Частые вопросы -->
 
 
