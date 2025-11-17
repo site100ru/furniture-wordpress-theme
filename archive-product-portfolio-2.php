@@ -13,7 +13,7 @@ include 'header.php';
 
 <!-- Home section -->
 <div id="sp-home" class="scroll-points"></div>
-<section class="main-home-section main-home-section-shkafy main-parallax">
+<section class="main-home-section main-parallax">
     <div class="parallax-home-section" style="min-height: 640px;"></div>
     <header class="d-none d-lg-block">
         <!-- Header nav top -->
