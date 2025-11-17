@@ -126,7 +126,7 @@ do_action('woocommerce_before_main_content');
                                         </svg>
                                     </div>
                                     <div class="nav-li-float-right" style="min-width: 128px;">
-                                        8 (951) 101-46-10
+                                        8 (800) 880-80-88
                                     </div>
                                     <div style="clear: both;"></div>
                                 </div>
@@ -182,7 +182,7 @@ do_action('woocommerce_before_main_content');
                                             </svg>
 												<span>гор. Рязань, ул. Чапаева, 56</span>
 										</div>
-										<a class="nav-link top-menu-tel pt-1 pb-1" href="tel:89511014610">8 (951) 101-46-10</a>
+										<a class="nav-link top-menu-tel pt-1 pb-1" href="tel:89511014610">8 (800) 880-80-88</a>
 										<div class="mb-2" style="font-size: 12px; font-family: HelveticaNeueCyr-Light; text-transform: none;">
 											<svg width="10" height="10" style="position: relative; top: 2px;" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon me-1 mb-2">
                                             <path
@@ -260,7 +260,7 @@ do_action('woocommerce_before_main_content');
                                             </svg>
 											<span>гор. Рязань, ул. Чапаева, 56</span>
 										</div>
-										<a class="nav-link top-menu-tel pt-1 pb-1" href="tel:89511014610">8 (951) 101-46-10</a>
+										<a class="nav-link top-menu-tel pt-1 pb-1" href="tel:89511014610">8 (800) 880-80-88</a>
 										<div class="mb-2" style="font-size: 12px; font-family: Gilroy-Light; text-transform: none;">
 											  <svg width="10" height="10" style="position: relative; top: 3px;" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon me-1 mb-2">
                                             <path
@@ -433,199 +433,16 @@ do_action('woocommerce_before_main_content');
 
 
 <!-- SECTION PORTFOLIO -->
-<section class="section-portfolio bg-light" style="padding-block: 60px;">
-    <div class="container">
-        <div class="row">
-            <div class="col text-md-center">
-                <h2 style="margin-bottom: 15px;">Последние выполненные работы</h2>
-                <svg style="margin-bottom: 60px;" width="62" height="14" viewBox="0 0 62 14" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
-                    <rect x="48" width="14" height="14" rx="3" />
-                    <rect x="24" width="14" height="14" rx="3" />
-                    <rect width="14" height="14" rx="3" />
-        
-                </svg>
-                <div class="row">
+<?php  get_template_part('template-parts/section-portfolio/section-portfolio-one-tab', null, [
+    'category' => '06-шкафы',
+    'title' => 'Последние выполненные работы',
+    'bg_class' => 'bg-light',
+    'posts_count' => 6
+]); ?>
 
-                    <?php
-                    $obj = get_queried_object();
-                    $portfolio_cat = $obj->slug;
-                    switch ($portfolio_cat) {
-                        case 'шкафы':
-                            $portfolio_cat = '06-шкафы';
-                            break;
-                    }
-
-                    $args = [
-                        'post_type' => 'portfolio',
-                        'numberposts' => 6,
-                        'posts_per_page' => 6,
-                        'portfolio-cat' => '06-шкафы' //$portfolio_cat
-                    ];
-
-                    $query = new WP_Query($args);
-
-                    while ($query->have_posts()):
-                        $query->the_post(); ?>
-                        <div class="col-md-6 col-lg-4 mb-5">
-                            <a onclick="portfolioGalleryOpen( 'portfolio-gallery-<?php echo get_the_ID(); ?>' )">
-                                <div class="approximation approximation-project project-container-2 rounded">
-                                    <img src="<?php echo get_post_meta(get_the_ID(), '_img-1')[0]; ?>" class="rounded"
-                                        alt="<?php echo get_the_title(); ?>" loading="lazy">
-                                    <div class="card-wrapper">
-                                        <div class="position-absolute"><?php echo get_the_title(); ?></div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    <?php endwhile;
-
-                    wp_reset_postdata();
-                    ?>
-                </div>
-                <a href="https://site100.ru/furniture/portfolio-cat/06-шкафы/" class="btn btn-lg btn-corporate-color-1"
-                    style="margin-top: 12px;">Смотреть еще</a>
-            </div>
-        </div>
-    </div>
-</section>
 <!-- END SECTION PORTFOLIO -->
 
-<!-- SECTION PORTFOLIO GALLERY -->
-<div id="portfolioGalleryWrapper" style="display: none;">
-    <?php
-    $obj = get_queried_object();
-    $portfolio_cat = $obj->slug;
-    switch ($portfolio_cat) {
-        case 'шкафы':
-            $portfolio_cat = '06-шкафы';
-            break;
-    }
 
-    $args = [
-        'post_type' => 'portfolio',
-        'numberposts' => 6,
-        'posts_per_page' => 6,
-        'portfolio-cat' => '06-шкафы' //$portfolio_cat
-    ];
-
-    $query = new WP_Query($args);
-
-    while ($query->have_posts()):
-        $query->the_post(); ?>
-        <div id="portfolio-gallery-<?php echo get_the_ID(); ?>" class="carousel slide" data-bs-ride="false"
-            data-bs-interval="false"
-            style="display: none; position: fixed; top: 0; height: 100%; width: 100%; z-index: 9999;">
-
-            <div class="carousel-indicators">
-                <?php
-                $count_2 = 0;
-                for ($i = 1; $i <= 9; $i++) {
-                    if (get_post_meta(get_the_ID(), '_img-' . $i)) {
-                        if ($count_2 == 0) { ?>
-
-                            <button id="ind-<?php echo get_the_ID(); ?>-<?php echo $count_2; ?>" type="button"
-                                data-bs-target="#portfolio-gallery-<?php echo get_the_ID(); ?>"
-                                data-bs-slide-to="<?php echo $count_2; ?>" aria-label="Slide 3" class="active"
-                                aria-current="true"></button>
-
-                        <?php $count_2 = $count_2 + 1;
-                        } else { ?>
-
-                            <button id="ind-<?php echo get_the_ID(); ?>-<?php echo $count_2; ?>" type="button"
-                                data-bs-target="#portfolio-gallery-<?php echo get_the_ID(); ?>"
-                                data-bs-slide-to="<?php echo $count_2; ?>" aria-label="Slide 3"></button>
-
-                <?php $count_2 = $count_2 + 1;
-                        }
-                    }
-                }
-                ?>
-            </div>
-            <div class="carousel-inner h-100">
-                <?php
-                $count_2 = 0;
-                for ($i = 1; $i <= 9; $i++) {
-                    if (get_post_meta(get_the_ID(), '_img-' . $i)) { ?>
-                        <div id="img-<?php echo get_the_ID(); ?>-<?php echo $count_2; ?>" class="carousel-item h-100 <?php if ($i == 1)
-                                                                                                                            echo ' active'; ?>" data-bs-interval="999999999">
-                            <div class="row align-items-center h-100">
-                                <div class="col text-center">
-                                    <img src="<?php echo get_post_meta(get_the_ID(), '_img-' . $i)[0]; ?>" class="img-fluid"
-                                        style="max-width: 90vw; max-height: 90vh;" alt="...">
-                                </div>
-                            </div>
-                        </div>
-                <?php $count_2 = $count_2 + 1;
-                    }
-                }
-                ?>
-            </div>
-
-            <button class="carousel-control-prev" type="button"
-                data-bs-target="#portfolio-gallery-<?php echo get_the_ID(); ?>" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button"
-                data-bs-target="#portfolio-gallery-<?php echo get_the_ID(); ?>" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    <?php endwhile;
-
-    wp_reset_postdata();
-    ?>
-
-    <button type="button" onClick="portfolioGalleryClose();" class="btn-close btn-close-white"
-        style="position: fixed; top: 25px; right: 25px; z-index: 99999" aria-label="Close"></button>
-</div>
-<!-- END SECTION PORTFOLIO GALLERY -->
-
-<!-- SECTION PORTFOLIO SCRIPT -->
-<script>
-    function portfolioGalleryOpen(gal) {
-        var gallery = gal; // Получаем ID галереи
-
-        // Открываем обертку галереи
-        document.getElementById("portfolioGalleryWrapper").style.display = "block";
-
-        // Открываем галерею
-        document.getElementById(gallery).style.display = "block";
-    }
-
-    function portfolioGalleryClose() {
-        // Закрываем обертку галереи
-        document.getElementById("portfolioGalleryWrapper").style.display = "none";
-        // Закрываем галерею
-        <?php
-        $obj = get_queried_object();
-        $portfolio_cat = $obj->slug;
-        switch ($portfolio_cat) {
-            case 'шкафы':
-                $portfolio_cat = '06-шкафы';
-                break;
-        }
-
-        $args = [
-            'post_type' => 'portfolio',
-            'numberposts' => 6,
-            'posts_per_page' => 6,
-            'portfolio-cat' => '06-шкафы' //$portfolio_cat
-        ];
-
-        $query = new WP_Query($args);
-
-        while ($query->have_posts()):
-            $query->the_post(); ?>
-            document.getElementById('portfolio-gallery-<?php echo get_the_ID(); ?>').style.display = "none";
-        <?php endwhile;
-
-        wp_reset_postdata();
-        ?>
-    }
-</script>
-<!-- END SECTION PORTFOLIO SCRIPT -->
 
 
 
@@ -1270,141 +1087,10 @@ do_action('woocommerce_before_main_content');
 
 
 <!-- Частые вопросы -->
-<section class="section section-faq py-5 bg-white">
-    <div class="container">
-        <div class="section-title text-md-center">
-            <h2>Частые вопросы</h2>
-            <svg width="62" height="14" viewBox="0 0 62 14" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon mb-5">
-                    <rect x="48" width="14" height="14" rx="3" />
-                    <rect x="24" width="14" height="14" rx="3" />
-                    <rect width="14" height="14" rx="3" />
-                </svg>
-        </div>
-
-        <div class="col-lg-10 text-center mx-auto">
-            <div class="accordion text-start" id="accordionExample">
-                <div class="accordion-item mb-3">
-                    <h3 class="accordion-header" id="heading-2">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
-                            Сколько времени изготавливается кухня?
-                        </button>
-                    </h3>
-                    <div id="collapse-2" class="accordion-collapse collapse" aria-labelledby="heading-2"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <p> Срок производства зависит от материалов и составляет от 10 рабочих дней. Сроки, в
-                                обязательном
-                                порядке, согласовываются с заказчиком при заключении договора.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item mb-3">
-                    <h3 class="accordion-header" id="heading-1">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
-                            Как вызвать специалиста для проведения замера?
-                        </button>
-                    </h3>
-                    <div id="collapse-1" class="accordion-collapse collapse show" aria-labelledby="heading-1"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <p class="mb-0">
-                                Вызвать замерщика Вы можете любым из способов: оставить онлайн-заявку на нашем сайте,
-                                написать на
-                                электронный адрес: <a href="mailto:mozaika62@bk.ru">mozaika62@bk.ru</a>, позвонить по
-                                телефону ☎ <a href="tel:+79511014610">8 (951) 101-46-10</a> или оставить заявку на
-                                обратный звонок, написать в Telegram или Whatsapp.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item mb-3">
-                    <h3 class="accordion-header" id="heading-3">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
-                            Сколько стоит вызов замерщика?
-                        </button>
-                    </h3>
-                    <div id="collapse-3" class="accordion-collapse collapse" aria-labelledby="heading-3"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <p class="mb-0">
-                                Стоимость выезда замерщика с образцами материалов составляет 3000 руб. Но если Вы
-                                заключаете договор, то
-                                замер для Вас обходится бесплатно, а оплаченный Вами выезд вычитается из суммы оплаты.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item mb-3">
-                    <h3 class="accordion-header" id="heading-4">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
-                            Если эскиз кухни уже есть, можно ли по нему получить расчет?
-                        </button>
-                    </h3>
-                    <div id="collapse-4" class="accordion-collapse collapse" aria-labelledby="heading-4"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <p>Конечно!</p>
-                            <p class="mb-0">Направьте эскиз с Вашей кухней (или другой корпусной мебелью) на нашу
-                                электронную почту:<a target="_blank"
-                                    href="mailto:mebel-dsever@yandex.ru">mebel-dsever@yandex.ru</a>,
-                                дополнительно указав в письме материал фасадов,
-                                комплектацию, габариты мебели и мы предоставим расчет в ответном письме.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item mb-3">
-                    <h3 class="accordion-header" id="heading-4">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
-                            У вас цены ниже, чем обычно по городу. Почему?
-                        </button>
-                    </h3>
-                    <div id="collapse-5" class="accordion-collapse collapse" aria-labelledby="heading-5"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body pb-2">
-                            <p class="mb-0">
-                                Наличие собственного производства, оптовые закупки расходных материалов и большое
-                                количество заказов
-                                позволяют нам сохранять цены на докризисном уровне и делать нашим клиентам предложения
-                                на самых выгодных
-                                условиях.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item mb-3">
-                    <h3 class="accordion-header" id="heading-6">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse-6" aria-expanded="false" aria-controls="collapse-6">
-                            Какая модель кухни самая популярная?
-                        </button>
-                    </h3>
-                    <div id="collapse-6" class="accordion-collapse collapse" aria-labelledby="heading-6"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body pb-2">
-                            <p>Предпочтения наших клиентов настолько разнообразны, что выделить какую-либо модель
-                                достаточно сложно.
-                                При разработке проекта мы учитываем все Ваши пожелания, а благодаря широчайшей коллекции
-                                фасадов и
-                                столешниц, могут быть сотни разных вариаций.</p>
-                            <p class="mb-0">
-                                В одном можем уверить Вас точно: какая бы ни была кухня от нашей фабрики по стилю или
-                                конфигурации, она
-                                идеально впишется в ваш интерьер и прослужит долгие годы.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<?php get_template_part('template-parts/section-faq/section-faq', null, [
+    'bg_class' => 'bg-white',
+    'config' => 'faq-kitchen' 
+]);?>
 <!-- /Частые вопросы -->
 
 <!-- Gradient order section -->

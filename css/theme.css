@@ -82,6 +82,29 @@ body.modal-open {
 	font-family: Gilroy-Black;
 	src: url(../fonts/Gilroy/Gilroy-Black.ttf);
 }
+/*** END FONTS ***/
+
+/*** GENERAL ***/
+:root {
+	--corporate-color-1: #dc3545;
+	--corporate-color-hover-1: #bb2d3c;
+	--corporate-color-active-1: #902531;
+	--corporate-color-2: #dc3545;
+	--dark-color: #323232;
+	--light-color: #e1e1e1;
+}
+
+.svg-icon {
+	color: var(--corporate-color-1);
+}
+
+.bg-light {
+	background-color: #f5f5f5;
+}
+
+body.modal-open {
+	padding-right: 0 !important;
+}
 
 h1 {
 	font-family: HelveticaNeueBlackCondensed;
@@ -544,7 +567,7 @@ a:hover {
 	top: 57px;
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 1199.98px) {
 	#top-menu-2 {
 		position: fixed;
 		width: 100%;
@@ -1175,10 +1198,18 @@ a.navbar-brand {
 	text-align: center;
 	color: #4b4b4b;
 	display: flex;
+    align-items: center;
 }
 
 #myTab .nav-item:has(span) {
 	padding-bottom: 2px;
+}
+
+@media (max-width: 768px) {
+    #myTab .nav-item:has(span) {
+        padding-top: 4px;
+        padding-bottom: 0;
+    }
 }
 
 #myTab .nav-link.active,
@@ -1683,6 +1714,17 @@ h6,
 	white-space: nowrap;
 	-webkit-overflow-scrolling: touch;
 }
+
+#myTab .nav-item:first-child  button.nav-link, 
+.nav-scroller .nav .nav-item:first-child  button.nav-link {
+    padding-left: 0;
+}
+
+#myTab .nav-item:last-child  button.nav-link, 
+.nav-scroller .nav .nav-item:last-child  button.nav-link {
+    padding-right: 0;
+}
+
 
 /* Archive portfolio section 2 */
 .archive-portfolio-section-2 .nav-item a,
@@ -2375,15 +2417,12 @@ footer {
 .callback-phone-button-ico {
 	width: 30px;
 	height: 30px;
-	background-color: var(--corporate-color-1);
-	mask-image: url(../img/ico/callback-phone-ico.svg);
-	-webkit-mask-image: url(../img/ico/callback-phone-ico.svg);
-	mask-size: contain;
-	-webkit-mask-size: contain;
-	mask-repeat: no-repeat;
-	-webkit-mask-repeat: no-repeat;
-	mask-position: center;
-	-webkit-mask-position: center;
+	filter: invert();
+	background: url(../img/ico/callback-phone-button-ico.svg) center no-repeat;
+	background-size: contain;
+	-moz-background-size: contain;
+	-webkit-background-size: contain;
+	-o-background-size: contain;
 }
 
 .callback-whatsapp-button {

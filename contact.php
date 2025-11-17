@@ -117,7 +117,7 @@ include 'header.php';
                                             </svg>
                                         </div>
                                         <div class="nav-li-float-right" style="min-width: 128px;">
-                                            8 (951) 101-46-10
+                                            8 (800) 880-80-88
                                         </div>
                                         <div style="clear: both;"></div>
                                     </div>
@@ -173,7 +173,7 @@ include 'header.php';
                                             </svg>
 													<span>гор. Рязань, ул. Чапаева, 56</span>
 											</div>
-											<a class="nav-link top-menu-tel pt-1 pb-1" href="tel:89511014610">8 (951) 101-46-10</a>
+											<a class="nav-link top-menu-tel pt-1 pb-1" href="tel:89511014610">8 (800) 880-80-88</a>
 											<div class="mb-2" style="font-size: 12px; font-family: HelveticaNeueCyr-Light; text-transform: none;">
 												<svg width="10" height="10" style="position: relative; top: 2px;" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon me-1 mb-2">
                                             <path
@@ -213,7 +213,7 @@ include 'header.php';
 
                     <div class="d-lg-none">
                         <a class="top-menu-tel pt-1 pb-0" style="font-size: 14px;" href="tel:89511014610">
-                            8 (951) 101-46-10</a>
+                            8 (800) 880-80-88</a>
                         <div style="font-size: 10px; font-family: Gilroy-Light; text-transform: none;">
                             <svg width="12" height="12" viewBox="0 0 24 24" style=" position: relative; top: -1px;" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon me-1">
                                 <path
@@ -251,7 +251,7 @@ include 'header.php';
                                             </svg>
 												<span>гор. Рязань, ул. Чапаева, 56</span>
 											</div>
-											<a class="nav-link top-menu-tel pt-1 pb-1" href="tel:89511014610">8 (951) 101-46-10</a>
+											<a class="nav-link top-menu-tel pt-1 pb-1" href="tel:89511014610">8 (800) 880-80-88</a>
 											<div class="mb-2" style="font-size: 12px; font-family: Gilroy-Light; text-transform: none;">
 												  <svg width="10" height="10" style="position: relative; top: 3px;" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon me-1 mb-2">
                                             <path
