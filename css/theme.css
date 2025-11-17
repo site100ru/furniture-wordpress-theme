@@ -2417,15 +2417,12 @@ footer {
 .callback-phone-button-ico {
 	width: 30px;
 	height: 30px;
-	background-color: var(--corporate-color-1);
-	mask-image: url(../img/ico/callback-phone-ico.svg);
-	-webkit-mask-image: url(../img/ico/callback-phone-ico.svg);
-	mask-size: contain;
-	-webkit-mask-size: contain;
-	mask-repeat: no-repeat;
-	-webkit-mask-repeat: no-repeat;
-	mask-position: center;
-	-webkit-mask-position: center;
+	filter: invert();
+	background: url(../img/ico/callback-phone-button-ico.svg) center no-repeat;
+	background-size: contain;
+	-moz-background-size: contain;
+	-webkit-background-size: contain;
+	-o-background-size: contain;
 }
 
 .callback-whatsapp-button {
