@@ -324,7 +324,7 @@ include 'header.php';
                     <div class="col text-center mb-4 mb-lg-5">
                         <div class="nav-scroller mb-0"
                             style="text-transform: uppercase; font-family: 'HelveticaNeueCyr-Light'; font-weight: bold;">
-                            <ul class="nav justify-content-lg-center d-flex m-auto" id="myTab" role="tablist">
+                            <ul class="nav justify-content-lg-center d-flex m-auto 1" id="myTab" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" href="https://site100.ru/furniture/portfolio/">Все</a>
                                 </li>
