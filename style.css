@@ -87,7 +87,7 @@ p.advantages {
 	padding-inline: 0;
 }
 
-.contacts-section-4 .nav-item.d-none.d-xl-inline .nav-link span {
+.contacts-section-4 .nav-item.d-none.d-xl-inline span.nav-link  {
     margin-bottom: 2px;
 }
 
