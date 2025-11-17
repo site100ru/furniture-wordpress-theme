@@ -213,7 +213,7 @@ strong {
 }
 
 .breadcrumbs {
-	padding: 0 0 36px 0;
+	padding: 0 0 24px 0;
 }
 
 .category {
@@ -479,9 +479,6 @@ strong {
 	.contact-box-info {
 		flex-direction: column;
 		gap: 15px;
-	}
-	.breadcrumbs_box {
-		margin-top: 70px;
 	}
 }
 

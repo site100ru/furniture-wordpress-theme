@@ -2731,9 +2731,6 @@ footer {
 		flex-direction: column;
 		gap: 15px;
 	}
-	.breadcrumbs_box {
-		margin-top: 70px;
-	}
 }
 
 .section-faq .accordion .accordion-collapse a {
