@@ -784,6 +784,13 @@ a.navbar-brand {
 	height: auto;
 }
 
+@media (max-width: 768px) {
+    .main-home-section.min-home .parallax-home-section{
+        background-position: 50%;
+        min-height: 400px !important;
+    }
+}
+
 .home-video-section video {
 	width: 100%;
 	height: auto;
