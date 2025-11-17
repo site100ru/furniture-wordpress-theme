@@ -318,12 +318,6 @@ include 'header.php';
                             <rect x="24" width="14" height="14" rx="3" />
                             <rect width="14" height="14" rx="3" />
                         </svg>
-
-                        <svg width="62" height="14" viewBox="0 0 62 14" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
-                            <rect x="48" width="14" height="14" rx="3" />
-                            <rect x="24" width="14" height="14" rx="3" />
-                            <rect width="14" height="14" rx="3" />
-                        </svg>
                     </div>
                 </div>
                 <div class="row">

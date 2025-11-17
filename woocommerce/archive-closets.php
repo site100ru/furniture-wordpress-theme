@@ -434,7 +434,7 @@ do_action('woocommerce_before_main_content');
 
 <!-- SECTION PORTFOLIO -->
 <?php  get_template_part('template-parts/section-portfolio/section-portfolio-one-tab', null, [
-    'category' => '06-шкафы',
+    'category' => '06-shkafy',
     'title' => 'Последние выполненные работы',
     'bg_class' => 'bg-light',
     'posts_count' => 6
