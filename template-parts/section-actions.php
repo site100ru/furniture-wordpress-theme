@@ -1,5 +1,5 @@
 <!-- Section actions -->
-<section class="archive-portfolio-section archive-portfolio bg-white pb-5">
+<section class="archive-portfolio-section archive-portfolio bg-white py-5">
     <div class="container">
         <?php if ($args['show_breadcrumbs'] == 'true') { ?>
             <nav class="breadcrumbs pt-4">

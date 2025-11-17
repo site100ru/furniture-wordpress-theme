@@ -72,13 +72,6 @@ p.advantages {
 	margin-bottom: 20px;
 }
 
-.description_about {
-	padding-left: 20px;
-	padding-right: 0;
-	margin-bottom: 0;
-	margin-bottom: 0;
-}
-
 .description_about p {
 	line-height: 27px;
 }
@@ -476,17 +469,8 @@ strong {
 		text-align: left !important;
 	}
 
-	.project-container-2 .project-container-2-footer {
-		color: #fff;
-		height: auto;
-	}
-
 	.text-end-product {
 		text-align: right !important;
-	}
-
-	.pc-sell {
-		position: relative;
 	}
 
 	.pc-btn-more {

@@ -20,7 +20,7 @@
                 ?>
 
                 <div class="row">
-                    <div class="col text-center mb-4 mb-md-5">
+                    <div class="col text-center mb-4 mb-lg-5">
                         <div class="d-lg-none">
                             <!-- Bootstrap Tabs Navigation -->
                             <div class="nav-scroller mb-0" style="text-transform: uppercase; font-family: 'HelveticaNeueCyr-Light'; font-weight: bold;">
@@ -38,7 +38,7 @@
                                             <!-- Декоративная точка -->
                                             <li class="nav-item">
                                                 <span class="nav-link px-0">
-                                                    <svg style="margin-bottom: 5px;" width="6" height="6" viewBox="0 0 6 6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
+                                                    <svg width="6" height="6" viewBox="0 0 6 6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
                                                         <rect width="6" height="6" rx="2" />
                                                     </svg>
                                                 </span>
