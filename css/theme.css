@@ -437,11 +437,10 @@ a:hover {
 	height: 60px;
 }
 
-.magnifier:hover {
+.single-product-img.approximation:hover .magnifier {
 	cursor: pointer;
 	opacity: 1;
 }
-
 
 /* HEADER */
 .header-padding-top {
@@ -1205,7 +1204,7 @@ a.navbar-brand {
 	padding-bottom: 2px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991.98px) {
     #myTab .nav-item:has(span) {
         padding-top: 4px;
         padding-bottom: 0;

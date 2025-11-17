@@ -1,7 +1,7 @@
 <section class="section-portfolio archive-portfolio-section-2 bg-white" style="padding-block: 60px;">
     <div class="container">
         <div class="row">
-            <div class="col text-md-center">
+            <div class="col text-lg-center">
                 <h2 style="margin-bottom: 15px;">Последние выполненные работы</h2>
                 <svg style="margin-bottom: 60px;" width="62" height="14" viewBox="0 0 62 14" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
                     <rect x="48" width="14" height="14" rx="3" />
@@ -21,10 +21,10 @@
 
                 <div class="row">
                     <div class="col text-center mb-4 mb-md-5">
-                        <div class="d-md-none">
+                        <div class="d-lg-none">
                             <!-- Bootstrap Tabs Navigation -->
                             <div class="nav-scroller mb-0" style="text-transform: uppercase; font-family: 'HelveticaNeueCyr-Light'; font-weight: bold;">
-                                <ul class="nav justify-content-md-center d-flex m-auto" id="myTab" role="tablist">
+                                <ul class="nav justify-content-lg-center d-flex m-auto" id="myTab" role="tablist">
                                     <!-- Таб "Все" -->
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all"
@@ -36,7 +36,7 @@
                                     <?php if (!empty($portfolio_categories)): ?>
                                         <?php foreach ($portfolio_categories as $category): ?>
                                             <!-- Декоративная точка -->
-                                            <li class="nav-item d-none d-xl-inline">
+                                            <li class="nav-item">
                                                 <span class="nav-link px-0">
                                                     <svg style="margin-bottom: 5px;" width="6" height="6" viewBox="0 0 6 6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
                                                         <rect width="6" height="6" rx="2" />
@@ -67,7 +67,7 @@
                         </div>
 
                         <!-- Десктопная версия с Bootstrap Tabs -->
-                        <ul class="nav nav-tabs justify-content-center mb-4 d-none d-md-flex" id="myTab" role="tablist">
+                        <ul class="nav nav-tabs justify-content-center mb-4 d-none d-lg-flex" id="myTab" role="tablist">
                             <!-- Таб "Все" -->
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all"
