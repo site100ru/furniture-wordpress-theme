@@ -1230,7 +1230,7 @@ a.navbar-brand {
     }
     
     #myTab.tablist .nav-item:has(span) {
-        padding-top: 0;
+        padding-top: 2px;
     }
 }
 
