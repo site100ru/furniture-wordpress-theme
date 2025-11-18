@@ -85,15 +85,6 @@ body.modal-open {
 /*** END FONTS ***/
 
 /*** GENERAL ***/
-:root {
-	--corporate-color-1: #dc3545;
-	--corporate-color-hover-1: #bb2d3c;
-	--corporate-color-active-1: #902531;
-	--corporate-color-2: #dc3545;
-	--dark-color: #323232;
-	--light-color: #e1e1e1;
-}
-
 .svg-icon {
 	color: var(--corporate-color-1);
 }
