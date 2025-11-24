@@ -1,0 +1,195 @@
+/* Product Video Meta Box Styles */
+
+#product-videos-container {
+    margin: -12px -12px 0;
+}
+
+#product-videos-list {
+    margin-bottom: 15px;
+}
+
+.product-video-item {
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.video-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.video-item-title {
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.remove-video {
+    color: #b32d2e;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.remove-video:hover {
+    color: #dc3232;
+}
+
+/* Превью */
+.video-preview-wrap {
+    margin-bottom: 15px;
+}
+
+.video-preview-wrap label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.video-preview-container {
+    min-height: 100px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    padding: 10px;
+}
+
+.video-preview-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 3px;
+}
+
+/* Toggle переключатель */
+.video-type-toggle {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.toggle-label {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.toggle-label:hover {
+    background: #e8e8e8;
+}
+
+.toggle-label input[type="radio"] {
+    margin: 0 6px 0 0;
+}
+
+.toggle-label input[type="radio"]:checked + span {
+    color: #2271b1;
+}
+
+.toggle-label:has(input[type="radio"]:checked) {
+    background: #f0f6fc;
+    border-color: #2271b1;
+}
+
+/* Загрузка файла */
+.video-file-wrap,
+.video-url-wrap {
+    display: none;
+}
+
+.video-file-wrap.active,
+.video-url-wrap.active {
+    display: block;
+}
+
+.video-file-wrap label,
+.video-url-wrap label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.video-file-info {
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-bottom: 8px;
+}
+
+.video-filename {
+    font-size: 13px;
+    color: #2c3338;
+}
+
+.video-filename.no-file {
+    color: #999;
+    font-style: italic;
+}
+
+.video-file-wrap .button {
+    width: 100%;
+}
+
+/* URL видео */
+.video-url-input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.video-url-input:focus {
+    border-color: #2271b1;
+    outline: none;
+    box-shadow: 0 0 0 1px #2271b1;
+}
+
+.video-url-wrap .description {
+    display: block;
+    font-size: 12px;
+    color: #646970;
+    margin-top: 5px;
+}
+
+/* Кнопка добавления видео */
+#add-product-video {
+    margin: 12px;
+}
+
+/* Адаптивность */
+@media screen and (max-width: 782px) {
+    .video-type-toggle {
+        flex-direction: column;
+    }
+    
+    .toggle-label {
+        width: 100%;
+    }
+}

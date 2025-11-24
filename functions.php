@@ -378,8 +378,8 @@ function extra_fields_box_func($post)
         <input type="text" name="extra[img-<?php echo $i; ?>]" value="<?php echo get_post_meta($post->ID, '_img-' . $i, 1); ?>"
             style="width: 100%;">
         <div style="clear: both;"></div>
-    <? } ?>
-    <input type="hidden" name="extra_fields_nonce" value="<?php echo wp_create_nonce(__FILE__); ?>" />
+        <? } ?>
+        <input type="hidden" name="extra_fields_nonce" value="<?php echo wp_create_nonce(__FILE__); ?>" />
 <?php
 }
 
@@ -792,15 +792,15 @@ function echo_description()
         //echo 'Категория портфолио';
 
         // Если страница магазина	
-    } elseif ( is_shop() ) {
+    } elseif (is_shop()) {
         $shop_page_id = wc_get_page_id('shop');
         echo get_the_excerpt($shop_page_id);
 
         // Если обычная страница
-    } elseif ( is_page() ) {
+    } elseif (is_page()) {
         echo get_the_excerpt();
-    
-     // Во всех других случаях
+
+        // Во всех других случаях
     } else {
         echo get_the_title();
     }
@@ -909,4 +909,17 @@ function filter_product_categories_widget($list_args)
 }
 add_filter('woocommerce_product_categories_widget_args', 'filter_product_categories_widget');
 
-require_once get_template_directory() . '/inc/transliteration.php';
+
+// Подключение загрузки видео в товар и посты 
+require_once get_template_directory() . '/inc/product-video/product-video.php';
+
+// Добавить поддержку видео для custom post type
+add_filter('product_video_post_types', function ($types) {
+    $types[] = 'portfolio'; // тип записи портфолио 
+    // $types[] = 'arhive'; // можно несколько 
+    return $types;
+});
+
+
+require_once get_template_directory() . '/inc/gallery-images/gallery-images.php';
+init_gallery_images(['post', 'portfolio', 'products']);

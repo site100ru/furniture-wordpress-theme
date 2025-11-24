@@ -321,29 +321,6 @@ do_action('woocommerce_before_main_content');
     <button type="button" onClick="closeGallery();" class="btn-close btn-close-white" style="position: fixed; top: 25px; right: 25px; z-index: 99999;" aria-label="Close"></button>
 </div> <!-- #galleryWrapper -->
 
-
-<script>
-    /* Функция открытия галереи */
-    function galleryOn(gal) {
-        var gallery = gal; // Получаем ID галереи
-        // Открываем обертку галереи
-        document.getElementById('galleryWrapper').style.display = 'block';
-
-        /* Открываем галерею */
-        document.getElementById(gallery).style.display = "block";
-
-    }
-
-    /* Кнопка закрытия галереи */
-    function closeGallery() {
-        // Закрываем обертку галереи
-        document.getElementById('galleryWrapper').style.display = 'none';
-        document.getElementById("gallery-2").style.display = "none";
-    }
-</script>
-
-
-
 <!-- Advantage section -->
 <section class="advantage bg-light py-5">
     <div class="container">
