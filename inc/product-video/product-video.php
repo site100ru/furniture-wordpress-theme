@@ -295,9 +295,6 @@ class WC_Product_Video {
 
 // Инициализация
 function wc_product_video_init() {
-    if ( ! class_exists( 'WooCommerce' ) ) {
-        return;
-    }
     WC_Product_Video::get_instance();
 }
 
