@@ -17,8 +17,7 @@
 	display: none;
 }
 
-bdi {
-}
+bdi {}
 
 .active {
 	color: var(--corporate-color-1);
@@ -53,10 +52,11 @@ bdi {
 	background-color: white;
 }
 
+/* This element is styled in the theme.css file
 h2 {
 	font-family: 'HelveticaNeueBoldCondensed';
 	margin-bottom: 15px;
-}
+}*/
 
 p.advantages {
 	font-size: 20px;
@@ -72,19 +72,16 @@ p.advantages {
 	margin-bottom: 20px;
 }
 
-.description_about {
-	padding-left: 20px;
-	padding-right: 0;
-	margin-bottom: 0;
-	margin-bottom: 0;
-}
-
 .description_about p {
 	line-height: 27px;
 }
 
 .contacts-section-4 .nav-item.d-none.d-xl-inline .nav-link {
 	padding-inline: 0;
+}
+
+.contacts-section-4 .nav-item.d-none.d-xl-inline span.nav-link svg  {
+    margin-bottom: 2px;
 }
 
 .contacts-section-4 .menu-item.menu-item-has-children.dropdown a {
@@ -118,11 +115,13 @@ p.advantages {
 .contact-box-info span {
 	line-height: 20px;
 }
+
 /* .overlay
 {
     height: 540px;
     background: rgba(0,0,0,.25);
 } */
+ 
 .overlay {
 	position: absolute;
 	width: 100%;
@@ -216,7 +215,7 @@ strong {
 }
 
 .breadcrumbs {
-	padding: 0 0 36px 0;
+	padding: 0 0 24px 0;
 }
 
 .category {
@@ -433,12 +432,6 @@ strong {
 		width: 100%;
 	}
 
-	.single_img,
-	.single_img_slide {
-		width: 336px;
-		height: 224px;
-	}
-
 	.site-wrap {
 		height: auto;
 	}
@@ -472,17 +465,8 @@ strong {
 		text-align: left !important;
 	}
 
-	.project-container-2 .project-container-2-footer {
-		color: #fff;
-		height: auto;
-	}
-
 	.text-end-product {
 		text-align: right !important;
-	}
-
-	.pc-sell {
-		position: relative;
 	}
 
 	.pc-btn-more {
@@ -491,9 +475,6 @@ strong {
 	.contact-box-info {
 		flex-direction: column;
 		gap: 15px;
-	}
-	.breadcrumbs_box {
-		margin-top: 70px;
 	}
 }
 

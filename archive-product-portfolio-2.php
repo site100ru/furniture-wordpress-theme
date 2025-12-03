@@ -13,7 +13,7 @@ include 'header.php';
 
 <!-- Home section -->
 <div id="sp-home" class="scroll-points"></div>
-<section class="main-home-section min-home main-parallax">
+<section class="main-home-section main-parallax">
     <div class="parallax-home-section" style="min-height: 640px;"></div>
     <header class="d-none d-lg-block">
         <!-- Header nav top -->
@@ -329,7 +329,7 @@ include 'header.php';
                 'post_type' => 'portfolio',
                 'numberposts' => 10,
                 'posts_per_page' => 10,
-                'portfolio-cat' => '01-кухни'
+                'portfolio-cat' => '01-kuhni'
             ];
 
             $query = new WP_Query($args);
@@ -396,7 +396,7 @@ include 'header.php';
         </div>
         <div class="row text-md-center">
             <div class="col">
-                <a href="/furniture/portfolio-cat/01-кухни/" type="button"
+                <a href="/furniture/portfolio-cat/01-kuhni/" type="button"
                     class="btn btn-lg btn-corporate-color-1">Показать еще</a>
             </div>
         </div>

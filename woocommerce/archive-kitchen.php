@@ -23,7 +23,7 @@ do_action('woocommerce_before_main_content');
 
 <!-- Home section -->
 <div id="sp-home" class="scroll-points"></div>
-<section class="main-home-section min-home main-parallax">
+<section class="main-home-section main-home-section main-parallax">
     <div class="parallax-home-section" style="min-height: 640px;"></div>
     <header class="d-none d-lg-block">
         <!-- Header nav top -->
@@ -443,7 +443,7 @@ do_action('woocommerce_before_main_content');
                     $portfolio_cat = $obj->slug;
                     switch ($portfolio_cat) {
                         case 'кухни':
-                            $portfolio_cat = '01-кухни';
+                            $portfolio_cat = '01-kuhni';
                             break;
                     }
 
@@ -451,7 +451,7 @@ do_action('woocommerce_before_main_content');
                         'post_type' => 'portfolio',
                         'numberposts' => 6,
                         'posts_per_page' => 6,
-                        'portfolio-cat' => '01-кухни' //$portfolio_cat
+                        'portfolio-cat' => '01-kuhni' //$portfolio_cat
                     ];
 
                     $query = new WP_Query($args);
@@ -474,7 +474,7 @@ do_action('woocommerce_before_main_content');
                     wp_reset_postdata();
                     ?>
                 </div>
-                <a href="https://site100.ru/furniture/portfolio-cat/01-кухни/" class="btn btn-lg btn-corporate-color-1"
+                <a href="https://site100.ru/furniture/portfolio-cat/01-kuhni/" class="btn btn-lg btn-corporate-color-1"
                     style="margin-top: 12px;">Смотреть еще</a>
             </div>
         </div>
@@ -489,7 +489,7 @@ do_action('woocommerce_before_main_content');
     $portfolio_cat = $obj->slug;
     switch ($portfolio_cat) {
         case 'кухни':
-            $portfolio_cat = '01-кухни';
+            $portfolio_cat = '01-kuhni';
             break;
     }
 
@@ -497,7 +497,7 @@ do_action('woocommerce_before_main_content');
         'post_type' => 'portfolio',
         'numberposts' => 6,
         'posts_per_page' => 6,
-        'portfolio-cat' => '01-кухни' //$portfolio_cat
+        'portfolio-cat' => '01-kuhni' //$portfolio_cat
     ];
 
     $query = new WP_Query($args);
@@ -593,7 +593,7 @@ do_action('woocommerce_before_main_content');
         $portfolio_cat = $obj->slug;
         switch ($portfolio_cat) {
             case 'кухни':
-                $portfolio_cat = '01-кухни';
+                $portfolio_cat = '01-kuhni';
                 break;
         }
 
@@ -601,7 +601,7 @@ do_action('woocommerce_before_main_content');
             'post_type' => 'portfolio',
             'numberposts' => 6,
             'posts_per_page' => 6,
-            'portfolio-cat' => '01-кухни' //$portfolio_cat
+            'portfolio-cat' => '01-kuhni' //$portfolio_cat
         ];
 
         $query = new WP_Query($args);

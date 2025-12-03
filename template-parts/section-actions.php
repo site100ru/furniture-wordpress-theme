@@ -1,5 +1,5 @@
 <!-- Section actions -->
-<section class="archive-portfolio-section archive-portfolio bg-white pb-5">
+<section class="archive-portfolio-section archive-portfolio bg-white py-5">
     <div class="container">
         <?php if ($args['show_breadcrumbs'] == 'true') { ?>
             <nav class="breadcrumbs pt-4">
@@ -27,23 +27,23 @@
         <?php if ($args['section_actions_place'] == 'actions-page') { ?>
             <div class="row text-start">
                 <div class="col-md-6">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-1.jpg"
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-1.webp"
                         class="img-fluid rounded mb-3" alt="">
                     <p class="mb-5 d-none">Бесплатная доставка</p>
                 </div>
                 <div class="col-md-6">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-4.jpg" class="img-fluid rounded mb-3" alt="Акция">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-4.webp" class="img-fluid rounded mb-3" alt="Акция">
                 </div>
                 <div class="col-md-4">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-4.jpg" class="img-fluid rounded mb-3" alt="Акция">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-4.webp" class="img-fluid rounded mb-3" alt="Акция">
                 </div>
                 <div class="col-md-4">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-1.jpg"
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-1.webp"
                         class="img-fluid rounded mb-3" alt="">
                     <p class="mb-5 d-none">Бесплатная доставка</p>
                 </div>
                 <div class="col-md-4">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-1.jpg"
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-1.webp"
                         class="img-fluid rounded mb-3" alt="">
                     <p class="mb-5 d-none">Бесплатная доставка</p>
                 </div>
@@ -71,15 +71,15 @@
         <?php } else if ($args['section_actions_place'] == 'home-page') { ?>
             <div class="row text-start">
                 <div class="col-md-4">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-1.jpg"
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-1.webp"
                         class="img-fluid rounded mb-3" alt="">
                     <p class="mb-5 d-none">Бесплатная доставка</p>
                 </div>
                 <div class="col-md-4">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-4.jpg" class="img-fluid rounded mb-3" alt="Акция">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-4.webp" class="img-fluid rounded mb-3" alt="Акция">
                 </div>
                 <div class="col-md-4">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-4.jpg" class="img-fluid rounded mb-3" alt="Акция">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/actions/action-img-4.webp" class="img-fluid rounded mb-3" alt="Акция">
                 </div>
             </div>
         <?php } ?>

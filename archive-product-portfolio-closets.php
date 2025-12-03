@@ -329,7 +329,7 @@ include 'header.php';
                 'post_type' => 'portfolio',
                 'numberposts' => 10,
                 'posts_per_page' => 10,
-                'portfolio-cat' => '06-шкафы'
+                'portfolio-cat' => '06-shkafy'
             ];
 
             $query = new WP_Query($args);
@@ -396,7 +396,7 @@ include 'header.php';
         </div>
         <div class="row text-md-center">
             <div class="col">
-                <a href="/furniture/portfolio-cat/06-шкафы/" type="button"
+                <a href="/furniture/portfolio-cat/06-shkafy/" type="button"
                     class="btn btn-lg btn-corporate-color-1">Показать
                     еще</a>
             </div>
