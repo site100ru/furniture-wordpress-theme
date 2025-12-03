@@ -474,7 +474,7 @@ do_action('woocommerce_before_main_content');
                     wp_reset_postdata();
                     ?>
                 </div>
-                <a href="https://site100.ru/furniture/portfolio-cat/01-kuhni/" class="btn btn-lg btn-corporate-color-1"
+                <a href="/portfolio-cat/01-kuhni/" class="btn btn-lg btn-corporate-color-1"
                     style="margin-top: 12px;">Смотреть еще</a>
             </div>
         </div>

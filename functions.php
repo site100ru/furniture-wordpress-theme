@@ -222,7 +222,7 @@ add_filter('woocommerce_get_breadcrumb', function ($crumbs, $Breadcrumb) {
     } else if (is_tax('portfolio-cat')) {
         $new_breadcrumb = [
             _x('Наши работы', 'breadcrumb', 'woocommerce'), //Title
-            'https://site100.ru/furniture/portfolio/' // URL
+            home_url('/portfolio/') // Лучше использовать home_url()
         ];
         array_splice($crumbs, 0, 1, [$new_breadcrumb]); //Insert a new breadcrumb after the 'Home' crumb
     }

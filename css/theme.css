@@ -1205,23 +1205,9 @@ a.navbar-brand {
     align-items: center;
 }
 
-#myTab .nav-item:has(span) {
-	padding-bottom: 2px;
-}
-
-#myTab.tablist .nav-item:has(span) {
-    align-content: center;
-    padding-top: 4px;
-}
-
-@media (max-width: 991.98px) {
-    #myTab .nav-item:has(span) {
-        padding-bottom: 0;
-        align-content: center;
-    }
-    
+@media (max-width: 599.98px) {
     #myTab.tablist .nav-item:has(span) {
-        padding-top: 2px;
+        padding-bottom: 2px;
     }
 }
 
@@ -1731,17 +1717,6 @@ h6,
 .archive-portfolio-section-2 .nav-scroller .nav-item:last-child a.nav-link {
     padding-right: 0;
 }
-
-@media (min-width: 992px) {
-    #myTab .nav-item .nav-link svg {
-        margin-bottom: 2px;
-    }
-
-    .archive-portfolio-section-2 .nav-scroller .nav-item .nav-link svg{
-        margin-bottom: 5px;
-    }
-}
-
 
 /* Archive portfolio section 2 */
 .archive-portfolio-section-2 .nav-item a,
