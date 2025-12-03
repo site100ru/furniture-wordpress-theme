@@ -17,8 +17,7 @@
 	display: none;
 }
 
-bdi {
-}
+bdi {}
 
 .active {
 	color: var(--corporate-color-1);
