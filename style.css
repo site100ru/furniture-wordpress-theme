@@ -52,10 +52,11 @@ bdi {}
 	background-color: white;
 }
 
+/* This element is styled in the theme.css file
 h2 {
 	font-family: 'HelveticaNeueBoldCondensed';
 	margin-bottom: 15px;
-}
+}*/
 
 p.advantages {
 	font-size: 20px;
