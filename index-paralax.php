@@ -1035,8 +1035,8 @@ include 'header.php';
                 <br />
 
                 <button type="button" class="btn btn-lg btn-corporate-color-1 mb-4" data-bs-toggle="modal"
-                    data-bs-target="#callbackModal">
-                    Расчитать стоимость
+                    data-bs-target="#calculatePriceWithDownloadModal">
+                    Расcчитать стоимость
                 </button>
 
                 <div class="row justify-content-md-end">

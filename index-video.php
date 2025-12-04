@@ -1037,7 +1037,7 @@ include 'header.php';
                     Это бесплатно и ни к чему Вас не обязывает!
                 </p>
 
-                 <svg width="62" height="14" viewBox="0 0 62 14" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon mb-5">
+                <svg width="62" height="14" viewBox="0 0 62 14" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon mb-5">
                     <rect x="48" width="14" height="14" rx="3" />
                     <rect x="24" width="14" height="14" rx="3" />
                     <rect width="14" height="14" rx="3" />
@@ -1046,8 +1046,8 @@ include 'header.php';
                 <br />
 
                 <button type="button" class="btn btn-lg btn-corporate-color-1 mb-4" data-bs-toggle="modal"
-                    data-bs-target="#callbackModal">
-                    Расчитать стоимость
+                    data-bs-target="#calculatePriceWithDownloadModal">
+                    Расcчитать стоимость
                 </button>
 
                 <div class="row justify-content-md-end">

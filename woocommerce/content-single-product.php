@@ -160,7 +160,7 @@ if ( post_password_required() ) {
 			<p><strong>Фурнитура:</strong> вся используемая фурнитура и интегрированная подсветка производства Hettich (Германия).</p>
 			<p><strong>Стоимость представленного образца:</strong> ₽155 000</p>
 			<p>Возможно любое индивидуальное изменение характеристик: размеров, материалов, фурнитуры.</p>
-			<p><strong>Расчитать стоимость этого образца с учетом Ваших характеристик?</strong> Это бесплатно и ник чему Вас не обязывает!</p>
+			<p><strong>Расcчитать стоимость этого образца с учетом Ваших характеристик?</strong> Это бесплатно и ник чему Вас не обязывает!</p>
 			<a href="#" style="padding: 7px 30px; margin-top: 25px;" type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Да, рассчитайте</a>	
 		</div>
 	</div>
