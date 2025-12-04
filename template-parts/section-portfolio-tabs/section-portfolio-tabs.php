@@ -45,41 +45,41 @@ $query = new WP_Query($query_args);
 
                 <div class="row">
                     <div class="col text-center mb-4 mb-lg-5">
-                        <div class="d-lg-none">
-                            <!-- Bootstrap Tabs Navigation -->
-                            <div class="nav-scroller mb-0" style="text-transform: uppercase; font-family: 'HelveticaNeueCyr-Light'; font-weight: bold;">
-                                <ul class="nav justify-content-lg-center d-flex m-auto align-items-center" id="myTab" role="tablist">
-                                    <!-- Таб "Все" -->
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all"
-                                            type="button" role="tab" aria-controls="all" aria-selected="true">
-                                            Все
-                                        </button>
-                                    </li>
+                        <!-- Bootstrap Tabs Navigation -->
+                        <div class="nav-scroller mb-0" style="text-transform: uppercase; font-family: 'HelveticaNeueCyr-Light'; font-weight: bold;">
+                            <ul class="nav justify-content-lg-center d-flex m-auto align-items-center" id="myTab" role="tablist">
+                                <!-- Таб "Все" -->
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all"
+                                        type="button" role="tab" aria-controls="all" aria-selected="true">
+                                        Все
+                                    </button>
+                                </li>
 
-                                    <?php if (!empty($portfolio_categories)): ?>
-                                        <?php foreach ($portfolio_categories as $category): ?>
-                                            <!-- Декоративная точка -->
-                                            <li class="nav-item">
-                                                <span class="nav-link px-0">
-                                                    <svg width="6" height="6" viewBox="0 0 6 6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
-                                                        <rect width="6" height="6" rx="2" />
-                                                    </svg>
-                                                </span>
-                                            </li>
-                                            <!-- Категория -->
-                                            <li class="nav-item" role="presentation">
-                                                <button class="nav-link" id="<?php echo esc_attr($category->slug); ?>-tab"
-                                                    data-bs-toggle="tab" data-bs-target="#<?php echo esc_attr($category->slug); ?>"
-                                                    type="button" role="tab" aria-controls="<?php echo esc_attr($category->slug); ?>"
-                                                    aria-selected="false">
-                                                    <?php echo esc_html($category->name); ?>
-                                                </button>
-                                            </li>
-                                        <?php endforeach; ?>
-                                    <?php endif; ?>
-                                </ul>
-                            </div>
+                                <?php if (!empty($portfolio_categories)): ?>
+                                    <?php foreach ($portfolio_categories as $category): ?>
+                                        <!-- Декоративная точка -->
+                                        <li class="nav-item">
+                                            <span class="nav-link px-0">
+                                                <svg width="6" height="6" viewBox="0 0 6 6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
+                                                    <rect width="6" height="6" rx="2" />
+                                                </svg>
+                                            </span>
+                                        </li>
+                                        <!-- Категория -->
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="<?php echo esc_attr($category->slug); ?>-tab"
+                                                data-bs-toggle="tab" data-bs-target="#<?php echo esc_attr($category->slug); ?>"
+                                                type="button" role="tab" aria-controls="<?php echo esc_attr($category->slug); ?>"
+                                                aria-selected="false">
+                                                <?php echo esc_html($category->name); ?>
+                                            </button>
+                                        </li>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+                            </ul>
+                        </div>
+                        <div class="d-lg-none">
                             <div class="text-center mb-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="40" fill="currentColor" viewBox="0 0 34 40" class="svg-icon" style="opacity: 1">
                                     <path
@@ -88,34 +88,7 @@ $query = new WP_Query($query_args);
                                         d="M22.101 6.4h6.069l-1.835 1.833a.801.801 0 0 0 1.133 1.133l3.2-3.2a.8.8 0 0 0 0-1.133l-3.2-3.2a.8.8 0 1 0-1.133 1.133L28.17 4.8h-6.069a.8.8 0 1 0 0 1.6M4.501 9.6a.8.8 0 0 0 .567-1.367L3.233 6.4H9.3a.8.8 0 1 0 0-1.6H3.233l1.835-1.834a.801.801 0 1 0-1.133-1.133l-3.2 3.2a.8.8 0 0 0 0 1.133l3.2 3.2a.8.8 0 0 0 .566.234" />
                                 </svg>
                             </div>
-                        </div>
-
-                        <!-- Десктопная версия с Bootstrap Tabs -->
-                        <ul class="nav nav-tabs justify-content-center mb-4 d-none d-lg-flex" id="myTab" role="tablist">
-                            <!-- Таб "Все" -->
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all"
-                                    type="button" role="tab" aria-controls="all" aria-selected="true">
-                                    Все
-                                </button>
-                            </li>
-
-                            <?php if (!empty($portfolio_categories)): ?>
-                                <?php foreach ($portfolio_categories as $category): ?>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link ps-0" id="<?php echo esc_attr($category->slug); ?>-tab"
-                                            data-bs-toggle="tab" data-bs-target="#<?php echo esc_attr($category->slug); ?>"
-                                            type="button" role="tab" aria-controls="<?php echo esc_attr($category->slug); ?>"
-                                            aria-selected="false">
-                                            <svg width="6" height="6" viewBox="0 0 6 6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon me-3">
-                                                <rect width="6" height="6" rx="2" />
-                                            </svg>
-                                            <?php echo esc_html($category->name); ?>
-                                        </button>
-                                    </li>
-                                <?php endforeach; ?>
-                            <?php endif; ?>
-                        </ul>
+                        </div>  
                     </div>
                 </div>
 
@@ -264,7 +237,7 @@ $query = new WP_Query($query_args);
                                 <div class="col text-center">
                                     <img src="<?php echo get_post_meta($post->ID, '_img-' . $i)[0]; ?>"
                                         class="img-fluid"
-                                        style="max-width: 75vw; max-height: 75vh;"
+                                        style="max-width: 90vw; max-height: 90vh;"
                                         alt="<?php echo get_the_title(); ?>">
                                 </div>
                             </div>

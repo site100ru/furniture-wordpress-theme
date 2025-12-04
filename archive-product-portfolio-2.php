@@ -474,7 +474,7 @@ include 'header.php';
                     <div id="img-<?php echo $post->ID; ?>-<?php echo $count2; ?>" class="carousel-item h-100">
                         <div class="row align-items-center h-100">
                             <div class="col text-center">
-                                <img src="<?php echo $image; ?>" class="img-fluid" style="max-width: 75vw; max-height: 75vh;" alt="...">
+                                <img src="<?php echo $image; ?>" class="img-fluid" style="max-width: 90vw; max-height: 90vh;" alt="...">
                             </div>
                         </div>
                     </div>

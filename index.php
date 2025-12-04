@@ -286,7 +286,7 @@ include 'header.php';
                     на заказ от производителя</h1>
                 <p class="home-subtitle mb-4">Изготовим качественную кухню с учетом Ваших пожеланий и особенностей помещения по разумной цене! Рассчитаем стоимость за 15 минут.</p>
                 <a href="#" type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal"
-                    data-bs-target="#measurerModal">Рассчитать стоимость</a>
+                    data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
             </div>
         </div>
     </div>

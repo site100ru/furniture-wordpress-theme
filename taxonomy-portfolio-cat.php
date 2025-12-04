@@ -312,7 +312,7 @@ include 'header.php';
             <div class="col">
                 <div class="row">
                     <div class="col text-md-center">
-                        <h2>Наши работы</h2>
+                        <h2 class="mb-3">Наши работы</h2>
                         <svg width="62" height="14" viewBox="0 0 62 14" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon mb-5">
                             <rect x="48" width="14" height="14" rx="3" />
                             <rect x="24" width="14" height="14" rx="3" />
@@ -349,10 +349,7 @@ include 'header.php';
                                         </span>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link<?php if ($current_category_name == $term->name) {
-                                                                echo ' active';
-                                                            } ?>"
-                                            href="<?php echo get_term_link($term->term_id); ?>"><?php echo $term->name; ?></a>
+                                        <a class="nav-link<?php if ($current_category_name == $term->name) { echo ' active'; } ?>" href="<?php echo get_term_link($term->term_id); ?>"><?php echo $term->name; ?></a>
                                     </li>
                                 <?php }
                                 ?>
@@ -393,8 +390,7 @@ include 'header.php';
                                         if (get_post_meta($post->ID, '_img-' . $i)) { ?>
                                             <button type="button"
                                                 data-bs-target="#carouselExampleIndicators<?php echo $post->ID; ?>"
-                                                data-bs-slide-to="<?php echo $i - 1; ?>" <?php if ($i == 1)
-                                                                                                echo ' class="active"'; ?>
+                                                data-bs-slide-to="<?php echo $i - 1; ?>" <?php if ($i == 1) echo ' class="active"'; ?>
                                                 aria-current="true" aria-label="Slide <?php echo $i; ?>"></button>
                                     <?php $count2 = $count2 + 1;
                                         }
@@ -406,10 +402,8 @@ include 'header.php';
                                     $count2 = 0;
                                     for ($i = 1; $i <= 9; $i++) {
                                         if (get_post_meta($post->ID, '_img-' . $i)) { ?>
-                                            <div class="carousel-item <?php if ($i == 1)
-                                                                            echo ' active'; ?>" data-bs-interval="999999999">
-                                                <a
-                                                    onClick="galleryOn('gallery-<?php echo $post->ID; ?>','img-<?php echo $post->ID; ?>-<?php echo $count2; ?>');">
+                                            <div class="carousel-item <?php if ($i == 1) echo ' active'; ?>" data-bs-interval="999999999">
+                                                <a onClick="galleryOn('gallery-<?php echo $post->ID; ?>','img-<?php echo $post->ID; ?>-<?php echo $count2; ?>');">
                                                     <div class="single-product-img approximation">
                                                         <img src="<?php echo get_post_meta($post->ID, '_img-' . $i)[0]; ?>"
                                                             class="shadow rounded" alt="..." loading="lazy">
@@ -529,7 +523,7 @@ include 'header.php';
                     <div id="img-<?php echo $post->ID; ?>-<?php echo $count2; ?>" class="carousel-item h-100">
                         <div class="row align-items-center h-100">
                             <div class="col text-center">
-                                <img src="<?php echo $image; ?>" class="img-fluid" style="max-width: 75vw; max-height: 75vh;" alt="...">
+                                <img src="<?php echo $image; ?>" class="img-fluid" style="max-width: 90vw; max-height: 90vh;" alt="...">
                             </div>
                         </div>
                     </div>

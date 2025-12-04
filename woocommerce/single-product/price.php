@@ -55,7 +55,7 @@ global $product;
 			<?php echo $product->get_price_html(); ?>
 		</p>
 		
-		<button class="btn btn-lg btn-corporate-color-1 mt-4 text-light" data-bs-toggle="modal" data-bs-target="#calculatePriceModal">Рассчитать стоимость</button>
+		<button class="btn btn-lg btn-corporate-color-1 mt-4 text-light" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</button>
 	<?php } else { ?>
 		<!--button class="btn btn-lg btn-corporate-color-1 mt-3 text-light" data-bs-toggle="modal" data-bs-target="#orderModal">Узнать стоимость</button-->
 		<button type="button" class="btn btn-lg btn-corporate-color-1 mt-3 text-light" data-bs-toggle="modal" data-bs-target="#measurerModal">Вызвать замерщика</button>

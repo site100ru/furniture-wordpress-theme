@@ -97,7 +97,7 @@ if ( post_password_required() ) {
 			<div class="carousel-item carousel-item-2 h-100<?php if ( $count == false ) { echo ' active'; $count = true; } ?>">
 				<div class="row align-items-center h-100">
 					<div class="col text-center">
-						<img src="<?php echo wp_get_attachment_url( $attachment_id ); ?>" class="img-fluid" loading="lazy" style="max-width: 75vw; max-height: 75vh;" alt="...">
+						<img src="<?php echo wp_get_attachment_url( $attachment_id ); ?>" class="img-fluid" loading="lazy" style="max-width: 90vw; max-height: 90vh;" alt="...">
 					</div>
 				</div>
 			</div>

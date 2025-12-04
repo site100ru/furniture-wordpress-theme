@@ -514,7 +514,7 @@ include 'header.php';
                 <div class="row align-items-center h-100">
                     <div class="col text-center">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/card-image-cucina1.webp"
-                            class="img-fluid lazyload" loading="lazy" style="max-width: 75vw; max-height: 75vh"
+                            class="img-fluid lazyload" loading="lazy" style="max-width: 90vw; max-height: 90vh"
                             alt="..." />
                     </div>
                 </div>
@@ -523,7 +523,7 @@ include 'header.php';
                 <div class="row align-items-center h-100">
                     <div class="col text-center">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/card-image-cucina2.webp"
-                            class="img-fluid lazyload" loading="lazy" style="max-width: 75vw; max-height: 75vh"
+                            class="img-fluid lazyload" loading="lazy" style="max-width: 90vw; max-height: 90vh"
                             alt="..." />
                     </div>
                 </div>
@@ -531,7 +531,7 @@ include 'header.php';
             <!-- <div id="imgAboutSectionGallery-3" class="carousel-item h-100">
                 <div class="row align-items-center h-100">
                     <div class="col text-center">
-                        <img  data-src="<?php echo get_template_directory_uri(); ?>/img/about-section-slide-3.jpeg" class="img-fluid lazyload" loading="lazy"  style="max-width: 75vw; max-height: 75vh"  alt="..."/>
+                        <img  data-src="<?php echo get_template_directory_uri(); ?>/img/about-section-slide-3.jpeg" class="img-fluid lazyload" loading="lazy"  style="max-width: 90vw; max-height: 90vh"  alt="..."/>
                     </div>
                 </div>
             </div> -->
@@ -566,7 +566,7 @@ include 'header.php';
                 <div class="row align-items-center h-100">
                     <div class="col text-center">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/card-image-cucina2.webp"
-                            class="img-fluid lazyload" loading="lazy" style="max-width: 75vw; max-height: 75vh"
+                            class="img-fluid lazyload" loading="lazy" style="max-width: 90vw; max-height: 90vh"
                             alt="..." />
                     </div>
                 </div>
@@ -575,7 +575,7 @@ include 'header.php';
                 <div class="row align-items-center h-100">
                     <div class="col text-center">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/card-image-cucina1.webp"
-                            class="img-fluid lazyload" loading="lazy" style="max-width: 75vw; max-height: 75vh"
+                            class="img-fluid lazyload" loading="lazy" style="max-width: 90vw; max-height: 90vh"
                             alt="..." />
                     </div>
                 </div>
@@ -583,7 +583,7 @@ include 'header.php';
             <!-- <div id="imgAboutSectionGallery-3" class="carousel-item h-100">
                 <div class="row align-items-center h-100">
                     <div class="col text-center">
-                        <img  data-src="<?php echo get_template_directory_uri(); ?>/img/about-section-slide-3.jpeg" class="img-fluid lazyload" loading="lazy"  style="max-width: 75vw; max-height: 75vh"  alt="..."/>
+                        <img  data-src="<?php echo get_template_directory_uri(); ?>/img/about-section-slide-3.jpeg" class="img-fluid lazyload" loading="lazy"  style="max-width: 90vw; max-height: 90vh"  alt="..."/>
                     </div>
                 </div>
             </div> -->
@@ -878,12 +878,10 @@ include 'header.php';
                 for ($i = 1; $i <= 9; $i++) {
                     if (get_post_meta($post->ID, '_img-' . $i)) { ?>
                         <div id="img-<?php echo $post->ID; ?>-<?php echo $count2; ?>"
-                            class="carousel-item h-100 <?php // if ( $i == 1 ) echo ' active'; 
-                                                        ?>" data-bs-interval="999999999">
+                            class="carousel-item h-100 <?php // if ( $i == 1 ) echo ' active'; ?>" data-bs-interval="999999999">
                             <div class="row align-items-center h-100">
                                 <div class="col text-center">
-                                    <img src="<?php echo get_post_meta($post->ID, '_img-' . $i)[0]; ?>" class="img-fluid"
-                                        style="max-width: 75vw; max-height: 75vh;" alt="...">
+                                    <img src="<?php echo get_post_meta($post->ID, '_img-' . $i)[0]; ?>" class="img-fluid" style="max-width: 90vw; max-height: 90vh;" alt="...">
                                 </div>
                             </div>
                         </div>

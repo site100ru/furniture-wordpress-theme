@@ -84,7 +84,7 @@ p.advantages {
     margin-bottom: 2px;
 }
 
-.contacts-section-4 .menu-item.menu-item-has-children.dropdown a {
+.contacts-section-4 .menu-item.menu-item-has-children.dropdown a.nav-link.header-link.dropdown-toggle {
 	padding-right: 0;
 }
 
@@ -163,12 +163,6 @@ strong {
 	font-family: 'HelveticaNeueCyr-Bold';
 	padding: 13px 36px;
 	border-radius: 5px;
-}
-
-.carousel-item-2 img {
-	height: 424px;
-	border-radius: 10px;
-	overflow: hidden;
 }
 
 .single_img {
@@ -367,17 +361,6 @@ strong {
 	-webkit-overflow-scrolling: touch;
 }
 
-.archive-portfolio-section-2 .nav-item a,
-.archive-portfolio-section-2 .nav-item button {
-	color: #000000;
-	opacity: 0.75;
-	transition: 0.25s;
-}
-
-.archive-portfolio-section-2 .nav-item a.active,
-.archive-portfolio-section-2 .nav-item button.active {
-	color: var(--corporate-color-1);
-}
 
 .card-portfolio {
 	position: absolute;
@@ -417,11 +400,6 @@ strong {
 	}
 	.home-title {
 		font-size: 32px;
-	}
-	.carousel-item-2 img {
-		height: auto;
-		max-width: 75vw;
-		max-height: 75vw;
 	}
 
 	.carousel-inner {

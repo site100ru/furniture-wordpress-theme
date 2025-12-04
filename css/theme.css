@@ -3,6 +3,7 @@
 	--corporate-color-1: #dc3545;
 	--corporate-color-hover-1: #bb2d3c;
 	--corporate-color-active-1: #902531;
+    --corporate-color-focus-1: #902531;
 	--corporate-color-2: #dc3545;
 	--dark-color: #323232;
 	--light-color: #e1e1e1;
@@ -373,6 +374,7 @@ a:hover {
 }
 
 .btn-corporate-color-1:focus {
+    background-color: var(--corporate-color-1) !important;
 	box-shadow: 0 0 1px 3px rgba(220, 53, 69, 0.5);
 }
 
@@ -1197,12 +1199,14 @@ a.navbar-brand {
 
 #myTab .nav-link {
 	font-family: Gilroy-Medium;
+    font-weight: 400;
 	font-size: 14px;
 	text-transform: uppercase;
 	text-align: center;
 	color: #4b4b4b;
 	display: flex;
     align-items: center;
+    line-height: 1;
 }
 
 @media (max-width: 599.98px) {
@@ -1719,26 +1723,6 @@ h6,
 }
 
 /* Archive portfolio section 2 */
-.archive-portfolio-section-2 .nav-item a,
-.archive-portfolio-section-2 .nav-item button {
-	color: #000000;
-	opacity: 0.75;
-	transition: 0.25s;
-	font-family: Gilroy-Medium;
-	font-weight: 400;
-	font-size: 14px;
-}
-
-.archive-portfolio-section-2 .nav-item a:hover,
-.archive-portfolio-section-2 .nav-item button:hover {
-	color: var(--corporate-color-1);
-}
-
-.archive-portfolio-section-2 .nav-item a.active,
-.archive-portfolio-section-2 .nav-item button.active {
-	color: var(--corporate-color-1);
-}
-
 .archive-portfolio-section-2 .card-portfolio {
 	position: absolute;
 	width: 94%;
@@ -1950,6 +1934,7 @@ strong {
 	color: #c8c8c8;
 	text-decoration: none;
 	transition: 0.25s;
+    text-wrap: nowrap;
 }
 
 .contacts-section-4 .contacts-phone:hover {
@@ -2410,7 +2395,7 @@ footer {
 	width: 30px;
 	height: 30px;
 	filter: invert();
-	background: url(../img/ico/callback-phone-button-ico.svg) center no-repeat;
+	background: url(../img/ico/callback-phone-ico.svg) center no-repeat;
 	background-size: contain;
 	-moz-background-size: contain;
 	-webkit-background-size: contain;
@@ -2652,11 +2637,6 @@ footer {
 	}
 	.home-title {
 		font-size: 31px;
-	}
-	.carousel-item-2 img {
-		height: auto;
-		max-width: 75vw;
-		max-height: 75vw;
 	}
 
 	.carousel-inner {
