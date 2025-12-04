@@ -396,6 +396,7 @@ include 'header.php';
 
 <!-- SECTION PORTFOLIO -->
 <?php get_template_part('template-parts/section-portfolio-tabs/section-portfolio-tabs', null, []); ?>
+<?php get_template_part('template-parts/section-portfolio-tabs/section-portfolio-one-tab', null, []); ?>
 <!-- END SECTION PORTFOLIO -->
 
 
