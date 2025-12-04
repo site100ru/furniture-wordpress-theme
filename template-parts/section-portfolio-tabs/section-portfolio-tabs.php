@@ -1,4 +1,5 @@
 <?php
+// section-portfolio-tabs.php
 $category = $args['category'] ?? '';
 $title = $args['title'] ?? 'Последние выполненные работы';
 $bg_class = $args['bg_class'] ?? 'bg-white';
@@ -190,6 +191,7 @@ $query = new WP_Query($query_args);
         </div>
     </div>
 </section>
+<!-- END SECTION PORTFOLIO -->
 
 <!-- Gallery wrapper -->
 <div id="galleryWrapper" style="background: rgba(0,0,0,0.85); display: none; position: fixed; top: 0; bottom: 0; left: 0; right: 0; z-index: 9999;">
@@ -250,11 +252,11 @@ $query = new WP_Query($query_args);
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#gallery-<?php echo $post->ID; ?>" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
+                <span class="visually-hidden">Предыдущий</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#gallery-<?php echo $post->ID; ?>" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
+                <span class="visually-hidden">Следующий</span>
             </button>
         </div>
     <?php }
@@ -268,25 +270,6 @@ $query = new WP_Query($query_args);
 </div>
 
 <script>
-    // Объект для хранения соответствий ID галерей
-    const portfolioGalleries = {};
-
-    <?php
-    // Создаем JavaScript объект с данными галерей
-    $posts = get_posts(array(
-        'numberposts' => 999,
-        'orderby' => 'date',
-        'order' => 'DESC',
-        'post_type' => 'portfolio',
-    ));
-
-    foreach ($posts as $post) {
-        setup_postdata($post);
-        echo "portfolioGalleries['gallery-{$post->ID}'] = 'gallery-{$post->ID}';";
-    }
-    wp_reset_postdata();
-    ?>
-
     // Функция открытия галереи
     function galleryOn(galleryId, imageId = null) {
         const galleryWrapper = document.getElementById('galleryWrapper');
@@ -296,9 +279,6 @@ $query = new WP_Query($query_args);
             return;
         }
 
-        // Закрываем все открытые галереи
-        closeAllGalleries();
-
         // Показываем модальное окно
         galleryWrapper.style.display = 'block';
         document.body.style.overflow = 'hidden';
@@ -307,6 +287,23 @@ $query = new WP_Query($query_args);
         const targetGallery = document.getElementById(galleryId);
         if (targetGallery) {
             targetGallery.style.display = 'block';
+
+            // Проверяем количество изображений
+            const carouselItems = targetGallery.querySelectorAll('.carousel-item');
+            const indicators = targetGallery.querySelector('.carousel-indicators');
+            const prevButton = targetGallery.querySelector('.carousel-control-prev');
+            const nextButton = targetGallery.querySelector('.carousel-control-next');
+
+            // Если только одно изображение, скрываем стрелки и индикаторы
+            if (carouselItems.length <= 1) {
+                if (indicators) indicators.style.display = 'none';
+                if (prevButton) prevButton.style.display = 'none';
+                if (nextButton) nextButton.style.display = 'none';
+            } else {
+                if (indicators) indicators.style.display = 'flex';
+                if (prevButton) prevButton.style.display = 'flex';
+                if (nextButton) nextButton.style.display = 'flex';
+            }
 
             // Если указан конкретный слайд, активируем его
             if (imageId) {
@@ -332,23 +329,6 @@ $query = new WP_Query($query_args);
         }
     }
 
-    // Функция закрытия всех галерей
-    function closeAllGalleries() {
-        // Скрываем все галереи
-        document.querySelectorAll('[id^="gallery-"]').forEach(gallery => {
-            gallery.style.display = 'none';
-        });
-
-        // Убираем активные классы
-        document.querySelectorAll('.carousel-item').forEach(item => {
-            item.classList.remove('active');
-        });
-
-        document.querySelectorAll('.carousel-indicators button').forEach(btn => {
-            btn.classList.remove('active');
-        });
-    }
-
     // Функция закрытия галереи
     function closeGallery() {
         const galleryWrapper = document.getElementById('galleryWrapper');
@@ -356,7 +336,11 @@ $query = new WP_Query($query_args);
             galleryWrapper.style.display = 'none';
             document.body.style.overflow = '';
         }
-        closeAllGalleries();
+        
+        // Скрываем все открытые галереи
+        document.querySelectorAll('[id^="gallery-"]').forEach(gallery => {
+            gallery.style.display = 'none';
+        });
     }
 
     // События
@@ -372,10 +356,38 @@ $query = new WP_Query($query_args);
             });
         }
 
-        // Закрытие по клавише Escape
+        // Обработка клавиш
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeGallery();
+            const galleryWrapper = document.getElementById('galleryWrapper');
+            
+            // Проверяем, открыта ли галерея
+            if (galleryWrapper && galleryWrapper.style.display === 'block') {
+                // Находим текущую открытую галерею
+                const openGallery = document.querySelector('[id^="gallery-"][style*="display: block"]');
+                
+                if (openGallery) {
+                    const carouselElement = openGallery;
+                    const carousel = bootstrap.Carousel.getInstance(carouselElement);
+                    
+                    // Escape - закрыть галерею
+                    if (e.key === 'Escape' || e.keyCode === 27) {
+                        closeGallery();
+                    }
+                    // Стрелка влево - предыдущий слайд
+                    else if (e.key === 'ArrowLeft' || e.keyCode === 37) {
+                        if (carousel) {
+                            e.preventDefault();
+                            carousel.prev();
+                        }
+                    }
+                    // Стрелка вправо - следующий слайд
+                    else if (e.key === 'ArrowRight' || e.keyCode === 39) {
+                        if (carousel) {
+                            e.preventDefault();
+                            carousel.next();
+                        }
+                    }
+                }
             }
         });
     });
