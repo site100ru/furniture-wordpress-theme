@@ -35,4 +35,4 @@ include 'header.php';
 
 
 
-<?php include 'footer-1.php'; ?>
+<?php include 'footer-2.php'; ?>
