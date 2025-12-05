@@ -24,32 +24,24 @@ function vyezjalo() {
     });
 }
 
-
-
 /* Функция "Прилипало" */
 function prilipalo() {
-    onscroll = function () {
+    window.addEventListener('scroll', function() {
         var prokrutka = window.pageYOffset;
-        if (window.screen.width >= 769) {
+        var screenWidth = window.innerWidth;
+
+        if (screenWidth >= 992) {
             if (prokrutka > 57) {
                 document.getElementById('top-menu-2').classList.add('fixed-top');
                 document.getElementById('top-menu-2').style.position = 'fixed';
                 document.getElementById('top-menu-2').style.top = 0;
-
             } else {
                 document.getElementById('top-menu-2').classList.remove('fixed-top');
                 document.getElementById('top-menu-2').style.position = 'absolute';
-                //document.getElementById('header-2-bottom').style.width = '100%';
                 document.getElementById('top-menu-2').style.top = '57px';
-
             }
-        } else {
-            document.getElementById('top-menu-2').style.position = '';
-            document.getElementById('top-menu-2').style.top = 0;
-            document.getElementById('top-menu-2').classList.add('fixed-top');
-
-        }
-    }
+        } 
+    });
 }
 
 
