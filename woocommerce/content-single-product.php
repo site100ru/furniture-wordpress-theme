@@ -35,7 +35,7 @@ if ( post_password_required() ) {
 <section class="single-product-section bg-white">
 	<div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'pt-md-3', $product ); ?>>
 		<div class="container pt-md-3 pb-5 single-product">
-			<div class="row " style="padding: 25px 0 0 0;">
+			<div class="row" style="padding: 25px 0 0 0;">
 				<div class="col breadcrumbs_box">
 					<div class="breadcrumbs" >
 						<?php woocommerce_breadcrumb(); ?>

@@ -489,11 +489,12 @@ a:hover {
 	font-family: HelveticaNeueBoldCondensed !important;
 	font-size: 18px !important;
 	text-decoration: none;
-	transition: all 0.3s;
+	transition: all;
+    transition-duration: var(--transition-duration);
 }
 
-.header-nav-top a.top-menu-tel.nav-link:hover {
-	opacity: 75%;
+.header-nav-top a.top-menu-tel.nav-link:hover span {
+	opacity: var(--opacity-text);
 }
 
 /* 123
