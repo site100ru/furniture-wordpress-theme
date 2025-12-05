@@ -8,18 +8,20 @@ $(window).scroll(function (e) {
 
 
 
-/* Функция "Выезжало */
+/* Функция "Выезжало" */
 function vyezjalo() {
-    onscroll = function () {
+    window.addEventListener('scroll', function() {
         var prokrutka = window.pageYOffset;
-        if (window.screen.width >= 992) {
+        var screenWidth = window.innerWidth;  
+
+        if (screenWidth >= 992) {  
             if (prokrutka > 400) {
                 document.getElementById('sliding-header').style.top = '0px';
             } else if (prokrutka <= 400) {
                 document.getElementById('sliding-header').style.top = '-100px';
             }
         }
-    }
+    });
 }
 
 

@@ -744,7 +744,122 @@ add_action('customize_register', 'mytheme_customize_register');
 /*** END ДОБАВЛЯЕМ ВОЗМОЖНОСТЬ В НАСТРОЙКАХ ТЕМЫ ДОБАВИТЬ КОНТАКТЫ И КОД СЧЕТЧИКА ***/
 
 
+/**
+ * Получить отформатированный телефон для отображения
+ */
+function mytheme_get_phone($type = 'main') {
+    if ($type === 'main') {
+        $country_code = get_theme_mod('mytheme_main_phone_country_code', '');
+        $region_code = get_theme_mod('mytheme_main_phone_region_code', '');
+        $number = get_theme_mod('mytheme_main_phone_number', '');
+    } else {
+        $country_code = get_theme_mod('additional_phone_country_code', '');
+        $region_code = get_theme_mod('additional_phone_region_code', '');
+        $number = get_theme_mod('additional_phone_number', '');
+    }
+    
+    // Проверяем, что все части заполнены
+    if (empty($country_code) || empty($region_code) || empty($number)) {
+        return '';
+    }
+    
+    // Форматируем: 8 (800) 880-80-88 или +7 (800) 880-80-88
+    return $country_code . ' (' . $region_code . ') ' . $number;
+}
 
+/**
+ * Получить телефон в формате для ссылки tel:
+ */
+function mytheme_get_phone_link($type = 'main') {
+    if ($type === 'main') {
+        $country_code = get_theme_mod('mytheme_main_phone_country_code', '');
+        $region_code = get_theme_mod('mytheme_main_phone_region_code', '');
+        $number = get_theme_mod('mytheme_main_phone_number', '');
+    } else {
+        $country_code = get_theme_mod('additional_phone_country_code', '');
+        $region_code = get_theme_mod('additional_phone_region_code', '');
+        $number = get_theme_mod('additional_phone_number', '');
+    }
+    
+    // Проверяем, что все части заполнены
+    if (empty($country_code) || empty($region_code) || empty($number)) {
+        return '';
+    }
+    
+    // Убираем все символы кроме цифр и +
+    $phone_link = $country_code . $region_code . $number;
+    $phone_link = preg_replace('/[^0-9+]/', '', $phone_link);
+    
+    return $phone_link;
+}
+
+/**
+ * Получить email
+ */
+function mytheme_get_email() {
+    return get_theme_mod('mytheme_email', '');
+}
+
+/**
+ * Получить ссылку на email с mailto
+ */
+function mytheme_get_email_link() {
+    $email = get_theme_mod('mytheme_email', '');
+    return !empty($email) ? 'mailto:' . $email : '';
+}
+
+/**
+ * Получить ссылку на Telegram
+ */
+function mytheme_get_telegram() {
+    return get_theme_mod('mytheme_telegram', '');
+}
+
+/**
+ * Получить ссылку на WhatsApp
+ */
+function mytheme_get_whatsapp($with_params = true) {
+    $whatsapp = get_theme_mod('mytheme_whatsapp', '');
+    
+    if (empty($whatsapp)) {
+        return '';
+    }
+    
+    // Если нужны параметры и их ещё нет в ссылке
+    if ($with_params && strpos($whatsapp, '?') === false) {
+        $whatsapp .= '?web=1&app_absent=1';
+    }
+    
+    return $whatsapp;
+}
+
+/**
+ * Получить ссылку на VK
+ */
+function mytheme_get_vk() {
+    return get_theme_mod('mytheme_vk', '');
+}
+
+/**
+ * Получить адрес
+ */
+function mytheme_get_address() {
+    return get_theme_mod('mytheme_address', '');
+}
+
+/**
+ * Получить время работы
+ */
+function mytheme_get_job_time() {
+    return get_theme_mod('mytheme_job_time', '');
+}
+
+/**
+ * Получить ссылку на MAX
+ */
+function mytheme_get_max() {
+    return get_theme_mod('mytheme_max', '');
+}
 
 // Включаем Excerpt для страниц
 add_action('init', 'add_excerpt_to_pages');
