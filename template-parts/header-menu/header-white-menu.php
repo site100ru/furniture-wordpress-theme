@@ -1,7 +1,7 @@
 <!-- Header 2 -->
 <header class="header-2">
     <!-- Top menu header -->
-    <nav class="header-nav-top navbar navbar-expand-lg navbar-light d-none d-lg-block py-0" style="border-bottom: 1px solid #d7d7d7">
+    <nav class="header-nav-top navbar navbar-expand-lg navbar-light d-none d-lg-block py-0 bg-light" style="border-bottom: 1px solid #d7d7d7">
         <div class="container">
             <div class="collapse navbar-collapse" id="navbarSupportedContent1">
                 <ul class="navbar-nav ms-auto align-items-center">
