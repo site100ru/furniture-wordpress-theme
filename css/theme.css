@@ -479,9 +479,9 @@ a:hover {
 }
 
 .nav-li-float-right {
-	width: calc(100% - 24px);
-	float: right;
-	margin: auto;
+	width: max-content;
+	/* float: right; */
+	/* margin: auto; */
 	line-height: 16px;
 }
 
@@ -1918,10 +1918,10 @@ strong {
 }
 
 .contacts-section-4 .nav-li-float-right {
-	width: calc(100% - 24px);
-	float: right;
-	margin: auto;
-	line-height: 18px;
+	width: max-content;
+	/* float: right; */
+	/* margin: auto; */
+	line-height: 16px;
 }
 
 .contacts-section-4 .nav-li-float-right:hover {
@@ -2784,7 +2784,7 @@ footer {
 	.main-home-section .home-section-height {
 		padding: 120px 0 60px 0;
 	}
-}
+}   
 
 #sliding-header-collapse li {
 	height: 100%;
@@ -2792,4 +2792,38 @@ footer {
 
 #sliding-header-collapse li span {
 	line-height: 1;
+}
+
+.error-page h1 {
+    font-family: Gilroy-Black;
+    color: #323232;
+    font-weight: 900;
+    font-size: 60px;
+}
+
+.error-page h2 {
+    font-family: HelveticaNeueCyr-Roman;
+    font-weight: 400;
+    font-size: 40px;
+    color: #323232;
+}
+
+@media (max-width: 1200px) {
+    .error-page h1 {
+        font-size: 45px;
+    }
+
+    .error-page h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .error-page h1 {
+        font-size: 32px;
+    }
+
+    .error-page h2 {
+        font-size: 24px;
+    }
 }
