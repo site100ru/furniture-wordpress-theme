@@ -12,7 +12,7 @@
                     <img id="navbar-brand-img" src="<?php echo get_template_directory_uri(); ?>/img/ico/logo-light.svg"class="img-fluid">
                 </a>
             </div>
-            <div class="col-xl-8">
+            <div class="col-xl-8" id="footer-menu">
                 <?php
                 wp_nav_menu(array(
                     'theme_location' => 'contacts-desktop-menu',
@@ -28,20 +28,39 @@
                 ?>
             </div>
             <div class="col-xl-2">
-                <a href="tel:89511014610" class="contacts-phone d-flex justify-content-end align-items-center">
+                <?php
+                // Получаем основной телефон для футера (desktop)
+                $phone_display = '';
+                $phone_link = '';
+                if (function_exists('mytheme_get_phone')) {
+                    $phone_display = mytheme_get_phone('main');
+                    $phone_link = mytheme_get_phone_link('main');
+                }
+                if (!empty($phone_display)):
+                ?>
+                <a href="tel:<?php echo esc_attr($phone_link); ?>" class="contacts-phone d-flex justify-content-end align-items-center">
                     <div class="d-flex align-items-center gap-3 lh-1">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
                             <path
                                 d="M4 3c0-1.655 1.305-3 2.91-3h10.18C18.696 0 20 1.345 20 3v18c0 1.655-1.305 3-2.91 3H6.91C5.304 24 4 22.655 4 21zm5.818 18c0 .413.328.75.728.75h2.909c.4 0 .727-.337.727-.75a.74.74 0 0 0-.728-.75h-2.908c-.4 0-.728.337-.728.75m7.273-18H6.909v15h10.182z" />
                         </svg>
-                        <span>8 <span>(951)</span> 101-46-10</span>
+                        <span class="phone-footer"><?php echo esc_html($phone_display); ?></span>
                     </div>
                 </a>
+                <?php endif; ?>
             </div>
         </div>
         <div class="row">
             <div class="col py-4">
                 <ul class="nav justify-content-center align-items-center">
+                    <?php
+                    // Получаем адрес для футера (desktop)
+                    $address = '';
+                    if (function_exists('mytheme_get_address')) {
+                        $address = mytheme_get_address();
+                    }
+                    if (!empty($address)):
+                    ?>
                     <li class="nav-item me-1 me-lg-2">
                         <a class="nav-link">
                             <div class="d-flex align-items-center gap-3 lh-1">
@@ -49,10 +68,20 @@
                                     <path
                                         d="M13.11 23.46C15.517 20.444 21 13.13 21 9.024 21 4.042 16.969 0 12 0S3 4.042 3 9.023c0 4.108 5.484 11.42 7.89 14.438.576.719 1.644.719 2.22 0M12 6.017c.796 0 1.559.316 2.121.88a3.01 3.01 0 0 1 0 4.254 2.996 2.996 0 0 1-4.242 0 3.01 3.01 0 0 1 0-4.253A3 3 0 0 1 12 6.016" />
                                 </svg>
-                                <span>гор. Рязань,<br>ул. Чапаева, 56</span>
+                                <span class="address-footer"><?php echo esc_html($address); ?></span>
                             </div>
                         </a>
                     </li>
+                    <?php endif; ?>
+
+                    <?php
+                    // Получаем время работы для футера (desktop)
+                    $job_time = '';
+                    if (function_exists('mytheme_get_job_time')) {
+                        $job_time = mytheme_get_job_time();
+                    }
+                    if (!empty($job_time)):
+                    ?>
                     <li class="nav-item me-1 me-lg-2">
                         <a class="nav-link">
                             <div class="d-flex align-items-center gap-3 lh-1">
@@ -60,21 +89,35 @@
                                     <path
                                         d="M21.75 12a9.75 9.75 0 1 1-19.5 0 9.75 9.75 0 0 1 19.5 0M0 12a12 12 0 1 0 24 0 12 12 0 0 0-24 0m10.875-6.375V12c0 .375.188.727.502.938l4.5 3a1.12 1.12 0 0 0 1.56-.315 1.12 1.12 0 0 0-.314-1.56L13.125 11.4V5.625c0-.623-.502-1.125-1.125-1.125s-1.125.502-1.125 1.125" />
                                 </svg>
-                                <span>Пн-Сб: с 10:00-19:00<br>Вс: с 10:00-17:00</span>
+                                <span class="time-footer"><?php echo esc_html($job_time); ?></span>
                             </div>
                         </a>
                     </li>
+                    <?php endif; ?>
+
+                    <?php
+                    // Получаем email для футера (desktop)
+                    $email = '';
+                    $email_link = '';
+                    if (function_exists('mytheme_get_email')) {
+                        $email = mytheme_get_email();
+                        $email_link = mytheme_get_email_link();
+                    }
+                    if (!empty($email)):
+                    ?>
                     <li class="nav-item me-1 me-lg-2">
-                        <a href="mailto:mozaika62@bk.ru" class="nav-link">
+                        <a href="<?php echo esc_url($email_link); ?>" class="nav-link">
                             <div class="d-flex align-items-center gap-3 lh-1">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
                                     <path
                                         d="M12 3c-4.969 0-9 4.031-9 9s4.031 9 9 9c.83 0 1.5.67 1.5 1.5S12.83 24 12 24C5.372 24 0 18.628 0 12S5.372 0 12 0s12 5.372 12 12v1.5a4.501 4.501 0 0 1-7.931 2.91A6 6 0 1 1 12 6c1.308 0 2.517.417 3.502 1.13A1.498 1.498 0 0 1 18 8.25v5.25c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V12c0-4.969-4.031-9-9-9m3 9a3 3 0 1 0-6 0 3 3 0 0 0 6 0" />
                                 </svg>
-                                <span>mozaika62@bk.ru</span>
+                                <span><?php echo esc_html($email); ?></span>
                             </div>
                         </a>
                     </li>
+                    <?php endif; ?>
+
                     <li class="nav-item me-1 me-lg-2">
                         <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#callbackModal">
                             <div class="d-flex align-items-center gap-3 lh-1">
@@ -107,32 +150,65 @@
         <div class="row justify-content-center">
             <div class="col">
                 <ul class="nav justify-content-center">
+                    <?php
+                    // Получаем WhatsApp для футера (desktop)
+                    $whatsapp = '';
+                    if (function_exists('mytheme_get_whatsapp')) {
+                        $whatsapp = mytheme_get_whatsapp(true);
+                    }
+                    if (!empty($whatsapp)):
+                    ?>
                     <li class="nav-item">
-                        <a class="nav-link ico-button px-2" href="https://wa.me/79511014610?web=1&app_absent=1">
+                        <a class="nav-link ico-button px-2" href="<?php echo esc_url($whatsapp); ?>">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/ico/whatsapp-ico.svg">
                         </a>
                     </li>
-
-                    <!-- Telegram -->
-                    <?php if (get_theme_mod('mytheme_telegram')): ?>
-                        <li class="nav-item">
-                            <a class="nav-link ico-button px-2" href="<?php echo get_theme_mod('mytheme_telegram'); ?>"
-                                target="blank">
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/ico/telegram-ico.svg">
-                            </a>
-                        </li>
                     <?php endif; ?>
 
+                    <?php
+                    // Получаем Telegram для футера (desktop)
+                    $telegram = '';
+                    if (function_exists('mytheme_get_telegram')) {
+                        $telegram = mytheme_get_telegram();
+                    }
+                    if (!empty($telegram)):
+                    ?>
                     <li class="nav-item">
-                        <a class="nav-link ico-button px-2" href="https://www.instagram.com/mozaika.kitchen62">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/ico/instagram-ico.svg">
+                        <a class="nav-link ico-button px-2" href="<?php echo esc_url($telegram); ?>" target="_blank">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/ico/telegram-ico.svg">
                         </a>
                     </li>
+                    <?php endif; ?>
+
+                    <?php
+                    // Получаем VK для футера (desktop)
+                    $vk = '';
+                    if (function_exists('mytheme_get_vk')) {
+                        $vk = mytheme_get_vk();
+                    }
+                    if (!empty($vk)):
+                    ?>
                     <li class="nav-item">
-                        <a class="nav-link ico-button px-2" href="https://vk.com/mozaika.kitchen62">
+                        <a class="nav-link ico-button px-2" href="<?php echo esc_url($vk); ?>">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/ico/vk-ico.svg">
                         </a>
                     </li>
+                    <?php endif; ?>
+
+                    <?php
+                    // Получаем Instagram
+                    $instagram = '';
+                    if (function_exists('mytheme_get_instagram')) {
+                        $instagram = mytheme_get_instagram();
+                    }
+                    if (!empty($instagram)):
+                    ?>
+                    <li class="nav-item">
+                        <a class="nav-link ico-button px-2" href="<?php echo esc_url($instagram); ?>">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/ico/instagram-ico.svg">
+                        </a>
+                    </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
@@ -147,6 +223,14 @@
                     <img id="navbar-brand-img" src="<?php echo get_template_directory_uri(); ?>/img/ico/logo-light.svg" class="img-fluid">
                 </a>
                 <ul class="ps-0 pt-3 pb-2">
+                    <?php
+                    // Получаем адрес для футера (mobile)
+                    $address = '';
+                    if (function_exists('mytheme_get_address')) {
+                        $address = mytheme_get_address();
+                    }
+                    if (!empty($address)):
+                    ?>
                     <li class="nav-item">
                         <a class="nav-link ps-0 pb-2">
                             <div class="d-flex align-items-center gap-3 lh-1">
@@ -154,10 +238,20 @@
                                     <path
                                         d="M13.11 23.46C15.517 20.444 21 13.13 21 9.024 21 4.042 16.969 0 12 0S3 4.042 3 9.023c0 4.108 5.484 11.42 7.89 14.438.576.719 1.644.719 2.22 0M12 6.017c.796 0 1.559.316 2.121.88a3.01 3.01 0 0 1 0 4.254 2.996 2.996 0 0 1-4.242 0 3.01 3.01 0 0 1 0-4.253A3 3 0 0 1 12 6.016" />
                                 </svg>
-                                <span>гор. Рязань, ул. Чапаева, д. 56</span>
+                                <span class="address-footer"><?php echo esc_html($address); ?></span>
                             </div>
                         </a>
                     </li>
+                    <?php endif; ?>
+
+                    <?php
+                    // Получаем время работы для футера (mobile)
+                    $job_time = '';
+                    if (function_exists('mytheme_get_job_time')) {
+                        $job_time = mytheme_get_job_time();
+                    }
+                    if (!empty($job_time)):
+                    ?>
                     <li class="nav-item">
                         <a class="nav-link ps-0 py-2">
                             <div class="d-flex align-items-center gap-3 lh-1">
@@ -165,21 +259,35 @@
                                     <path
                                         d="M21.75 12a9.75 9.75 0 1 1-19.5 0 9.75 9.75 0 0 1 19.5 0M0 12a12 12 0 1 0 24 0 12 12 0 0 0-24 0m10.875-6.375V12c0 .375.188.727.502.938l4.5 3a1.12 1.12 0 0 0 1.56-.315 1.12 1.12 0 0 0-.314-1.56L13.125 11.4V5.625c0-.623-.502-1.125-1.125-1.125s-1.125.502-1.125 1.125" />
                                 </svg>
-                                <span>Пн-Сб: с 10:00-19:00 Вс: с 10:00-17:00</span>
+                                <span class="time-footer"><?php echo esc_html($job_time); ?></span>
                             </div>
                         </a>
                     </li>
+                    <?php endif; ?>
+
+                    <?php
+                    // Получаем email для футера (mobile)
+                    $email = '';
+                    $email_link = '';
+                    if (function_exists('mytheme_get_email')) {
+                        $email = mytheme_get_email();
+                        $email_link = mytheme_get_email_link();
+                    }
+                    if (!empty($email)):
+                    ?>
                     <li class="nav-item">
-                        <a href="mailto:mozaika62@bk.ru" class="nav-link ps-0 py-2">
+                        <a href="<?php echo esc_url($email_link); ?>" class="nav-link ps-0 py-2">
                             <div class="d-flex align-items-center gap-3 lh-1">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
                                     <path
                                         d="M12 3c-4.969 0-9 4.031-9 9s4.031 9 9 9c.83 0 1.5.67 1.5 1.5S12.83 24 12 24C5.372 24 0 18.628 0 12S5.372 0 12 0s12 5.372 12 12v1.5a4.501 4.501 0 0 1-7.931 2.91A6 6 0 1 1 12 6c1.308 0 2.517.417 3.502 1.13A1.498 1.498 0 0 1 18 8.25v5.25c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V12c0-4.969-4.031-9-9-9m3 9a3 3 0 1 0-6 0 3 3 0 0 0 6 0" />
                                 </svg>
-                                <span>mozaika62@bk.ru</span>
+                                <span><?php echo esc_html($email); ?></span>
                             </div>
                         </a>
                     </li>
+                    <?php endif; ?>
+
                     <li class="nav-item">
                         <a class="nav-link ps-0 py-2" data-bs-toggle="modal" data-bs-target="#callbackModal">
                             <div class="d-flex align-items-center gap-3 lh-1">
@@ -194,7 +302,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link ps-0 pt-2" data-bs-toggle="modal" data-bs-target="#callbackModal">
+                        <a class="nav-link ps-0 pt-2" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">
                             <div class="d-flex align-items-center gap-3 lh-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="svg-icon">
                                     <path
@@ -207,36 +315,88 @@
                         </a>
                     </li>
                 </ul>
-                <a href="tel:89511014610" class="contacts-phone">
+
+                <?php
+                // Получаем основной телефон для футера (mobile)
+                $phone_display = '';
+                $phone_link = '';
+                if (function_exists('mytheme_get_phone')) {
+                    $phone_display = mytheme_get_phone('main');
+                    $phone_link = mytheme_get_phone_link('main');
+                }
+                if (!empty($phone_display)):
+                ?>
+                <a href="tel:<?php echo esc_attr($phone_link); ?>" class="contacts-phone">
                     <div class="d-flex align-items-center gap-3 lh-1">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
                             <path
                                 d="M4 3c0-1.655 1.305-3 2.91-3h10.18C18.696 0 20 1.345 20 3v18c0 1.655-1.305 3-2.91 3H6.91C5.304 24 4 22.655 4 21zm5.818 18c0 .413.328.75.728.75h2.909c.4 0 .727-.337.727-.75a.74.74 0 0 0-.728-.75h-2.908c-.4 0-.728.337-.728.75m7.273-18H6.909v15h10.182z" />
                         </svg>
-                        <span>8 <span>(951)</span> 101-46-10</span>
+                        <span class="phone-footer"><?php echo esc_html($phone_display); ?></span>
                     </div>
                 </a>
+                <?php endif; ?>
+
                 <ul class="nav pt-4 pb-3">
+                    <?php
+                    // Получаем WhatsApp для футера (mobile)
+                    $whatsapp = '';
+                    if (function_exists('mytheme_get_whatsapp')) {
+                        $whatsapp = mytheme_get_whatsapp(true);
+                    }
+                    if (!empty($whatsapp)):
+                    ?>
                     <li class="nav-item">
-                        <a class="nav-link ico-button ps-0 pe-2" href="https://wa.me/79511014610?web=1&app_absent=1">
+                        <a class="nav-link ico-button ps-0 pe-2" href="<?php echo esc_url($whatsapp); ?>">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/ico/whatsapp-ico.svg">
                         </a>
                     </li>
+                    <?php endif; ?>
+
+                    <?php
+                    // Получаем Telegram для футера (mobile)
+                    $telegram = '';
+                    if (function_exists('mytheme_get_telegram')) {
+                        $telegram = mytheme_get_telegram();
+                    }
+                    if (!empty($telegram)):
+                    ?>
                     <li class="nav-item">
-                        <a class="nav-link ico-button px-2" href="https://t.me/+79511014610">
+                        <a class="nav-link ico-button px-2" href="<?php echo esc_url($telegram); ?>">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/ico/telegram-ico.svg">
                         </a>
                     </li>
+                    <?php endif; ?>
+
+                    <?php
+                    // Получаем VK для футера (mobile)
+                    $vk = '';
+                    if (function_exists('mytheme_get_vk')) {
+                        $vk = mytheme_get_vk();
+                    }
+                    if (!empty($vk)):
+                    ?>
                     <li class="nav-item">
-                        <a class="nav-link ico-button px-2" href="https://www.instagram.com/mozaika.kitchen62">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/ico/instagram-ico.svg">
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link ico-button px-2" href="https://vk.com/mozaika.kitchen62">
+                        <a class="nav-link ico-button px-2" href="<?php echo esc_url($vk); ?>">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/ico/vk-ico.svg">
                         </a>
                     </li>
+                    <?php endif; ?>
+
+                    <?php
+                    // Получаем Instagram
+                    $instagram = '';
+                    if (function_exists('mytheme_get_instagram')) {
+                        $instagram = mytheme_get_instagram();
+                    }
+                    if (!empty($instagram)):
+                    ?>
+                    <li class="nav-item">
+                        <a class="nav-link ico-button px-2" href="<?php echo esc_url($instagram); ?>">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/ico/instagram-ico.svg">
+                        </a>
+                    </li>
+                    <?php endif; ?>
                 </ul>
                 <div class="row">
                     <div class="col-lg-8 pt-4 pt-lg-2">
@@ -523,30 +683,54 @@
             <div class="callback-form-button-ico"></div>
         </a>
     </div>
+
+    <?php
+    // Получаем основной телефон
+    $phone_link = '';
+    if (function_exists('mytheme_get_phone_link')) {
+        $phone_link = mytheme_get_phone_link('main');
+    }
+    if (!empty($phone_link)):
+    ?>
     <div id="phoneBtn" class="callback-phone-button" data-bs-toggle="tooltip" data-bs-placement="left"
         data-bs-custom-class="custom-tooltip" data-bs-title="Позвонить">
-        <a href="tel:89511014610">
+        <a href="tel:<?php echo esc_attr($phone_link); ?>">
             <div class="callback-phone-button-ico"></div>
         </a>
     </div>
+    <?php endif; ?>
+
+    <?php
+    // Получаем WhatsApp
+    $whatsapp = '';
+    if (function_exists('mytheme_get_whatsapp')) {
+        $whatsapp = mytheme_get_whatsapp(true);
+    }
+    if (!empty($whatsapp)):
+    ?>
     <div id="whatsappBtn" class="callback-whatsapp-button" data-bs-toggle="tooltip" data-bs-placement="left"
         data-bs-custom-class="custom-tooltip" data-bs-title="Whatsapp">
-        <!-- Не открывает ссылку с ПК если не установлено приложение WhatsApp
-        <a href="whatsapp://send?phone=+79361385058"><div class="callback-whatsapp-button-ico"></div></a> -->
-        <!-- Другой вариант ссылки. Все равно не открывает Whatsapp если нет приложения -->
-        <a href="https://wa.me/79511014610?web=1&app_absent=1" target="blank">
+        <a href="<?php echo esc_url($whatsapp); ?>" target="_blank">
             <div class="callback-whatsapp-button-ico"></div>
         </a>
-        <!-- Еще варианты -->
-        <!--a href="https://api.whatsapp.com/send/?phone=79361385058&text=Привет"><div class="callback-whatsapp-button-ico"></div></a-->
-        <!--a href="https://wa.clck.bar/79361385058?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!"><div class="callback-whatsapp-button-ico"></div></a-->
     </div>
+    <?php endif; ?>
+
+    <?php
+    // Получаем Telegram
+    $telegram = '';
+    if (function_exists('mytheme_get_telegram')) {
+        $telegram = mytheme_get_telegram();
+    }
+    if (!empty($telegram)):
+    ?>
     <div id="telegramBtn" class="callback-telegram-button" data-bs-toggle="tooltip" data-bs-placement="left"
         data-bs-custom-class="custom-tooltip" data-bs-title="Telegram">
-        <a href="https://t.me/+79511014610">
+        <a href="<?php echo esc_url($telegram); ?>">
             <div class="callback-telegram-button-ico"></div>
         </a>
     </div>
+    <?php endif; ?>
 </div>
 <!-- /Callback button HTML -->
 

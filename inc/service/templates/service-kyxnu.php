@@ -1,19 +1,17 @@
 <?php
 
 /**
- * Template Name: Кухни на заказ (с примерами из продуктов с тегом portfolio).
- * Description: Для правильной работы шаблона необходимо добавить тег portfolio товарам, которые необходимо выводить в этом шаблоне. А так же, для правильной работы страницы single-portfolio необходимо задать соответствующий шаблон этой странице, чтобы ссылка назад вела на страницу Кухни на заказ, а не на страницу каталога.
- * Template Post Type: page.
- **/
+ * Template Name: Кухни на заказ (с примерами из портфолио).
+ * Template Post Type: service
+ */
 
-include 'header.php';
-
+include get_template_directory() . '/header.php';
 ?>
 
 
 <!-- Home section -->
 <div id="sp-home" class="scroll-points"></div>
-<section class="main-home-section main-home-section main-parallax">
+<section class="main-home-section main-parallax">
     <div class="parallax-home-section" style="min-height: 640px;"></div>
 
     <!-- header-menu -->
@@ -35,7 +33,7 @@ include 'header.php';
 
 
 <!-- Archive portfolio section -->
-<section class="archive-portfolio-section-2 pt-4 bg-white" style="margin-bottom: 60px;">
+<section class="archive-portfolio-section-2 pt-4 bg-white" style="padding-bottom: 60px;">
     <div class="container">
         <div class="row">
             <div class="col">
@@ -47,7 +45,7 @@ include 'header.php';
                         </svg>
                     </a>
                     /
-                    <a href="archive-product-portfolio.html" style="text-decoration: none;">Услуги</a> /
+                    Услуги /
                     Кухни на заказ
                 </nav>
             </div>
@@ -63,87 +61,323 @@ include 'header.php';
                 </svg>
             </div>
         </div>
-        <!--div class="row text-md-center">
-            <div class="col mb-5">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                    <label class="form-check-label" for="inlineCheckbox1">Прямые</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">Угловые</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                    <label class="form-check-label" for="inlineCheckbox3">П-образные</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
-                    <label class="form-check-label" for="inlineCheckbox4">С барной стойкой</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
-                    <label class="form-check-label" for="inlineCheckbox5">С островком</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
-                    <label class="form-check-label" for="inlineCheckbox6">Трехрядные</label>
-                </div>
-            </div>
-        </div-->
-
-        <div class="row text-start">
+        <div class="row">
             <?php
-            $args = array(
-                'post_type' => 'product',
-                'tax_query' => array(
-                    array(
-                        'taxonomy' => 'product_tag',
-                        'field' => 'slug',
-                        'terms' => 'portfolio'
-                    )
-                )
-            );
+            $args = [
+                'post_type' => 'portfolio',
+                'numberposts' => 10,
+                'posts_per_page' => 10,
+                'portfolio-cat' => '01-kuhni'
+            ];
 
             $query = new WP_Query($args);
-
-            while ($query->have_posts()) {
-                $query->the_post();
-
-            ?>
-                <div class="col-md-6 mb-5">
-                    <a href="<?php echo get_permalink(); ?>">
-                        <!--div class="approximation single-product-img rounded"-->
-                        <div class="approximation project-container-2 rounded">
-                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="img-fluid" alt=""
-                                decoding="async" />
-                            <div class="card-wrapper project-container-2-footer">
-                                <div class="row card-portfolio">
-                                    <div class="col-6">
-                                        <h3><?php echo get_the_title(); ?></h3>
-                                    </div>
-                                    <div class="col-6">
-                                        <h3 class="text-end">
-                                            ₽<?php echo get_post_meta(get_the_ID(), '_regular_price', true); ?></h3>
-                                    </div>
-                                </div>
-                            </div>
+            $count = 1;
+            while ($query->have_posts()):
+                $query->the_post(); ?>
+                <div class="col-md-6">
+                    <div id="carouselExampleIndicators<?php echo $post->ID; ?>" class="carousel slide mb-4"
+                        data-bs-ride="carousel" data-bs-interval="999999999">
+                        <div class="carousel-indicators" style="bottom: 5%;">
+                            <?php
+                            $count2 = 0;
+                            for ($i = 1; $i <= 9; $i++) {
+                                if (get_post_meta($post->ID, '_img-' . $i)) { ?>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators<?php echo $post->ID; ?>"
+                                        data-bs-slide-to="<?php echo $i - 1; ?>" <?php if ($i == 1)
+                                                                                        echo ' class="active"'; ?>
+                                        aria-current="true" aria-label="Slide <?php echo $i; ?>"></button>
+                            <?php $count2 = $count2 + 1;
+                                }
+                            }
+                            ?>
                         </div>
-                    </a>
+                        <div class="carousel-inner rounded">
+                            <?php
+                            $count2 = 0;
+                            for ($i = 1; $i <= 9; $i++) {
+                                if (get_post_meta($post->ID, '_img-' . $i)) { ?>
+                                    <div class="carousel-item <?php if ($i == 1)
+                                                                    echo ' active'; ?>" data-bs-interval="999999999">
+                                        <a
+                                            onClick="galleryOn('gallery-<?php echo $post->ID; ?>','img-<?php echo $post->ID; ?>-<?php echo $count2; ?>');">
+                                            <div class="single-product-img approximation">
+                                                <img src="<?php echo get_post_meta($post->ID, '_img-' . $i)[0]; ?>"
+                                                    class="shadow rounded" alt="..." loading="lazy">
+                                                <div class="magnifier"></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                            <?php $count2 = $count2 + 1;
+                                }
+                            }
+                            ?>
+                        </div>
+                        <button class="carousel-control-prev" type="button"
+                            data-bs-target="#carouselExampleIndicators<?php echo $post->ID; ?>" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Предыдущий</span>
+                        </button>
+                        <button class="carousel-control-next" type="button"
+                            data-bs-target="#carouselExampleIndicators<?php echo $post->ID; ?>" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Следующий</span>
+                        </button>
+                    </div>
                 </div>
-            <?php }
+
+            <?php $count = $count + 1;
+            endwhile;
+
             wp_reset_postdata();
             ?>
+
         </div>
         <div class="row text-md-center">
             <div class="col">
-                <a href="/furniture/portfolio/" type="button" class="btn btn-lg btn-corporate-color-1">Показать
-                    еще</a>
+                <a href="/furniture/portfolio-cat/01-kuhni/" type="button"
+                    class="btn btn-lg btn-corporate-color-1">Показать еще</a>
             </div>
         </div>
     </div>
 </section>
 <!-- /Archive-portfolio section -->
+
+<!-- Gallery wrapper-->
+<div id="galleryWrapper"
+    style="background: rgba(0,0,0,0.85); display: none; position: fixed; top: 0; bottom: 0; left: 0; right: 0; z-index: 9999;">
+    <?php
+    // параметры по умолчанию
+    $posts = get_posts(array(
+        'numberposts' => 999,
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'post_type' => 'portfolio',
+    ));
+
+    foreach ($posts as $post) {
+        setup_postdata($post); ?>
+
+        <div id="gallery-<?php echo $post->ID; ?>" class="carousel slide" data-bs-ride="carousel"
+            style="display: none; position: fixed; top: 0; height: 100%; width: 100%;">
+            <div class="carousel-indicators">
+                <?php
+
+                /*
+                $images = get_post_gallery_images();
+                $count2 = 0;
+                foreach ( $images as $image ) {
+
+
+                    if ( $count2 == 0 ) { ?>
+
+                        <button id="ind-<?php echo $post->ID; ?>-<?php echo $count2; ?>" type="button" data-bs-target="#gallery-<?php echo $post->ID; ?>" data-bs-slide-to="<?php echo $count2; ?>" aria-label="Slide 3"></button>
+
+                    <?php $count2 = $count2 + 1; } else { ?>
+
+                        <button id="ind-<?php echo $post->ID; ?>-<?php echo $count2; ?>" type="button" data-bs-target="#gallery-<?php echo $post->ID; ?>" data-bs-slide-to="<?php echo $count2; ?>" aria-label="Slide 3"></button>
+
+                    <?php $count2 = $count2 + 1; }
+                }*/
+
+                $count2 = 0;
+                for ($i = 1; $i <= 9; $i++) {
+                    if (get_post_meta($post->ID, '_img-' . $i)) {
+                        if ($count2 == 0) { ?>
+
+                            <button id="ind-<?php echo $post->ID; ?>-<?php echo $count2; ?>" type="button"
+                                data-bs-target="#gallery-<?php echo $post->ID; ?>" data-bs-slide-to="<?php echo $count2; ?>"
+                                aria-label="Slide 3"></button>
+
+                        <?php $count2 = $count2 + 1;
+                        } else { ?>
+
+                            <button id="ind-<?php echo $post->ID; ?>-<?php echo $count2; ?>" type="button"
+                                data-bs-target="#gallery-<?php echo $post->ID; ?>" data-bs-slide-to="<?php echo $count2; ?>"
+                                aria-label="Slide 3"></button>
+
+                <?php $count2 = $count2 + 1;
+                        }
+                    }
+                }
+                ?>
+
+            </div>
+            <div class="carousel-inner h-100">
+                <?php
+
+                /*
+                $images = get_post_gallery_images();
+                $count2 = 0;
+                foreach ( $images as $image ) { ?>
+                    <div id="img-<?php echo $post->ID; ?>-<?php echo $count2; ?>" class="carousel-item h-100">
+                        <div class="row align-items-center h-100">
+                            <div class="col text-center">
+                                <img src="<?php echo $image; ?>" class="img-fluid" style="max-width: 90vw; max-height: 90vh;" alt="...">
+                            </div>
+                        </div>
+                    </div>
+
+                <?php  $count2 = $count2 + 1; } */
+
+
+                $count2 = 0;
+                for ($i = 1; $i <= 9; $i++) {
+                    if (get_post_meta($post->ID, '_img-' . $i)) { ?>
+                        <div id="img-<?php echo $post->ID; ?>-<?php echo $count2; ?>"
+                            class="carousel-item h-100 <?php // if ( $i == 1 ) echo ' active'; 
+                                                        ?>" data-bs-interval="999999999">
+                            <div class="row align-items-center h-100">
+                                <div class="col text-center">
+                                    <img src="<?php echo get_post_meta($post->ID, '_img-' . $i)[0]; ?>" class="img-fluid"
+                                        style="max-width: 90vw; max-height: 90vh;" alt="...">
+                                </div>
+                            </div>
+                        </div>
+                <?php $count2 = $count2 + 1;
+                    }
+                }
+
+                ?>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#gallery-<?php echo $post->ID; ?>"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Предыдущий</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#gallery-<?php echo $post->ID; ?>"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Следующий</span>
+            </button>
+        </div>
+    <?php }
+    wp_reset_postdata();
+    ?>
+
+    <!-- Кнопка закрытия галереи -->
+    <button type="button" onClick="closeGallery();" class="btn-close btn-close-white"
+        style="position: fixed; top: 25px; right: 25px; z-index: 99999;" aria-label="Close"></button>
+</div>
+
+
+<script>
+    /* Функция открытия галереи */
+    function galleryOn(gal, img) {
+        var gallery = gal; // Получаем ID галереи
+        var image = img; // Получаем ID картинки
+        // Открываем обертку галереи
+        document.getElementById('galleryWrapper').style.display = 'block';
+
+        // Проверяем какие данные передаются для открытия галереи и картинки
+        //alert(gallery+' '+image); 
+
+
+        <?php // Открываем галерею
+        $posts = get_posts(array(
+            'numberposts' => 999,
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'post_type' => 'portfolio',
+            //'post__not_in' => array( 42 ) // Выводим все категории портфолио кроме Разное
+        ));
+
+        foreach ($posts as $post) {
+            setup_postdata($post);
+
+            echo 'if ( gallery == "gallery-' . $post->ID . '" ) { document.getElementById("gallery-' . $post->ID . '").style.display = "block"; }';
+        }
+        wp_reset_postdata();
+        ?>
+
+
+        <?php // Открываем изображения
+        $posts = get_posts(array(
+            'numberposts' => 999,
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'post_type' => 'portfolio',
+            //'post__not_in' => array( 42 ) // Выводим все категории портфолио кроме Разное
+        ));
+
+        foreach ($posts as $post) {
+            setup_postdata($post);
+            $count2 = 0;
+            for ($i = 1; $i <= 9; $i++) {
+                echo 'if ( image == "img-' . $post->ID . '-' . $count2 . '" ) { document.getElementById("img-' . $post->ID . '-' . $count2 . '").classList.add("active"); document.getElementById("ind-' . $post->ID . '-' . $count2 . '").classList.add("active"); } ';
+                $count2 = $count2 + 1;
+            }
+        }
+        wp_reset_postdata();
+        ?>
+    }
+
+
+    // Кнопка закрытия галереи
+    function closeGallery() {
+        // Закрываем обертку галереи
+        document.getElementById('galleryWrapper').style.display = 'none';
+
+        <?php // Открываем галерею
+        $posts = get_posts(array(
+            'numberposts' => 999,
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'post_type' => 'portfolio',
+            //'post__not_in' => array( 42 ) // Выводим все категории портфолио кроме Разное
+        ));
+
+        foreach ($posts as $post) {
+            setup_postdata($post);
+
+            echo 'document.getElementById("gallery-' . $post->ID . '").style.display = "none";';
+        }
+        wp_reset_postdata();
+        ?>
+
+        <?php
+        // Закрываем изображения
+        $posts = get_posts(array(
+            'numberposts' => 999,
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'post_type' => 'portfolio',
+        ));
+
+        foreach ($posts as $post) {
+            setup_postdata($post);
+            $count2 = 0;
+            for ($i = 1; $i <= 9; $i++) {
+                echo 'document.getElementById("img-' . $post->ID . '-' . $count2 . '").classList.remove("active"); document.getElementById("ind-' . $post->ID . '-' . $count2 . '").classList.remove("active");';
+
+                $count2 = $count2 + 1;
+            }
+        }
+        wp_reset_postdata();
+        ?>
+    }
+</script>
+
+
+<!-- Gradient order section --
+<section class="gradient-order-section bg-light" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/gradient-order-section-bg.webp);">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5 text-md-end">
+                <h2 class="text-light">Рассчитаем стоимость за 15 минут</h2>
+                <p class="section-description archive-portfolio text-light mb-3">Хотите узнать стоимость качественной кухни с учетом всех Ваших пожеланий и особенностей помещения? Это бесплатно и ни к чему Вас не обязывает!</p>
+                <svg width="62" height="14" viewBox="0 0 62 14" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon mb-5">
+                    <rect x="48" width="14" height="14" rx="3" />
+                    <rect x="24" width="14" height="14" rx="3" />
+                    <rect width="14" height="14" rx="3" />
+                </svg>
+                <br>
+                <a href="#" type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
+            </div>
+            <div class="col-md-7"></div>
+        </div>
+    </div>
+</section>
+<!-- End gradient order section -->
 
 
 <!-- Gradient order section -->
@@ -208,7 +442,7 @@ include 'header.php';
                     <div class="col-lg-6 mb-4">
                         <div class="row">
                             <div class="col-3 col-md-2">
-                                 <svg width="70" height="70" viewBox="0 0 70 70" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
+                                <svg width="70" height="70" viewBox="0 0 70 70" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
                                     <path
                                         d="M70 51.201V36.025H16.27V16.338h8.75v-8.75h28.574v15.45H30.383l-10.8 5.4 10.8 5.4h36.199v-10.8H55.645v-17.5H23.638l-9.42 9.282v21.205H0v15.176h14.219v13.262h41.426v-9.844h-2.051v7.793H16.27v-11.21zM29.531 31.085 24.1 28.369l5.432-2.716zm24.063.702H31.582v-2.324h22.012zm0-4.375H31.582v-2.324h22.012zm6.426-2.324h4.511v6.7H60.02zm-4.376 0h2.325v6.7h-2.325zM22.97 8.97v5.317h-5.181zM2.05 38.076h3.418v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h3.555v6.7H2.051zm0 11.074v-2.324h65.898v2.324z" />
                                     <path d="M63.3 28.37h-2.05v2.187h2.05z" />
@@ -225,7 +459,7 @@ include 'header.php';
                     <div class="col-lg-6 mb-4">
                         <div class="row">
                             <div class="col-3 col-md-2">
-                                <svg width="70" height="70" viewBox="0 0 70 70" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
+                                 <svg width="70" height="70" viewBox="0 0 70 70" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
                                         d="M22.285 58.79c-4.512 0-8.203-3.83-8.203-8.204 0-4.512 3.691-8.203 8.203-8.203s8.203 3.691 8.203 8.203-3.691 8.203-8.203 8.203m0-14.493c-3.418 0-6.152 2.871-6.152 6.152-.137 3.555 2.598 6.29 6.152 6.29a6.127 6.127 0 0 0 6.153-6.153c0-3.418-2.735-6.29-6.153-6.29" />
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -263,7 +497,7 @@ include 'header.php';
                     <div class="col-lg-6 mb-4">
                         <div class="row">
                             <div class="col-3 col-md-2">
-                                 <svg width="65" height="65" viewBox="0 0 65 65" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
+                                <svg width="65" height="65" viewBox="0 0 65 65" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
                                     <path
                                         d="M40.05 23.97a1.03 1.03 0 0 0-.73-.313 1 1 0 0 0-.73.313L24.138 38.905a1.07 1.07 0 0 0-.315.758 1.1 1.1 0 0 0 .303.764 1.005 1.005 0 0 0 1.472-.013L40.05 25.478a1.07 1.07 0 0 0 .302-.754 1.1 1.1 0 0 0-.302-.754M26.933 31.125c.816 0 1.615-.25 2.294-.719a4.24 4.24 0 0 0 1.52-1.915 4.4 4.4 0 0 0 .235-2.465 4.3 4.3 0 0 0-1.13-2.185 4.1 4.1 0 0 0-2.114-1.168 4 4 0 0 0-2.385.243c-.755.323-1.4.87-1.853 1.571a4.37 4.37 0 0 0-.696 2.371 4.35 4.35 0 0 0 1.21 3.016c.774.8 1.824 1.25 2.919 1.251m0-6.4c.408 0 .807.125 1.147.359s.604.568.76.957a2.2 2.2 0 0 1 .118 1.233c-.08.414-.277.794-.565 1.093a2.05 2.05 0 0 1-1.058.584c-.4.082-.815.04-1.192-.122a2.1 2.1 0 0 1-.927-.786 2.185 2.185 0 0 1 .258-2.693c.387-.4.911-.625 1.459-.626M37.255 33.259c-.817 0-1.615.25-2.294.719a4.24 4.24 0 0 0-1.52 1.915 4.4 4.4 0 0 0-.236 2.465c.16.828.553 1.589 1.13 2.185a4.1 4.1 0 0 0 2.114 1.168c.801.165 1.632.08 2.386-.243s1.4-.87 1.853-1.571a4.37 4.37 0 0 0 .696-2.371 4.35 4.35 0 0 0-1.21-3.016 4.07 4.07 0 0 0-2.919-1.251m0 6.4c-.408 0-.808-.124-1.147-.359a2.1 2.1 0 0 1-.76-.957 2.2 2.2 0 0 1-.118-1.233c.08-.414.276-.794.565-1.093a2.04 2.04 0 0 1 1.057-.584c.4-.082.816-.04 1.193.122.377.161.7.435.927.786a2.185 2.185 0 0 1-.258 2.693c-.387.4-.912.625-1.459.626" />
                                     <path
@@ -283,7 +517,7 @@ include 'header.php';
                     <div class="col-lg-6 mb-4">
                         <div class="row">
                             <div class="col-3 col-md-2">
-                                 <svg width="70" height="70" viewBox="0 0 70 70" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
+                                <svg width="70" height="70" viewBox="0 0 70 70" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
                                     <path
                                         d="M70 51.201V36.025H16.27V16.338h8.75v-8.75h28.574v15.45H30.383l-10.8 5.4 10.8 5.4h36.199v-10.8H55.645v-17.5H23.638l-9.42 9.282v21.205H0v15.176h14.219v13.262h41.426v-9.844h-2.051v7.793H16.27v-11.21zM29.531 31.085 24.1 28.369l5.432-2.716zm24.063.702H31.582v-2.324h22.012zm0-4.375H31.582v-2.324h22.012zm6.426-2.324h4.511v6.7H60.02zm-4.376 0h2.325v6.7h-2.325zM22.97 8.97v5.317h-5.181zM2.05 38.076h3.418v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h3.555v6.7H2.051zm0 11.074v-2.324h65.898v2.324z" />
                                     <path d="M63.3 28.37h-2.05v2.187h2.05z" />
@@ -300,7 +534,7 @@ include 'header.php';
                     <div class="col-lg-6 mb-4">
                         <div class="row">
                             <div class="col-3 col-md-2">
-                                <svg width="70" height="70" viewBox="0 0 70 70" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
+                                 <svg width="70" height="70" viewBox="0 0 70 70" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
                                         d="M22.285 58.79c-4.512 0-8.203-3.83-8.203-8.204 0-4.512 3.691-8.203 8.203-8.203s8.203 3.691 8.203 8.203-3.691 8.203-8.203 8.203m0-14.493c-3.418 0-6.152 2.871-6.152 6.152-.137 3.555 2.598 6.29 6.152 6.29a6.127 6.127 0 0 0 6.153-6.153c0-3.418-2.735-6.29-6.153-6.29" />
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -327,7 +561,6 @@ include 'header.php';
 <!-- /Advantage section -->
 
 
-
 <!-- Как заказать -->
 <section class="advantages bg-light py-5">
     <div class="container">
@@ -349,15 +582,15 @@ include 'header.php';
                         </div>
                         <div class="col-4">
                             <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" viewBox="0 0 70 70" class="svg-icon">
-    <path
-        d="M58.288 45.4a1.06 1.06 0 0 1-1.054-1.055V23.394a1.054 1.054 0 0 1 1.054-1.054 11.534 11.534 0 0 1 0 23.06m1.054-20.901v18.699a9.426 9.426 0 0 0 0-18.7M12.356 45.4a11.533 11.533 0 1 1 0-23.06 1.054 1.054 0 0 1 1.054 1.054v20.951a1.063 1.063 0 0 1-1.054 1.054m-1.054-20.901a9.426 9.426 0 0 0 0 18.699zM38.67 65.799h-6.697a3.934 3.934 0 0 1-3.8-5.48 3.935 3.935 0 0 1 3.8-2.382h6.698a3.935 3.935 0 0 1 0 7.862m-6.697-5.737a1.827 1.827 0 1 0 0 3.655h6.698a1.827 1.827 0 0 0 0-3.655z" />
-    <path
-        d="M8.064 25.366a.9.9 0 0 1-.332-.06 1.054 1.054 0 0 1-.671-1.326 29.749 29.749 0 0 1 56.514 0 1.054 1.054 0 0 1-1.998.655 27.633 27.633 0 0 0-52.519 0 1.05 1.05 0 0 1-.994.73M41.68 62.22a1.054 1.054 0 0 1-.23-2.073 27.57 27.57 0 0 0 19.584-16.872 1.056 1.056 0 0 1 1.963.773 29.67 29.67 0 0 1-21.122 18.147q-.097.022-.195.026" />
-    <path
-        d="M35.322 52.939a19.736 19.736 0 1 1 19.736-19.736 19.76 19.76 0 0 1-19.736 19.736m0-37.399A17.637 17.637 0 1 0 52.95 33.203a17.645 17.645 0 0 0-17.628-17.629z" />
-    <path
-        d="M24.842 35.49a2.091 2.091 0 1 1 0-4.184 2.091 2.091 0 0 1 0 4.183M45.241 35.49a2.09 2.09 0 1 1 0-4.182 2.09 2.09 0 0 1 0 4.181M35.322 45.357a6.044 6.044 0 0 1-6.035-6.035 1.052 1.052 0 0 1 1.828-.805 1.05 1.05 0 0 1 .272.805 3.935 3.935 0 1 0 7.87 0 1.054 1.054 0 0 1 2.108 0 6.05 6.05 0 0 1-6.043 6.035M40.311 29.667a1 1 0 0 1-.272 0 29 29 0 0 1-7.938-3.952c-.34-.221-.663-.434-.97-.62a2.74 2.74 0 0 0 0 1.759 1.054 1.054 0 0 1-.934 1.7c-4.522-.408-7.446-3.264-9.707-6.01a1.078 1.078 0 0 1 .486-1.727 1.08 1.08 0 0 1 1.155.325c2.37 2.873 4.428 4.403 6.8 5.006q.015-.901.195-1.785c.068-.39.136-.748.161-1.062a1.04 1.04 0 0 1 .527-.85 1.05 1.05 0 0 1 .978 0q1.265.664 2.447 1.47a34.6 34.6 0 0 0 5.483 3.06v-.093a8.5 8.5 0 0 1-.697-2.941 1.055 1.055 0 0 1 1.81-.79c2.474 2.626 8.05 3.153 11.9 1.13a1.055 1.055 0 1 1 .994 1.861 13.96 13.96 0 0 1-11.9.28c.253.644.444 1.31.57 1.99a1.054 1.054 0 0 1-.672 1.19 1 1 0 0 1-.416.06" />
-</svg>
+                                <path
+                                    d="M58.288 45.4a1.06 1.06 0 0 1-1.054-1.055V23.394a1.054 1.054 0 0 1 1.054-1.054 11.534 11.534 0 0 1 0 23.06m1.054-20.901v18.699a9.426 9.426 0 0 0 0-18.7M12.356 45.4a11.533 11.533 0 1 1 0-23.06 1.054 1.054 0 0 1 1.054 1.054v20.951a1.063 1.063 0 0 1-1.054 1.054m-1.054-20.901a9.426 9.426 0 0 0 0 18.699zM38.67 65.799h-6.697a3.934 3.934 0 0 1-3.8-5.48 3.935 3.935 0 0 1 3.8-2.382h6.698a3.935 3.935 0 0 1 0 7.862m-6.697-5.737a1.827 1.827 0 1 0 0 3.655h6.698a1.827 1.827 0 0 0 0-3.655z" />
+                                <path
+                                    d="M8.064 25.366a.9.9 0 0 1-.332-.06 1.054 1.054 0 0 1-.671-1.326 29.749 29.749 0 0 1 56.514 0 1.054 1.054 0 0 1-1.998.655 27.633 27.633 0 0 0-52.519 0 1.05 1.05 0 0 1-.994.73M41.68 62.22a1.054 1.054 0 0 1-.23-2.073 27.57 27.57 0 0 0 19.584-16.872 1.056 1.056 0 0 1 1.963.773 29.67 29.67 0 0 1-21.122 18.147q-.097.022-.195.026" />
+                                <path
+                                    d="M35.322 52.939a19.736 19.736 0 1 1 19.736-19.736 19.76 19.76 0 0 1-19.736 19.736m0-37.399A17.637 17.637 0 1 0 52.95 33.203a17.645 17.645 0 0 0-17.628-17.629z" />
+                                <path
+                                    d="M24.842 35.49a2.091 2.091 0 1 1 0-4.184 2.091 2.091 0 0 1 0 4.183M45.241 35.49a2.09 2.09 0 1 1 0-4.182 2.09 2.09 0 0 1 0 4.181M35.322 45.357a6.044 6.044 0 0 1-6.035-6.035 1.052 1.052 0 0 1 1.828-.805 1.05 1.05 0 0 1 .272.805 3.935 3.935 0 1 0 7.87 0 1.054 1.054 0 0 1 2.108 0 6.05 6.05 0 0 1-6.043 6.035M40.311 29.667a1 1 0 0 1-.272 0 29 29 0 0 1-7.938-3.952c-.34-.221-.663-.434-.97-.62a2.74 2.74 0 0 0 0 1.759 1.054 1.054 0 0 1-.934 1.7c-4.522-.408-7.446-3.264-9.707-6.01a1.078 1.078 0 0 1 .486-1.727 1.08 1.08 0 0 1 1.155.325c2.37 2.873 4.428 4.403 6.8 5.006q.015-.901.195-1.785c.068-.39.136-.748.161-1.062a1.04 1.04 0 0 1 .527-.85 1.05 1.05 0 0 1 .978 0q1.265.664 2.447 1.47a34.6 34.6 0 0 0 5.483 3.06v-.093a8.5 8.5 0 0 1-.697-2.941 1.055 1.055 0 0 1 1.81-.79c2.474 2.626 8.05 3.153 11.9 1.13a1.055 1.055 0 1 1 .994 1.861 13.96 13.96 0 0 1-11.9.28c.253.644.444 1.31.57 1.99a1.054 1.054 0 0 1-.672 1.19 1 1 0 0 1-.416.06" />
+                            </svg>
                         </div>
                     </div>
                     <div class="row pt-3">
@@ -379,18 +612,18 @@ include 'header.php';
                             <img src="<?php echo get_template_directory_uri(); ?>/img/ico/2.svg" class="img-fluid" />
                         </div>
                         <div class="col-4 text-start">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" viewBox="0 0 70 70" class="svg-icon">
-    <path
-        d="M63.094 22.094h-3.051a11.01 11.01 0 0 0-9.95-9.95v-7.05a1 1 0 0 0-1-1h-44a1 1 0 0 0-1 1v60a1 1 0 0 0 1 1h58a3 3 0 0 0 3-3v-38a3 3 0 0 0-3-3m-14 12a11 11 0 0 0 9.786-6h1.214v8h-22v-8h1.214a11 11 0 0 0 9.786 6m9-11a9 9 0 1 1-9-9 9.01 9.01 0 0 1 9 9m-52-17h42v6.05a11.01 11.01 0 0 0-9.95 9.95h-3.05a3 3 0 0 0-2.816 2h-8.184v2h8v10h-8v2h8v2h-8v2h8v10h-8v2h8v2h-8v2h8v5c.003.341.065.68.184 1H6.094zm58 57a1 1 0 0 1-1 1h-28a1 1 0 0 1-1-1v-38a1 1 0 0 1 1-1h3.05q.095 1.017.376 2h-1.426a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h24a1 1 0 0 0 1-1v-10a1 1 0 0 0-1-1h-1.426q.28-.983.375-2h3.05a1 1 0 0 1 1 1z" />
-    <path
-        d="M41.094 40.094h-4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1m-1 4h-2v-2h2zM61.094 40.094h-8a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1m-1 4h-6v-2h6zM41.094 48.094h-4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1m-1 4h-2v-2h2zM41.094 56.094h-4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1m-1 4h-2v-2h2zM49.094 40.094h-4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1m-1 4h-2v-2h2zM49.094 48.094h-4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1m-1 4h-2v-2h2zM49.094 56.094h-4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1m-1 4h-2v-2h2zM61.094 48.094h-8a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-12a1 1 0 0 0-1-1m-1 12h-6v-10h6zM15.094 16.094a7 7 0 1 0 7 7 7.01 7.01 0 0 0-7-7m0 12a5 5 0 1 1 5-5 5.006 5.006 0 0 1-5 5M24.094 20.094h9v2h-9zM14.094 14.094h26a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-26a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1m1-4h24v2h-24z" />
-    <path
-        d="M14.094 23.68 12.8 22.387 11.387 23.8l2 2a1 1 0 0 0 1.414 0l4-4-1.414-1.414zM15.094 32.094a7 7 0 1 0 7 7 7.01 7.01 0 0 0-7-7m0 12a5 5 0 1 1 5-5 5.006 5.006 0 0 1-5 5" />
-    <path
-        d="M14.094 39.68 12.8 38.387 11.387 39.8l2 2a1 1 0 0 0 1.414 0l4-4-1.414-1.414zM15.094 48.094a7 7 0 1 0 7 7 7.01 7.01 0 0 0-7-7m0 12a5 5 0 1 1 5-5 5.006 5.006 0 0 1-5 5" />
-    <path
-        d="M14.094 55.68 12.8 54.387 11.387 55.8l2 2a1 1 0 0 0 1.414 0l4-4-1.414-1.414zM46.523 17.03a3.99 3.99 0 0 0-1.43 3.064h2a2 2 0 0 1 2.372-1.967 2.03 2.03 0 0 1 1.6 1.6 1.99 1.99 0 0 1-.61 1.839 6.9 6.9 0 0 0-2.361 5.028v.5h2v-.5a4.91 4.91 0 0 1 1.717-3.568 4 4 0 0 0-5.288-6zM48.094 28.094h2v2h-2z" />
-</svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" viewBox="0 0 70 70" class="svg-icon">
+                                <path
+                                    d="M63.094 22.094h-3.051a11.01 11.01 0 0 0-9.95-9.95v-7.05a1 1 0 0 0-1-1h-44a1 1 0 0 0-1 1v60a1 1 0 0 0 1 1h58a3 3 0 0 0 3-3v-38a3 3 0 0 0-3-3m-14 12a11 11 0 0 0 9.786-6h1.214v8h-22v-8h1.214a11 11 0 0 0 9.786 6m9-11a9 9 0 1 1-9-9 9.01 9.01 0 0 1 9 9m-52-17h42v6.05a11.01 11.01 0 0 0-9.95 9.95h-3.05a3 3 0 0 0-2.816 2h-8.184v2h8v10h-8v2h8v2h-8v2h8v10h-8v2h8v2h-8v2h8v5c.003.341.065.68.184 1H6.094zm58 57a1 1 0 0 1-1 1h-28a1 1 0 0 1-1-1v-38a1 1 0 0 1 1-1h3.05q.095 1.017.376 2h-1.426a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h24a1 1 0 0 0 1-1v-10a1 1 0 0 0-1-1h-1.426q.28-.983.375-2h3.05a1 1 0 0 1 1 1z" />
+                                <path
+                                    d="M41.094 40.094h-4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1m-1 4h-2v-2h2zM61.094 40.094h-8a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1m-1 4h-6v-2h6zM41.094 48.094h-4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1m-1 4h-2v-2h2zM41.094 56.094h-4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1m-1 4h-2v-2h2zM49.094 40.094h-4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1m-1 4h-2v-2h2zM49.094 48.094h-4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1m-1 4h-2v-2h2zM49.094 56.094h-4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1m-1 4h-2v-2h2zM61.094 48.094h-8a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-12a1 1 0 0 0-1-1m-1 12h-6v-10h6zM15.094 16.094a7 7 0 1 0 7 7 7.01 7.01 0 0 0-7-7m0 12a5 5 0 1 1 5-5 5.006 5.006 0 0 1-5 5M24.094 20.094h9v2h-9zM14.094 14.094h26a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-26a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1m1-4h24v2h-24z" />
+                                <path
+                                    d="M14.094 23.68 12.8 22.387 11.387 23.8l2 2a1 1 0 0 0 1.414 0l4-4-1.414-1.414zM15.094 32.094a7 7 0 1 0 7 7 7.01 7.01 0 0 0-7-7m0 12a5 5 0 1 1 5-5 5.006 5.006 0 0 1-5 5" />
+                                <path
+                                    d="M14.094 39.68 12.8 38.387 11.387 39.8l2 2a1 1 0 0 0 1.414 0l4-4-1.414-1.414zM15.094 48.094a7 7 0 1 0 7 7 7.01 7.01 0 0 0-7-7m0 12a5 5 0 1 1 5-5 5.006 5.006 0 0 1-5 5" />
+                                <path
+                                    d="M14.094 55.68 12.8 54.387 11.387 55.8l2 2a1 1 0 0 0 1.414 0l4-4-1.414-1.414zM46.523 17.03a3.99 3.99 0 0 0-1.43 3.064h2a2 2 0 0 1 2.372-1.967 2.03 2.03 0 0 1 1.6 1.6 1.99 1.99 0 0 1-.61 1.839 6.9 6.9 0 0 0-2.361 5.028v.5h2v-.5a4.91 4.91 0 0 1 1.717-3.568 4 4 0 0 0-5.288-6zM48.094 28.094h2v2h-2z" />
+                            </svg>
                         </div>
                     </div>
                     <div class="row pt-3">
@@ -436,13 +669,13 @@ include 'header.php';
                         </div>
                         <div class="col-4">
                             <svg width="70" height="70" viewBox="0 0 70 70" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
-    <path
-        d="M22.58 48.01a4.525 4.525 0 0 0 0 9.05 4.525 4.525 0 0 0 0-9.05m0 6.788a2.263 2.263 0 0 1 0-4.525 2.263 2.263 0 0 1 0 4.525M49.677 48.01a4.525 4.525 0 0 0 0 9.05 4.525 4.525 0 0 0 0-9.05m0 6.788a2.263 2.263 0 0 1 0-4.525 2.263 2.263 0 0 1 0 4.525" />
-    <path
-        d="M67.742 36.905v-9.072a5.66 5.66 0 0 0-.883-3.037L60.327 14.51a3.37 3.37 0 0 0-2.857-1.572h-7.793V8.414h-37.01l-1.694 6.788h3.491l-.393 2.263H4.516v2.262h9.163l-.787 4.525H4.516v2.263H12.5l-.785 4.525H4.516v2.263h6.806l-.982 5.657H8.036l-1.13 9.05h-.132a2.263 2.263 0 0 0-2.258 2.263v4.525a2.263 2.263 0 0 0 2.258 2.262h7.996c1.565 2.701 4.475 4.526 7.81 4.526s6.247-1.825 7.811-4.526h11.477c1.565 2.701 4.475 4.526 7.81 4.526s6.247-1.825 7.811-4.526h8.91l3.577-16.732.024-.237a3.39 3.39 0 0 0-2.258-3.186M57.47 15.202c.387 0 .744.196.952.524l6.532 10.286c.347.544.53 1.174.53 1.821v8.864H61.17l-.452 2.262H42.903V16.333c0-.624.507-1.131 1.13-1.131zm-43.04-4.525h32.99v2.262H13.864zm2.326 4.525h24.097a3.4 3.4 0 0 0-.208 1.131V38.96H12.633zm-6.727 26.02h50.239l-1.355 6.788h-1.426c-1.565-2.7-4.475-4.525-7.81-4.525s-6.247 1.824-7.811 4.525H30.39c-1.564-2.7-4.475-4.525-7.81-4.525s-6.246 1.824-7.811 4.525H9.181zM6.774 54.798v-4.525h7.071a9 9 0 0 0-.297 2.262c0 .783.11 1.538.297 2.263zm15.807 4.525c-3.736 0-6.775-3.044-6.775-6.788 0-3.743 3.039-6.788 6.775-6.788s6.774 3.045 6.774 6.788-3.038 6.788-6.774 6.788m8.735-4.525c.187-.725.297-1.48.297-2.263s-.11-1.537-.297-2.262h9.627a9 9 0 0 0-.298 2.262c0 .783.11 1.538.297 2.263zm18.361 4.525c-3.736 0-6.774-3.044-6.774-6.788 0-3.743 3.038-6.788 6.774-6.788s6.775 3.045 6.775 6.788-3.038 6.788-6.775 6.788m14.893-4.525h-6.159c.189-.725.299-1.48.299-2.263s-.11-1.537-.297-2.262h2.351l2.258-11.314h3.59c.59 0 1.076.454 1.126 1.032z" />
-    <path
-        d="m63.226 27.322-6.149-9.857H45.161v14.707h18.065zm-2.258 2.587H47.419V19.728h8.407l5.142 8.243zM45.161 34.435h6.774v2.262h-6.774zM0 17.465h2.258v2.262H0zM0 24.252h2.258v2.263H0zM0 31.04h2.258v2.263H0z" />
-</svg>
+                                <path
+                                    d="M22.58 48.01a4.525 4.525 0 0 0 0 9.05 4.525 4.525 0 0 0 0-9.05m0 6.788a2.263 2.263 0 0 1 0-4.525 2.263 2.263 0 0 1 0 4.525M49.677 48.01a4.525 4.525 0 0 0 0 9.05 4.525 4.525 0 0 0 0-9.05m0 6.788a2.263 2.263 0 0 1 0-4.525 2.263 2.263 0 0 1 0 4.525" />
+                                <path
+                                    d="M67.742 36.905v-9.072a5.66 5.66 0 0 0-.883-3.037L60.327 14.51a3.37 3.37 0 0 0-2.857-1.572h-7.793V8.414h-37.01l-1.694 6.788h3.491l-.393 2.263H4.516v2.262h9.163l-.787 4.525H4.516v2.263H12.5l-.785 4.525H4.516v2.263h6.806l-.982 5.657H8.036l-1.13 9.05h-.132a2.263 2.263 0 0 0-2.258 2.263v4.525a2.263 2.263 0 0 0 2.258 2.262h7.996c1.565 2.701 4.475 4.526 7.81 4.526s6.247-1.825 7.811-4.526h11.477c1.565 2.701 4.475 4.526 7.81 4.526s6.247-1.825 7.811-4.526h8.91l3.577-16.732.024-.237a3.39 3.39 0 0 0-2.258-3.186M57.47 15.202c.387 0 .744.196.952.524l6.532 10.286c.347.544.53 1.174.53 1.821v8.864H61.17l-.452 2.262H42.903V16.333c0-.624.507-1.131 1.13-1.131zm-43.04-4.525h32.99v2.262H13.864zm2.326 4.525h24.097a3.4 3.4 0 0 0-.208 1.131V38.96H12.633zm-6.727 26.02h50.239l-1.355 6.788h-1.426c-1.565-2.7-4.475-4.525-7.81-4.525s-6.247 1.824-7.811 4.525H30.39c-1.564-2.7-4.475-4.525-7.81-4.525s-6.246 1.824-7.811 4.525H9.181zM6.774 54.798v-4.525h7.071a9 9 0 0 0-.297 2.262c0 .783.11 1.538.297 2.263zm15.807 4.525c-3.736 0-6.775-3.044-6.775-6.788 0-3.743 3.039-6.788 6.775-6.788s6.774 3.045 6.774 6.788-3.038 6.788-6.774 6.788m8.735-4.525c.187-.725.297-1.48.297-2.263s-.11-1.537-.297-2.262h9.627a9 9 0 0 0-.298 2.262c0 .783.11 1.538.297 2.263zm18.361 4.525c-3.736 0-6.774-3.044-6.774-6.788 0-3.743 3.038-6.788 6.774-6.788s6.775 3.045 6.775 6.788-3.038 6.788-6.775 6.788m14.893-4.525h-6.159c.189-.725.299-1.48.299-2.263s-.11-1.537-.297-2.262h2.351l2.258-11.314h3.59c.59 0 1.076.454 1.126 1.032z" />
+                                <path
+                                    d="m63.226 27.322-6.149-9.857H45.161v14.707h18.065zm-2.258 2.587H47.419V19.728h8.407l5.142 8.243zM45.161 34.435h6.774v2.262h-6.774zM0 17.465h2.258v2.262H0zM0 24.252h2.258v2.263H0zM0 31.04h2.258v2.263H0z" />
+                            </svg>
                         </div>
                     </div>
                     <div class="row pt-3">
@@ -463,7 +696,6 @@ include 'header.php';
 <!-- /Как заказать -->
 
 
-
 <!-- Частые вопросы -->
 <?php get_template_part('template-parts/section-faq/section-faq', null, [
     'bg_class' => 'bg-white',
@@ -471,6 +703,28 @@ include 'header.php';
 ]);?>
 <!-- /Частые вопросы -->
 
+
+
+<!-- Gradient order section --
+<section class="gradient-order-section bg-light" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/sec-bg2.webp);">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5 text-md-end">
+                <h2>Рассчитаем стоимость за 15 минут</h2>
+                <p class="section-description archive-portfolio mb-3">Хотите узнать стоимость качественной кухни с учетом всех Ваших пожеланий и особенностей помещения? Это бесплатно и ни к чему Вас не обязывает!</p>
+                <svg width="62" height="14" viewBox="0 0 62 14" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon mb-5">
+                    <rect x="48" width="14" height="14" rx="3" />
+                    <rect x="24" width="14" height="14" rx="3" />
+                    <rect width="14" height="14" rx="3" />
+                </svg>
+                <br>
+                <a href="#" type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
+            </div>
+            <div class="col-md-7"></div>
+        </div>
+    </div>
+</section>
+<!-- End gradient order section -->
 
 
 <!-- Gradient order section -->
@@ -515,4 +769,6 @@ include 'header.php';
 <!-- End gradient order section -->
 
 
-<?php include 'footer-1.php'; ?>
+<?php 
+include get_template_directory() . '/footer-1.php'; 
+?>

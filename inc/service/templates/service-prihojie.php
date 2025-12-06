@@ -2,12 +2,10 @@
 
 /**
  * Template Name: Прихожие на заказ (с примерами из портфолио).
- * Description:
- * Template Post Type: page.
+ * Template Post Type: service
  */
 
-include 'header.php';
-
+include get_template_directory() . '/header.php';
 ?>
 
 
@@ -85,8 +83,7 @@ include 'header.php';
                             for ($i = 1; $i <= 9; $i++) {
                                 if (get_post_meta($post->ID, '_img-' . $i)) { ?>
                                     <button type="button" data-bs-target="#carouselExampleIndicators<?php echo $post->ID; ?>"
-                                        data-bs-slide-to="<?php echo $i - 1; ?>" <?php if ($i == 1)
-                                                                                        echo ' class="active"'; ?>
+                                        data-bs-slide-to="<?php echo $i - 1; ?>" <?php if ($i == 1) echo ' class="active"'; ?>
                                         aria-current="true" aria-label="Slide <?php echo $i; ?>"></button>
                             <?php $count2 = $count2 + 1;
                                 }
@@ -98,10 +95,8 @@ include 'header.php';
                             $count2 = 0;
                             for ($i = 1; $i <= 9; $i++) {
                                 if (get_post_meta($post->ID, '_img-' . $i)) { ?>
-                                    <div class="carousel-item <?php if ($i == 1)
-                                                                    echo ' active'; ?>" data-bs-interval="999999999">
-                                        <a
-                                            onClick="galleryOn('gallery-<?php echo $post->ID; ?>','img-<?php echo $post->ID; ?>-<?php echo $count2; ?>');">
+                                    <div class="carousel-item <?php if ($i == 1) echo ' active'; ?>" data-bs-interval="999999999">
+                                        <a onClick="galleryOn('gallery-<?php echo $post->ID; ?>','img-<?php echo $post->ID; ?>-<?php echo $count2; ?>');">
                                             <div class="single-product-img approximation">
                                                 <img src="<?php echo get_post_meta($post->ID, '_img-' . $i)[0]; ?>"
                                                     class="shadow rounded" alt="..." loading="lazy">
@@ -117,12 +112,12 @@ include 'header.php';
                         <button class="carousel-control-prev" type="button"
                             data-bs-target="#carouselExampleIndicators<?php echo $post->ID; ?>" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
+                            <span class="visually-hidden">Предыдущий</span>
                         </button>
                         <button class="carousel-control-next" type="button"
                             data-bs-target="#carouselExampleIndicators<?php echo $post->ID; ?>" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
+                            <span class="visually-hidden">Следующий</span>
                         </button>
                     </div>
                 </div>
@@ -245,12 +240,12 @@ include 'header.php';
             <button class="carousel-control-prev" type="button" data-bs-target="#gallery-<?php echo $post->ID; ?>"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
+                <span class="visually-hidden">Предыдущий</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#gallery-<?php echo $post->ID; ?>"
                 data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
+                <span class="visually-hidden">Следующий</span>
             </button>
         </div>
     <?php }
@@ -725,4 +720,6 @@ include 'header.php';
 <!-- End gradient order section -->
 
 
-<?php include 'footer-1.php'; ?>
+<?php 
+include get_template_directory() . '/footer-1.php'; 
+?>

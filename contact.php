@@ -47,7 +47,8 @@ include 'header.php';
                 </div>
             </div>
         </div>
-        <div class="container" style="padding: 0;">
+        
+        <div class="container p-0" >
             <div class="row">
                 <div class="col text-dark text-md-center">
                     <h2 class="mb-3">Контакты</h2>
@@ -56,39 +57,76 @@ include 'header.php';
                         <rect x="24" width="14" height="14" rx="3" />
                         <rect width="14" height="14" rx="3" />
                     </svg>
+
                     <div class="row section-contacts contacts">
-                        <!-- 1 блок -->
+                        <?php
+                        // Собираем данные для колонки 1 (адрес и время)
+                        $address_full = '';
+                        $job_time = '';
+                        if (function_exists('mytheme_get_address_full')) {
+                            $address_full = mytheme_get_address_full();
+                        }
+                        if (function_exists('mytheme_get_job_time')) {
+                            $job_time = mytheme_get_job_time();
+                        }
+                        
+                        // Показываем колонку 1 только если есть хоть что-то
+                        if (!empty($address_full) || !empty($job_time)):
+                        ?>
+                        <!-- Колонка 1 - Адрес и время работы -->
                         <div class="col-12 col-md-6 col-xl-3 col-xxl-4 mb-0 mb-md-4">
+                            <?php if (!empty($address_full)): ?>
                             <div class="d-flex align-items-center mb-4 pb-md-3">
                                 <svg width="24" height="24" viewBox="0 0 24 24" style="flex-shrink: 0;" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon me-4">
                                     <path
                                         d="M13.11 23.46C15.517 20.444 21 13.13 21 9.024 21 4.042 16.969 0 12 0S3 4.042 3 9.023c0 4.108 5.484 11.42 7.89 14.438.576.719 1.644.719 2.22 0M12 6.017c.796 0 1.559.316 2.121.88a3.01 3.01 0 0 1 0 4.254 2.996 2.996 0 0 1-4.242 0 3.01 3.01 0 0 1 0-4.253A3 3 0 0 1 12 6.016" />
                                 </svg>
                                 <p class="mb-0 text-min-text">
-                                    <span>гор. Рязань, ул. Чапаева, д. 56, Мебельный центр "Базар" (ост.
-                                        "Центральный рынок").</span>
+                                    <span class="address-contacts-section"><?php echo esc_html($address_full); ?></span>
                                 </p>
                             </div>
+                            <?php endif; ?>
 
+                            <?php if (!empty($job_time)): ?>
                             <div class="d-flex align-items-center mb-4">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon me-4">
                                     <path
                                         d="M21.75 12a9.75 9.75 0 1 1-19.5 0 9.75 9.75 0 0 1 19.5 0M0 12a12 12 0 1 0 24 0 12 12 0 0 0-24 0m10.875-6.375V12c0 .375.188.727.502.938l4.5 3a1.12 1.12 0 0 0 1.56-.315 1.12 1.12 0 0 0-.314-1.56L13.125 11.4V5.625c0-.623-.502-1.125-1.125-1.125s-1.125.502-1.125 1.125" />
                                 </svg>
-                                <p class="mb-0 text-min-text">Пн-Сб 10:00-19:00, <br /> Вс 10:00-17:00</p>
+                                <p class="mb-0 text-min-text time-contacts-section"><?php echo esc_html($job_time); ?></p>
                             </div>
+                            <?php endif; ?>
                         </div>
+                        <?php endif; ?>
 
-                        <!-- 2 блок -->
+                        <?php
+                        // Собираем данные для колонки 2 (основной телефон + обратный звонок)
+                        $phone_main = '';
+                        $phone_main_link = '';
+                        
+                        if (function_exists('mytheme_get_phone')) {
+                            $phone_main = mytheme_get_phone('main');
+                        }
+                        if (function_exists('mytheme_get_phone_link')) {
+                            $phone_main_link = mytheme_get_phone_link('main');
+                        }
+                        
+                        // Показываем колонку 2 если есть основной телефон
+                        if (!empty($phone_main)):
+                        ?>
+                        <!-- Колонка 2 - Основной телефон и обратный звонок -->
                         <div class="col-12 col-md-6 col-xl-3 col-xxl-2 mb-0 mb-md-4">
                             <div class="d-flex align-items-center mb-4 pb-md-3 flex-wrap">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon me-3">
                                     <path
                                         d="M4 3c0-1.655 1.305-3 2.91-3h10.18C18.696 0 20 1.345 20 3v18c0 1.655-1.305 3-2.91 3H6.91C5.304 24 4 22.655 4 21zm5.818 18c0 .413.328.75.728.75h2.909c.4 0 .727-.337.727-.75a.74.74 0 0 0-.728-.75h-2.908c-.4 0-.728.337-.728.75m7.273-18H6.909v15h10.182z" />
                                 </svg>
-                                <a href="tel:+79511014610" class="text-decoration-none">+7 (951) 101-46-10</a>
+                                <a href="tel:<?php echo esc_attr($phone_main_link); ?>" class="text-decoration-none">
+                                    <?php echo esc_html($phone_main); ?>
+                                </a>
                             </div>
 
+                            <!-- Кнопка обратного звонка -->
                             <div class="d-flex align-items-center mb-4">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon me-3">
                                     <path
@@ -102,79 +140,181 @@ include 'header.php';
                                 </button>
                             </div>
                         </div>
+                        <?php endif; ?>
 
-                        <!-- 3 блок -->
+                        <?php
+                        // Собираем данные для колонки 3 (дополнительные телефоны)
+                        $phone_additional = '';
+                        $phone_additional_link = '';
+                        $phones_extra = array();
+                        
+                        if (function_exists('mytheme_get_phone')) {
+                            $phone_additional = mytheme_get_phone('additional');
+                        }
+                        if (function_exists('mytheme_get_phone_link')) {
+                            $phone_additional_link = mytheme_get_phone_link('additional');
+                        }
+                        if (function_exists('mytheme_get_phones_extra')) {
+                            $phones_extra = mytheme_get_phones_extra();
+                        }
+                        
+                        // Показываем колонку 3 если есть дополнительный телефон или телефоны из повторителя
+                        if (!empty($phone_additional) || !empty($phones_extra)):
+                        ?>
+                        <!-- Колонка 3 - Дополнительные телефоны -->
                         <div class="col-12 col-md-6 col-xl-3 col-xxl-2 mb-0 mb-md-4">
-                            <div class="d-flex align-items-center mb-4 pb-md-3 flex-wrap">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon me-3">
-                                    <path
-                                        d="M4.483 1.107c-.375.011-.704.21-.98.485l-.46.459 4.985 5.076.724-.724a1.13 1.13 0 0 0 0-1.592l-3.22-3.22c-.312-.311-.674-.496-1.049-.484M2.511 2.581l-.528.528c-.864.864-.858 1.994-.858 2.516 0 2.16.863 5.893 6.11 11.139 5.245 5.246 8.98 6.11 11.139 6.11.521 0 1.652.006 2.516-.859l.478-.477-4.985-5.076-.523.524c-.31.31-.539.347-.761.32-.223-.025-.452-.154-.62-.284-.917-.71-2.401-1.726-4.089-3.413-1.687-1.688-2.703-3.173-3.413-4.09-.13-.168-.259-.395-.285-.617s.014-.454.324-.764l.481-.481zm15.88 12.339c-.289 0-.577.109-.795.327l-.683.684 4.986 5.076.508-.508c.276-.276.473-.608.484-.983s-.172-.737-.484-1.05l-3.22-3.219a1.12 1.12 0 0 0-.796-.327" />
-                                </svg>
-
-                                <a href="tel:+74912527890" class="text-decoration-none">8 (4912) 52-78-90</a>
-                            </div>
-
+                            <?php if (!empty($phone_additional)): ?>
                             <div class="d-flex align-items-center mb-4 flex-wrap">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon me-3">
                                     <path
                                         d="M4.483 1.107c-.375.011-.704.21-.98.485l-.46.459 4.985 5.076.724-.724a1.13 1.13 0 0 0 0-1.592l-3.22-3.22c-.312-.311-.674-.496-1.049-.484M2.511 2.581l-.528.528c-.864.864-.858 1.994-.858 2.516 0 2.16.863 5.893 6.11 11.139 5.245 5.246 8.98 6.11 11.139 6.11.521 0 1.652.006 2.516-.859l.478-.477-4.985-5.076-.523.524c-.31.31-.539.347-.761.32-.223-.025-.452-.154-.62-.284-.917-.71-2.401-1.726-4.089-3.413-1.687-1.688-2.703-3.173-3.413-4.09-.13-.168-.259-.395-.285-.617s.014-.454.324-.764l.481-.481zm15.88 12.339c-.289 0-.577.109-.795.327l-.683.684 4.986 5.076.508-.508c.276-.276.473-.608.484-.983s-.172-.737-.484-1.05l-3.22-3.219a1.12 1.12 0 0 0-.796-.327" />
                                 </svg>
-                                <a href="tel:+74912777098" class="text-decoration-none">8 (4912) 77-70-98</a>
+                                <a href="tel:<?php echo esc_attr($phone_additional_link); ?>" class="text-decoration-none">
+                                    <?php echo esc_html($phone_additional); ?>
+                                </a>
                             </div>
-                        </div>
+                            <?php endif; ?>
 
-                        <!-- Третий блок -->
+                            <?php
+                            // Дополнительные телефоны из повторителя
+                            foreach ($phones_extra as $phone):
+                                if (!empty($phone['display']) || !empty($phone['link'])):
+                            ?>
+                            <div class="d-flex align-items-center mb-4 flex-wrap">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon me-3">
+                                    <path
+                                        d="M4.483 1.107c-.375.011-.704.21-.98.485l-.46.459 4.985 5.076.724-.724a1.13 1.13 0 0 0 0-1.592l-3.22-3.22c-.312-.311-.674-.496-1.049-.484M2.511 2.581l-.528.528c-.864.864-.858 1.994-.858 2.516 0 2.16.863 5.893 6.11 11.139 5.245 5.246 8.98 6.11 11.139 6.11.521 0 1.652.006 2.516-.859l.478-.477-4.985-5.076-.523.524c-.31.31-.539.347-.761.32-.223-.025-.452-.154-.62-.284-.917-.71-2.401-1.726-4.089-3.413-1.687-1.688-2.703-3.173-3.413-4.09-.13-.168-.259-.395-.285-.617s.014-.454.324-.764l.481-.481zm15.88 12.339c-.289 0-.577.109-.795.327l-.683.684 4.986 5.076.508-.508c.276-.276.473-.608.484-.983s-.172-.737-.484-1.05l-3.22-3.219a1.12 1.12 0 0 0-.796-.327" />
+                                </svg>
+                                <a href="tel:<?php echo esc_attr($phone['link']); ?>" class="text-decoration-none">
+                                    <?php echo esc_html($phone['display']); ?>
+                                </a>
+                            </div>
+                            <?php 
+                                endif;
+                            endforeach; 
+                            ?>
+                        </div>
+                        <?php endif; ?>
+
+                        <?php
+                        // Собираем данные для колонки 4 (email)
+                        $email = '';
+                        $email_link = '';
+                        $emails_extra = array();
+                        
+                        if (function_exists('mytheme_get_email')) {
+                            $email = mytheme_get_email();
+                        }
+                        if (function_exists('mytheme_get_email_link')) {
+                            $email_link = mytheme_get_email_link();
+                        }
+                        if (function_exists('mytheme_get_emails_extra')) {
+                            $emails_extra = mytheme_get_emails_extra();
+                        }
+                        
+                        // Показываем колонку 4 только если есть хоть один email
+                        if (!empty($email) || !empty($emails_extra)):
+                        ?>
+                        <!-- Колонка 4 - Email -->
                         <div class="col-12 col-md-12 col-xl-3 col-xxl-3 mb-0 mb-md-4">
+                            <?php if (!empty($email)): ?>
                             <div class="d-flex align-items-center mb-4 pb-md-3 flex-wrap">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon me-3 ">
                                     <path
                                         d="M12 3c-4.969 0-9 4.031-9 9s4.031 9 9 9c.83 0 1.5.67 1.5 1.5S12.83 24 12 24C5.372 24 0 18.628 0 12S5.372 0 12 0s12 5.372 12 12v1.5a4.501 4.501 0 0 1-7.931 2.91A6 6 0 1 1 12 6c1.308 0 2.517.417 3.502 1.13A1.498 1.498 0 0 1 18 8.25v5.25c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V12c0-4.969-4.031-9-9-9m3 9a3 3 0 1 0-6 0 3 3 0 0 0 6 0" />
                                 </svg>
-                                <a href="mailto:zakaz@mglight.ru" class="text-decoration-none">zakaz@mglight.ru
+                                <a href="<?php echo esc_url($email_link); ?>" class="text-decoration-none">
+                                    <?php echo esc_html($email); ?>
                                 </a>
                             </div>
+                            <?php endif; ?>
 
-
+                            <?php
+                            // Дополнительные email из повторителя
+                            foreach ($emails_extra as $email_item):
+                                if (!empty($email_item['email'])):
+                            ?>
+                            <div class="d-flex align-items-center mb-4 flex-wrap">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon me-3 ">
+                                    <path
+                                        d="M12 3c-4.969 0-9 4.031-9 9s4.031 9 9 9c.83 0 1.5.67 1.5 1.5S12.83 24 12 24C5.372 24 0 18.628 0 12S5.372 0 12 0s12 5.372 12 12v1.5a4.501 4.501 0 0 1-7.931 2.91A6 6 0 1 1 12 6c1.308 0 2.517.417 3.502 1.13A1.498 1.498 0 0 1 18 8.25v5.25c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V12c0-4.969-4.031-9-9-9m3 9a3 3 0 1 0-6 0 3 3 0 0 0 6 0" />
+                                </svg>
+                                <a href="mailto:<?php echo esc_attr($email_item['email']); ?>" class="text-decoration-none">
+                                    <?php echo esc_html($email_item['email']); ?>
+                                </a>
+                            </div>
+                            <?php 
+                                endif;
+                            endforeach; 
+                            ?>
                         </div>
+                        <?php endif; ?>
                     </div>
+
+                    <!-- Социальные сети -->
                     <div class="d-flex justify-content-md-center" style="margin-top: 60px;">
-                        <!--
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/ico/whatsapp-ico.svg" alt="whatsapp" style="padding: 10px;">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/ico/telegram-ico.svg" alt="telegram" style="padding: 10px;">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/ico/instagram-ico.svg" alt="instagram" style="padding: 10px;">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/ico/vk-ico.svg" alt="vk" style="padding: 10px;">
-                        -->
                         <ul class="nav">
+                            <?php
+                            $whatsapp = '';
+                            if (function_exists('mytheme_get_whatsapp')) {
+                                $whatsapp = mytheme_get_whatsapp(true);
+                            }
+                            if (!empty($whatsapp)):
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link ico-button px-2"
-                                    href="https://wa.me/79511014610?web=1&amp;app_absent=1">
-                                    <img
-                                        src="https://xn--62-6kca7ahoms.xn--p1ai/wp-content/themes/mozaika/img/ico/whatsapp-ico.svg">
+                                <a class="nav-link ico-button px-2" href="<?php echo esc_url($whatsapp); ?>">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/ico/whatsapp-ico.svg">
                                 </a>
                             </li>
+                            <?php endif; ?>
+
+                            <?php
+                            $telegram = '';
+                            if (function_exists('mytheme_get_telegram')) {
+                                $telegram = mytheme_get_telegram();
+                            }
+                            if (!empty($telegram)):
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link ico-button px-2" href="https://t.me/+79511014610">
-                                    <img
-                                        src="https://xn--62-6kca7ahoms.xn--p1ai/wp-content/themes/mozaika/img/ico/telegram-ico.svg">
+                                <a class="nav-link ico-button px-2" href="<?php echo esc_url($telegram); ?>">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/ico/telegram-ico.svg">
                                 </a>
                             </li>
+                            <?php endif; ?>
+
+                            <?php
+                            $instagram = '';
+                            if (function_exists('mytheme_get_instagram')) {
+                                $instagram = mytheme_get_instagram();
+                            }
+                            if (!empty($instagram)):
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link ico-button px-2" href="https://www.instagram.com/mozaika.kitchen62">
-                                    <img
-                                        src="https://xn--62-6kca7ahoms.xn--p1ai/wp-content/themes/mozaika/img/ico/instagram-ico.svg">
+                                <a class="nav-link ico-button px-2" href="<?php echo esc_url($instagram); ?>">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/ico/instagram-ico.svg">
                                 </a>
                             </li>
+                            <?php endif; ?>
+
+                            <?php
+                            $vk = '';
+                            if (function_exists('mytheme_get_vk')) {
+                                $vk = mytheme_get_vk();
+                            }
+                            if (!empty($vk)):
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link ico-button px-2" href="https://vk.com/mozaika.kitchen62">
-                                    <img
-                                        src="https://xn--62-6kca7ahoms.xn--p1ai/wp-content/themes/mozaika/img/ico/vk-ico.svg">
+                                <a class="nav-link ico-button px-2" href="<?php echo esc_url($vk); ?>">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/ico/vk-ico.svg">
                                 </a>
                             </li>
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 </section>
 

@@ -9,8 +9,8 @@
 	--light-color: #e1e1e1;
 
     --radius-small: 5px;
-    --radius-medium: px;
-    --radius-large: px;
+    --radius-medium: 10px;
+    --radius-large: 15px;
     --transition-duration: 0.3s;
     --opacity-text: 0.85;
 }
@@ -1974,6 +1974,7 @@ strong {
 	opacity: var(--opacity-text);
 }
 
+
 /* .contacts-section-4 .nav-li-float-left {
 	width: 24px;
 	float: left;
@@ -1991,7 +1992,21 @@ strong {
     text-wrap: nowrap;
 }
 
-.contacts-section-4 .contacts-phone:hover {
+@media (min-width: 1200px){
+    .contacts-section-4 .address-footer {
+        max-width: 110px;
+    }
+    
+    .contacts-section-4 .time-footer {
+        max-width: 135px;
+    }
+}
+
+.contacts-section-4 .contacts-phone:hover span {
+    transition-duration: var(--transition-duration);
+}
+
+.contacts-section-4 .contacts-phone:hover span {
 	opacity: var(--opacity-text);
 }
 

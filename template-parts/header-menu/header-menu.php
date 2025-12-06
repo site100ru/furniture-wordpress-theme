@@ -286,7 +286,7 @@
             <div class="collapse navbar-collapse" id="sliding-header-collapse">
                 <?php
                 wp_nav_menu(array(
-                    'theme_location' => 'sliding-header-collapse',
+                    'theme_location' => 'main-menu',
                     'container' => false,
                     'menu_class' => '',
                     'fallback_cb' => '__return_false',

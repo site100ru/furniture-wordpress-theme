@@ -62,11 +62,11 @@ $wrapper_classes   = apply_filters(
 		if ( $count > 1 ) { ?>
 			<button class="carousel-control-prev" type="button" data-bs-target="#carousel-<?php the_ID(); ?>"  data-bs-slide="prev">
 				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Previous</span>
+				<span class="visually-hidden">Предыдущий</span>
 			</button>
 			<button class="carousel-control-next" type="button" data-bs-target="#carousel-<?php the_ID(); ?>"  data-bs-slide="next">
 				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Next</span>
+				<span class="visually-hidden">Следующий</span>
 			</button>
 		<?php }
 	?>
@@ -134,10 +134,10 @@ $wrapper_classes   = apply_filters(
 	</div>
 	<button class="carousel-control-prev" type="button" data-bs-target="#carousel-2"  data-bs-slide="prev">
 		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-		<span class="visually-hidden">Previous</span>
+		<span class="visually-hidden"><span class="visually-hidden">Следующий</span></span>
 	</button>
 	<button class="carousel-control-next" type="button" data-bs-target="#carousel-2"  data-bs-slide="next">
 		<span class="carousel-control-next-icon" aria-hidden="true"></span>
-		<span class="visually-hidden">Next</span>
+		<span class="visually-hidden">Следующий</span>
 	</button>
 </div-->
