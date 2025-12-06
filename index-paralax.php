@@ -20,11 +20,10 @@ include 'header.php';
     <div class="container">
         <div class="row align-items-center home-section-height">
             <div class="col-xl-10 col-xxl-9">
-                <h1 class="home-title mb-3">Мебель По индивидуальным размерам <br />
+                <h1 class="home-title mb-3">Мебель по индивидуальным размерам <br />
                     на заказ от производителя</h1>
-                <p class="home-subtitle mb-4">Изготовим качественную кухню с учетом Ваших пожеланий и особенностей помещения по разумной цене! Рассчитаем стоимость за 15 минут.</p>
-                <a href="#" type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal"
-                    data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
+                <p class="home-subtitle mb-4">Изготовим качественную мебель с учетом Ваших пожеланий и особенностей помещения по разумной цене! Рассчитаем стоимость за 15 минут.</p>
+                <a href="#" type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
             </div>
         </div>
     </div>
@@ -132,14 +131,18 @@ include 'header.php';
 </section>
 <!-- /Action -->
 
+
 <!-- SECTION PORTFOLIO -->
 <?php get_template_part('template-parts/section-portfolio-tabs/section-portfolio-tabs', null, []); ?>
-<!-- END SECTION PORTFOLIO -->
 
+
+<!-- SECTION ACTIONS -->
 <?php get_template_part('template-parts/section-actions', null, ['section_actions_button' => 'false', 'section_actions_place' => 'home-page', 'show_breadcrumbs' => 'false']); ?>
+
 
 <!-- ABOUT SECTION -->
 <?php get_template_part('template-parts/about-section/about-section'); ?>
+
 
 <!-- Advantage section -->
 <section class="advantage bg-white py-5">
@@ -276,6 +279,7 @@ include 'header.php';
 </section>
 <!-- /Advantage section -->
 
+
 <!-- Как заказать -->
 <section class="section section-how bg-light py-5">
     <div class="container">
@@ -410,12 +414,14 @@ include 'header.php';
 </section>
 <!-- /Как заказать -->
 
+
 <!-- Частые вопросы -->
 <?php get_template_part('template-parts/section-faq/section-faq', null, [
     'bg_class' => 'bg-white',
     'config' => 'faq-kitchen'
 ]);?>
 <!-- /Частые вопросы -->
+
 
 <!-- Не нашли нужного товара? -->
 <section class="section section-half bg-light py-5">
