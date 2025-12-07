@@ -23,7 +23,7 @@ include 'header.php';
                 <h1 class="home-title mb-3">Мебель по индивидуальным размерам <br />
                     на заказ от производителя</h1>
                 <p class="home-subtitle mb-4">Изготовим качественную мебель с учетом Ваших пожеланий и особенностей помещения по разумной цене! Рассчитаем стоимость за 15 минут.</p>
-                <a href="#" type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
+                <button type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</button>
             </div>
         </div>
     </div>
@@ -34,10 +34,16 @@ include 'header.php';
 
 
 <!-- Action -->
-<?php get_template_part('template-parts/section-projects/section-projects'); ?>
+<?php get_template_part('template-parts/section-projects/section-projects', null, array(
+    'background_color' => 'bg-white',
+    'card_type' => 'approximation'
+)); ?>
 
 <!-- Services -->
-<?php get_template_part('template-parts/section-services/section-services'); ?>
+<?php get_template_part('template-parts/section-services/section-services', null, array(
+    'background_color' => 'bg-light',
+    'card_type' => 'approximation'
+)); ?>
 
 
 <!-- SECTION PORTFOLIO -->
@@ -232,16 +238,35 @@ include 'header.php';
                 <div class="row justify-content-md-end">
                     <div class="col">
                         <ul class="nav justify-content-md-end gap-3">
+                            <?php
+                            // Получаем WhatsApp
+                            $whatsapp = '';
+                            if (function_exists('mytheme_get_whatsapp')) {
+                                $whatsapp = mytheme_get_whatsapp(true);
+                            }
+                            if (!empty($whatsapp)):
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link ico-button" href="https://wa.me/79361385058?web=1&amp;app_absent=1">
+                                <a class="nav-link ico-button" href="<?php echo esc_url($whatsapp); ?>">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/ico/whatsapp-ico.png" />
                                 </a>
                             </li>
+                            <?php endif; ?>
+
+                            <?php
+                            // Получаем Telegram
+                            $telegram = '';
+                            if (function_exists('mytheme_get_telegram')) {
+                                $telegram = mytheme_get_telegram();
+                            }
+                            if (!empty($telegram)):
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link ico-button" href="https://t.me/+79361385058">
+                                <a class="nav-link ico-button" href="<?php echo esc_url($telegram); ?>">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/ico/telegram-ico.png" />
                                 </a>
                             </li>
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </div>

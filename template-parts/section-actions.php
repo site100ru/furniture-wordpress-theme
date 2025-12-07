@@ -169,18 +169,16 @@ wp_reset_postdata();
                     <div class="<?php echo esc_attr($col_class); ?> mb-4">
                         <!-- Если выводить в админке выбрана кнопка выводить модальное окно при нажатии -->
                         <?php if ($display_type === 'modal'): ?>
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#actionModal"
-                                data-action-title="<?php echo esc_attr(get_the_title()); ?>"
-                                style="cursor: pointer;">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#actionModal" data-action-title="<?php echo esc_attr(get_the_title()); ?>" class="action-card">
                                 <?php if (has_post_thumbnail()): ?>
-                                    <?php the_post_thumbnail('full', array('class' => 'img-fluid rounded w-100')); ?>
+                                    <img src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'full')); ?>"  class="img-fluid w-100"  alt="<?php echo esc_attr(get_the_title()); ?>">
                                 <?php endif; ?>
                             </a>
                         <!-- Иначе выводи ссылку на страницу акций -->
                         <?php else: ?>
-                            <a href="<?php the_permalink(); ?>">
+                            <a href="<?php the_permalink(); ?>" class="action-card">
                                 <?php if (has_post_thumbnail()): ?>
-                                    <?php the_post_thumbnail('full', array('class' => 'img-fluid rounded w-100')); ?>
+                                    <img src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'full')); ?>"  class="img-fluid w-100"  alt="<?php echo esc_attr(get_the_title()); ?>">
                                 <?php endif; ?>
                             </a>
                         <?php endif; ?>

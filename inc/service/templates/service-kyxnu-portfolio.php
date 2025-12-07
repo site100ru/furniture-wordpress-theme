@@ -24,8 +24,9 @@ include get_template_directory() . '/header.php';
                 <h1 class="home-title mb-3">Кухни по индивидуальным размерам на&#160;заказ от&#160;производителя</h1>
                 <p class="home-subtitle mb-4">Изготовим качественную кухню по разумной цене, с учетом Ваших пожеланий и
                     особенностей помещения. Рассчитаем стоимость за 15 минут.</p>
-                <a href="#" type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal"
-                    data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
+
+                <button type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</button>
+
             </div>
         </div>
     </div>
@@ -33,117 +34,17 @@ include get_template_directory() . '/header.php';
 <!-- /Home section -->
 
 
-<!-- Archive portfolio section -->
-<section class="archive-portfolio-section-2 pt-4 bg-white" style="margin-bottom: 60px;">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <nav class="breadcrumbs">
-                    <a href="/">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" fill="currentColor" viewBox="0 0 24 24" class="svg-icon">
-                            <path
-                                d="m21.71 11.29-9-9a1 1 0 0 0-1.42 0l-9 9a1 1 0 0 0 1.42 1.42l.29-.3v7.89A1.77 1.77 0 0 0 5.83 22H8.5a1 1 0 0 0 1-1v-4.9a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1V21a1 1 0 0 0 1 1h2.67A1.77 1.77 0 0 0 20 20.3v-7.89l.29.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42" />
-                        </svg>
-                    </a>
-                    /
-                    <a href="archive-product-portfolio.html" style="text-decoration: none;">Услуги</a> /
-                    Кухни на заказ
-                </nav>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col text-md-center">
-                <h2>Наши работы</h2>
-                <p class="section-description archive-portfolio mb-3">Представляем с гордостью!</p>
-                <svg width="62" height="14" viewBox="0 0 62 14" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon mb-5">
-                    <rect x="48" width="14" height="14" rx="3" />
-                    <rect x="24" width="14" height="14" rx="3" />
-                    <rect width="14" height="14" rx="3" />
-                </svg>
-            </div>
-        </div>
-        <!--div class="row text-md-center">
-            <div class="col mb-5">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                    <label class="form-check-label" for="inlineCheckbox1">Прямые</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">Угловые</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                    <label class="form-check-label" for="inlineCheckbox3">П-образные</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
-                    <label class="form-check-label" for="inlineCheckbox4">С барной стойкой</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
-                    <label class="form-check-label" for="inlineCheckbox5">С островком</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
-                    <label class="form-check-label" for="inlineCheckbox6">Трехрядные</label>
-                </div>
-            </div>
-        </div-->
-
-        <div class="row text-start">
-            <?php
-            $args = array(
-                'post_type' => 'product',
-                'tax_query' => array(
-                    array(
-                        'taxonomy' => 'product_tag',
-                        'field' => 'slug',
-                        'terms' => 'portfolio'
-                    )
-                )
-            );
-
-            $query = new WP_Query($args);
-
-            while ($query->have_posts()) {
-                $query->the_post();
-
-            ?>
-                <div class="col-md-6 mb-5">
-                    <a href="<?php echo get_permalink(); ?>">
-                        <!--div class="approximation single-product-img rounded"-->
-                        <div class="approximation project-container-2 rounded">
-                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="img-fluid" alt=""
-                                decoding="async" />
-                            <div class="card-wrapper project-container-2-footer">
-                                <div class="row card-portfolio">
-                                    <div class="col-6">
-                                        <h3><?php echo get_the_title(); ?></h3>
-                                    </div>
-                                    <div class="col-6">
-                                        <h3 class="text-end">
-                                            ₽<?php echo get_post_meta(get_the_ID(), '_regular_price', true); ?></h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            <?php }
-            wp_reset_postdata();
-            ?>
-        </div>
-        <div class="row text-md-center">
-            <div class="col">
-                <a href="/furniture/portfolio/" type="button" class="btn btn-lg btn-corporate-color-1">Показать
-                    еще</a>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- /Archive-portfolio section -->
-
+<?php 
+get_template_part('template-parts/archive-portfolio-slider/archive-portfolio-slider', null, [
+    'show_breadcrumbs' => true,
+    'breadcrumbs_text' => 'Кухни на заказ',
+    'title' => 'Наши работы',
+    'description' => 'Представляем с гордостью!',
+    'taxonomy_slug' => '01-kuhni',
+    'category_link' => '/portfolio-cat/01-kuhni/',
+    'posts_per_page' => 10
+]);
+?>
 
 <!-- Gradient order section -->
 <section class="gradient-order-section bg-light section-half"
@@ -161,22 +62,43 @@ include get_template_directory() . '/header.php';
                     <rect x="24" width="14" height="14" rx="3" />
                     <rect width="14" height="14" rx="3" />
                 </svg>
+
                 <br>
-                <a href="#" type="button" class="btn btn-lg btn-corporate-color-1 mb-4" data-bs-toggle="modal"
-                    data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
+
+                <button type="button" class="btn btn-lg btn-corporate-color-1 mb-4" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</button>
+
                 <div class="row justify-content-md-end">
                     <div class="col">
                         <ul class="nav justify-content-md-end gap-3">
+                            <?php
+                            // Получаем WhatsApp
+                            $whatsapp = '';
+                            if (function_exists('mytheme_get_whatsapp')) {
+                                $whatsapp = mytheme_get_whatsapp(true);
+                            }
+                            if (!empty($whatsapp)):
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link ico-button" href="https://wa.me/79361385058?web=1&amp;app_absent=1">
+                                <a class="nav-link ico-button" href="<?php echo esc_url($whatsapp); ?>">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/ico/whatsapp-ico.png" />
                                 </a>
                             </li>
+                            <?php endif; ?>
+
+                            <?php
+                            // Получаем Telegram
+                            $telegram = '';
+                            if (function_exists('mytheme_get_telegram')) {
+                                $telegram = mytheme_get_telegram();
+                            }
+                            if (!empty($telegram)):
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link ico-button" href="https://t.me/+79361385058">
+                                <a class="nav-link ico-button" href="<?php echo esc_url($telegram); ?>">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/ico/telegram-ico.png" />
                                 </a>
                             </li>
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </div>
@@ -487,22 +409,43 @@ include get_template_directory() . '/header.php';
                     <rect x="24" width="14" height="14" rx="3" />
                     <rect width="14" height="14" rx="3" />
                 </svg>
+
                 <br>
-                <a href="#" type="button" class="btn btn-lg btn-corporate-color-1 mb-4" data-bs-toggle="modal"
-                    data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
+
+                <button type="button" class="btn btn-lg btn-corporate-color-1 mb-4" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</button>
+
                 <div class="row justify-content-md-end">
                     <div class="col">
                         <ul class="nav justify-content-md-end gap-3">
+                            <?php
+                            // Получаем WhatsApp
+                            $whatsapp = '';
+                            if (function_exists('mytheme_get_whatsapp')) {
+                                $whatsapp = mytheme_get_whatsapp(true);
+                            }
+                            if (!empty($whatsapp)):
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link ico-button" href="https://wa.me/79361385058?web=1&amp;app_absent=1">
+                                <a class="nav-link ico-button" href="<?php echo esc_url($whatsapp); ?>">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/ico/whatsapp-ico.png" />
                                 </a>
                             </li>
+                            <?php endif; ?>
+
+                            <?php
+                            // Получаем Telegram
+                            $telegram = '';
+                            if (function_exists('mytheme_get_telegram')) {
+                                $telegram = mytheme_get_telegram();
+                            }
+                            if (!empty($telegram)):
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link ico-button" href="https://t.me/+79361385058">
+                                <a class="nav-link ico-button" href="<?php echo esc_url($telegram); ?>">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/ico/telegram-ico.png" />
                                 </a>
                             </li>
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </div>

@@ -458,6 +458,7 @@
 <!-- /CONTACTS SECTION 4 -->
 
 
+<?php get_template_part('template-parts/gallery/gallery-modal'); ?>
 
 <!-- Показываем сообщение об успешной отправки -->
 <div style="display: <?php echo $_SESSION['display'] ?>;" onclick="modalClose();">
@@ -469,7 +470,6 @@
         unset($_SESSION['recaptcha']); ?>
     </div>
 </div>
-
 
 
 <!-- Callback Modal -->
@@ -541,8 +541,7 @@
                     </div>
                     <div class="mb-3">
                         <div class="input-group custom-file-button">
-                            <label class="input-group-text" for="inputGroupFile"
-                                style="border-radius: 5px;">Прикрепить</label>
+                            <label class="input-group-text" for="inputGroupFile">Прикрепить</label>
                             <input type="file" name="file[]" class="form-control" id="inputGroupFile"
                                 accept=".jpg,.jpeg,.png,.pdf,.heic" multiple>
                         </div>
@@ -557,7 +556,6 @@
                     </div>
                     <div class="col-md-6">
                         <button type="submit"
-                            style="border-radius: 0.5rem; background-color: var(--corporate-color-1); border-color: var(--corporate-color-1);"
                             class="btn btn-lg btn-corporate-color-1">Отправить</button>
                     </div>
                 </div>

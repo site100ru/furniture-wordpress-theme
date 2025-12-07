@@ -23,8 +23,9 @@ include get_template_directory() . '/header.php';
                 <h1 class="home-title mb-3">Кухни по индивидуальным размерам на&#160;заказ от&#160;производителя</h1>
                 <p class="home-subtitle mb-4">Изготовим качественную кухню по разумной цене, с учетом Ваших пожеланий и
                     особенностей помещения. Рассчитаем стоимость за 15 минут.</p>
-                <a href="#" type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal"
-                    data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
+
+                <button type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</button>
+                
             </div>
         </div>
     </div>
@@ -32,331 +33,18 @@ include get_template_directory() . '/header.php';
 <!-- /Home section -->
 
 
-<!-- Archive portfolio section -->
-<section class="archive-portfolio-section-2 pt-4 bg-white" style="padding-bottom: 60px;">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <nav class="breadcrumbs">
-                    <a href="/">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" fill="currentColor" viewBox="0 0 24 24" class="svg-icon">
-                            <path
-                                d="m21.71 11.29-9-9a1 1 0 0 0-1.42 0l-9 9a1 1 0 0 0 1.42 1.42l.29-.3v7.89A1.77 1.77 0 0 0 5.83 22H8.5a1 1 0 0 0 1-1v-4.9a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1V21a1 1 0 0 0 1 1h2.67A1.77 1.77 0 0 0 20 20.3v-7.89l.29.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42" />
-                        </svg>
-                    </a>
-                    /
-                    Услуги /
-                    Кухни на заказ
-                </nav>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col text-md-center">
-                <h2>Наши работы</h2>
-                <p class="section-description archive-portfolio mb-3">Представляем с гордостью!</p>
-                <svg width="62" height="14" viewBox="0 0 62 14" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon mb-5">
-                    <rect x="48" width="14" height="14" rx="3" />
-                    <rect x="24" width="14" height="14" rx="3" />
-                    <rect width="14" height="14" rx="3" />
-                </svg>
-            </div>
-        </div>
-        <div class="row">
-            <?php
-            $args = [
-                'post_type' => 'portfolio',
-                'numberposts' => 10,
-                'posts_per_page' => 10,
-                'portfolio-cat' => '01-kuhni'
-            ];
 
-            $query = new WP_Query($args);
-            $count = 1;
-            while ($query->have_posts()):
-                $query->the_post(); ?>
-                <div class="col-md-6">
-                    <div id="carouselExampleIndicators<?php echo $post->ID; ?>" class="carousel slide mb-4"
-                        data-bs-ride="carousel" data-bs-interval="999999999">
-                        <div class="carousel-indicators" style="bottom: 5%;">
-                            <?php
-                            $count2 = 0;
-                            for ($i = 1; $i <= 9; $i++) {
-                                if (get_post_meta($post->ID, '_img-' . $i)) { ?>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators<?php echo $post->ID; ?>"
-                                        data-bs-slide-to="<?php echo $i - 1; ?>" <?php if ($i == 1)
-                                                                                        echo ' class="active"'; ?>
-                                        aria-current="true" aria-label="Slide <?php echo $i; ?>"></button>
-                            <?php $count2 = $count2 + 1;
-                                }
-                            }
-                            ?>
-                        </div>
-                        <div class="carousel-inner rounded">
-                            <?php
-                            $count2 = 0;
-                            for ($i = 1; $i <= 9; $i++) {
-                                if (get_post_meta($post->ID, '_img-' . $i)) { ?>
-                                    <div class="carousel-item <?php if ($i == 1)
-                                                                    echo ' active'; ?>" data-bs-interval="999999999">
-                                        <a
-                                            onClick="galleryOn('gallery-<?php echo $post->ID; ?>','img-<?php echo $post->ID; ?>-<?php echo $count2; ?>');">
-                                            <div class="single-product-img approximation">
-                                                <img src="<?php echo get_post_meta($post->ID, '_img-' . $i)[0]; ?>"
-                                                    class="shadow rounded" alt="..." loading="lazy">
-                                                <div class="magnifier"></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                            <?php $count2 = $count2 + 1;
-                                }
-                            }
-                            ?>
-                        </div>
-                        <button class="carousel-control-prev" type="button"
-                            data-bs-target="#carouselExampleIndicators<?php echo $post->ID; ?>" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Предыдущий</span>
-                        </button>
-                        <button class="carousel-control-next" type="button"
-                            data-bs-target="#carouselExampleIndicators<?php echo $post->ID; ?>" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Следующий</span>
-                        </button>
-                    </div>
-                </div>
-
-            <?php $count = $count + 1;
-            endwhile;
-
-            wp_reset_postdata();
-            ?>
-
-        </div>
-        <div class="row text-md-center">
-            <div class="col">
-                <a href="/furniture/portfolio-cat/01-kuhni/" type="button"
-                    class="btn btn-lg btn-corporate-color-1">Показать еще</a>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- /Archive-portfolio section -->
-
-<!-- Gallery wrapper-->
-<div id="galleryWrapper"
-    style="background: rgba(0,0,0,0.85); display: none; position: fixed; top: 0; bottom: 0; left: 0; right: 0; z-index: 9999;">
-    <?php
-    // параметры по умолчанию
-    $posts = get_posts(array(
-        'numberposts' => 999,
-        'orderby' => 'date',
-        'order' => 'DESC',
-        'post_type' => 'portfolio',
-    ));
-
-    foreach ($posts as $post) {
-        setup_postdata($post); ?>
-
-        <div id="gallery-<?php echo $post->ID; ?>" class="carousel slide" data-bs-ride="carousel"
-            style="display: none; position: fixed; top: 0; height: 100%; width: 100%;">
-            <div class="carousel-indicators">
-                <?php
-
-                /*
-                $images = get_post_gallery_images();
-                $count2 = 0;
-                foreach ( $images as $image ) {
-
-
-                    if ( $count2 == 0 ) { ?>
-
-                        <button id="ind-<?php echo $post->ID; ?>-<?php echo $count2; ?>" type="button" data-bs-target="#gallery-<?php echo $post->ID; ?>" data-bs-slide-to="<?php echo $count2; ?>" aria-label="Slide 3"></button>
-
-                    <?php $count2 = $count2 + 1; } else { ?>
-
-                        <button id="ind-<?php echo $post->ID; ?>-<?php echo $count2; ?>" type="button" data-bs-target="#gallery-<?php echo $post->ID; ?>" data-bs-slide-to="<?php echo $count2; ?>" aria-label="Slide 3"></button>
-
-                    <?php $count2 = $count2 + 1; }
-                }*/
-
-                $count2 = 0;
-                for ($i = 1; $i <= 9; $i++) {
-                    if (get_post_meta($post->ID, '_img-' . $i)) {
-                        if ($count2 == 0) { ?>
-
-                            <button id="ind-<?php echo $post->ID; ?>-<?php echo $count2; ?>" type="button"
-                                data-bs-target="#gallery-<?php echo $post->ID; ?>" data-bs-slide-to="<?php echo $count2; ?>"
-                                aria-label="Slide 3"></button>
-
-                        <?php $count2 = $count2 + 1;
-                        } else { ?>
-
-                            <button id="ind-<?php echo $post->ID; ?>-<?php echo $count2; ?>" type="button"
-                                data-bs-target="#gallery-<?php echo $post->ID; ?>" data-bs-slide-to="<?php echo $count2; ?>"
-                                aria-label="Slide 3"></button>
-
-                <?php $count2 = $count2 + 1;
-                        }
-                    }
-                }
-                ?>
-
-            </div>
-            <div class="carousel-inner h-100">
-                <?php
-
-                /*
-                $images = get_post_gallery_images();
-                $count2 = 0;
-                foreach ( $images as $image ) { ?>
-                    <div id="img-<?php echo $post->ID; ?>-<?php echo $count2; ?>" class="carousel-item h-100">
-                        <div class="row align-items-center h-100">
-                            <div class="col text-center">
-                                <img src="<?php echo $image; ?>" class="img-fluid" style="max-width: 90vw; max-height: 90vh;" alt="...">
-                            </div>
-                        </div>
-                    </div>
-
-                <?php  $count2 = $count2 + 1; } */
-
-
-                $count2 = 0;
-                for ($i = 1; $i <= 9; $i++) {
-                    if (get_post_meta($post->ID, '_img-' . $i)) { ?>
-                        <div id="img-<?php echo $post->ID; ?>-<?php echo $count2; ?>"
-                            class="carousel-item h-100 <?php // if ( $i == 1 ) echo ' active'; 
-                                                        ?>" data-bs-interval="999999999">
-                            <div class="row align-items-center h-100">
-                                <div class="col text-center">
-                                    <img src="<?php echo get_post_meta($post->ID, '_img-' . $i)[0]; ?>" class="img-fluid"
-                                        style="max-width: 90vw; max-height: 90vh;" alt="...">
-                                </div>
-                            </div>
-                        </div>
-                <?php $count2 = $count2 + 1;
-                    }
-                }
-
-                ?>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#gallery-<?php echo $post->ID; ?>"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Предыдущий</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#gallery-<?php echo $post->ID; ?>"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Следующий</span>
-            </button>
-        </div>
-    <?php }
-    wp_reset_postdata();
-    ?>
-
-    <!-- Кнопка закрытия галереи -->
-    <button type="button" onClick="closeGallery();" class="btn-close btn-close-white"
-        style="position: fixed; top: 25px; right: 25px; z-index: 99999;" aria-label="Close"></button>
-</div>
-
-
-<script>
-    /* Функция открытия галереи */
-    function galleryOn(gal, img) {
-        var gallery = gal; // Получаем ID галереи
-        var image = img; // Получаем ID картинки
-        // Открываем обертку галереи
-        document.getElementById('galleryWrapper').style.display = 'block';
-
-        // Проверяем какие данные передаются для открытия галереи и картинки
-        //alert(gallery+' '+image); 
-
-
-        <?php // Открываем галерею
-        $posts = get_posts(array(
-            'numberposts' => 999,
-            'orderby' => 'date',
-            'order' => 'DESC',
-            'post_type' => 'portfolio',
-            //'post__not_in' => array( 42 ) // Выводим все категории портфолио кроме Разное
-        ));
-
-        foreach ($posts as $post) {
-            setup_postdata($post);
-
-            echo 'if ( gallery == "gallery-' . $post->ID . '" ) { document.getElementById("gallery-' . $post->ID . '").style.display = "block"; }';
-        }
-        wp_reset_postdata();
-        ?>
-
-
-        <?php // Открываем изображения
-        $posts = get_posts(array(
-            'numberposts' => 999,
-            'orderby' => 'date',
-            'order' => 'DESC',
-            'post_type' => 'portfolio',
-            //'post__not_in' => array( 42 ) // Выводим все категории портфолио кроме Разное
-        ));
-
-        foreach ($posts as $post) {
-            setup_postdata($post);
-            $count2 = 0;
-            for ($i = 1; $i <= 9; $i++) {
-                echo 'if ( image == "img-' . $post->ID . '-' . $count2 . '" ) { document.getElementById("img-' . $post->ID . '-' . $count2 . '").classList.add("active"); document.getElementById("ind-' . $post->ID . '-' . $count2 . '").classList.add("active"); } ';
-                $count2 = $count2 + 1;
-            }
-        }
-        wp_reset_postdata();
-        ?>
-    }
-
-
-    // Кнопка закрытия галереи
-    function closeGallery() {
-        // Закрываем обертку галереи
-        document.getElementById('galleryWrapper').style.display = 'none';
-
-        <?php // Открываем галерею
-        $posts = get_posts(array(
-            'numberposts' => 999,
-            'orderby' => 'date',
-            'order' => 'DESC',
-            'post_type' => 'portfolio',
-            //'post__not_in' => array( 42 ) // Выводим все категории портфолио кроме Разное
-        ));
-
-        foreach ($posts as $post) {
-            setup_postdata($post);
-
-            echo 'document.getElementById("gallery-' . $post->ID . '").style.display = "none";';
-        }
-        wp_reset_postdata();
-        ?>
-
-        <?php
-        // Закрываем изображения
-        $posts = get_posts(array(
-            'numberposts' => 999,
-            'orderby' => 'date',
-            'order' => 'DESC',
-            'post_type' => 'portfolio',
-        ));
-
-        foreach ($posts as $post) {
-            setup_postdata($post);
-            $count2 = 0;
-            for ($i = 1; $i <= 9; $i++) {
-                echo 'document.getElementById("img-' . $post->ID . '-' . $count2 . '").classList.remove("active"); document.getElementById("ind-' . $post->ID . '-' . $count2 . '").classList.remove("active");';
-
-                $count2 = $count2 + 1;
-            }
-        }
-        wp_reset_postdata();
-        ?>
-    }
-</script>
-
+<?php 
+get_template_part('template-parts/archive-portfolio-slider/archive-portfolio-slider', null, [
+    'show_breadcrumbs' => true,
+    'breadcrumbs_text' => 'Кухни на заказ',
+    'title' => 'Наши работы',
+    'description' => 'Представляем с гордостью!',
+    'taxonomy_slug' => '01-kuhni',
+    'category_link' => '/portfolio-cat/01-kuhni/',
+    'posts_per_page' => 10
+]);
+?>
 
 <!-- Gradient order section --
 <section class="gradient-order-section bg-light" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/gradient-order-section-bg.webp);">
@@ -396,22 +84,43 @@ include get_template_directory() . '/header.php';
                     <rect x="24" width="14" height="14" rx="3" />
                     <rect width="14" height="14" rx="3" />
                 </svg>
+                
                 <br>
-                <a href="#" type="button" class="btn btn-lg btn-corporate-color-1 mb-4" data-bs-toggle="modal"
-                    data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
+
+                <button type="button" class="btn btn-lg btn-corporate-color-1 mb-4" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</button>
+
                 <div class="row justify-content-md-end">
                     <div class="col">
                         <ul class="nav justify-content-md-end gap-3">
+                            <?php
+                            // Получаем WhatsApp
+                            $whatsapp = '';
+                            if (function_exists('mytheme_get_whatsapp')) {
+                                $whatsapp = mytheme_get_whatsapp(true);
+                            }
+                            if (!empty($whatsapp)):
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link ico-button" href="https://wa.me/79361385058?web=1&amp;app_absent=1">
+                                <a class="nav-link ico-button" href="<?php echo esc_url($whatsapp); ?>">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/ico/whatsapp-ico.png" />
                                 </a>
                             </li>
+                            <?php endif; ?>
+
+                            <?php
+                            // Получаем Telegram
+                            $telegram = '';
+                            if (function_exists('mytheme_get_telegram')) {
+                                $telegram = mytheme_get_telegram();
+                            }
+                            if (!empty($telegram)):
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link ico-button" href="https://t.me/+79361385058">
+                                <a class="nav-link ico-button" href="<?php echo esc_url($telegram); ?>">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/ico/telegram-ico.png" />
                                 </a>
                             </li>
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </div>
@@ -742,22 +451,43 @@ include get_template_directory() . '/header.php';
                     <rect x="24" width="14" height="14" rx="3" />
                     <rect width="14" height="14" rx="3" />
                 </svg>
+
                 <br>
-                <a href="#" type="button" class="btn btn-lg btn-corporate-color-1 mb-4" data-bs-toggle="modal"
-                    data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
+
+                <button type="button" class="btn btn-lg btn-corporate-color-1 mb-4" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</button>
+
                 <div class="row justify-content-md-end">
                     <div class="col">
                         <ul class="nav justify-content-md-end gap-3">
+                            <?php
+                            // Получаем WhatsApp
+                            $whatsapp = '';
+                            if (function_exists('mytheme_get_whatsapp')) {
+                                $whatsapp = mytheme_get_whatsapp(true);
+                            }
+                            if (!empty($whatsapp)):
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link ico-button" href="https://wa.me/79361385058?web=1&amp;app_absent=1">
+                                <a class="nav-link ico-button" href="<?php echo esc_url($whatsapp); ?>">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/ico/whatsapp-ico.png" />
                                 </a>
                             </li>
+                            <?php endif; ?>
+
+                            <?php
+                            // Получаем Telegram
+                            $telegram = '';
+                            if (function_exists('mytheme_get_telegram')) {
+                                $telegram = mytheme_get_telegram();
+                            }
+                            if (!empty($telegram)):
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link ico-button" href="https://t.me/+79361385058">
+                                <a class="nav-link ico-button" href="<?php echo esc_url($telegram); ?>">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/ico/telegram-ico.png" />
                                 </a>
                             </li>
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </div>

@@ -7,23 +7,27 @@
  * Параметры:
  * $args['service_category']    - slug категории услуг (например: 'kuhni', 'shkafi'), если не указан - выводятся все услуги
  * $args['background_color']    - цвет фона (например: 'bg-white', 'bg-light', 'bg-dark'), по умолчанию 'bg-light'
+ * $args['card_type']           - тип карточки: 'approximation', 'zoom-card', 'hover-image', по умолчанию 'approximation'
  * 
  * Пример использования:
  * // Все услуги
  * <?php get_template_part('template-parts/section-services/section-services', null, array(
- *     'background_color' => 'bg-light'
+ *     'background_color' => 'bg-light',
+ *     'card_type' => 'approximation'
  * )); ?>
  * 
  * // Услуги конкретной категории
  * <?php get_template_part('template-parts/section-services/section-services', null, array(
  *     'service_category' => 'kuhni',
- *     'background_color' => 'bg-white'
+ *     'background_color' => 'bg-white',
+ *     'card_type' => 'zoom-card'
  * )); ?>
  */
 
 // Получаем параметры
 $service_category = isset($args['service_category']) ? $args['service_category'] : '';
 $background_color = isset($args['background_color']) ? $args['background_color'] : 'bg-light';
+$card_type = isset($args['card_type']) ? $args['card_type'] : 'approximation';
 
 // Формируем запрос услуг
 $services_args = array(
@@ -64,24 +68,19 @@ if ($services_query->have_posts()) :
             </div>
         </div>
         <div class="row text-start">
-            <?php while ($services_query->have_posts()) : $services_query->the_post(); ?>
+            <?php while ($services_query->have_posts()) : $services_query->the_post(); 
+                // Получаем изображение
+                $image = has_post_thumbnail() ? get_the_post_thumbnail_url(get_the_ID(), 'full') : '';
+            ?>
                 <div class="col-md-6 mb-5">
-                    <a href="<?php the_permalink(); ?>">
-                        <div class="approximation project-container-2 services">
-                            <?php if (has_post_thumbnail()) : ?>
-                                <?php the_post_thumbnail('full', array('class' => 'img-fluid', 'alt' => get_the_title())); ?>
-                            <?php else : ?>
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/default-service-image.webp" class="img-fluid" alt="<?php the_title(); ?>">
-                            <?php endif; ?>
-                            <div class="card-wrapper project-container-2-footer">
-                                <div class="row" style="height: 100%;">
-                                    <div class="col-6">
-                                        <h3 style="position: absolute; bottom: 0; width: 100%;"><?php the_title(); ?></h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                    <?php 
+                    get_template_part('template-parts/cards/card', null, array(
+                        'link' => get_permalink(),
+                        'image' => $image,
+                        'title' => get_the_title(),
+                        'card_type' => $card_type
+                    ));
+                    ?>
                 </div>
             <?php endwhile; ?>
         </div>

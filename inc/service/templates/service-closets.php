@@ -23,340 +23,24 @@ include get_template_directory() . '/header.php';
                 <h1 class="home-title mb-3">Шкафы по индивидуальным размерам на&#160;заказ от&#160;производителя</h1>
                 <p class="home-subtitle mb-4">Изготовим качественную кухню по разумной цене, с учетом Ваших пожеланий и
                     особенностей помещения. Рассчитаем стоимость за 15 минут.</p>
-                <a href="#" type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal"
-                    data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
+                <button type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</button>
             </div>
         </div>
     </div>
 </section>
 <!-- /Home section -->
 
-
-<!-- Archive portfolio section -->
-<section class="archive-portfolio-section-2 pt-4 bg-white" style="padding-bottom: 60px;">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <nav class="breadcrumbs">
-                    <a href="/">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" fill="currentColor" viewBox="0 0 24 24" class="svg-icon">
-                            <path
-                                d="m21.71 11.29-9-9a1 1 0 0 0-1.42 0l-9 9a1 1 0 0 0 1.42 1.42l.29-.3v7.89A1.77 1.77 0 0 0 5.83 22H8.5a1 1 0 0 0 1-1v-4.9a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1V21a1 1 0 0 0 1 1h2.67A1.77 1.77 0 0 0 20 20.3v-7.89l.29.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42" />
-                        </svg>
-                    </a>
-                    /
-                    Услуги /
-                    Шкафы на заказ
-                </nav>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col text-md-center">
-                <h2>Наши работы</h2>
-                <p class="section-description archive-portfolio mb-3">Представляем с гордостью!</p>
-                <svg width="62" height="14" viewBox="0 0 62 14" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon mb-5">
-                    <rect x="48" width="14" height="14" rx="3" />
-                    <rect x="24" width="14" height="14" rx="3" />
-                    <rect width="14" height="14" rx="3" />
-                </svg>
-            </div>
-        </div>
-        <div class="row">
-            <?php
-            $args = [
-                'post_type' => 'portfolio',
-                'numberposts' => 10,
-                'posts_per_page' => 10,
-                'portfolio-cat' => '06-shkafy'
-            ];
-
-            $query = new WP_Query($args);
-            $count = 1;
-            while ($query->have_posts()):
-                $query->the_post(); ?>
-                <div class="col-md-6">
-                    <div id="carouselExampleIndicators<?php echo $post->ID; ?>" class="carousel slide mb-4"
-                        data-bs-ride="carousel" data-bs-interval="999999999">
-                        <div class="carousel-indicators" style="bottom: 5%;">
-                            <?php
-                            $count2 = 0;
-                            for ($i = 1; $i <= 9; $i++) {
-                                if (get_post_meta($post->ID, '_img-' . $i)) { ?>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators<?php echo $post->ID; ?>"
-                                        data-bs-slide-to="<?php echo $i - 1; ?>" <?php if ($i == 1)
-                                                                                        echo ' class="active"'; ?>
-                                        aria-current="true" aria-label="Slide <?php echo $i; ?>"></button>
-                            <?php $count2 = $count2 + 1;
-                                }
-                            }
-                            ?>
-                        </div>
-                        <div class="carousel-inner rounded">
-                            <?php
-                            $count2 = 0;
-                            for ($i = 1; $i <= 9; $i++) {
-                                if (get_post_meta($post->ID, '_img-' . $i)) { ?>
-                                    <div class="carousel-item <?php if ($i == 1)
-                                                                    echo ' active'; ?>" data-bs-interval="999999999">
-                                        <a
-                                            onClick="galleryOn('gallery-<?php echo $post->ID; ?>','img-<?php echo $post->ID; ?>-<?php echo $count2; ?>');">
-                                            <div class="single-product-img approximation">
-                                                <img src="<?php echo get_post_meta($post->ID, '_img-' . $i)[0]; ?>"
-                                                    class="shadow rounded" alt="..." loading="lazy">
-                                                <div class="magnifier"></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                            <?php $count2 = $count2 + 1;
-                                }
-                            }
-                            ?>
-                        </div>
-                        <button class="carousel-control-prev" type="button"
-                            data-bs-target="#carouselExampleIndicators<?php echo $post->ID; ?>" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Предыдущий</span>
-                        </button>
-                        <button class="carousel-control-next" type="button"
-                            data-bs-target="#carouselExampleIndicators<?php echo $post->ID; ?>" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Следующий</span>
-                        </button>
-                    </div>
-                </div>
-
-            <?php $count = $count + 1;
-            endwhile;
-
-            wp_reset_postdata();
-            ?>
-
-        </div>
-        <div class="row text-md-center">
-            <div class="col">
-                <a href="/furniture/portfolio-cat/06-shkafy/" type="button"
-                    class="btn btn-lg btn-corporate-color-1">Показать
-                    еще</a>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- /Archive-portfolio section -->
-
-<!-- Gallery wrapper-->
-<div id="galleryWrapper"
-    style="background: rgba(0,0,0,0.85); display: none; position: fixed; top: 0; bottom: 0; left: 0; right: 0; z-index: 9999;">
-    <?php
-    // параметры по умолчанию
-    $posts = get_posts(array(
-        'numberposts' => 999,
-        'orderby' => 'date',
-        'order' => 'DESC',
-        'post_type' => 'portfolio',
-    ));
-
-    foreach ($posts as $post) {
-        setup_postdata($post); ?>
-
-        <div id="gallery-<?php echo $post->ID; ?>" class="carousel slide" data-bs-ride="carousel"
-            style="display: none; position: fixed; top: 0; height: 100%; width: 100%;">
-            <div class="carousel-indicators">
-                <?php
-
-                /*
-                $images = get_post_gallery_images();
-                $count2 = 0;
-                foreach ( $images as $image ) {
-
-
-                    if ( $count2 == 0 ) { ?>
-
-                        <button id="ind-<?php echo $post->ID; ?>-<?php echo $count2; ?>" type="button" data-bs-target="#gallery-<?php echo $post->ID; ?>" data-bs-slide-to="<?php echo $count2; ?>" aria-label="Slide 3"></button>
-
-                    <?php $count2 = $count2 + 1; } else { ?>
-
-                        <button id="ind-<?php echo $post->ID; ?>-<?php echo $count2; ?>" type="button" data-bs-target="#gallery-<?php echo $post->ID; ?>" data-bs-slide-to="<?php echo $count2; ?>" aria-label="Slide 3"></button>
-
-                    <?php $count2 = $count2 + 1; }
-                }*/
-
-                $count2 = 0;
-                for ($i = 1; $i <= 9; $i++) {
-                    if (get_post_meta($post->ID, '_img-' . $i)) {
-                        if ($count2 == 0) { ?>
-
-                            <button id="ind-<?php echo $post->ID; ?>-<?php echo $count2; ?>" type="button"
-                                data-bs-target="#gallery-<?php echo $post->ID; ?>" data-bs-slide-to="<?php echo $count2; ?>"
-                                aria-label="Slide 3"></button>
-
-                        <?php $count2 = $count2 + 1;
-                        } else { ?>
-
-                            <button id="ind-<?php echo $post->ID; ?>-<?php echo $count2; ?>" type="button"
-                                data-bs-target="#gallery-<?php echo $post->ID; ?>" data-bs-slide-to="<?php echo $count2; ?>"
-                                aria-label="Slide 3"></button>
-
-                <?php $count2 = $count2 + 1;
-                        }
-                    }
-                }
-                ?>
-
-            </div>
-            <div class="carousel-inner h-100">
-                <?php
-
-                /*
-                $images = get_post_gallery_images();
-                $count2 = 0;
-                foreach ( $images as $image ) { ?>
-                    <div id="img-<?php echo $post->ID; ?>-<?php echo $count2; ?>" class="carousel-item h-100">
-                        <div class="row align-items-center h-100">
-                            <div class="col text-center">
-                                <img src="<?php echo $image; ?>" class="img-fluid" style="max-width: 90vw; max-height: 90vh;" alt="...">
-                            </div>
-                        </div>
-                    </div>
-
-                <?php  $count2 = $count2 + 1; } */
-
-
-                $count2 = 0;
-                for ($i = 1; $i <= 9; $i++) {
-                    if (get_post_meta($post->ID, '_img-' . $i)) { ?>
-                        <div id="img-<?php echo $post->ID; ?>-<?php echo $count2; ?>"
-                            class="carousel-item h-100 <?php // if ( $i == 1 ) echo ' active'; 
-                                                        ?>" data-bs-interval="999999999">
-                            <div class="row align-items-center h-100">
-                                <div class="col text-center">
-                                    <img src="<?php echo get_post_meta($post->ID, '_img-' . $i)[0]; ?>" class="img-fluid"
-                                        style="max-width: 90vw; max-height: 90vh;" alt="...">
-                                </div>
-                            </div>
-                        </div>
-                <?php $count2 = $count2 + 1;
-                    }
-                }
-
-                ?>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#gallery-<?php echo $post->ID; ?>"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Предыдущий</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#gallery-<?php echo $post->ID; ?>"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Следующий</span>
-            </button>
-        </div>
-    <?php }
-    wp_reset_postdata();
-    ?>
-
-    <!-- Кнопка закрытия галереи -->
-    <button type="button" onClick="closeGallery();" class="btn-close btn-close-white"
-        style="position: fixed; top: 25px; right: 25px; z-index: 99999;" aria-label="Close"></button>
-</div>
-
-
-<script>
-    /* Функция открытия галереи */
-    function galleryOn(gal, img) {
-        var gallery = gal; // Получаем ID галереи
-        var image = img; // Получаем ID картинки
-        // Открываем обертку галереи
-        document.getElementById('galleryWrapper').style.display = 'block';
-
-        // Проверяем какие данные передаются для открытия галереи и картинки
-        //alert(gallery+' '+image); 
-
-
-        <?php // Открываем галерею
-        $posts = get_posts(array(
-            'numberposts' => 999,
-            'orderby' => 'date',
-            'order' => 'DESC',
-            'post_type' => 'portfolio',
-            //'post__not_in' => array( 42 ) // Выводим все категории портфолио кроме Разное
-        ));
-
-        foreach ($posts as $post) {
-            setup_postdata($post);
-
-            echo 'if ( gallery == "gallery-' . $post->ID . '" ) { document.getElementById("gallery-' . $post->ID . '").style.display = "block"; }';
-        }
-        wp_reset_postdata();
-        ?>
-
-
-        <?php // Открываем изображения
-        $posts = get_posts(array(
-            'numberposts' => 999,
-            'orderby' => 'date',
-            'order' => 'DESC',
-            'post_type' => 'portfolio',
-            //'post__not_in' => array( 42 ) // Выводим все категории портфолио кроме Разное
-        ));
-
-        foreach ($posts as $post) {
-            setup_postdata($post);
-            $count2 = 0;
-            for ($i = 1; $i <= 9; $i++) {
-                echo 'if ( image == "img-' . $post->ID . '-' . $count2 . '" ) { document.getElementById("img-' . $post->ID . '-' . $count2 . '").classList.add("active"); document.getElementById("ind-' . $post->ID . '-' . $count2 . '").classList.add("active"); } ';
-                $count2 = $count2 + 1;
-            }
-        }
-        wp_reset_postdata();
-        ?>
-    }
-
-
-    // Кнопка закрытия галереи
-    function closeGallery() {
-        // Закрываем обертку галереи
-        document.getElementById('galleryWrapper').style.display = 'none';
-
-        <?php // Открываем галерею
-        $posts = get_posts(array(
-            'numberposts' => 999,
-            'orderby' => 'date',
-            'order' => 'DESC',
-            'post_type' => 'portfolio',
-            //'post__not_in' => array( 42 ) // Выводим все категории портфолио кроме Разное
-        ));
-
-        foreach ($posts as $post) {
-            setup_postdata($post);
-
-            echo 'document.getElementById("gallery-' . $post->ID . '").style.display = "none";';
-        }
-        wp_reset_postdata();
-        ?>
-
-        <?php
-        // Закрываем изображения
-        $posts = get_posts(array(
-            'numberposts' => 999,
-            'orderby' => 'date',
-            'order' => 'DESC',
-            'post_type' => 'portfolio',
-        ));
-
-        foreach ($posts as $post) {
-            setup_postdata($post);
-            $count2 = 0;
-            for ($i = 1; $i <= 9; $i++) {
-                echo 'document.getElementById("img-' . $post->ID . '-' . $count2 . '").classList.remove("active"); document.getElementById("ind-' . $post->ID . '-' . $count2 . '").classList.remove("active");';
-
-                $count2 = $count2 + 1;
-            }
-        }
-        wp_reset_postdata();
-        ?>
-    }
-</script>
+<?php 
+get_template_part('template-parts/archive-portfolio-slider/archive-portfolio-slider', null, [
+    'show_breadcrumbs' => true,
+    'breadcrumbs_text' => 'Шкафы на заказ',
+    'title' => 'Наши работы',
+    'description' => 'Представляем с гордостью!',
+    'taxonomy_slug' => '06-shkafy',
+    'category_link' => '/portfolio-cat/06-shkafy/',
+    'posts_per_page' => 10
+]);
+?>
 
 <!-- Gradient order section -->
 <section class="gradient-order-section bg-light section-half"
@@ -374,22 +58,43 @@ include get_template_directory() . '/header.php';
                     <rect x="24" width="14" height="14" rx="3" />
                     <rect width="14" height="14" rx="3" />
                 </svg>
+                
                 <br>
-                <a href="#" type="button" class="btn btn-lg btn-corporate-color-1 mb-4" data-bs-toggle="modal"
-                    data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
+                
+                <button type="button" class="btn btn-lg btn-corporate-color-1 mb-4" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</button>
+                
                 <div class="row justify-content-md-end">
                     <div class="col">
                         <ul class="nav justify-content-md-end gap-3">
+                            <?php
+                            // Получаем WhatsApp
+                            $whatsapp = '';
+                            if (function_exists('mytheme_get_whatsapp')) {
+                                $whatsapp = mytheme_get_whatsapp(true);
+                            }
+                            if (!empty($whatsapp)):
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link ico-button" href="https://wa.me/79361385058?web=1&amp;app_absent=1">
+                                <a class="nav-link ico-button" href="<?php echo esc_url($whatsapp); ?>">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/ico/whatsapp-ico.png" />
                                 </a>
                             </li>
+                            <?php endif; ?>
+
+                            <?php
+                            // Получаем Telegram
+                            $telegram = '';
+                            if (function_exists('mytheme_get_telegram')) {
+                                $telegram = mytheme_get_telegram();
+                            }
+                            if (!empty($telegram)):
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link ico-button" href="https://t.me/+79361385058">
+                                <a class="nav-link ico-button" href="<?php echo esc_url($telegram); ?>">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/ico/telegram-ico.png" />
                                 </a>
                             </li>
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </div>
@@ -420,7 +125,7 @@ include get_template_directory() . '/header.php';
                     <div class="col-lg-6 mb-4">
                         <div class="row">
                             <div class="col-3 col-md-2">
-                                 <svg width="70" height="70" viewBox="0 0 70 70" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
+                                <svg width="70" height="70" viewBox="0 0 70 70" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
                                     <path
                                         d="M70 51.201V36.025H16.27V16.338h8.75v-8.75h28.574v15.45H30.383l-10.8 5.4 10.8 5.4h36.199v-10.8H55.645v-17.5H23.638l-9.42 9.282v21.205H0v15.176h14.219v13.262h41.426v-9.844h-2.051v7.793H16.27v-11.21zM29.531 31.085 24.1 28.369l5.432-2.716zm24.063.702H31.582v-2.324h22.012zm0-4.375H31.582v-2.324h22.012zm6.426-2.324h4.511v6.7H60.02zm-4.376 0h2.325v6.7h-2.325zM22.97 8.97v5.317h-5.181zM2.05 38.076h3.418v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h2.325v1.23h2.05v-1.23h2.325v3.418h2.05v-3.418h3.555v6.7H2.051zm0 11.074v-2.324h65.898v2.324z" />
                                     <path d="M63.3 28.37h-2.05v2.187h2.05z" />
@@ -428,9 +133,9 @@ include get_template_directory() . '/header.php';
                             </div>
                             <div class="col-9 col-md-10">
                                 <h3 class="advantage-title text-start">Замер и дизайн-проект бесплатно</h3>
-                                <p class="text-start">При заключении договора наш специалист бесплатно сделает замер и
-                                    разработает
-                                    дизайн-проект любого предмета мебели.</p>
+                                <p class="text-start">
+                                    При заключении договора наш специалист бесплатно сделает замер и разработает дизайн-проект любого предмета мебели.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -450,9 +155,9 @@ include get_template_directory() . '/header.php';
                             </div>
                             <div class="col-9 col-md-10">
                                 <h3 class="advantage-title text-start">Высокотехнологичное производство</h3>
-                                <p class="text-start">Вся наша мебель изготавливаются на современном оборудовании
-                                    фабрики Cucina, что
-                                    позволяет гарантировать нам высочайшее качество каждого изделия.</p>
+                                <p class="text-start">
+                                    Вся наша мебель изготавливаются на современном оборудовании фабрики Cucina, что позволяет гарантировать нам высочайшее качество каждого изделия.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -466,16 +171,16 @@ include get_template_directory() . '/header.php';
                             </div>
                             <div class="col-9 col-md-10">
                                 <h3 class="advantage-title text-start">Гарантия 2 года</h3>
-                                <p class="text-start">Мы даем максимальную гарантию на свою мебель, т.к. уверены в
-                                    профессионализме
-                                    своих сотрудников и используемых материалах.</p>
+                                <p class="text-start">
+                                    Мы даем максимальную гарантию на свою мебель, т.к. уверены в профессионализме своих сотрудников и используемых материалах.
+                                </p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 mb-4">
                         <div class="row">
                             <div class="col-3 col-md-2">
-                                 <svg width="65" height="65" viewBox="0 0 65 65" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
+                                <svg width="65" height="65" viewBox="0 0 65 65" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
                                     <path
                                         d="M40.05 23.97a1.03 1.03 0 0 0-.73-.313 1 1 0 0 0-.73.313L24.138 38.905a1.07 1.07 0 0 0-.315.758 1.1 1.1 0 0 0 .303.764 1.005 1.005 0 0 0 1.472-.013L40.05 25.478a1.07 1.07 0 0 0 .302-.754 1.1 1.1 0 0 0-.302-.754M26.933 31.125c.816 0 1.615-.25 2.294-.719a4.24 4.24 0 0 0 1.52-1.915 4.4 4.4 0 0 0 .235-2.465 4.3 4.3 0 0 0-1.13-2.185 4.1 4.1 0 0 0-2.114-1.168 4 4 0 0 0-2.385.243c-.755.323-1.4.87-1.853 1.571a4.37 4.37 0 0 0-.696 2.371 4.35 4.35 0 0 0 1.21 3.016c.774.8 1.824 1.25 2.919 1.251m0-6.4c.408 0 .807.125 1.147.359s.604.568.76.957a2.2 2.2 0 0 1 .118 1.233c-.08.414-.277.794-.565 1.093a2.05 2.05 0 0 1-1.058.584c-.4.082-.815.04-1.192-.122a2.1 2.1 0 0 1-.927-.786 2.185 2.185 0 0 1 .258-2.693c.387-.4.911-.625 1.459-.626M37.255 33.259c-.817 0-1.615.25-2.294.719a4.24 4.24 0 0 0-1.52 1.915 4.4 4.4 0 0 0-.236 2.465c.16.828.553 1.589 1.13 2.185a4.1 4.1 0 0 0 2.114 1.168c.801.165 1.632.08 2.386-.243s1.4-.87 1.853-1.571a4.37 4.37 0 0 0 .696-2.371 4.35 4.35 0 0 0-1.21-3.016 4.07 4.07 0 0 0-2.919-1.251m0 6.4c-.408 0-.808-.124-1.147-.359a2.1 2.1 0 0 1-.76-.957 2.2 2.2 0 0 1-.118-1.233c.08-.414.276-.794.565-1.093a2.04 2.04 0 0 1 1.057-.584c.4-.082.816-.04 1.193.122.377.161.7.435.927.786a2.185 2.185 0 0 1-.258 2.693c-.387.4-.912.625-1.459.626" />
                                     <path
@@ -486,9 +191,9 @@ include get_template_directory() . '/header.php';
                             </div>
                             <div class="col-9 col-md-10">
                                 <h3 class="advantage-title text-start">Скидка +10% при повторном обращении</h3>
-                                <p class="text-start">Мы изготавливаем любую корпусную мебель, а значит Вы можете
-                                    заказать у нас кухню,
-                                    шкаф, прихожую или другую мебель в квартиру в едином стиле по выгодной цене.</p>
+                                <p class="text-start">
+                                    Мы изготавливаем любую корпусную мебель, а значит Вы можете заказать у нас кухню, шкаф, прихожую или другую мебель в квартиру в едином стиле по выгодной цене.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -503,9 +208,7 @@ include get_template_directory() . '/header.php';
                             </div>
                             <div class="col-9 col-md-10">
                                 <h3 class="advantage-title text-start">Замер и дизайн-проект бесплатно</h3>
-                                <p class="text-start">При заключении договора наш специалист бесплатно сделает замер и
-                                    разработает
-                                    дизайн-проект Вашей будущей кухни</p>
+                                <p class="text-start">При заключении договора наш специалист бесплатно сделает замер и разработает дизайн-проект Вашей будущей кухни</p>
                             </div>
                         </div>
                     </div>
@@ -525,9 +228,7 @@ include get_template_directory() . '/header.php';
                             </div>
                             <div class="col-9 col-md-10">
                                 <h3 class="advantage-title text-start">Собственное производство</h3>
-                                <p class="text-start">Мы обеспечиваем полный цикл изготовления кухни (проект,
-                                    производство, доставка,
-                                    монтаж), без перекладывания обязанностей на посредников.</p>
+                                <p class="text-start">Мы обеспечиваем полный цикл изготовления кухни (проект, производство, доставка, монтаж), без перекладывания обязанностей на посредников.</p>
                             </div>
                         </div>
                     </div>
@@ -560,26 +261,22 @@ include get_template_directory() . '/header.php';
                         </div>
                         <div class="col-4">
                             <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" viewBox="0 0 70 70" class="svg-icon">
-    <path
-        d="M58.288 45.4a1.06 1.06 0 0 1-1.054-1.055V23.394a1.054 1.054 0 0 1 1.054-1.054 11.534 11.534 0 0 1 0 23.06m1.054-20.901v18.699a9.426 9.426 0 0 0 0-18.7M12.356 45.4a11.533 11.533 0 1 1 0-23.06 1.054 1.054 0 0 1 1.054 1.054v20.951a1.063 1.063 0 0 1-1.054 1.054m-1.054-20.901a9.426 9.426 0 0 0 0 18.699zM38.67 65.799h-6.697a3.934 3.934 0 0 1-3.8-5.48 3.935 3.935 0 0 1 3.8-2.382h6.698a3.935 3.935 0 0 1 0 7.862m-6.697-5.737a1.827 1.827 0 1 0 0 3.655h6.698a1.827 1.827 0 0 0 0-3.655z" />
-    <path
-        d="M8.064 25.366a.9.9 0 0 1-.332-.06 1.054 1.054 0 0 1-.671-1.326 29.749 29.749 0 0 1 56.514 0 1.054 1.054 0 0 1-1.998.655 27.633 27.633 0 0 0-52.519 0 1.05 1.05 0 0 1-.994.73M41.68 62.22a1.054 1.054 0 0 1-.23-2.073 27.57 27.57 0 0 0 19.584-16.872 1.056 1.056 0 0 1 1.963.773 29.67 29.67 0 0 1-21.122 18.147q-.097.022-.195.026" />
-    <path
-        d="M35.322 52.939a19.736 19.736 0 1 1 19.736-19.736 19.76 19.76 0 0 1-19.736 19.736m0-37.399A17.637 17.637 0 1 0 52.95 33.203a17.645 17.645 0 0 0-17.628-17.629z" />
-    <path
-        d="M24.842 35.49a2.091 2.091 0 1 1 0-4.184 2.091 2.091 0 0 1 0 4.183M45.241 35.49a2.09 2.09 0 1 1 0-4.182 2.09 2.09 0 0 1 0 4.181M35.322 45.357a6.044 6.044 0 0 1-6.035-6.035 1.052 1.052 0 0 1 1.828-.805 1.05 1.05 0 0 1 .272.805 3.935 3.935 0 1 0 7.87 0 1.054 1.054 0 0 1 2.108 0 6.05 6.05 0 0 1-6.043 6.035M40.311 29.667a1 1 0 0 1-.272 0 29 29 0 0 1-7.938-3.952c-.34-.221-.663-.434-.97-.62a2.74 2.74 0 0 0 0 1.759 1.054 1.054 0 0 1-.934 1.7c-4.522-.408-7.446-3.264-9.707-6.01a1.078 1.078 0 0 1 .486-1.727 1.08 1.08 0 0 1 1.155.325c2.37 2.873 4.428 4.403 6.8 5.006q.015-.901.195-1.785c.068-.39.136-.748.161-1.062a1.04 1.04 0 0 1 .527-.85 1.05 1.05 0 0 1 .978 0q1.265.664 2.447 1.47a34.6 34.6 0 0 0 5.483 3.06v-.093a8.5 8.5 0 0 1-.697-2.941 1.055 1.055 0 0 1 1.81-.79c2.474 2.626 8.05 3.153 11.9 1.13a1.055 1.055 0 1 1 .994 1.861 13.96 13.96 0 0 1-11.9.28c.253.644.444 1.31.57 1.99a1.054 1.054 0 0 1-.672 1.19 1 1 0 0 1-.416.06" />
-</svg>
+                                <path
+                                    d="M58.288 45.4a1.06 1.06 0 0 1-1.054-1.055V23.394a1.054 1.054 0 0 1 1.054-1.054 11.534 11.534 0 0 1 0 23.06m1.054-20.901v18.699a9.426 9.426 0 0 0 0-18.7M12.356 45.4a11.533 11.533 0 1 1 0-23.06 1.054 1.054 0 0 1 1.054 1.054v20.951a1.063 1.063 0 0 1-1.054 1.054m-1.054-20.901a9.426 9.426 0 0 0 0 18.699zM38.67 65.799h-6.697a3.934 3.934 0 0 1-3.8-5.48 3.935 3.935 0 0 1 3.8-2.382h6.698a3.935 3.935 0 0 1 0 7.862m-6.697-5.737a1.827 1.827 0 1 0 0 3.655h6.698a1.827 1.827 0 0 0 0-3.655z" />
+                                <path
+                                    d="M8.064 25.366a.9.9 0 0 1-.332-.06 1.054 1.054 0 0 1-.671-1.326 29.749 29.749 0 0 1 56.514 0 1.054 1.054 0 0 1-1.998.655 27.633 27.633 0 0 0-52.519 0 1.05 1.05 0 0 1-.994.73M41.68 62.22a1.054 1.054 0 0 1-.23-2.073 27.57 27.57 0 0 0 19.584-16.872 1.056 1.056 0 0 1 1.963.773 29.67 29.67 0 0 1-21.122 18.147q-.097.022-.195.026" />
+                                <path
+                                    d="M35.322 52.939a19.736 19.736 0 1 1 19.736-19.736 19.76 19.76 0 0 1-19.736 19.736m0-37.399A17.637 17.637 0 1 0 52.95 33.203a17.645 17.645 0 0 0-17.628-17.629z" />
+                                <path
+                                    d="M24.842 35.49a2.091 2.091 0 1 1 0-4.184 2.091 2.091 0 0 1 0 4.183M45.241 35.49a2.09 2.09 0 1 1 0-4.182 2.09 2.09 0 0 1 0 4.181M35.322 45.357a6.044 6.044 0 0 1-6.035-6.035 1.052 1.052 0 0 1 1.828-.805 1.05 1.05 0 0 1 .272.805 3.935 3.935 0 1 0 7.87 0 1.054 1.054 0 0 1 2.108 0 6.05 6.05 0 0 1-6.043 6.035M40.311 29.667a1 1 0 0 1-.272 0 29 29 0 0 1-7.938-3.952c-.34-.221-.663-.434-.97-.62a2.74 2.74 0 0 0 0 1.759 1.054 1.054 0 0 1-.934 1.7c-4.522-.408-7.446-3.264-9.707-6.01a1.078 1.078 0 0 1 .486-1.727 1.08 1.08 0 0 1 1.155.325c2.37 2.873 4.428 4.403 6.8 5.006q.015-.901.195-1.785c.068-.39.136-.748.161-1.062a1.04 1.04 0 0 1 .527-.85 1.05 1.05 0 0 1 .978 0q1.265.664 2.447 1.47a34.6 34.6 0 0 0 5.483 3.06v-.093a8.5 8.5 0 0 1-.697-2.941 1.055 1.055 0 0 1 1.81-.79c2.474 2.626 8.05 3.153 11.9 1.13a1.055 1.055 0 1 1 .994 1.861 13.96 13.96 0 0 1-11.9.28c.253.644.444 1.31.57 1.99a1.054 1.054 0 0 1-.672 1.19 1 1 0 0 1-.416.06" />
+                            </svg>
                         </div>
                     </div>
                     <div class="row pt-3">
                         <div class="col text-start">
                             <h3>Первичный контакт</h3>
                             <p class="mb-0">
-                                Свяжитесь с нами любым удобным способом, расскажите, что Вы хотите. При наличии
-                                дизайн-проекта,
-                                набросок, размеров или другой информации — высылаете нам на почту, в Telegram, Whatsapp
-                                или в форме
-                                обратной связи.
+                                Свяжитесь с нами любым удобным способом, расскажите, что Вы хотите. При наличии дизайн-проекта, набросок, размеров или другой информации — высылаете нам на почту, в Telegram, Whatsapp или в форме обратной связи.
                             </p>
                         </div>
                     </div>
@@ -608,9 +305,7 @@ include get_template_directory() . '/header.php';
                         <div class="col text-start">
                             <h3>Расчет стоимости</h3>
                             <p class="mb-0">
-                                На основании полученой от Вас информации мы сделаем предварительный расчет стоимости и
-                                сроков
-                                производства. При необходимости уточняемм детали.
+                                На основании полученой от Вас информации мы сделаем предварительный расчет стоимости и сроков производства. При необходимости уточняемм детали.
                             </p>
                         </div>
                     </div>
@@ -633,9 +328,7 @@ include get_template_directory() . '/header.php';
                         <div class="col text-start">
                             <h3>Заключение договора</h3>
                             <p class="mb-0">
-                                Если Вас все устраивает, мы приезжаем к Вам на замер, утверждаем сроки, материалы,
-                                заключаем договор. Вы
-                                вносите предоплату и кухня поступает в производство.
+                                Если Вас все устраивает, мы приезжаем к Вам на замер, утверждаем сроки, материалы, заключаем договор. Вы вносите предоплату и кухня поступает в производство.
                             </p>
                         </div>
                     </div>
@@ -647,22 +340,20 @@ include get_template_directory() . '/header.php';
                         </div>
                         <div class="col-4">
                             <svg width="70" height="70" viewBox="0 0 70 70" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
-    <path
-        d="M22.58 48.01a4.525 4.525 0 0 0 0 9.05 4.525 4.525 0 0 0 0-9.05m0 6.788a2.263 2.263 0 0 1 0-4.525 2.263 2.263 0 0 1 0 4.525M49.677 48.01a4.525 4.525 0 0 0 0 9.05 4.525 4.525 0 0 0 0-9.05m0 6.788a2.263 2.263 0 0 1 0-4.525 2.263 2.263 0 0 1 0 4.525" />
-    <path
-        d="M67.742 36.905v-9.072a5.66 5.66 0 0 0-.883-3.037L60.327 14.51a3.37 3.37 0 0 0-2.857-1.572h-7.793V8.414h-37.01l-1.694 6.788h3.491l-.393 2.263H4.516v2.262h9.163l-.787 4.525H4.516v2.263H12.5l-.785 4.525H4.516v2.263h6.806l-.982 5.657H8.036l-1.13 9.05h-.132a2.263 2.263 0 0 0-2.258 2.263v4.525a2.263 2.263 0 0 0 2.258 2.262h7.996c1.565 2.701 4.475 4.526 7.81 4.526s6.247-1.825 7.811-4.526h11.477c1.565 2.701 4.475 4.526 7.81 4.526s6.247-1.825 7.811-4.526h8.91l3.577-16.732.024-.237a3.39 3.39 0 0 0-2.258-3.186M57.47 15.202c.387 0 .744.196.952.524l6.532 10.286c.347.544.53 1.174.53 1.821v8.864H61.17l-.452 2.262H42.903V16.333c0-.624.507-1.131 1.13-1.131zm-43.04-4.525h32.99v2.262H13.864zm2.326 4.525h24.097a3.4 3.4 0 0 0-.208 1.131V38.96H12.633zm-6.727 26.02h50.239l-1.355 6.788h-1.426c-1.565-2.7-4.475-4.525-7.81-4.525s-6.247 1.824-7.811 4.525H30.39c-1.564-2.7-4.475-4.525-7.81-4.525s-6.246 1.824-7.811 4.525H9.181zM6.774 54.798v-4.525h7.071a9 9 0 0 0-.297 2.262c0 .783.11 1.538.297 2.263zm15.807 4.525c-3.736 0-6.775-3.044-6.775-6.788 0-3.743 3.039-6.788 6.775-6.788s6.774 3.045 6.774 6.788-3.038 6.788-6.774 6.788m8.735-4.525c.187-.725.297-1.48.297-2.263s-.11-1.537-.297-2.262h9.627a9 9 0 0 0-.298 2.262c0 .783.11 1.538.297 2.263zm18.361 4.525c-3.736 0-6.774-3.044-6.774-6.788 0-3.743 3.038-6.788 6.774-6.788s6.775 3.045 6.775 6.788-3.038 6.788-6.775 6.788m14.893-4.525h-6.159c.189-.725.299-1.48.299-2.263s-.11-1.537-.297-2.262h2.351l2.258-11.314h3.59c.59 0 1.076.454 1.126 1.032z" />
-    <path
-        d="m63.226 27.322-6.149-9.857H45.161v14.707h18.065zm-2.258 2.587H47.419V19.728h8.407l5.142 8.243zM45.161 34.435h6.774v2.262h-6.774zM0 17.465h2.258v2.262H0zM0 24.252h2.258v2.263H0zM0 31.04h2.258v2.263H0z" />
-</svg>
+                                <path
+                                    d="M22.58 48.01a4.525 4.525 0 0 0 0 9.05 4.525 4.525 0 0 0 0-9.05m0 6.788a2.263 2.263 0 0 1 0-4.525 2.263 2.263 0 0 1 0 4.525M49.677 48.01a4.525 4.525 0 0 0 0 9.05 4.525 4.525 0 0 0 0-9.05m0 6.788a2.263 2.263 0 0 1 0-4.525 2.263 2.263 0 0 1 0 4.525" />
+                                <path
+                                    d="M67.742 36.905v-9.072a5.66 5.66 0 0 0-.883-3.037L60.327 14.51a3.37 3.37 0 0 0-2.857-1.572h-7.793V8.414h-37.01l-1.694 6.788h3.491l-.393 2.263H4.516v2.262h9.163l-.787 4.525H4.516v2.263H12.5l-.785 4.525H4.516v2.263h6.806l-.982 5.657H8.036l-1.13 9.05h-.132a2.263 2.263 0 0 0-2.258 2.263v4.525a2.263 2.263 0 0 0 2.258 2.262h7.996c1.565 2.701 4.475 4.526 7.81 4.526s6.247-1.825 7.811-4.526h11.477c1.565 2.701 4.475 4.526 7.81 4.526s6.247-1.825 7.811-4.526h8.91l3.577-16.732.024-.237a3.39 3.39 0 0 0-2.258-3.186M57.47 15.202c.387 0 .744.196.952.524l6.532 10.286c.347.544.53 1.174.53 1.821v8.864H61.17l-.452 2.262H42.903V16.333c0-.624.507-1.131 1.13-1.131zm-43.04-4.525h32.99v2.262H13.864zm2.326 4.525h24.097a3.4 3.4 0 0 0-.208 1.131V38.96H12.633zm-6.727 26.02h50.239l-1.355 6.788h-1.426c-1.565-2.7-4.475-4.525-7.81-4.525s-6.247 1.824-7.811 4.525H30.39c-1.564-2.7-4.475-4.525-7.81-4.525s-6.246 1.824-7.811 4.525H9.181zM6.774 54.798v-4.525h7.071a9 9 0 0 0-.297 2.262c0 .783.11 1.538.297 2.263zm15.807 4.525c-3.736 0-6.775-3.044-6.775-6.788 0-3.743 3.039-6.788 6.775-6.788s6.774 3.045 6.774 6.788-3.038 6.788-6.774 6.788m8.735-4.525c.187-.725.297-1.48.297-2.263s-.11-1.537-.297-2.262h9.627a9 9 0 0 0-.298 2.262c0 .783.11 1.538.297 2.263zm18.361 4.525c-3.736 0-6.774-3.044-6.774-6.788 0-3.743 3.038-6.788 6.774-6.788s6.775 3.045 6.775 6.788-3.038 6.788-6.775 6.788m14.893-4.525h-6.159c.189-.725.299-1.48.299-2.263s-.11-1.537-.297-2.262h2.351l2.258-11.314h3.59c.59 0 1.076.454 1.126 1.032z" />
+                                <path
+                                    d="m63.226 27.322-6.149-9.857H45.161v14.707h18.065zm-2.258 2.587H47.419V19.728h8.407l5.142 8.243zM45.161 34.435h6.774v2.262h-6.774zM0 17.465h2.258v2.262H0zM0 24.252h2.258v2.263H0zM0 31.04h2.258v2.263H0z" />
+                            </svg>
                         </div>
                     </div>
                     <div class="row pt-3">
                         <div class="col text-start">
                             <h3>Доставка и установка</h3>
                             <p class="mb-0">
-                                После окончания производства доставляем и устанавливаем кухню в заранее оговоренные дату
-                                и время. После
-                                установки производим окончательные расчеты.
+                                После окончания производства доставляем и устанавливаем кухню в заранее оговоренные дату и время. После установки производим окончательные расчеты.
                             </p>
                         </div>
                     </div>
@@ -696,22 +387,43 @@ include get_template_directory() . '/header.php';
                     <rect x="24" width="14" height="14" rx="3" />
                     <rect width="14" height="14" rx="3" />
                 </svg>
+                
                 <br>
-                <a href="#" type="button" class="btn btn-lg btn-corporate-color-1 mb-4" data-bs-toggle="modal"
-                    data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
+
+                <button type="button" class="btn btn-lg btn-corporate-color-1 mb-4" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</button>
+
                 <div class="row justify-content-md-end">
                     <div class="col">
                         <ul class="nav justify-content-md-end gap-3">
+                            <?php
+                            // Получаем WhatsApp
+                            $whatsapp = '';
+                            if (function_exists('mytheme_get_whatsapp')) {
+                                $whatsapp = mytheme_get_whatsapp(true);
+                            }
+                            if (!empty($whatsapp)):
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link ico-button" href="https://wa.me/79361385058?web=1&amp;app_absent=1">
+                                <a class="nav-link ico-button" href="<?php echo esc_url($whatsapp); ?>">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/ico/whatsapp-ico.png" />
                                 </a>
                             </li>
+                            <?php endif; ?>
+
+                            <?php
+                            // Получаем Telegram
+                            $telegram = '';
+                            if (function_exists('mytheme_get_telegram')) {
+                                $telegram = mytheme_get_telegram();
+                            }
+                            if (!empty($telegram)):
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link ico-button" href="https://t.me/+79361385058">
+                                <a class="nav-link ico-button" href="<?php echo esc_url($telegram); ?>">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/ico/telegram-ico.png" />
                                 </a>
                             </li>
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </div>

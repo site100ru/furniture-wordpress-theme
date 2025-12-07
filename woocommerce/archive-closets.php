@@ -33,11 +33,12 @@ do_action('woocommerce_before_main_content');
         <div class="row align-items-center home-section-height">
             <div class="col-xl-10 col-xxl-9">
                 <h1 class="home-title mb-3">Каталог шкафов по индивидуальным размерам на заказ от производителя</h1>
-                <p class="home-subtitle mb-4">Изготовим качественный шкаф с учетом Ваших пожеланий и особенностей
-                    помещения.
-                    Рассчитаем стоимость за 15 минут.</p>
-                <a href="#" type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal"
-                    data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
+                <p class="home-subtitle mb-4">
+                    Изготовим качественный шкаф с учетом Ваших пожеланий и особенностей помещения. Рассчитаем стоимость за 15 минут.
+                </p>
+
+                <button type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</button>
+
             </div>
         </div>
     </div>
@@ -172,14 +173,14 @@ do_action('woocommerce_before_main_content');
 <!-- /ARCHIVE PRODUCT SECTION -->
 
 
-
 <!-- SECTION PORTFOLIO -->
-<?php  get_template_part('template-parts/section-portfolio/section-portfolio-one-tab', null, [
+<?php get_template_part('template-parts/section-portfolio-tabs/section-portfolio-one-tab', null, array(
     'category' => '06-shkafy',
     'title' => 'Последние выполненные работы',
-    'bg_class' => 'bg-light',
-    'posts_count' => 6
-]); ?>
+    'background_color' => 'bg-white',
+    'posts_count' => 6,
+    'card_type' => 'approximation'
+)); ?>
 
 <!-- END SECTION PORTFOLIO -->
 
@@ -194,31 +195,51 @@ do_action('woocommerce_before_main_content');
         <div class="row justify-content-center">
             <div class="col-md-5 text-md-end">
                 <h2 class="text-light">Рассчитаем стоимость за 15 минут</h2>
-                <p class="section-description archive-portfolio text-light mb-3">Хотите узнать стоимость качественной
-                    кухни с
-                    учетом всех Ваших пожеланий и особенностей помещения? Это бесплатно и ни к чему Вас не обязывает!
+                <p class="section-description archive-portfolio text-light mb-3">
+                    Хотите узнать стоимость качественной кухни с учетом всех Ваших пожеланий и особенностей помещения? Это бесплатно и ни к чему Вас не обязывает!
                 </p>
                 <svg width="62" height="14" viewBox="0 0 62 14" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon mb-5">
                     <rect x="48" width="14" height="14" rx="3" />
                     <rect x="24" width="14" height="14" rx="3" />
                     <rect width="14" height="14" rx="3" />
                 </svg>
+
                 <br>
-                <a href="#" type="button" class="btn btn-lg btn-corporate-color-1 mb-4" data-bs-toggle="modal"
-                    data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
+                
+                <button type="button" class="btn btn-lg btn-corporate-color-1 mb-4" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</button>
+
                 <div class="row justify-content-md-end">
                     <div class="col">
                         <ul class="nav justify-content-md-end gap-3">
+                            <?php
+                            // Получаем WhatsApp
+                            $whatsapp = '';
+                            if (function_exists('mytheme_get_whatsapp')) {
+                                $whatsapp = mytheme_get_whatsapp(true);
+                            }
+                            if (!empty($whatsapp)):
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link ico-button" href="https://wa.me/79361385058?web=1&amp;app_absent=1">
+                                <a class="nav-link ico-button" href="<?php echo esc_url($whatsapp); ?>">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/ico/whatsapp-ico.png" />
                                 </a>
                             </li>
+                            <?php endif; ?>
+
+                            <?php
+                            // Получаем Telegram
+                            $telegram = '';
+                            if (function_exists('mytheme_get_telegram')) {
+                                $telegram = mytheme_get_telegram();
+                            }
+                            if (!empty($telegram)):
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link ico-button" href="https://t.me/+79361385058">
+                                <a class="nav-link ico-button" href="<?php echo esc_url($telegram); ?>">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/ico/telegram-ico.png" />
                                 </a>
                             </li>
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </div>
@@ -519,30 +540,51 @@ do_action('woocommerce_before_main_content');
         <div class="row justify-content-center">
             <div class="col-md-5 text-md-end">
                 <h2>Рассчитаем стоимость за 15 минут</h2>
-                <p class="section-description archive-portfolio mb-3">Хотите узнать стоимость качественной кухни с
-                    учетом всех
-                    Ваших пожеланий и особенностей помещения? Это бесплатно и ни к чему Вас не обязывает!</p>
+                <p class="section-description archive-portfolio mb-3">
+                    Хотите узнать стоимость качественной кухни с учетом всех Ваших пожеланий и особенностей помещения? Это бесплатно и ни к чему Вас не обязывает!
+                </p>
                 <svg width="62" height="14" viewBox="0 0 62 14" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon mb-5">
                     <rect x="48" width="14" height="14" rx="3" />
                     <rect x="24" width="14" height="14" rx="3" />
                     <rect width="14" height="14" rx="3" />
                 </svg>
+
                 <br>
-                <a href="#" type="button" class="btn btn-lg btn-corporate-color-1 mb-4" data-bs-toggle="modal"
-                    data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
+                
+                <button type="button" class="btn btn-lg btn-corporate-color-1 mb-4" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</button>
+
                 <div class="row justify-content-md-end">
                     <div class="col">
                         <ul class="nav justify-content-md-end gap-3">
+                            <?php
+                            // Получаем WhatsApp
+                            $whatsapp = '';
+                            if (function_exists('mytheme_get_whatsapp')) {
+                                $whatsapp = mytheme_get_whatsapp(true);
+                            }
+                            if (!empty($whatsapp)):
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link ico-button" href="https://wa.me/79361385058?web=1&amp;app_absent=1">
+                                <a class="nav-link ico-button" href="<?php echo esc_url($whatsapp); ?>">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/ico/whatsapp-ico.png" />
                                 </a>
                             </li>
+                            <?php endif; ?>
+
+                            <?php
+                            // Получаем Telegram
+                            $telegram = '';
+                            if (function_exists('mytheme_get_telegram')) {
+                                $telegram = mytheme_get_telegram();
+                            }
+                            if (!empty($telegram)):
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link ico-button" href="https://t.me/+79361385058">
+                                <a class="nav-link ico-button" href="<?php echo esc_url($telegram); ?>">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/ico/telegram-ico.png" />
                                 </a>
                             </li>
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </div>

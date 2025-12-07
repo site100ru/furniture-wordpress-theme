@@ -52,7 +52,7 @@ include 'header.php';
             <div class="col">
                 <div class="row">
                     <div class="col text-md-center">
-                        <h2 class="mb-3">Наши работы</h2>
+                        <h2>Наши работы</h2>
                         <svg width="62" height="14" viewBox="0 0 62 14" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon mb-5">
                             <rect x="48" width="14" height="14" rx="3" />
                             <rect x="24" width="14" height="14" rx="3" />
@@ -119,10 +119,21 @@ include 'header.php';
                     $query = new WP_Query($args);
                     $count = 1;
                     while ($query->have_posts()):
-                        $query->the_post(); ?>
+                        $query->the_post();
+                        
+                        // Подсчитываем количество изображений
+                        $images_count = 0;
+                        for ($i = 1; $i <= 9; $i++) {
+                            if (get_post_meta($post->ID, '_img-' . $i)) {
+                                $images_count++;
+                            }
+                        }
+                        ?>
                         <div class="col-md-6">
                             <div id="carouselExampleIndicators<?php echo $post->ID; ?>" class="carousel slide mb-4"
                                 data-bs-ride="carousel" data-bs-interval="999999999">
+                                
+                                <?php if ($images_count > 1) : ?>
                                 <div class="carousel-indicators" style="bottom: 5%;">
                                     <?php
                                     $count2 = 0;
@@ -137,6 +148,8 @@ include 'header.php';
                                     }
                                     ?>
                                 </div>
+                                <?php endif; ?>
+                                
                                 <div class="carousel-inner rounded">
                                     <?php
                                     $count2 = 0;
@@ -156,6 +169,8 @@ include 'header.php';
                                     }
                                     ?>
                                 </div>
+                                
+                                <?php if ($images_count > 1) : ?>
                                 <button class="carousel-control-prev" type="button"
                                     data-bs-target="#carouselExampleIndicators<?php echo $post->ID; ?>"
                                     data-bs-slide="prev">
@@ -168,6 +183,7 @@ include 'header.php';
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Следующий</span>
                                 </button>
+                                <?php endif; ?>
                             </div>
                         </div>
 
@@ -183,244 +199,5 @@ include 'header.php';
     </div>
 </section>
 <!-- /Portfolio -->
-
-<!-- Gallery wrapper-->
-<div id="galleryWrapper"
-    style="background: rgba(0,0,0,0.85); display: none; position: fixed; top: 0; bottom: 0; left: 0; right: 0; z-index: 9999;">
-
-
-    <?php
-    // параметры по умолчанию
-    $posts = get_posts(array(
-        'numberposts' => 999,
-        'orderby' => 'date',
-        'order' => 'DESC',
-        'post_type' => 'portfolio',
-        //'post__not_in' => array( 42 ) // Выводим все категории портфолио кроме Разное
-    ));
-
-    foreach ($posts as $post) {
-        setup_postdata($post); ?>
-
-        <div id="gallery-<?php echo $post->ID; ?>" class="carousel slide" data-bs-ride="carousel"
-            style="display: none; position: fixed; top: 0; height: 100%; width: 100%;">
-            <div class="carousel-indicators">
-                <?php
-
-                /*
-                $images = get_post_gallery_images();
-                $count2 = 0;
-                foreach ( $images as $image ) {
-
-
-                    if ( $count2 == 0 ) { ?>
-
-                        <button id="ind-<?php echo $post->ID; ?>-<?php echo $count2; ?>" type="button" data-bs-target="#gallery-<?php echo $post->ID; ?>" data-bs-slide-to="<?php echo $count2; ?>" aria-label="Slide 3"></button>
-
-                    <?php $count2 = $count2 + 1; } else { ?>
-
-                        <button id="ind-<?php echo $post->ID; ?>-<?php echo $count2; ?>" type="button" data-bs-target="#gallery-<?php echo $post->ID; ?>" data-bs-slide-to="<?php echo $count2; ?>" aria-label="Slide 3"></button>
-
-                    <?php $count2 = $count2 + 1; }
-                }*/
-
-
-
-
-
-
-
-                $count2 = 0;
-                for ($i = 1; $i <= 9; $i++) {
-                    if (get_post_meta($post->ID, '_img-' . $i)) {
-                        if ($count2 == 0) { ?>
-
-                            <button id="ind-<?php echo $post->ID; ?>-<?php echo $count2; ?>" type="button"
-                                data-bs-target="#gallery-<?php echo $post->ID; ?>" data-bs-slide-to="<?php echo $count2; ?>"
-                                aria-label="Slide 3"></button>
-
-                        <?php $count2 = $count2 + 1;
-                        } else { ?>
-
-                            <button id="ind-<?php echo $post->ID; ?>-<?php echo $count2; ?>" type="button"
-                                data-bs-target="#gallery-<?php echo $post->ID; ?>" data-bs-slide-to="<?php echo $count2; ?>"
-                                aria-label="Slide 3"></button>
-
-                <?php $count2 = $count2 + 1;
-                        }
-                    }
-                }
-                ?>
-
-            </div>
-            <div class="carousel-inner h-100">
-                <?php
-
-                /*
-                $images = get_post_gallery_images();
-                $count2 = 0;
-                foreach ( $images as $image ) { ?>
-                    <div id="img-<?php echo $post->ID; ?>-<?php echo $count2; ?>" class="carousel-item h-100">
-                        <div class="row align-items-center h-100">
-                            <div class="col text-center">
-                                <img src="<?php echo $image; ?>" class="img-fluid" style="max-width: 90vw; max-height: 90vh;" alt="...">
-                            </div>
-                        </div>
-                    </div>
-
-                <?php  $count2 = $count2 + 1; } */
-
-
-                $count2 = 0;
-                for ($i = 1; $i <= 9; $i++) {
-                    if (get_post_meta($post->ID, '_img-' . $i)) { ?>
-                        <div id="img-<?php echo $post->ID; ?>-<?php echo $count2; ?>"
-                            class="carousel-item h-100 <?php // if ( $i == 1 ) echo ' active'; 
-                                                        ?>" data-bs-interval="999999999">
-                            <div class="row align-items-center h-100">
-                                <div class="col text-center">
-                                    <img src="<?php echo get_post_meta($post->ID, '_img-' . $i)[0]; ?>" class="img-fluid"
-                                        style="max-width: 90vw; max-height: 90vh;" alt="...">
-                                </div>
-                            </div>
-                        </div>
-                <?php $count2 = $count2 + 1;
-                    }
-                }
-
-                ?>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#gallery-<?php echo $post->ID; ?>"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Предыдущий</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#gallery-<?php echo $post->ID; ?>"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Следующий</span>
-            </button>
-        </div>
-    <?php }
-    wp_reset_postdata();
-    ?>
-
-    <!-- Кнопка закрытия галереи -->
-    <button type="button" onClick="closeGallery();" class="btn-close btn-close-white"
-        style="position: fixed; top: 25px; right: 25px; z-index: 99999;" aria-label="Close"></button>
-</div>
-
-
-<script>
-    /* Функция открытия галереи */
-    function galleryOn(gal, img) {
-        var gallery = gal; // Получаем ID галереи
-        var image = img; // Получаем ID картинки
-        // Открываем обертку галереи
-        document.getElementById('galleryWrapper').style.display = 'block';
-
-        // Проверяем какие данные передаются для открытия галереи и картинки
-        //alert(gallery+' '+image); 
-
-
-        <?php // Открываем галерею
-        $posts = get_posts(array(
-            'numberposts' => 999,
-            'orderby' => 'date',
-            'order' => 'DESC',
-            'post_type' => 'portfolio',
-            //'post__not_in' => array( 42 ) // Выводим все категории портфолио кроме Разное
-        ));
-
-        foreach ($posts as $post) {
-            setup_postdata($post);
-
-            echo 'if ( gallery == "gallery-' . $post->ID . '" ) { document.getElementById("gallery-' . $post->ID . '").style.display = "block"; }';
-        }
-        wp_reset_postdata();
-        ?>
-
-
-        <?php // Открываем изображения
-        $posts = get_posts(array(
-            'numberposts' => 999,
-            'orderby' => 'date',
-            'order' => 'DESC',
-            'post_type' => 'portfolio',
-            //'post__not_in' => array( 42 ) // Выводим все категории портфолио кроме Разное
-        ));
-
-        foreach ($posts as $post) {
-            setup_postdata($post);
-            $count2 = 0;
-            for ($i = 1; $i <= 9; $i++) {
-                echo 'if ( image == "img-' . $post->ID . '-' . $count2 . '" ) { document.getElementById("img-' . $post->ID . '-' . $count2 . '").classList.add("active"); document.getElementById("ind-' . $post->ID . '-' . $count2 . '").classList.add("active"); } ';
-                $count2 = $count2 + 1;
-            }
-        }
-        wp_reset_postdata();
-        ?>
-    }
-
-
-    // Кнопка закрытия галереи
-    function closeGallery() {
-        // Закрываем обертку галереи
-        document.getElementById('galleryWrapper').style.display = 'none';
-
-        <?php // Открываем галерею
-        $posts = get_posts(array(
-            'numberposts' => 999,
-            'orderby' => 'date',
-            'order' => 'DESC',
-            'post_type' => 'portfolio',
-            //'post__not_in' => array( 42 ) // Выводим все категории портфолио кроме Разное
-        ));
-
-        foreach ($posts as $post) {
-            setup_postdata($post);
-
-            echo 'document.getElementById("gallery-' . $post->ID . '").style.display = "none";';
-        }
-        wp_reset_postdata();
-        ?>
-
-        <?php // Закрываем изображения
-        $posts = get_posts(array(
-            'numberposts' => 999,
-            'orderby' => 'date',
-            'order' => 'DESC',
-            'post_type' => 'portfolio',
-            //'post__not_in' => array( 42 ) // Выводим все категории портфолио кроме Разное
-        ));
-
-        /*
-        foreach( $posts as $post ) { setup_postdata($post);
-            $images = get_post_gallery_images();
-            $count2 = 0;
-            foreach ( $images as $image ) {
-
-                echo 'document.getElementById("img-'.$post->ID.'-'.$count2.'").classList.remove("active"); document.getElementById("ind-'.$post->ID.'-'.$count2.'").classList.remove("active");';
-
-                $count2 = $count2 + 1;
-            }
-        } wp_reset_postdata(); */
-
-
-        foreach ($posts as $post) {
-            setup_postdata($post);
-            $count2 = 0;
-            for ($i = 1; $i <= 9; $i++) {
-                echo 'document.getElementById("img-' . $post->ID . '-' . $count2 . '").classList.remove("active"); document.getElementById("ind-' . $post->ID . '-' . $count2 . '").classList.remove("active");';
-
-                $count2 = $count2 + 1;
-            }
-        }
-        wp_reset_postdata(); ?>
-
-    }
-</script>
-
-
 
 <?php include 'footer-1.php'; ?>

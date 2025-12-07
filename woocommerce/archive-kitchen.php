@@ -33,10 +33,12 @@ do_action('woocommerce_before_main_content');
         <div class="row align-items-center home-section-height">
             <div class="col-xl-10 col-xxl-9">
                 <h1 class="home-title mb-3">Каталог кухонь по индивидуальным размерам на заказ от производителя</h1>
-                <p class="home-subtitle mb-4">Изготовим качественную кухню с учетом Ваших пожеланий и особенностей помещения.
-                    Рассчитаем стоимость за 15 минут.</p>
-                <a href="#" type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal"
-                    data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
+                <p class="home-subtitle mb-4">
+                    Изготовим качественную кухню с учетом Ваших пожеланий и особенностей помещения. Рассчитаем стоимость за 15 минут.
+                </p>
+                
+                <button type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</button>
+
             </div>
         </div>
     </div>
@@ -171,197 +173,15 @@ do_action('woocommerce_before_main_content');
 
 
 <!-- SECTION PORTFOLIO -->
-<section class="section-portfolio bg-light" style="padding-block: 60px;">
-    <div class="container">
-        <div class="row">
-            <div class="col text-md-center">
-                <h2 style="margin-bottom: 15px;">Последние выполненные работы</h2>
-                <svg style="margin-bottom: 60px;" width="62" height="14" viewBox="0 0 62 14" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
-                    <rect x="48" width="14" height="14" rx="3" />
-                    <rect x="24" width="14" height="14" rx="3" />
-                    <rect width="14" height="14" rx="3" />
-        
-                </svg>
-                <div class="row">
+<?php get_template_part('template-parts/section-portfolio-tabs/section-portfolio-one-tab', null, array(
+    'category' => '01-kuhni',
+    'title' => 'Последние выполненные работы',
+    'background_color' => 'bg-white',
+    'posts_count' => 6,
+    'card_type' => 'approximation'
+)); ?>
 
-                    <?php
-                    $obj = get_queried_object();
-                    $portfolio_cat = $obj->slug;
-                    switch ($portfolio_cat) {
-                        case 'кухни':
-                            $portfolio_cat = '01-kuhni';
-                            break;
-                    }
-
-                    $args = [
-                        'post_type' => 'portfolio',
-                        'numberposts' => 6,
-                        'posts_per_page' => 6,
-                        'portfolio-cat' => '01-kuhni' //$portfolio_cat
-                    ];
-
-                    $query = new WP_Query($args);
-
-                    while ($query->have_posts()):
-                        $query->the_post(); ?>
-                        <div class="col-md-6 col-lg-4 mb-5">
-                            <a onclick="portfolioGalleryOpen( 'portfolio-gallery-<?php echo get_the_ID(); ?>' )">
-                                <div class="approximation approximation-project project-container-2 rounded">
-                                    <img src="<?php echo get_post_meta(get_the_ID(), '_img-1')[0]; ?>" class="rounded"
-                                        alt="<?php echo get_the_title(); ?>" loading="lazy">
-                                    <div class="card-wrapper">
-                                        <div class="position-absolute"><?php echo get_the_title(); ?></div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    <?php endwhile;
-
-                    wp_reset_postdata();
-                    ?>
-                </div>
-                <a href="/portfolio-cat/01-kuhni/" class="btn btn-lg btn-corporate-color-1"
-                    style="margin-top: 12px;">Смотреть еще</a>
-            </div>
-        </div>
-    </div>
-</section>
 <!-- END SECTION PORTFOLIO -->
-
-<!-- SECTION PORTFOLIO GALLERY -->
-<div id="portfolioGalleryWrapper" style="display: none;">
-    <?php
-    $obj = get_queried_object();
-    $portfolio_cat = $obj->slug;
-    switch ($portfolio_cat) {
-        case 'кухни':
-            $portfolio_cat = '01-kuhni';
-            break;
-    }
-
-    $args = [
-        'post_type' => 'portfolio',
-        'numberposts' => 6,
-        'posts_per_page' => 6,
-        'portfolio-cat' => '01-kuhni' //$portfolio_cat
-    ];
-
-    $query = new WP_Query($args);
-
-    while ($query->have_posts()):
-        $query->the_post(); ?>
-        <div id="portfolio-gallery-<?php echo get_the_ID(); ?>" class="carousel slide" data-bs-ride="false"
-            data-bs-interval="false" style="display: none; position: fixed; top: 0; height: 100%; width: 100%; z-index: 9999;">
-
-            <div class="carousel-indicators">
-                <?php
-                $count_2 = 0;
-                for ($i = 1; $i <= 9; $i++) {
-                    if (get_post_meta(get_the_ID(), '_img-' . $i)) {
-                        if ($count_2 == 0) { ?>
-
-                            <button id="ind-<?php echo get_the_ID(); ?>-<?php echo $count_2; ?>" type="button"
-                                data-bs-target="#portfolio-gallery-<?php echo get_the_ID(); ?>" data-bs-slide-to="<?php echo $count_2; ?>"
-                                aria-label="Slide 3" class="active" aria-current="true"></button>
-
-                        <?php $count_2 = $count_2 + 1;
-                        } else { ?>
-
-                            <button id="ind-<?php echo get_the_ID(); ?>-<?php echo $count_2; ?>" type="button"
-                                data-bs-target="#portfolio-gallery-<?php echo get_the_ID(); ?>" data-bs-slide-to="<?php echo $count_2; ?>"
-                                aria-label="Slide 3"></button>
-
-                <?php $count_2 = $count_2 + 1;
-                        }
-                    }
-                }
-                ?>
-            </div>
-            <div class="carousel-inner h-100">
-                <?php
-                $count_2 = 0;
-                for ($i = 1; $i <= 9; $i++) {
-                    if (get_post_meta(get_the_ID(), '_img-' . $i)) { ?>
-                        <div id="img-<?php echo get_the_ID(); ?>-<?php echo $count_2; ?>" class="carousel-item h-100 <?php if ($i == 1)
-                                                                                                                            echo ' active'; ?>" data-bs-interval="999999999">
-                            <div class="row align-items-center h-100">
-                                <div class="col text-center">
-                                    <img src="<?php echo get_post_meta(get_the_ID(), '_img-' . $i)[0]; ?>" class="img-fluid"
-                                        style="max-width: 90vw; max-height: 90vh;" alt="...">
-                                </div>
-                            </div>
-                        </div>
-                <?php $count_2 = $count_2 + 1;
-                    }
-                }
-                ?>
-            </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#portfolio-gallery-<?php echo get_the_ID(); ?>"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Предыдущий</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#portfolio-gallery-<?php echo get_the_ID(); ?>"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Следующий</span>
-            </button>
-        </div>
-    <?php endwhile;
-
-    wp_reset_postdata();
-    ?>
-
-    <button type="button" onClick="portfolioGalleryClose();" class="btn-close btn-close-white"
-        style="position: fixed; top: 25px; right: 25px; z-index: 99999" aria-label="Close"></button>
-</div>
-<!-- END SECTION PORTFOLIO GALLERY -->
-
-<!-- SECTION PORTFOLIO SCRIPT -->
-<script>
-    function portfolioGalleryOpen(gal) {
-        var gallery = gal; // Получаем ID галереи
-
-        // Открываем обертку галереи
-        document.getElementById("portfolioGalleryWrapper").style.display = "block";
-
-        // Открываем галерею
-        document.getElementById(gallery).style.display = "block";
-    }
-
-    function portfolioGalleryClose() {
-        // Закрываем обертку галереи
-        document.getElementById("portfolioGalleryWrapper").style.display = "none";
-        // Закрываем галерею
-        <?php
-        $obj = get_queried_object();
-        $portfolio_cat = $obj->slug;
-        switch ($portfolio_cat) {
-            case 'кухни':
-                $portfolio_cat = '01-kuhni';
-                break;
-        }
-
-        $args = [
-            'post_type' => 'portfolio',
-            'numberposts' => 6,
-            'posts_per_page' => 6,
-            'portfolio-cat' => '01-kuhni' //$portfolio_cat
-        ];
-
-        $query = new WP_Query($args);
-
-        while ($query->have_posts()):
-            $query->the_post(); ?>
-            document.getElementById('portfolio-gallery-<?php echo get_the_ID(); ?>').style.display = "none";
-        <?php endwhile;
-
-        wp_reset_postdata();
-        ?>
-    }
-</script>
-<!-- END SECTION PORTFOLIO SCRIPT -->
 
 
 
@@ -372,29 +192,50 @@ do_action('woocommerce_before_main_content');
         <div class="row justify-content-center">
             <div class="col-md-5 text-md-end">
                 <h2 class="text-light">Рассчитаем стоимость за 15 минут</h2>
-                <p class="section-description archive-portfolio text-light mb-3">Хотите узнать стоимость качественной кухни с
-                    учетом всех Ваших пожеланий и особенностей помещения? Это бесплатно и ни к чему Вас не обязывает!</p>
+                <p class="section-description archive-portfolio text-light mb-3">
+                    Хотите узнать стоимость качественной кухни с учетом всех Ваших пожеланий и особенностей помещения? Это бесплатно и ни к чему Вас не обязывает! 
+                </p>
                 <svg width="62" height="14" viewBox="0 0 62 14" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon mb-5">
                     <rect x="48" width="14" height="14" rx="3" />
                     <rect x="24" width="14" height="14" rx="3" />
                     <rect width="14" height="14" rx="3" />
                 </svg>
                 <br>
-                <a href="#" type="button" class="btn btn-lg btn-corporate-color-1 mb-4" data-bs-toggle="modal"
-                    data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
+
+                <button type="button" class="btn btn-lg btn-corporate-color-1 mb-4" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</button>
+
                 <div class="row justify-content-md-end">
                     <div class="col">
                         <ul class="nav justify-content-md-end gap-3">
+                            <?php
+                            // Получаем WhatsApp
+                            $whatsapp = '';
+                            if (function_exists('mytheme_get_whatsapp')) {
+                                $whatsapp = mytheme_get_whatsapp(true);
+                            }
+                            if (!empty($whatsapp)):
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link ico-button" href="https://wa.me/79361385058?web=1&amp;app_absent=1">
+                                <a class="nav-link ico-button" href="<?php echo esc_url($whatsapp); ?>">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/ico/whatsapp-ico.png" />
                                 </a>
                             </li>
+                            <?php endif; ?>
+
+                            <?php
+                            // Получаем Telegram
+                            $telegram = '';
+                            if (function_exists('mytheme_get_telegram')) {
+                                $telegram = mytheme_get_telegram();
+                            }
+                            if (!empty($telegram)):
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link ico-button" href="https://t.me/+79361385058">
+                                <a class="nav-link ico-button" href="<?php echo esc_url($telegram); ?>">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/ico/telegram-ico.png" />
                                 </a>
                             </li>
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </div>
@@ -691,29 +532,51 @@ do_action('woocommerce_before_main_content');
         <div class="row justify-content-center">
             <div class="col-md-5 text-md-end">
                 <h2>Рассчитаем стоимость за 15 минут</h2>
-                <p class="section-description archive-portfolio mb-3">Хотите узнать стоимость качественной кухни с учетом всех
-                    Ваших пожеланий и особенностей помещения? Это бесплатно и ни к чему Вас не обязывает!</p>
+                <p class="section-description archive-portfolio mb-3">
+                    Хотите узнать стоимость качественной кухни с учетом всех Ваших пожеланий и особенностей помещения? Это бесплатно и ни к чему Вас не обязывает!
+                </p>
                 <svg width="62" height="14" viewBox="0 0 62 14" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon mb-5">
                     <rect x="48" width="14" height="14" rx="3" />
                     <rect x="24" width="14" height="14" rx="3" />
                     <rect width="14" height="14" rx="3" />
                 </svg>
+
                 <br>
-                <a href="#" type="button" class="btn btn-lg btn-corporate-color-1 mb-4" data-bs-toggle="modal"
-                    data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</a>
+                
+                <button type="button" class="btn btn-lg btn-corporate-color-1 mb-4" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</button>
+
                 <div class="row justify-content-md-end">
                     <div class="col">
                         <ul class="nav justify-content-md-end gap-3">
+                            <?php
+                            // Получаем WhatsApp
+                            $whatsapp = '';
+                            if (function_exists('mytheme_get_whatsapp')) {
+                                $whatsapp = mytheme_get_whatsapp(true);
+                            }
+                            if (!empty($whatsapp)):
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link ico-button" href="https://wa.me/79361385058?web=1&amp;app_absent=1">
+                                <a class="nav-link ico-button" href="<?php echo esc_url($whatsapp); ?>">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/ico/whatsapp-ico.png" />
                                 </a>
                             </li>
+                            <?php endif; ?>
+
+                            <?php
+                            // Получаем Telegram
+                            $telegram = '';
+                            if (function_exists('mytheme_get_telegram')) {
+                                $telegram = mytheme_get_telegram();
+                            }
+                            if (!empty($telegram)):
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link ico-button" href="https://t.me/+79361385058">
+                                <a class="nav-link ico-button" href="<?php echo esc_url($telegram); ?>">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/ico/telegram-ico.png" />
                                 </a>
                             </li>
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </div>

@@ -7,23 +7,27 @@
  * Параметры:
  * $args['product_category']    - slug родительской категории (например: 'mebel', 'kuhni'), если не указан - выводятся все категории первого уровня
  * $args['background_color']    - цвет фона (например: 'bg-white', 'bg-light', 'bg-dark'), по умолчанию 'bg-white'
+ * $args['card_type']           - тип карточки: 'approximation', 'zoom-card', 'hover-image', по умолчанию 'approximation'
  * 
  * Пример использования:
  * // Все категории первого уровня (непустые)
  * <?php get_template_part('template-parts/section-projects/section-projects', null, array(
- *     'background_color' => 'bg-white'
+ *     'background_color' => 'bg-white',
+ *     'card_type' => 'approximation'
  * )); ?>
  * 
  * // Дочерние категории конкретной родительской категории (непустые)
  * <?php get_template_part('template-parts/section-projects/section-projects', null, array(
  *     'product_category' => 'mebel',
- *     'background_color' => 'bg-light'
+ *     'background_color' => 'bg-light',
+ *     'card_type' => 'zoom-card'
  * )); ?>
  */
 
 // Получаем параметры
 $product_category = isset($args['product_category']) ? $args['product_category'] : '';
 $background_color = isset($args['background_color']) ? $args['background_color'] : 'bg-white';
+$card_type = isset($args['card_type']) ? $args['card_type'] : 'approximation';
 
 // Определяем parent для категорий
 if (!empty($product_category)) {
@@ -40,7 +44,7 @@ $categories = get_terms(array(
     'taxonomy'   => 'product_cat',
     'orderby'    => 'name',
     'order'      => 'ASC',
-    'hide_empty' => true, // Только непустые категории
+    'hide_empty' => true,
     'parent'     => $parent_id
 ));
 
@@ -68,22 +72,14 @@ if (!empty($categories) && !is_wp_error($categories)) :
                 $image = wp_get_attachment_url($thumbnail_id);
             ?>
                 <div class="col-md-6 mb-5">
-                    <a href="<?php echo esc_url(get_term_link($category)); ?>">
-                        <div class="approximation project-container-2 services">
-                            <?php if ($image) : ?>
-                                <img src="<?php echo esc_url($image); ?>" class="img-fluid" alt="<?php echo esc_attr($category->name); ?>">
-                            <?php else : ?>
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/default-category-image.webp" class="img-fluid" alt="default image">
-                            <?php endif; ?>
-                            <div class="card-wrapper project-container-2-footer">
-                                <div class="row" style="height: 100%;">
-                                    <div class="col-6">
-                                        <h3 style="position: absolute; bottom: 0; width: 100%;"><?php echo esc_html($category->name); ?></h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                    <?php 
+                    get_template_part('template-parts/cards/card', null, array(
+                        'link' => get_term_link($category),
+                        'image' => $image,
+                        'title' => $category->name,
+                        'card_type' => $card_type
+                    ));
+                    ?>
                 </div>
             <?php endforeach; ?>
         </div>

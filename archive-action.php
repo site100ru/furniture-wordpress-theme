@@ -8,7 +8,7 @@
 include 'header.php';
 ?>
 
-<div class="site-wrap min-home" style="height: auto; z-index: auto;">
+<div class="min-home">
     <!-- Header -->
     <div class="site-navbar-wrap">
         <div class="parallax-home-section" style="min-height: 640px;"></div>

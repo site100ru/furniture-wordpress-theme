@@ -15,211 +15,98 @@
         <div class="row justify-content-between about_box">
             <div class="col-12 col-lg-6 order-2 order-lg-first text-center">
                 <div id="aboutCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner rounded">
-                        <div class="carousel-item active">
-                            <a onclick="aboutSectionGalleryOn('aboutSectionGallery','imgAboutSectionGallery-1');">
-                                <div class="single-product-img approximation">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/about/1.webp"
-                                        class="d-block w-100" loading="lazy" alt="...">
-                                    <div class="magnifier"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a onclick="aboutSectionGalleryOn('aboutSectionGallery','imgAboutSectionGallery-2');">
-                                <div class="single-product-img approximation">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/about/2.webp"
-                                        class="d-block w-100" loading="lazy" alt="...">
-                                    <div class="magnifier"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a onclick="aboutSectionGalleryOn('aboutSectionGallery','imgAboutSectionGallery-3');">
-                                <div class="single-product-img approximation">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/about/3.webp"
-                                        class="d-block w-100" loading="lazy" alt="...">
-                                    <div class="magnifier"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a onclick="aboutSectionGalleryOn('aboutSectionGallery','imgAboutSectionGallery-4');">
-                                <div class="single-product-img approximation">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/about/4.webp"
-                                        class="d-block w-100" loading="lazy" alt="...">
-                                    <div class="magnifier"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a onclick="aboutSectionGalleryOn('aboutSectionGallery','imgAboutSectionGallery-5');">
-                                <div class="single-product-img approximation">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/about/5.webp"
-                                        class="d-block w-100" loading="lazy" alt="...">
-                                    <div class="magnifier"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a onclick="aboutSectionGalleryOn('aboutSectionGallery','imgAboutSectionGallery-6');">
-                                <div class="single-product-img approximation">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/about/6.webp"
-                                        class="d-block w-100" loading="lazy" alt="...">
-                                    <div class="magnifier"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a onclick="aboutSectionGalleryOn('aboutSectionGallery','imgAboutSectionGallery-7');">
-                                <div class="single-product-img approximation">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/about/7.webp"
-                                        class="d-block w-100" loading="lazy" alt="...">
-                                    <div class="magnifier"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a onclick="aboutSectionGalleryOn('aboutSectionGallery','imgAboutSectionGallery-8');">
-                                <div class="single-product-img approximation">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/about/8.webp"
-                                        class="d-block w-100" loading="lazy" alt="...">
-                                    <div class="magnifier"></div>
-                                </div>
-                            </a>
-                        </div>
+                    <div class="carousel-inner">
+                        <?php 
+                        $about_images = [
+                            get_template_directory_uri() . '/img/about/1.webp',
+                            get_template_directory_uri() . '/img/about/2.webp',
+                            get_template_directory_uri() . '/img/about/3.webp',
+                            get_template_directory_uri() . '/img/about/4.webp',
+                            get_template_directory_uri() . '/img/about/5.webp',
+                            get_template_directory_uri() . '/img/about/6.webp',
+                            get_template_directory_uri() . '/img/about/7.webp',
+                            get_template_directory_uri() . '/img/about/8.webp',
+                        ];
+                        
+                        foreach ($about_images as $index => $image): 
+                            $active_class = ($index === 0) ? 'active' : '';
+                        ?>
+                            <div class="carousel-item <?php echo $active_class; ?>">
+                                <a href="#" onclick="aboutSectionGalleryOn(<?php echo $index; ?>); return false;">
+                                    <div class="single-product-img approximation">
+                                        <img src="<?php echo esc_url($image); ?>"
+                                            class="d-block w-100" loading="lazy" alt="О нас - фото <?php echo $index + 1; ?>">
+                                        <div class="magnifier"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
                     <!-- Кнопки навигации -->
-                    <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel"
-                        data-bs-slide="prev">
+                    <?php if (count($about_images) > 1): ?>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Предыдущий</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#aboutCarousel"
-                        data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#aboutCarousel" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Следующий</span>
                     </button>
+                    <?php endif; ?>
                 </div>
             </div>
             <!-- Описание -->
             <div class="col-12 col-lg-5 offset-lg-1 order-1 order-lg-last mb-lg-0 description_about">
-                <p class="text-start">Студия кухни «Furniture» поможет каждому клиенту при выборе мебели по
-                    индивидуальным
-                    размерам, бесплатный дизайн-проект любой сложности, большой выбор мебели по цветовой гамме и ценовой
-                    категории.</p>
-                <p class="text-start">Обширный ассортимент фасадного материала такие как: Fundermax, Альтернатив, AGT,
-                    Feelwood,
-                    TSS. Для каждого клиента подбираем по его желаниям и возможностям европейскую фурнитуру, таких фирм
-                    как: Blum,
-                    Boyard, Hettich, VIBO и др. А также у нас можно укомплектоать мебель кухонной техникой известных
-                    фирм: Эликор,
-                    Midea, Куперсберг и др.</p>
-                <p class="text-start">Нашими партнерами являются крупные фабрики «Ульяновск», «CUCINA», г. Пенза «Лев
-                    Мебель»,
-                    «Мебель стиль».</p>
+                <p class="text-start">
+                    Студия кухни «Furniture» поможет каждому клиенту при выборе мебели по индивидуальным размерам, бесплатный дизайн-проект любой сложности, большой выбор мебели по цветовой гамме и ценовой категории.
+                </p>
+                <p class="text-start">
+                    Обширный ассортимент фасадного материала такие как: Fundermax, Альтернатив, AGT, Feelwood, TSS. Для каждого клиента подбираем по его желаниям и возможностям европейскую фурнитуру, таких фирм как: Blum, Boyard, Hettich, VIBO и др. А также у нас можно укомплектоать мебель кухонной техникой известных фирм: Эликор, Midea, Куперсберг и др.
+                </p>
+                <p class="text-start">
+                    Нашими партнерами являются крупные фабрики «Ульяновск», «CUCINA», г. Пенза «Лев Мебель», «Мебель стиль».
+                </p>
             </div>
         </div>
     </div>
 </section>
 <!-- /ABOUT SECTION -->
 
-<!-- /ABOUT SECTION GALLERY -->
+<!-- ABOUT SECTION GALLERY -->
 <div id="aboutSectionGalleryWrapper">
-    <div id="aboutSectionGallery" class="carousel slide" data-bs-ride="false" data-bs-interval="false"
-        style="display: none;  position: fixed;  top: 0;  height: 100%;  width: 100%;">
+    <div id="aboutSectionGallery" class="carousel slide" data-bs-ride="false" data-bs-interval="false" style="position: fixed; top: 0; height: 100%; width: 100%;">
+        
+        <!-- Индикаторы -->
         <div class="carousel-indicators">
-            <button id="indAboutSectionGallery-1" type="button" data-bs-target="#aboutSectionGallery"
-                data-bs-slide-to="0" aria-label="Slide 1"></button>
-            <button id="indAboutSectionGallery-2" type="button" data-bs-target="#aboutSectionGallery"
-                data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button id="indAboutSectionGallery-3" type="button" data-bs-target="#aboutSectionGallery"
-                data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button id="indAboutSectionGallery-4" type="button" data-bs-target="#aboutSectionGallery"
-                data-bs-slide-to="3" aria-label="Slide 4"></button>
-            <button id="indAboutSectionGallery-5" type="button" data-bs-target="#aboutSectionGallery"
-                data-bs-slide-to="4" aria-label="Slide 5"></button>
-            <button id="indAboutSectionGallery-6" type="button" data-bs-target="#aboutSectionGallery"
-                data-bs-slide-to="5" aria-label="Slide 6"></button>
-            <button id="indAboutSectionGallery-7" type="button" data-bs-target="#aboutSectionGallery"
-                data-bs-slide-to="6" aria-label="Slide 7"></button>
-            <button id="indAboutSectionGallery-8" type="button" data-bs-target="#aboutSectionGallery"
-                data-bs-slide-to="7" aria-label="Slide 8"></button>
+            <?php foreach ($about_images as $index => $image): ?>
+                <button 
+                    type="button" 
+                    data-bs-target="#aboutSectionGallery" 
+                    data-bs-slide-to="<?php echo $index; ?>" 
+                    <?php echo ($index === 0) ? 'class="active" aria-current="true"' : ''; ?>
+                    aria-label="Slide <?php echo $index + 1; ?>">
+                </button>
+            <?php endforeach; ?>
         </div>
+
+        <!-- Слайды -->
         <div class="carousel-inner h-100">
-            <div id="imgAboutSectionGallery-1" class="carousel-item h-100">
-                <div class="row align-items-center h-100">
-                    <div class="col text-center">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/about/1.webp"
-                            class="img-fluid lazyload" loading="lazy" style="max-width: 90vw; max-height: 90vh"
-                            alt="..." />
+            <?php foreach ($about_images as $index => $image):  $active_class = ($index === 0) ? 'active' : ''; ?>
+                <div class="carousel-item h-100 <?php echo $active_class; ?>">
+                    <div class="row align-items-center h-100">
+                        <div class="col text-center">
+                            <img src="<?php echo esc_url($image); ?>"
+                                class="img-fluid" 
+                                loading="lazy" 
+                                style="max-width: 90vw; max-height: 90vh"
+                                alt="О нас - фото <?php echo $index + 1; ?>" />
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div id="imgAboutSectionGallery-2" class="carousel-item h-100">
-                <div class="row align-items-center h-100">
-                    <div class="col text-center">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/about/2.webp"
-                            class="img-fluid lazyload" loading="lazy" style="max-width: 90vw; max-height: 90vh"
-                            alt="..." />
-                    </div>
-                </div>
-            </div>
-            <div id="imgAboutSectionGallery-3" class="carousel-item h-100">
-                <div class="row align-items-center h-100">
-                    <div class="col text-center">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/about/3.webp"
-                            class="img-fluid lazyload" loading="lazy" style="max-width: 90vw; max-height: 90vh"
-                            alt="..." />
-                    </div>
-                </div>
-            </div>
-            <div id="imgAboutSectionGallery-4" class="carousel-item h-100">
-                <div class="row align-items-center h-100">
-                    <div class="col text-center">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/about/4.webp"
-                            class="img-fluid lazyload" loading="lazy" style="max-width: 90vw; max-height: 90vh"
-                            alt="..." />
-                    </div>
-                </div>
-            </div>
-            <div id="imgAboutSectionGallery-5" class="carousel-item h-100">
-                <div class="row align-items-center h-100">
-                    <div class="col text-center">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/about/5.webp"
-                            class="img-fluid lazyload" loading="lazy" style="max-width: 90vw; max-height: 90vh"
-                            alt="..." />
-                    </div>
-                </div>
-            </div>
-            <div id="imgAboutSectionGallery-6" class="carousel-item h-100">
-                <div class="row align-items-center h-100">
-                    <div class="col text-center">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/about/6.webp"
-                            class="img-fluid lazyload" loading="lazy" style="max-width: 90vw; max-height: 90vh"
-                            alt="..." />
-                    </div>
-                </div>
-            </div>
-            <div id="imgAboutSectionGallery-7" class="carousel-item h-100">
-                <div class="row align-items-center h-100">
-                    <div class="col text-center">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/about/7.webp"
-                            class="img-fluid lazyload" loading="lazy" style="max-width: 90vw; max-height: 90vh"
-                            alt="..." />
-                    </div>
-                </div>
-            </div>
-            <div id="imgAboutSectionGallery-8" class="carousel-item h-100">
-                <div class="row align-items-center h-100">
-                    <div class="col text-center">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/about/8.webp"
-                            class="img-fluid lazyload" loading="lazy" style="max-width: 90vw; max-height: 90vh"
-                            alt="..." />
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
+
+        <!-- Кнопки навигации -->
         <button class="carousel-control-prev" type="button" data-bs-target="#aboutSectionGallery" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Предыдущий</span>
@@ -231,65 +118,30 @@
     </div>
 
     <!-- Кнопка закрытия галереи -->
-    <button type="button" onClick="aboutSectionGalleryClose();" class="btn-close btn-close-white"
+    <button type="button" onclick="aboutSectionGalleryClose();" class="btn-close btn-close-white"
         style="position: fixed; top: 25px; right: 25px; z-index: 99999" aria-label="Close"></button>
 </div>
 <!-- /ABOUT SECTION GALLERY -->
 
-<!-- /ABOUT SECTION GALLERY SCRIPT -->
 <script>
-    function aboutSectionGalleryOn(gal, img) {
-        var gallery = gal; // Получаем ID галереи
-        var image = img; // Получаем ID картинки
-
-        // Открываем обертку галереи
-        document.getElementById("aboutSectionGalleryWrapper").style.display = "block";
-
-        // Открываем галерею
-        if (gallery == "aboutSectionGallery") {
-            document.getElementById("aboutSectionGallery").style.display = "block";
+    // Функция открытия галереи
+    function aboutSectionGalleryOn(slideIndex) {
+        const galleryWrapper = document.getElementById('aboutSectionGalleryWrapper');
+        const gallery = document.getElementById('aboutSectionGallery');
+        
+        if (!galleryWrapper || !gallery) {
+            return;
         }
 
-        /* Открываем изображения и индикаторы галереи */
-        if (image == "imgAboutSectionGallery-1") {
-            document.getElementById("imgAboutSectionGallery-1").classList.add("active");
-            document.getElementById("indAboutSectionGallery-1").classList.add("active");
-        }
-        if (image == "imgAboutSectionGallery-2") {
-            document.getElementById("imgAboutSectionGallery-2").classList.add("active");
-            document.getElementById("indAboutSectionGallery-2").classList.add("active");
-        }
-        if (image == "imgAboutSectionGallery-3") {
-            document.getElementById("imgAboutSectionGallery-3").classList.add("active");
-            document.getElementById("indAboutSectionGallery-3").classList.add("active");
-        }
-        if (image == "imgAboutSectionGallery-4") {
-            document.getElementById("imgAboutSectionGallery-4").classList.add("active");
-            document.getElementById("indAboutSectionGallery-4").classList.add("active");
-        }
-        if (image == "imgAboutSectionGallery-5") {
-            document.getElementById("imgAboutSectionGallery-5").classList.add("active");
-            document.getElementById("indAboutSectionGallery-5").classList.add("active");
-        }
-        if (image == "imgAboutSectionGallery-6") {
-            document.getElementById("imgAboutSectionGallery-6").classList.add("active");
-            document.getElementById("indAboutSectionGallery-6").classList.add("active");
-        }
-        if (image == "imgAboutSectionGallery-7") {
-            document.getElementById("imgAboutSectionGallery-7").classList.add("active");
-            document.getElementById("indAboutSectionGallery-7").classList.add("active");
-        }
-        if (image == "imgAboutSectionGallery-8") {
-            document.getElementById("imgAboutSectionGallery-8").classList.add("active");
-            document.getElementById("indAboutSectionGallery-8").classList.add("active");
-        }
+        // Показываем галерею
+        galleryWrapper.style.display = 'block';
+        document.body.style.overflow = 'hidden';
 
         // Проверяем количество изображений
-        var galleryElement = document.getElementById(gallery);
-        var carouselItems = galleryElement.querySelectorAll('.carousel-item');
-        var indicators = galleryElement.querySelector('.carousel-indicators');
-        var prevButton = galleryElement.querySelector('.carousel-control-prev');
-        var nextButton = galleryElement.querySelector('.carousel-control-next');
+        const carouselItems = gallery.querySelectorAll('.carousel-item');
+        const indicators = gallery.querySelector('.carousel-indicators');
+        const prevButton = gallery.querySelector('.carousel-control-prev');
+        const nextButton = gallery.querySelector('.carousel-control-next');
 
         // Если только одно изображение, скрываем стрелки и индикаторы
         if (carouselItems.length <= 1) {
@@ -302,34 +154,71 @@
             if (nextButton) nextButton.style.display = 'flex';
         }
 
-    } /* Ending gallery opening function */
+        // Получаем или создаем экземпляр карусели Bootstrap
+        const carouselElement = document.getElementById('aboutSectionGallery');
+        let carousel = bootstrap.Carousel.getInstance(carouselElement);
+        
+        if (!carousel) {
+            carousel = new bootstrap.Carousel(carouselElement, {
+                interval: false,
+                wrap: true
+            });
+        }
 
-
-    // Кнопка закрытия галереи
-    function aboutSectionGalleryClose() {
-        // Закрываем обертку галереи
-        document.getElementById("aboutSectionGalleryWrapper").style.display = "none";
-
-        // Закрываем галерею
-        document.getElementById("aboutSectionGallery").style.display = "none";
-
-        /* Закрываем тзображения и индикаторы галереи */
-        document.getElementById("imgAboutSectionGallery-1").classList.remove("active");
-        document.getElementById("indAboutSectionGallery-1").classList.remove("active");
-        document.getElementById("imgAboutSectionGallery-2").classList.remove("active");
-        document.getElementById("indAboutSectionGallery-2").classList.remove("active");
-        document.getElementById("imgAboutSectionGallery-3").classList.remove("active");
-        document.getElementById("indAboutSectionGallery-3").classList.remove("active");
-        document.getElementById("imgAboutSectionGallery-4").classList.remove("active");
-        document.getElementById("indAboutSectionGallery-4").classList.remove("active");
-        document.getElementById("imgAboutSectionGallery-5").classList.remove("active");
-        document.getElementById("indAboutSectionGallery-5").classList.remove("active");
-        document.getElementById("imgAboutSectionGallery-6").classList.remove("active");
-        document.getElementById("indAboutSectionGallery-6").classList.remove("active");
-        document.getElementById("imgAboutSectionGallery-7").classList.remove("active");
-        document.getElementById("indAboutSectionGallery-7").classList.remove("active");
-        document.getElementById("imgAboutSectionGallery-8").classList.remove("active");
-        document.getElementById("indAboutSectionGallery-8").classList.remove("active");
+        carousel.to(slideIndex);
     }
+
+    // Функция закрытия галереи
+    function aboutSectionGalleryClose() {
+        const galleryWrapper = document.getElementById('aboutSectionGalleryWrapper');
+        
+        if (galleryWrapper) {
+            galleryWrapper.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    }
+
+    // События
+    document.addEventListener('DOMContentLoaded', function() {
+        const galleryWrapper = document.getElementById('aboutSectionGalleryWrapper');
+
+        // Закрытие по клику на фон
+        if (galleryWrapper) {
+            galleryWrapper.addEventListener('click', function(e) {
+                if (e.target === galleryWrapper) {
+                    aboutSectionGalleryClose();
+                }
+            });
+        }
+
+        // Обработка клавиш
+        document.addEventListener('keydown', function(e) {
+            const galleryWrapper = document.getElementById('aboutSectionGalleryWrapper');
+            
+            // Проверяем, открыта ли галерея
+            if (galleryWrapper && galleryWrapper.style.display === 'block') {
+                const carouselElement = document.getElementById('aboutSectionGallery');
+                const carousel = bootstrap.Carousel.getInstance(carouselElement);
+                
+                // Escape - закрыть галерею
+                if (e.key === 'Escape' || e.keyCode === 27) {
+                    aboutSectionGalleryClose();
+                }
+                // Стрелка влево - предыдущий слайд
+                else if (e.key === 'ArrowLeft' || e.keyCode === 37) {
+                    if (carousel) {
+                        e.preventDefault();
+                        carousel.prev();
+                    }
+                }
+                // Стрелка вправо - следующий слайд
+                else if (e.key === 'ArrowRight' || e.keyCode === 39) {
+                    if (carousel) {
+                        e.preventDefault();
+                        carousel.next();
+                    }
+                }
+            }
+        });
+    });
 </script>
-<!-- /ABOUT SECTION GALLERY SCRIPT -->
