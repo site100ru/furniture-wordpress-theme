@@ -196,7 +196,7 @@ wp_reset_postdata();
         <?php if ($args['section_actions_button'] == 'true') { ?>
             <div class="row">
                 <div class="col text-md-center">
-                    <a href="/action/" class="btn btn-lg btn-corporate-color-1 mt-4">Смотреть еще</a>
+                    <a href="/actions/" class="btn btn-lg btn-corporate-color-1 mt-4">Смотреть все акции</a>
                 </div>
             </div>
         <?php } ?>

@@ -103,12 +103,12 @@ function custom_transliterate_slug($slug, $post_ID = null, $post_status = null, 
   $words_map = array(
     'и' => 'i',
     'в' => 'v',
-    'с' => 'with',
-    'по' => 'by',
-    'за' => 'for',
-    'на' => 'on',
-    'под' => 'under',
-    'над' => 'above',
+    'с' => 's',
+    'по' => 'po',
+    'за' => 'za',
+    'на' => 'na',
+    'под' => 'pod',
+    'над' => 'nad',
   );
 
   // Преобразуем предлоги и союзы
