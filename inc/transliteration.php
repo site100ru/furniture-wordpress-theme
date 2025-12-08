@@ -101,8 +101,8 @@ function custom_transliterate_slug($slug, $post_ID = null, $post_status = null, 
 
   // Дополнительная замена для предлогов и союзов
   $words_map = array(
-    'и' => 'and',
-    'в' => 'in',
+    'и' => 'i',
+    'в' => 'v',
     'с' => 'with',
     'по' => 'by',
     'за' => 'for',
