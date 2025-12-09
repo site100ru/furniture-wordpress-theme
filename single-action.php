@@ -33,7 +33,7 @@ while (have_posts()) : the_post();
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <nav class="breadcrumbs">
+                    <nav class="woocommerce-breadcrumb breadcrumbs">
                         <a href="/">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" fill="currentColor" viewBox="0 0 24 24" class="svg-icon breadcrumbs-svg">
                                 <path

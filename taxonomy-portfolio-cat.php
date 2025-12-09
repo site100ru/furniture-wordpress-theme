@@ -150,7 +150,7 @@ include 'header.php';
                                 </div>
                                 <?php endif; ?>
                                 
-                                <div class="carousel-inner rounded">
+                                <div class="carousel-inner">
                                     <?php
                                     $count2 = 0;
                                     for ($i = 1; $i <= 9; $i++) {
@@ -159,7 +159,7 @@ include 'header.php';
                                                 <a onClick="galleryOn('gallery-<?php echo $post->ID; ?>','img-<?php echo $post->ID; ?>-<?php echo $count2; ?>');">
                                                     <div class="single-product-img approximation">
                                                         <img src="<?php echo get_post_meta($post->ID, '_img-' . $i)[0]; ?>"
-                                                            class="shadow rounded" alt="..." loading="lazy">
+                                                            class="shadow" alt="..." loading="lazy">
                                                         <div class="magnifier"></div>
                                                     </div>
                                                 </a>

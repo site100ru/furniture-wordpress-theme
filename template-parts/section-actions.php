@@ -59,11 +59,10 @@ wp_reset_postdata();
 <!-- Section actions -->
 <section class="archive-portfolio-section archive-portfolio
     <?php echo !empty($args['background_color']) ? $args['background_color'] : 'bg-white'; ?>
-    <?php echo ($args['show_breadcrumbs'] != 'true') ? 'py-5' : ''; ?>
     ">
     <div class="container">
         <?php if ($args['show_breadcrumbs'] == 'true') { ?>
-            <nav class="breadcrumbs pt-4">
+            <nav class="woocommerce-breadcrumb breadcrumbs pt-4">
                 <a href="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" fill="currentColor" viewBox="0 0 24 24" class="svg-icon">
                         <path d="m21.71 11.29-9-9a1 1 0 0 0-1.42 0l-9 9a1 1 0 0 0 1.42 1.42l.29-.3v7.89A1.77 1.77 0 0 0 5.83 22H8.5a1 1 0 0 0 1-1v-4.9a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1V21a1 1 0 0 0 1 1h2.67A1.77 1.77 0 0 0 20 20.3v-7.89l.29.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42" />
@@ -73,8 +72,8 @@ wp_reset_postdata();
             </nav>
         <?php } ?>
         
-        <div class="row">
-            <div class="col text-md-center">
+        <div class="row ">
+            <div class="col text-md-center <?php echo ($args['show_breadcrumbs'] != 'true') ? 'pt-5' : ''; ?>">
                 <h2>Наши акции</h2>
                 <svg width="62" height="14" viewBox="0 0 62 14" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon mb-5">
                     <rect x="48" width="14" height="14" rx="3" />
@@ -158,7 +157,7 @@ wp_reset_postdata();
             $total_posts = $actions_query->post_count;
             $current_index = 0;
             ?>
-            <div class="row justify-content-center">
+            <div class="row justify-content-center pb-5">
                 <?php while ($actions_query->have_posts()) : $actions_query->the_post();
                     $display_type = get_post_meta(get_the_ID(), '_action_display_type', true);
                     $display_type = empty($display_type) ? 'page' : $display_type;

@@ -113,7 +113,7 @@ include 'header.php';
             <div class="col-12 col-lg-6 order-2 order-lg-last text-center">
 
                 <div id="aboutCarousel1" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner rounded">
+                    <div class="carousel-inner">
                         <div class="carousel-item active">
                             <a onClick="aboutSectionGallery1On('aboutSectionGallery1','imgAboutSectionGallery1-1');">
                                 <div class="single-product-img approximation">
@@ -173,7 +173,7 @@ include 'header.php';
             <div class="col-12 col-lg-6 order-2 order-lg-first text-center">
 
                 <div id="aboutCarousel2" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner rounded">
+                    <div class="carousel-inner ">
                         <div class="carousel-item active">
                             <a onClick="aboutSectionGallery2On('aboutSectionGallery2','imgAboutSectionGallery2-1');">
                                 <div class="single-product-img approximation">
@@ -547,8 +547,8 @@ include 'header.php';
                         $query->the_post(); ?>
                         <div class="col-md-4" style="margin-bottom: 40px;">
                             <a onClick="galleryOn('gallery-<?php echo $post->ID; ?>','img-<?php echo $post->ID; ?>-0');">
-                                <div class="approximation project-container-2 rounded">
-                                    <img src="<?php echo get_post_meta($post->ID, '_img-1')[0]; ?>" class=" rounded"
+                                <div class="approximation project-container-2 ">
+                                    <img src="<?php echo get_post_meta($post->ID, '_img-1')[0]; ?>" class=" "
                                         alt="">
                                     <div class="card-wrapper">
                                         <div class="position-absolute"><?php the_title(); ?></div>

@@ -41,7 +41,7 @@ $posts_per_page = isset($args['posts_per_page']) ? $args['posts_per_page'] : -1;
         <?php if ($show_breadcrumbs) : ?>
         <div class="row">
             <div class="col">
-                <nav class="breadcrumbs">
+                <nav class="woocommerce-breadcrumb breadcrumbs">
                     <a href="/">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" fill="currentColor" viewBox="0 0 24 24" class="svg-icon">
                             <path
@@ -121,7 +121,7 @@ $posts_per_page = isset($args['posts_per_page']) ? $args['posts_per_page'] : -1;
                             </div>
                             <?php endif; ?>
                             
-                            <div class="carousel-inner rounded">
+                            <div class="carousel-inner ">
                                 <?php
                                 $count2 = 0;
                                 for ($i = 1; $i <= 9; $i++) {
@@ -130,7 +130,7 @@ $posts_per_page = isset($args['posts_per_page']) ? $args['posts_per_page'] : -1;
                                             <a onClick="galleryOn('gallery-<?php echo $post->ID; ?>','img-<?php echo $post->ID; ?>-<?php echo $count2; ?>');">
                                                 <div class="single-product-img approximation">
                                                     <img src="<?php echo get_post_meta($post->ID, '_img-' . $i)[0]; ?>"
-                                                        class="shadow rounded" 
+                                                        class="shadow " 
                                                         alt="<?php echo esc_attr(get_the_title()); ?>" 
                                                         loading="lazy">
                                                     <div class="magnifier"></div>

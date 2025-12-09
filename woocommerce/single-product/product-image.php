@@ -38,7 +38,7 @@ $wrapper_classes   = apply_filters(
 ?>
 
 <div id="carousel-<?php the_ID(); ?>" class="carousel slide h-100" data-bs-ride="carousel"  data-bs-interval="false">
-	<div class="carousel-inner rounded h-100">
+	<div class="carousel-inner  h-100">
 		<?php
 			$attachment_ids = $product->get_gallery_image_ids();
 			$count = false;
