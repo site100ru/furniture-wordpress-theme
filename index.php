@@ -51,14 +51,16 @@ include 'header.php';
 
 <?php get_template_part('template-parts/section-actions', null, ['section_actions_button' => 'false', 'section_actions_place' => 'actions-page', 'show_breadcrumbs' => 'false']); ?>
 
-<!-- Advantage section -->
+
+<!-- SECTION ACTIONS -->
 <?php get_template_part('template-parts/section-actions', null, array(
     'section_actions_place' => 'home-page',
     'show_breadcrumbs' => 'false',
-    'section_actions_button' => 'false',
+    'section_actions_button' => 'true',
     'background_color' => 'bg-white'
 ));
-?> 
+?>
+
 
 <!-- ABOUT SECTION -->
 <?php get_template_part('template-parts/about-section/about-section'); ?>
@@ -99,13 +101,8 @@ include 'header.php';
                     <div class="row pt-3">
                         <div class="col text-start">
                             <h3>Первичный контакт</h3>
-                            <p class="mb-0">
-                                Свяжитесь с нами любым удобным способом, расскажите, что Вы хотите. При наличии
-                                дизайн-проекта,
-                                набросок, размеров или другой информации — высылаете нам на почту, в Telegram, Whatsapp
-                                или в форме
-                                обратной связи.
-                            </p>
+                            <!-- Здесь -->
+                            <p class="mb-0">Свяжитесь с нами любым удобным способом, расскажите, что Вы хотите. При наличии дизайн-проекта, набросок, размеров или другой информации — высылаете нам на почту, в Telegram, Whatsapp или в форме обратной связи.</p>
                         </div>
                     </div>
                 </div>
@@ -198,12 +195,14 @@ include 'header.php';
 </section>
 <!-- /Как заказать -->
 
+
 <!-- Частые вопросы -->
 <?php get_template_part('template-parts/section-faq/section-faq', null, [
     'bg_class' => 'bg-white',
     'config' => 'faq-kitchen'
 ]);?>
 <!-- /Частые вопросы -->
+
 
 <!-- Не нашли нужного товара? -->
 <section class="section section-half bg-light py-5">
