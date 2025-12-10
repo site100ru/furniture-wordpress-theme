@@ -1,29 +1,17 @@
 <?php
 
 /**
- * Template Name: Страница архива шкафов
- * Template Post Type: page, product_cat
- **/
-
-defined('ABSPATH') || exit;
-
-get_header();
-
-/**
- * Hook: woocommerce_before_main_content.
- *
- * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
- * @hooked woocommerce_breadcrumb - 20
- * @hooked WC_Structured_Data::generate_website_data() - 30
+ * Template Name: Прихожие на заказ (с примерами из портфолио).
+ * Template Post Type: service
  */
-do_action('woocommerce_before_main_content');
 
+include get_template_directory() . '/header.php';
 ?>
 
 
 <!-- Home section -->
 <div id="sp-home" class="scroll-points"></div>
-<section class="main-home-section main-home-section-shkafy main-parallax">
+<section class="main-home-section main-home-section-prihojie">
     <div class="parallax-home-section" style="min-height: 640px;"></div>
 
     <!-- header-menu -->
@@ -32,11 +20,11 @@ do_action('woocommerce_before_main_content');
     <div class="container">
         <div class="row align-items-center home-section-height">
             <div class="col-xl-10 col-xxl-9">
-                <h1 class="home-title mb-3">Каталог шкафов по индивидуальным размерам на заказ от производителя</h1>
+                <h1 class="home-title mb-3">Прихожие по индивидуальным размерам на&#160;заказ от&#160;производителя</h1>
                 <p class="home-subtitle mb-4">
-                    Изготовим качественный шкаф с учетом Ваших пожеланий и особенностей помещения. Рассчитаем стоимость за 15 минут.
+                    Изготовим качественную кухню по разумной цене, с учетом Ваших пожеланий и особенностей помещения. Рассчитаем стоимость за 15 минут.
                 </p>
-
+                
                 <button type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</button>
 
             </div>
@@ -46,146 +34,17 @@ do_action('woocommerce_before_main_content');
 <!-- /Home section -->
 
 
-
-<!-- ARCHIVE PRODUCT SECTION -->
-<section class="archive-product-section pb-5 bg-white">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="breadcrumbs py-4">
-                    <nav class="woocommerce-breadcrumb" itemprop="breadcrumb">
-                        <a href="/">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" fill="currentColor" viewBox="0 0 24 24" class="svg-icon">
-                                <path
-                                    d="m21.71 11.29-9-9a1 1 0 0 0-1.42 0l-9 9a1 1 0 0 0 1.42 1.42l.29-.3v7.89A1.77 1.77 0 0 0 5.83 22H8.5a1 1 0 0 0 1-1v-4.9a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1V21a1 1 0 0 0 1 1h2.67A1.77 1.77 0 0 0 20 20.3v-7.89l.29.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42" />
-                            </svg>
-                        </a> /
-                        Каталог / Шкафы
-                    </nav>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col text-md-center mb-5">
-                <h2>Каталог проектов для заказа кухни по Вашим размерам</h2>
-                <p style="font-family: 'HelveticaNeueCyr-Light';">Выбирайте из нашего каталога или присылайте Ваш проект
-                </p>
-                <svg width="62" height="14" viewBox="0 0 62 14" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon mb-5">
-                    <rect x="48" width="14" height="14" rx="3" />
-                    <rect x="24" width="14" height="14" rx="3" />
-                    <rect width="14" height="14" rx="3" />
-                </svg>
-                <div class="row text-start">
-                    <div class="col-md-3 mb-5 mb-md-0" style="text-transform: uppercase; font-size: 14px;">
-                        <?php dynamic_sidebar('wsidebar-1'); ?>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="row">
-                            <?php
-                            if (woocommerce_product_loop()) {
-
-                                /**
-                                 * Hook: woocommerce_before_shop_loop.
-                                 *
-                                 * @hooked woocommerce_output_all_notices - 10
-                                 * @hooked woocommerce_result_count - 20
-                                 * @hooked woocommerce_catalog_ordering - 30
-                                 */
-                                //do_action( 'woocommerce_before_shop_loop' );
-
-                                // Нижее выводятся карточки категорий и подкатегорий
-                                woocommerce_product_loop_start();
-
-
-                                if (wc_get_loop_prop('total')) {
-
-
-                                    /* Выводим все товары кроме тех, у которых есть тег Портфолио */
-                                    /* С таким условием вывода неправильно работает пагинация
-                                    global $query_string;
-                                    // добавляем базовые параметры в массив $args
-                                    parse_str( $query_string, $args );
-                                    // добавляем/заменяем параметр post_type в массиве
-                                    $args['tax_query'] = array(           
-                                        array(
-                                            'taxonomy' => 'product_tag',
-                                            'field' => 'slug',
-                                            'terms' => 'portfolio',
-                                            'operator' => 'NOT IN'
-                                        )
-                                    );
-                                    query_posts( $args ); */
-                                    /* End Выводим все товары кроме тех, у которых есть тег Портфолио */
-
-
-                                    while (have_posts()) {
-
-                                        the_post();
-
-                                        /**
-                                         * Hook: woocommerce_shop_loop.
-                                         */
-
-                                        do_action('woocommerce_shop_loop');
-
-                                        wc_get_template_part('content', 'kitchen');
-                                    }
-                                }
-
-                                woocommerce_product_loop_end();
-
-                                /**
-                                 * Hook: woocommerce_after_shop_loop.
-                                 *
-                                 * @hooked woocommerce_pagination - 10
-                                 */
-                                do_action('woocommerce_after_shop_loop');
-                            } else {
-                                /**
-                                 * Hook: woocommerce_no_products_found.
-                                 *
-                                 * @hooked wc_no_products_found - 10
-                                 */
-                                do_action('woocommerce_no_products_found');
-                            }
-
-                            /**
-                             * Hook: woocommerce_after_main_content.
-                             *
-                             * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-                             */
-                            do_action('woocommerce_after_main_content');
-
-                            /**
-                             * Hook: woocommerce_sidebar.
-                             *
-                             * @hooked woocommerce_get_sidebar - 10
-                             */
-                            //do_action( 'woocommerce_sidebar' );
-                            ?>
-                        </div><!-- row -->
-                    </div><!-- col-md-9 -->
-                </div><!-- row -->
-            </div>
-        </div>
-    </div>
-</section>
-<!-- /ARCHIVE PRODUCT SECTION -->
-
-
-<!-- SECTION PORTFOLIO -->
-<?php get_template_part('template-parts/section-portfolio-tabs/section-portfolio-one-tab', null, array(
-    'category' => '06-shkafy',
-    'title' => 'Последние выполненные работы',
-    'background_color' => 'bg-white',
-    'posts_count' => 6,
-    'card_type' => 'approximation'
-)); ?>
-
-<!-- END SECTION PORTFOLIO -->
-
-
-
+<?php 
+get_template_part('template-parts/archive-portfolio-slider/archive-portfolio-slider', null, [
+    'show_breadcrumbs' => true,
+    'breadcrumbs_text' => 'Прихожие на заказ',
+    'title' => 'Наши работы',
+    'description' => 'Представляем с гордостью!',
+    'taxonomy_slug' => '02-prikhozhie',
+    'category_link' => '/portfolio-cat/02-prikhozhie/',
+    'posts_per_page' => 10
+]);
+?>
 
 
 <!-- Gradient order section -->
@@ -203,9 +62,9 @@ do_action('woocommerce_before_main_content');
                     <rect x="24" width="14" height="14" rx="3" />
                     <rect width="14" height="14" rx="3" />
                 </svg>
-
-                <br>
                 
+                <br>
+
                 <button type="button" class="btn btn-lg btn-corporate-color-1 mb-4" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Рассчитать стоимость</button>
 
                 <div class="row justify-content-md-end">
@@ -389,7 +248,6 @@ do_action('woocommerce_before_main_content');
 <!-- /Advantage section -->
 
 
-
 <!-- Как заказать -->
 <section class="advantages bg-light py-5">
     <div class="container">
@@ -525,11 +383,10 @@ do_action('woocommerce_before_main_content');
 <!-- /Как заказать -->
 
 
-
 <!-- Частые вопросы -->
 <?php get_template_part('template-parts/section-faq/section-faq', null, [
     'bg_class' => 'bg-white',
-    'config' => 'faq-kitchen' 
+    'config' => 'faq-kitchen'
 ]);?>
 <!-- /Частые вопросы -->
 
@@ -596,5 +453,6 @@ do_action('woocommerce_before_main_content');
 <!-- End gradient order section -->
 
 
-
-<?php get_footer('1'); ?>
+<?php 
+include get_template_directory() . '/footer-1.php'; 
+?>

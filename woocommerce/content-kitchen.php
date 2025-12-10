@@ -27,7 +27,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
 
 <div class="col-md-4 mb-5">
-	<div class="approximation project-container-2 rounded">
+	<div class="approximation project-container-2">
 		<?php
 		/**
 		 * Hook: woocommerce_before_shop_loop_item.

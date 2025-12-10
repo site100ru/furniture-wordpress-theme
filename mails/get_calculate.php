@@ -57,7 +57,32 @@
 	}
 	
 	
-			
+	// Подключаем WordPress для доступа к функциям темы
+	require_once('../../../wp-load.php');
+	
+	// Получаем email адреса из настроек темы
+	$mail_to = "vasilyev-r@mail.ru"; // Адрес доставки почты по умолчанию
+	
+	// Собираем все email адреса из админки
+	$emails_from_admin = array();
+	
+	//  email из повторителя
+	if (function_exists('mytheme_get_emails_extra')) {
+		$extra_emails = mytheme_get_emails_extra();
+		if (!empty($extra_emails) && is_array($extra_emails)) {
+			foreach ($extra_emails as $email_item) {
+				if (!empty($email_item['email'])) {
+					$emails_from_admin[] = $email_item['email'];
+				}
+			}
+		}
+	}
+	
+	// Если есть email из админки, используем их вместо стандартных
+	if (!empty($emails_from_admin)) {
+		$mail_to = implode(', ', $emails_from_admin);
+	}
+	
 			
 	$name = $_POST['name'];
 	$tel = $_POST['tel'];
@@ -65,7 +90,6 @@
 	if ( isset( $_POST[ 'mes' ] ) ) { $mes = $_POST['mes']; } else { $mes = ''; }
 	
 	$picture = "";
-	$mail_to = "mozaika62@bk.ru, vasilyev-r@mail.ru"; // Адрес доставки почты
 	$thm = "Заявка на расчет стоимости с сайта furniture.ru"; // Тема письма
 	
 	

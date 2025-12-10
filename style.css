@@ -1,7 +1,7 @@
 /**
  * Theme Name: Furniture
  * Theme URI: https://site100.ru
- * Version: 3
+ * Version: 3.1.0
  * Description: WordPress тема для мебельных компаний (производство, продажа мебели, мебельные магазины)
  * Author: site100.ru
  * Author URI: https://site100.ru
@@ -20,24 +20,6 @@
 bdi {}
 
 .active {
-	color: var(--corporate-color-1);
-}
-
-.navbar-light .navbar-nav .nav-link {
-	color: #c8c8c8;
-}
-
-.navbar-light .navbar-nav .nav-link:hover,
-.navbar-light .navbar-nav .nav-link:focus {
-	color: #c8c8c8;
-}
-
-.header-nav-bottom a.nav-link:hover,
-.header-nav-bottom a.nav-link:focus {
-	color: var(--corporate-color-1);
-}
-
-.navbar-light .navbar-nav .nav-link.active {
 	color: var(--corporate-color-1);
 }
 
@@ -84,7 +66,7 @@ p.advantages {
     margin-bottom: 2px;
 }
 
-.contacts-section-4 .menu-item.menu-item-has-children.dropdown a {
+.contacts-section-4 .menu-item.menu-item-has-children.dropdown a.nav-link.header-link.dropdown-toggle {
 	padding-right: 0;
 }
 
@@ -163,12 +145,6 @@ strong {
 	font-family: 'HelveticaNeueCyr-Bold';
 	padding: 13px 36px;
 	border-radius: 5px;
-}
-
-.carousel-item-2 img {
-	height: 424px;
-	border-radius: 10px;
-	overflow: hidden;
 }
 
 .single_img {
@@ -367,17 +343,6 @@ strong {
 	-webkit-overflow-scrolling: touch;
 }
 
-.archive-portfolio-section-2 .nav-item a,
-.archive-portfolio-section-2 .nav-item button {
-	color: #000000;
-	opacity: 0.75;
-	transition: 0.25s;
-}
-
-.archive-portfolio-section-2 .nav-item a.active,
-.archive-portfolio-section-2 .nav-item button.active {
-	color: var(--corporate-color-1);
-}
 
 .card-portfolio {
 	position: absolute;
@@ -417,11 +382,6 @@ strong {
 	}
 	.home-title {
 		font-size: 32px;
-	}
-	.carousel-item-2 img {
-		height: auto;
-		max-width: 75vw;
-		max-height: 75vw;
 	}
 
 	.carousel-inner {

@@ -35,7 +35,7 @@ if ( post_password_required() ) {
 <section class="single-product-section bg-white">
 	<div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'pt-md-3', $product ); ?>>
 		<div class="container pt-md-3 pb-5 single-product">
-			<div class="row " style="padding: 25px 0 0 0;">
+			<div class="row" style="padding: 25px 0 0 0;">
 				<div class="col breadcrumbs_box">
 					<div class="breadcrumbs" >
 						<?php woocommerce_breadcrumb(); ?>
@@ -97,7 +97,7 @@ if ( post_password_required() ) {
 			<div class="carousel-item carousel-item-2 h-100<?php if ( $count == false ) { echo ' active'; $count = true; } ?>">
 				<div class="row align-items-center h-100">
 					<div class="col text-center">
-						<img src="<?php echo wp_get_attachment_url( $attachment_id ); ?>" class="img-fluid" loading="lazy" style="max-width: 75vw; max-height: 75vh;" alt="...">
+						<img src="<?php echo wp_get_attachment_url( $attachment_id ); ?>" class="img-fluid" loading="lazy" style="max-width: 90vw; max-height: 90vh;" alt="...">
 					</div>
 				</div>
 			</div>
@@ -111,11 +111,11 @@ if ( post_password_required() ) {
 		if ( $count > 1 ) { ?>
 			<button class="carousel-control-prev" type="button" data-bs-target="#gallery-<?php the_ID(); ?>" data-bs-slide="prev">
 				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Previous</span>
+				<span class="visually-hidden">Предыдущий</span>
 			</button>
 			<button class="carousel-control-next" type="button" data-bs-target="#gallery-<?php the_ID(); ?>" data-bs-slide="next">
 				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Next</span>
+				<span class="visually-hidden">Следующий</span>
 			</button>
 			<?php }
 		?>
@@ -160,7 +160,7 @@ if ( post_password_required() ) {
 			<p><strong>Фурнитура:</strong> вся используемая фурнитура и интегрированная подсветка производства Hettich (Германия).</p>
 			<p><strong>Стоимость представленного образца:</strong> ₽155 000</p>
 			<p>Возможно любое индивидуальное изменение характеристик: размеров, материалов, фурнитуры.</p>
-			<p><strong>Расчитать стоимость этого образца с учетом Ваших характеристик?</strong> Это бесплатно и ник чему Вас не обязывает!</p>
+			<p><strong>Расcчитать стоимость этого образца с учетом Ваших характеристик?</strong> Это бесплатно и ник чему Вас не обязывает!</p>
 			<a href="#" style="padding: 7px 30px; margin-top: 25px;" type="button" class="btn btn-lg btn-corporate-color-1" data-bs-toggle="modal" data-bs-target="#calculatePriceWithDownloadModal">Да, рассчитайте</a>	
 		</div>
 	</div>
