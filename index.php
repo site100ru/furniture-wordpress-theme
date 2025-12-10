@@ -33,11 +33,13 @@ include 'header.php';
 </section>
 <!-- /Home section -->
 
+
 <!-- Action -->
 <?php get_template_part('template-parts/section-projects/section-projects', null, array(
     'background_color' => 'bg-white',
     'card_type' => 'approximation'
 )); ?>
+
 
 <!-- Services -->
 <?php get_template_part('template-parts/section-services/section-services', null, array(
@@ -45,9 +47,10 @@ include 'header.php';
     'card_type' => 'approximation'
 )); ?>
 
+
 <!-- SECTION PORTFOLIO -->
 <?php get_template_part('template-parts/section-portfolio-tabs/section-portfolio-tabs', null, []); ?>
-<!-- END SECTION PORTFOLIO -->
+
 
 <!-- SECTION ACTIONS -->
 <?php get_template_part('template-parts/section-actions', null, array(
