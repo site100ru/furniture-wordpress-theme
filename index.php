@@ -49,9 +49,6 @@ include 'header.php';
 <?php get_template_part('template-parts/section-portfolio-tabs/section-portfolio-tabs', null, []); ?>
 <!-- END SECTION PORTFOLIO -->
 
-<?php get_template_part('template-parts/section-actions', null, ['section_actions_button' => 'false', 'section_actions_place' => 'actions-page', 'show_breadcrumbs' => 'false']); ?>
-
-
 <!-- SECTION ACTIONS -->
 <?php get_template_part('template-parts/section-actions', null, array(
     'section_actions_place' => 'home-page',
