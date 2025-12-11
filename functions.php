@@ -1127,5 +1127,3 @@ add_filter('woocommerce_product_categories_widget_args', 'filter_product_categor
 
 require_once get_template_directory() . '/inc/transliteration.php';
 
-require_once get_template_directory() . '/inc/snowflake/snowflake.php';
-
