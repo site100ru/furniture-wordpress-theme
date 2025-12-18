@@ -65,6 +65,8 @@ include 'header.php';
 <!-- ABOUT SECTION -->
 <?php get_template_part('template-parts/about-section/about-section'); ?>
 
+<?php get_template_part('template-parts/new-quiz/new-quiz'); ?>
+
 
 <!-- Как заказать -->
 <section class="section section-how bg-light py-5">
