@@ -776,8 +776,6 @@
     <?php echo $counter_body; ?>
 <?php endif; ?>
 
-<?php include get_template_directory() . '/inc/snowflake/snowflake.php'; ?>
-
 </body>
 
 </html>
