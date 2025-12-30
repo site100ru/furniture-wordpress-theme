@@ -1773,7 +1773,8 @@ h6,
 	padding: 0px;
 }
 
-.col-md-6 .project-container-2:after {
+.col-md-6 .project-container-2:after,
+.col-md-4 .project-container-2:after {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -3034,6 +3035,7 @@ footer {
     .section-portfolio.archive-portfolio-section-2 .col-md-6.col-lg-4 .approximation,
     .archive-portfolio-section .col-md-6 .approximation,
     .col-md-6 .project-container-2:after,
+    .col-md-4 .project-container-2:after,
     .archive-portfolio-section .col-md-6.col-lg-4 .approximation,
     .archive-portfolio-section .col-md-4 .action-card img,
     .archive-portfolio-section .col-md-6 .action-card img {

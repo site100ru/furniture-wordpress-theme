@@ -3,6 +3,7 @@ $(window).scroll(function (e) {
     var scrolled = $(window).scrollTop();
     $('.parallax-home-section').css('top', (-(scrolled * .35)) + 'px'); // 35 - скорость прокрутки
     $('.parallax-home-section-closets').css('top', (-(scrolled * .35)) + 'px'); // 35 - скорость прокрутки
+    $('.test').css('top', (-(scrolled * .35)) + 'px'); // 35 - скорость прокрутки
 });
 /* End parallax home section */
 
