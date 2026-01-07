@@ -35,6 +35,11 @@ include 'header.php';
     <div class="container">
         <div class="row">
             <div class="col">
+                <?php
+                    $obj = get_queried_object();
+                    $current_category_name = $obj->name;
+                ?>
+
                 <div class="breadcrumbs">
                     <nav class="woocommerce-breadcrumb" itemprop="breadcrumb">
                         <a href="/">
@@ -43,7 +48,7 @@ include 'header.php';
                                     d="m21.71 11.29-9-9a1 1 0 0 0-1.42 0l-9 9a1 1 0 0 0 1.42 1.42l.29-.3v7.89A1.77 1.77 0 0 0 5.83 22H8.5a1 1 0 0 0 1-1v-4.9a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1V21a1 1 0 0 0 1 1h2.67A1.77 1.77 0 0 0 20 20.3v-7.89l.29.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42" />
                             </svg>
                         </a> /
-                        <a href="#">Наши работы</a>
+                        <a href="/portfolio/">Наши работы</a> / <?php echo $current_category_name; ?>
                     </nav>
                 </div>
             </div>

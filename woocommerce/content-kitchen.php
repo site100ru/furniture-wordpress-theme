@@ -37,12 +37,29 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 		do_action( 'woocommerce_before_shop_loop_item' );
 		
 		/**
-		 * Hook: woocommerce_before_shop_loop_item_title.
-		 *
-		 * @hooked woocommerce_show_product_loop_sale_flash - 10
-		 * @hooked woocommerce_template_loop_product_thumbnail - 10
-		 */
-		do_action( 'woocommerce_before_shop_loop_item_title' );
+         * Эффект наведения со сменой изображений
+         */
+        $main_image_id = $product->get_image_id();
+        $gallery_image_ids = $product->get_gallery_image_ids();
+
+        // Определяем второе изображение если есть в галереи изображение, тогда берем его
+        if ( !empty( $gallery_image_ids ) ) {
+            $hover_image_id = $gallery_image_ids[0];
+        } else {
+        // иначе берем главную картинку (дублируем главную, чтобы не было ошибок)
+            $hover_image_id = $main_image_id;
+        }
+
+        $main_image = wp_get_attachment_image( $main_image_id, 'woocommerce_thumbnail', false, array( 'class' => 'main-image' ) );
+        $hover_image = wp_get_attachment_image( $hover_image_id, 'woocommerce_thumbnail', false, array( 'class' => 'hover-image' ) );
+        ?>
+
+        <div class="product-images-wrapper">
+            <?php echo $main_image; ?>
+            <?php echo $hover_image; ?>
+        </div>
+
+        <?php
 
 		/**
 		 * Hook: woocommerce_shop_loop_item_title.
