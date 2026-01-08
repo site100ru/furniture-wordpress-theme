@@ -2648,7 +2648,7 @@ footer {
 /*** CALLBACK BUTTON ***/
 
 .single_img .carousel {
-        border-radius: 10px;
+    border-radius: var(--radius-medium);
     overflow: hidden;
 }
 
