@@ -4,7 +4,7 @@
 	$win = "true";
 	
 	// Подключаем WordPress для доступа к функциям темы
-	require_once('../../../wp-load.php');
+	require_once('../../../../wp-load.php');
 	
 	// Получаем email адреса из настроек темы
 	$to = 'vasilyev-r@mail.ru'; // Адрес доставки почты по умолчанию
