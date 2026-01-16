@@ -1799,6 +1799,14 @@ h6,
 	opacity: 0;
 }
 
+.zoom-card {
+    overflow: hidden;
+}
+
+.zoom-card.portfolio {
+    border-radius: var(--radius-small);
+}
+
 .zoom-card img {
     transition: all;
     transition-duration: var(--transition-duration);
