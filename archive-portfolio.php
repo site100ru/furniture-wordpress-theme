@@ -25,16 +25,119 @@ include 'header.php';
 </section>
 <!-- /Home section -->
 
-<!-- Portfolio Section -->
-<?php  get_template_part('template-parts/archive-portfolio-section/archive-portfolio-section', null, [
-    'bg_color' => 'bg-white',
-    'category' => 'all',
-    'show_title' => true,
+<!-- Пример 1: Section Portfolio One Tab -->
+<?php get_template_part('template-parts/section-portfolio-tabs/section-portfolio-one-tab', null, array(
+    'category' => '01-kuhni',
+    'section_title' => 'Вариант 1 - Section Portfolio One Tab',
+    'section_description' => 'Базовый блок портфолио для категории, поддержка хлебных крошек и кнопки.',
+    'background_color' => 'bg-white',
+    'posts_count' => 6,
+    'card_type' => 'approximation',
+    'show_button' => true,
+    'button_text' => 'Смотреть все кухни',
     'show_breadcrumbs' => true,
-    'show_filter' => true
-]); 
-?>
-<!-- /Portfolio Section -->
+    'breadcrumbs_items' => [
+        ['text' => 'Услуги', 'link' => '/services/'],
+        ['text' => 'Кухни на заказ']
+    ]
+)); ?>
 
+<!-- Пример 2: Section Portfolio Tabs -->
+<?php get_template_part('template-parts/section-portfolio-tabs/section-portfolio-tabs', null, array(
+    'section_title' => 'Вариант 2 - Section Portfolio Tabs',
+    'section_description' => 'Переключение категорий через табы без перезагрузки. Автоматическая генерация вкладок для НЕПУСТЫХ категорий.',
+    'background_color' => 'bg-light',
+    'posts_count' => 9,
+    'card_type' => 'zoom-card',
+    'show_button' => true,
+    'button_text' => 'Смотреть еще',
+    'show_breadcrumbs' => false
+)); ?>
+
+<!-- Пример 3: Archive Portfolio Slider -->
+<?php get_template_part('template-parts/archive-portfolio-slider/archive-portfolio-slider', null, array(
+    'category' => '02-prikhozhie',
+    'section_title' => 'Вариант 3 - Archive Portfolio Slider',
+    'section_description' => 'Карусель Bootstrap с навигацией и индикаторами. Фильтр по категории.',
+    'background_color' => 'bg-white',
+    'posts_count' => 8,
+    'card_type' => 'magnifier',
+    'show_button' => true,
+    'button_text' => 'Показать еще',
+    'show_breadcrumbs' => true,
+    'breadcrumbs_items' => [
+        ['text' => 'Услуги', 'link' => '/services/'],
+        ['text' => 'Прихожие на заказ']
+    ]
+)); ?>
+
+<!-- Пример 4: Archive Portfolio Section -->
+<?php get_template_part('template-parts/archive-portfolio-section/archive-portfolio-section', null, array(
+    'category' => '',
+    'section_title' => 'Вариант 4 - Archive Portfolio Section',
+    'section_description' => 'Masonry layout с динамической сеткой. Горизонтальный фильтр категорий.',
+    'background_color' => 'bg-white',
+    'posts_count' => 12,
+    'card_type' => 'approximation',
+    'show_button' => true,
+    'button_text' => 'Загрузить еще',
+    'show_breadcrumbs' => true,
+    'breadcrumbs_items' => [
+        ['text' => 'Портфолио']
+    ],
+    'show_filter' => true
+)); ?>
+
+<!-- Пример 5: Section Portfolio One Tab без кнопки -->
+<?php get_template_part('template-parts/section-portfolio-tabs/section-portfolio-one-tab', null, array(
+    'category' => '01-kuhni',
+    'section_title' => 'Вариант 5 - One Tab без кнопки',
+    'section_description' => 'Вывод всех работ категории без пагинации. Карточки с hover-эффектом смены изображения.',
+    'background_color' => 'bg-light',
+    'posts_count' => -1,
+    'card_type' => 'hover-image',
+    'show_button' => false
+)); ?>
+
+
+<!-- Пример 6: Archive Portfolio Section с категорией -->
+<?php get_template_part('template-parts/archive-portfolio-section/archive-portfolio-section', null, array(
+    'category' => 'kuhni',
+    'section_title' => 'Вариант 6 - Masonry одна категория',
+    'section_description' => 'Masonry layout для конкретной категории. Фильтр скрыт, карточки magnifier с лупой.',
+    'background_color' => 'bg-light',
+    'posts_count' => 15,
+    'card_type' => 'magnifier',
+    'show_button' => true,
+    'button_text' => 'Все кухни',
+    'show_filter' => false
+)); ?>
+
+<!-- Пример 7: Section Portfolio One Tab компактный -->
+<?php get_template_part('template-parts/section-portfolio-tabs/section-portfolio-one-tab', null, array(
+    'section_title' => 'Вариант 7 - One Tab компактный',
+    'section_description' => 'Только заголовок и карточки. Без описания, хлебных крошек и кнопки. 3 работы zoom-эффект.',
+    'background_color' => 'bg-white',
+    'posts_count' => 3,
+    'card_type' => 'zoom-card',
+    'show_button' => false,
+    'show_breadcrumbs' => false
+)); ?>
+
+<!-- Пример 8: Archive Portfolio Section максимальный -->
+<?php get_template_part('template-parts/archive-portfolio-section/archive-portfolio-section', null, array(
+    'section_title' => 'Вариант 8 - Masonry максимальный',
+    'section_description' => 'Полная конфигурация: хлебные крошки, фильтр, hover-карточки, кнопка.',
+    'background_color' => 'bg-white',
+    'posts_count' => 18,
+    'card_type' => 'hover-image',
+    'show_button' => true,
+    'show_breadcrumbs' => true,
+    'breadcrumbs_items' => [
+        ['text' => 'Главная', 'link' => '/'],
+        ['text' => 'Портфолио']
+    ],
+    'show_filter' => true
+)); ?>
 
 <?php include 'footer-1.php'; ?>

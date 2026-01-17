@@ -1,88 +1,107 @@
 <?php
-
 /**
  * Template Part: Archive Portfolio Section
  * 
- * $bg_color - Цвет фона секции (по умолчанию 'bg-white')
- * $category - ID категории или 'all' для всех категорий (по умолчанию 'all')
- * $show_title - Показывать заголовок секции (по умолчанию false)
- * $show_breadcrumbs - Показывать хлебные крошки (по умолчанию false)
- * $show_filter - Показывать фильтр категорий (по умолчанию false)
- * $section_title - Заголовок секции (по умолчанию 'Наши работы')
+ * Параметры:
+ * $args['category']            - slug категории для фильтрации, если не указан - выводятся все работы (по умолчанию '')
+ * $args['section_title']       - заголовок секции, по умолчанию 'Наши работы'
+ * $args['section_description'] - описание секции (текст под заголовком), по умолчанию пусто
+ * $args['background_color']    - цвет фона секции (например: 'bg-white', 'bg-light'), по умолчанию 'bg-white'
+ * $args['posts_count']         - количество выводимых работ, по умолчанию -1 (все)
+ * $args['card_type']           - тип карточки: 'approximation', 'zoom-card', 'hover-image', 'magnifier', по умолчанию 'approximation'
+ * $args['show_button']         - показывать кнопку (bool), по умолчанию false
+ * $args['button_text']         - текст кнопки, по умолчанию 'Смотреть еще'
+ * $args['button_link']         - ссылка кнопки, если не указан - формируется автоматически
+ * $args['show_breadcrumbs']    - показывать хлебные крошки (bool), по умолчанию false
+ * $args['breadcrumbs_items']   - массив элементов хлебных крошек (см. breadcrumbs.php)
+ * $args['show_filter']         - показывать фильтр категорий (bool), по умолчанию false
  * 
- * Примеры
+ * Примеры использования:
+ * 
+ * // Все работы с фильтром категорий
  * <?php get_template_part('template-parts/archive-portfolio-section/archive-portfolio-section', null, [
- *  'bg_color' => 'bg-white',
- *  'category' => 'all',
- *  'show_title' => true,
- *  'show_breadcrumbs' => true,
- *  'show_filter' => true
- *  ]);
- * ?>
+ *     'background_color' => 'bg-white',
+ *     'section_title' => 'Наши работы',
+ *     'show_breadcrumbs' => true,
+ *     'breadcrumbs_items' => [
+ *         ['text' => 'Портфолио']
+ *     ],
+ *     'show_filter' => true
+ * ]); ?>
  * 
- * 
- * <?php 
- * get_template_part('template-parts/archive-portfolio-section/archive-portfolio-section', null, [
- *     'bg_color' => 'bg-white',
- *     'category' => '01-kuhni', // Slug категории
- *     'show_title' => false,
- *     'show_breadcrumbs' => false,
- *     'show_filter' => false
- * ]); 
- * ?>
+ * // Работы конкретной категории без фильтра
+ * <?php get_template_part('template-parts/archive-portfolio-section/archive-portfolio-section', null, [
+ *     'background_color' => 'bg-white',
+ *     'category' => 'kuhni',
+ *     'section_title' => 'Кухни',
+ *     'section_description' => 'Наши лучшие проекты',
+ *     'posts_count' => 12,
+ *     'card_type' => 'zoom-card',
+ *     'show_button' => true,
+ *     'button_text' => 'Смотреть все кухни'
+ * ]); ?>
  */
 
 // Параметры по умолчанию
-$bg_color = isset($args['bg_color']) ? $args['bg_color'] : 'bg-white';
-$category = isset($args['category']) ? $args['category'] : 'all';
-$show_title = isset($args['show_title']) ? $args['show_title'] : false;
-$show_breadcrumbs = isset($args['show_breadcrumbs']) ? $args['show_breadcrumbs'] : false;
-$show_filter = isset($args['show_filter']) ? $args['show_filter'] : false;
+$category = isset($args['category']) ? $args['category'] : '';
 $section_title = isset($args['section_title']) ? $args['section_title'] : 'Наши работы';
+$section_description = isset($args['section_description']) ? $args['section_description'] : '';
+$background_color = isset($args['background_color']) ? $args['background_color'] : 'bg-white';
+$posts_count = isset($args['posts_count']) ? $args['posts_count'] : -1;
+$card_type = isset($args['card_type']) ? $args['card_type'] : 'approximation';
+$show_button = isset($args['show_button']) ? $args['show_button'] : false;
+$button_text = isset($args['button_text']) ? $args['button_text'] : 'Смотреть еще';
+$button_link = isset($args['button_link']) ? $args['button_link'] : '';
+$show_breadcrumbs = isset($args['show_breadcrumbs']) ? $args['show_breadcrumbs'] : false;
+$breadcrumbs_items = isset($args['breadcrumbs_items']) ? $args['breadcrumbs_items'] : [];
+$show_filter = isset($args['show_filter']) ? $args['show_filter'] : false;
 
-// Если передан slug (строка), преобразуем его в term_id
-if ($category !== 'all' && !is_numeric($category)) {
+// Автоматическое определение ссылки кнопки
+if (empty($button_link)) {
+    if (!empty($category)) {
+        $term = get_term_by('slug', $category, 'portfolio-cat');
+        $button_link = $term ? get_term_link($term) : '/portfolio/';
+    } else {
+        $button_link = '/portfolio/';
+    }
+}
+
+// Если указана категория, получаем её term_id для фильтрации
+$category_term_id = '';
+if (!empty($category)) {
     $term = get_term_by('slug', $category, 'portfolio-cat');
-    if ($term) {
-        $category = $term->term_id;
+    if ($term && !is_wp_error($term)) {
+        $category_term_id = $term->term_id;
     }
 }
 ?>
 
 <!-- Portfolio -->
-<section class="archive-portfolio-section-2 pt-4 <?php echo esc_attr($bg_color); ?>" style="padding-bottom: 145px;">
+<section class="archive-portfolio-section-2 masonry pt-4 <?php echo esc_attr($background_color); ?>" style="padding-bottom: 145px;">
     <div class="container">
-        <?php if ($show_breadcrumbs) : ?>
-            <div class="row">
-                <div class="col">
-                    <div class="breadcrumbs">
-                        <nav class="woocommerce-breadcrumb" itemprop="breadcrumb">
-                            <a href="/">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" fill="currentColor" viewBox="0 0 24 24" class="svg-icon">
-                                    <path
-                                        d="m21.71 11.29-9-9a1 1 0 0 0-1.42 0l-9 9a1 1 0 0 0 1.42 1.42l.29-.3v7.89A1.77 1.77 0 0 0 5.83 22H8.5a1 1 0 0 0 1-1v-4.9a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1V21a1 1 0 0 0 1 1h2.67A1.77 1.77 0 0 0 20 20.3v-7.89l.29.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42" />
-                                </svg>
-                            </a> / <a href="#"><?php echo esc_html($section_title); ?></a>
-                        </nav>
-                    </div>
-                </div>
-            </div>
+        <?php if ($show_breadcrumbs && !empty($breadcrumbs_items)) : ?>
+            <?php get_template_part('template-parts/breadcrumbs/breadcrumbs', null, array(
+                'items' => $breadcrumbs_items
+            )); ?>
         <?php endif; ?>
 
         <div class="row">
             <div class="col">
-                <?php if ($show_title) : ?>
-                    <div class="row">
-                        <div class="col text-md-center">
-                            <h2><?php echo esc_html($section_title); ?></h2>
-                            <svg width="62" height="14" viewBox="0 0 62 14" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon mb-5">
-                                <rect x="48" width="14" height="14" rx="3" />
-                                <rect x="24" width="14" height="14" rx="3" />
-                                <rect width="14" height="14" rx="3" />
-                            </svg>
-                        </div>
+                <div class="row">
+                    <div class="col text-md-center">
+                        <h2><?php echo esc_html($section_title); ?></h2>
+                        
+                        <?php if ($section_description) : ?>
+                            <p class="section-description archive-portfolio mb-3"><?php echo esc_html($section_description); ?></p>
+                        <?php endif; ?>
+                        
+                        <svg width="62" height="14" viewBox="0 0 62 14" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" class="svg-icon mb-5">
+                            <rect x="48" width="14" height="14" rx="3" />
+                            <rect x="24" width="14" height="14" rx="3" />
+                            <rect width="14" height="14" rx="3" />
+                        </svg>
                     </div>
-                <?php endif; ?>
+                </div>
 
                 <?php if ($show_filter) : ?>
                     <div class="row">
@@ -90,7 +109,7 @@ if ($category !== 'all' && !is_numeric($category)) {
                             <div class="nav-scroller mb-0">
                                 <ul class="nav justify-content-lg-center d-flex m-auto align-items-center tablist" id="myTab" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link <?php echo ($category === 'all') ? 'active' : ''; ?>" href="/portfolio/">Все</a>
+                                        <a class="nav-link <?php echo (empty($category)) ? 'active' : ''; ?>" href="/portfolio/">Все</a>
                                     </li>
                                     <?php
                                     $args_terms = [
@@ -110,7 +129,7 @@ if ($category !== 'all' && !is_numeric($category)) {
                                             </span>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link <?php echo ($category == $term->term_id) ? 'active' : ''; ?>" href="<?php echo get_term_link($term->term_id); ?>">
+                                            <a class="nav-link <?php echo ($category == $term->slug) ? 'active' : ''; ?>" href="<?php echo get_term_link($term->term_id); ?>">
                                                 <?php echo $term->name; ?>
                                             </a>
                                         </li>
@@ -134,17 +153,17 @@ if ($category !== 'all' && !is_numeric($category)) {
                     // Формируем аргументы запроса
                     $query_args = [
                         'post_type' => 'portfolio',
-                        'numberposts' => 999,
-                        'posts_per_page' => 999
+                        'numberposts' => $posts_count,
+                        'posts_per_page' => $posts_count
                     ];
 
                     // Если указана конкретная категория
-                    if ($category !== 'all' && !empty($category)) {
+                    if (!empty($category_term_id)) {
                         $query_args['tax_query'] = [
                             [
                                 'taxonomy' => 'portfolio-cat',
                                 'field' => 'term_id',
-                                'terms' => $category,
+                                'terms' => $category_term_id,
                             ],
                         ];
                     }
@@ -155,21 +174,24 @@ if ($category !== 'all' && !is_numeric($category)) {
                         while ($query->have_posts()):
                             $query->the_post();
 
-                            // Проверяем наличие первого изображения
+                            // Получаем изображения
                             $first_img = get_post_meta(get_the_ID(), '_img-1', true);
+                            $second_img = get_post_meta(get_the_ID(), '_img-2', true);
 
                             if ($first_img) :
                     ?>
                                 <div class="col-md-6 col-lg-4">
                                     <div class="mb-4">
                                         <a href="#" onClick="galleryOn('gallery-<?php echo get_the_ID(); ?>','img-<?php echo get_the_ID(); ?>-0'); return false;">
-                                            <div class="zoom-card portfolio approximation">
-                                                <img src="<?php echo esc_url($first_img); ?>"
-                                                    class="shadow"
-                                                    alt="<?php echo esc_attr(get_the_title()); ?>"
-                                                    loading="lazy">
-                                                <div class="magnifier"></div>
-                                            </div>
+                                            <?php 
+                                            get_template_part('template-parts/cards/card', null, array(
+                                                'image' => $first_img,
+                                                'image_hover' => $second_img,
+                                                'title' => get_the_title(),
+                                                'card_type' => $card_type,
+                                                'link' => ''
+                                            ));
+                                            ?>
                                         </a>
                                     </div>
                                 </div>
@@ -178,13 +200,23 @@ if ($category !== 'all' && !is_numeric($category)) {
                         endwhile;
                     else: ?>
                         <div class="col-12 text-center py-5">
-                            <p>Работы не найдены.</p>
+                            <p>Проверьте категорию</p>
                         </div>
                     <?php endif;
 
                     wp_reset_postdata();
                     ?>
                 </div>
+                
+                <?php if ($show_button && $query->have_posts()) : ?>
+                    <div class="row text-md-center">
+                        <div class="col">
+                            <a href="<?php echo esc_url($button_link); ?>" type="button" class="btn btn-lg btn-corporate-color-1">
+                                <?php echo esc_html($button_text); ?>
+                            </a>
+                        </div>
+                    </div>
+                <?php endif; ?>
             </div>
         </div><!-- .row -->
     </div><!-- .container -->
